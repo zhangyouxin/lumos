@@ -74,6 +74,11 @@
 				<ul class="tsd-hierarchy">
 					<li>
 						<span class="target">CellCollector</span>
+						<ul class="tsd-hierarchy">
+							<li>
+								<a href="sql_indexer.cellcollector.html" class="tsd-signature-type">CellCollector</a>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</section>
@@ -97,6 +102,7 @@
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="indexer.cellcollector.html#collect" class="tsd-kind-icon">collect</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="indexer.cellcollector.html#count" class="tsd-kind-icon">count</a></li>
 							</ul>
 						</section>
 					</div>
@@ -108,13 +114,13 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Cell<wbr>Collector<span class="tsd-signature-symbol">(</span>indexer<span class="tsd-signature-symbol">: </span><a href="indexer.indexer-1.html" class="tsd-signature-type">Indexer</a>, queries<span class="tsd-signature-symbol">: </span><a href="../interfaces/indexer.collectorqueries.html" class="tsd-signature-type">CollectorQueries</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="indexer.cellcollector.html" class="tsd-signature-type">CellCollector</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Cell<wbr>Collector<span class="tsd-signature-symbol">(</span>indexer<span class="tsd-signature-symbol">: </span><a href="indexer.indexer-1.html" class="tsd-signature-type">Indexer</a>, queries<span class="tsd-signature-symbol">: </span><a href="../interfaces/base.queryoptions.html" class="tsd-signature-type">QueryOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="indexer.cellcollector.html" class="tsd-signature-type">CellCollector</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/d1c1a56/packages/indexer/index.d.ts#L42">indexer/index.d.ts:42</a></li>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/0d5b62d/packages/indexer/index.d.ts#L27">indexer/index.d.ts:27</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -123,7 +129,7 @@
 									<h5>indexer: <a href="indexer.indexer-1.html" class="tsd-signature-type">Indexer</a></h5>
 								</li>
 								<li>
-									<h5>queries: <a href="../interfaces/indexer.collectorqueries.html" class="tsd-signature-type">CollectorQueries</a></h5>
+									<h5>queries: <a href="../interfaces/base.queryoptions.html" class="tsd-signature-type">QueryOptions</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="indexer.cellcollector.html" class="tsd-signature-type">CellCollector</a></h4>
@@ -143,10 +149,27 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/d1c1a56/packages/indexer/index.d.ts#L45">indexer/index.d.ts:45</a></li>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/0d5b62d/packages/indexer/index.d.ts#L32">indexer/index.d.ts:32</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">CellCollectorResults</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="count" class="tsd-anchor"></a>
+					<h3>count</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">count<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/0d5b62d/packages/indexer/index.d.ts#L30">indexer/index.d.ts:30</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -172,6 +195,12 @@
 					</li>
 					<li class="current tsd-kind-module">
 						<a href="../modules/indexer.html">indexer</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/sql_indexer.html">sql-<wbr>indexer</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/transaction_manager.html">transaction-<wbr>manager</a>
 					</li>
 				</ul>
 			</nav>
@@ -203,6 +232,9 @@
 									<li class=" tsd-kind-method tsd-parent-kind-class">
 										<a href="indexer.cellcollector.html#collect" class="tsd-kind-icon">collect</a>
 									</li>
+									<li class=" tsd-kind-method tsd-parent-kind-class">
+										<a href="indexer.cellcollector.html#count" class="tsd-kind-icon">count</a>
+									</li>
 								</ul>
 							</li>
 							<li class=" tsd-kind-class tsd-parent-kind-module">
@@ -212,16 +244,7 @@
 								<a href="indexer.transactioncollector.html" class="tsd-kind-icon">Transaction<wbr>Collector</a>
 							</li>
 							<li class=" tsd-kind-interface tsd-parent-kind-module">
-								<a href="../interfaces/indexer.collectorqueries.html" class="tsd-kind-icon">Collector<wbr>Queries</a>
-							</li>
-							<li class=" tsd-kind-interface tsd-parent-kind-module">
 								<a href="../interfaces/indexer.indexeroptions.html" class="tsd-kind-icon">Indexer<wbr>Options</a>
-							</li>
-							<li class=" tsd-kind-interface tsd-parent-kind-module">
-								<a href="../interfaces/indexer.outpoint.html" class="tsd-kind-icon">Out<wbr>Point</a>
-							</li>
-							<li class=" tsd-kind-interface tsd-parent-kind-module">
-								<a href="../interfaces/indexer.script.html" class="tsd-kind-icon">Script</a>
 							</li>
 							<li class=" tsd-kind-interface tsd-parent-kind-module">
 								<a href="../interfaces/indexer.tip.html" class="tsd-kind-icon">Tip</a>
@@ -236,6 +259,9 @@
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-module">
+						<a href="../modules/sql_indexer.html" class="tsd-kind-icon">sql-<wbr>indexer</a>
+					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/transaction_manager.html" class="tsd-kind-icon">transaction-<wbr>manager</a>
 					</li>

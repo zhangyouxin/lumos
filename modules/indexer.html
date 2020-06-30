@@ -80,7 +80,7 @@
 					<p>It is also designed to store the indexed data in either of the following storage choices:</p>
 					<ul>
 						<li>A local RocksDB directory;</li>
-						<li>Remote SQL database, supported databases now include latest stable versions of PostgreSQL and MySQL.</li>
+						<li>Remote SQL database, supported databases now include latest stable versions of PostgreSQL and MySQL. For now, the SQL indexer is maintained as a separate <code>@ckb-lumos/sql-indexer</code> package, we might merge the 2 indexer packages into one later.</li>
 					</ul>
 					<p>Note for the moment, SQLite is not officially supported, single-node users or Electron users are highly recommended to use the RocksDB solution.</p>
 					<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
@@ -141,10 +141,7 @@ indexer.startForever();</code></pre><p>To query existing cells, you can create a
 						<section class="tsd-index-section ">
 							<h3>Interfaces</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/indexer.collectorqueries.html" class="tsd-kind-icon">Collector<wbr>Queries</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/indexer.indexeroptions.html" class="tsd-kind-icon">Indexer<wbr>Options</a></li>
-								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/indexer.outpoint.html" class="tsd-kind-icon">Out<wbr>Point</a></li>
-								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/indexer.script.html" class="tsd-kind-icon">Script</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/indexer.tip.html" class="tsd-kind-icon">Tip</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/indexer.transactioncollectoroptions.html" class="tsd-kind-icon">Transaction<wbr>Collector<wbr>Options</a></li>
 							</ul>
@@ -166,7 +163,7 @@ indexer.startForever();</code></pre><p>To query existing cells, you can create a
 					<div class="tsd-signature tsd-kind-icon">Logger<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>level<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/d1c1a56/packages/indexer/index.d.ts#L6">indexer/index.d.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/0d5b62d/packages/indexer/index.d.ts#L7">indexer/index.d.ts:7</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -217,6 +214,12 @@ indexer.startForever();</code></pre><p>To query existing cells, you can create a
 					<li class="current tsd-kind-module">
 						<a href="indexer.html">indexer</a>
 					</li>
+					<li class=" tsd-kind-module">
+						<a href="sql_indexer.html">sql-<wbr>indexer</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="transaction_manager.html">transaction-<wbr>manager</a>
+					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
@@ -248,16 +251,7 @@ indexer.startForever();</code></pre><p>To query existing cells, you can create a
 								<a href="../classes/indexer.transactioncollector.html" class="tsd-kind-icon">Transaction<wbr>Collector</a>
 							</li>
 							<li class=" tsd-kind-interface tsd-parent-kind-module">
-								<a href="../interfaces/indexer.collectorqueries.html" class="tsd-kind-icon">Collector<wbr>Queries</a>
-							</li>
-							<li class=" tsd-kind-interface tsd-parent-kind-module">
 								<a href="../interfaces/indexer.indexeroptions.html" class="tsd-kind-icon">Indexer<wbr>Options</a>
-							</li>
-							<li class=" tsd-kind-interface tsd-parent-kind-module">
-								<a href="../interfaces/indexer.outpoint.html" class="tsd-kind-icon">Out<wbr>Point</a>
-							</li>
-							<li class=" tsd-kind-interface tsd-parent-kind-module">
-								<a href="../interfaces/indexer.script.html" class="tsd-kind-icon">Script</a>
 							</li>
 							<li class=" tsd-kind-interface tsd-parent-kind-module">
 								<a href="../interfaces/indexer.tip.html" class="tsd-kind-icon">Tip</a>
@@ -272,6 +266,9 @@ indexer.startForever();</code></pre><p>To query existing cells, you can create a
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-module">
+						<a href="sql_indexer.html" class="tsd-kind-icon">sql-<wbr>indexer</a>
+					</li>
 					<li class=" tsd-kind-module">
 						<a href="transaction_manager.html" class="tsd-kind-icon">transaction-<wbr>manager</a>
 					</li>
