@@ -76,9 +76,50 @@
 					<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
 						<h2>Usage</h2>
 					</a>
-					<pre><code><span class="hljs-keyword">const</span> helpers = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;@ckb-lumos/helpers&#x27;</span>);
+					<pre><code class="language-javascript"><span class="hljs-keyword">const</span> { minimalCellCapacity, generateAddress, parseAddress } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;@ckb-lumos/helpers&quot;</span>)
 
-<span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> DEMONSTRATE API</span></code></pre>
+<span class="hljs-comment">// Get cell minimal capacity.</span>
+<span class="hljs-keyword">const</span> result = minimalCellCapacity({
+  <span class="hljs-attr">cell_output</span>: {
+    <span class="hljs-attr">capacity</span>: <span class="hljs-string">&quot;0x174876e800&quot;</span>,
+    <span class="hljs-attr">lock</span>: {
+      <span class="hljs-attr">args</span>: <span class="hljs-string">&quot;0x36c329ed630d6ce750712a477543672adab57f4c&quot;</span>,
+      <span class="hljs-attr">code_hash</span>:
+        <span class="hljs-string">&quot;0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8&quot;</span>,
+      <span class="hljs-attr">hash_type</span>: <span class="hljs-string">&quot;type&quot;</span>,
+    },
+    <span class="hljs-attr">type</span>: <span class="hljs-literal">null</span>,
+  },
+  <span class="hljs-attr">data</span>: <span class="hljs-string">&quot;0x&quot;</span>,
+  <span class="hljs-attr">block_hash</span>: <span class="hljs-literal">null</span>,
+  <span class="hljs-attr">block_number</span>: <span class="hljs-literal">null</span>,
+  <span class="hljs-attr">out_point</span>: <span class="hljs-literal">null</span>,
+})
+
+<span class="hljs-comment">// result will be 6100000000n shannons.</span>
+
+<span class="hljs-comment">// Use `generateAddress` to get address from lock script.</span>
+<span class="hljs-keyword">const</span> address = generateAddress({
+  <span class="hljs-attr">code_hash</span>:
+    <span class="hljs-string">&quot;0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8&quot;</span>,
+  <span class="hljs-attr">hash_type</span>: <span class="hljs-string">&quot;type&quot;</span>,
+  <span class="hljs-attr">args</span>: <span class="hljs-string">&quot;0x36c329ed630d6ce750712a477543672adab57f4c&quot;</span>,
+})
+
+<span class="hljs-comment">// Then you will get mainnet address &quot;ckb1qyqrdsefa43s6m882pcj53m4gdnj4k440axqdt9rtd&quot;, or you can generate testnet address by</span>
+<span class="hljs-keyword">const</span> { predefined } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;@ckb-lumos/config-manager&quot;</span>)
+
+<span class="hljs-keyword">const</span> address = generateAddress({
+  <span class="hljs-attr">code_hash</span>:
+    <span class="hljs-string">&quot;0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8&quot;</span>,
+  <span class="hljs-attr">hash_type</span>: <span class="hljs-string">&quot;type&quot;</span>,
+  <span class="hljs-attr">args</span>: <span class="hljs-string">&quot;0x36c329ed630d6ce750712a477543672adab57f4c&quot;</span>,
+}, { <span class="hljs-attr">config</span>: predefined.AGGRON4 })
+
+<span class="hljs-comment">// Will get testnet address &quot;ckt1qyqrdsefa43s6m882pcj53m4gdnj4k440axqswmu83&quot;.</span>
+
+<span class="hljs-comment">// Use `parseAddress` to get lock script from an address.</span>
+<span class="hljs-keyword">const</span> script = parseAddress(<span class="hljs-string">&quot;ckb1qyqrdsefa43s6m882pcj53m4gdnj4k440axqdt9rtd&quot;</span>)</code></pre>
 				</div>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -120,7 +161,7 @@
 					<div class="tsd-signature tsd-kind-icon">Transaction<wbr>Skeleton<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Factory</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span>cellDeps<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">List</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/base.celldep-1.html" class="tsd-signature-type">CellDep</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>cellProvider<span class="tsd-signature-symbol">: </span><a href="../interfaces/base.cellprovider.html" class="tsd-signature-type">CellProvider</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">; </span>fixedEntries<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">List</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span>field<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>headerDeps<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">List</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>inputSinces<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>inputs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">List</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/base.cell.html" class="tsd-signature-type">Cell</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>outputs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">List</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/base.cell.html" class="tsd-signature-type">Cell</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>signingEntries<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">List</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>witnesses<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">List</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/0d5b62d/packages/helpers/index.d.ts#L13">helpers/index.d.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/12b39e1/packages/helpers/index.d.ts#L13">helpers/index.d.ts:13</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -137,7 +178,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/0d5b62d/packages/helpers/index.d.ts#L25">helpers/index.d.ts:25</a></li>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/12b39e1/packages/helpers/index.d.ts#L25">helpers/index.d.ts:25</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -160,7 +201,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/0d5b62d/packages/helpers/index.d.ts#L53">helpers/index.d.ts:53</a></li>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/12b39e1/packages/helpers/index.d.ts#L53">helpers/index.d.ts:53</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -191,7 +232,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/0d5b62d/packages/helpers/index.d.ts#L43">helpers/index.d.ts:43</a></li>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/12b39e1/packages/helpers/index.d.ts#L43">helpers/index.d.ts:43</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -217,7 +258,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/0d5b62d/packages/helpers/index.d.ts#L33">helpers/index.d.ts:33</a></li>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/12b39e1/packages/helpers/index.d.ts#L33">helpers/index.d.ts:33</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -243,7 +284,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/0d5b62d/packages/helpers/index.d.ts#L38">helpers/index.d.ts:38</a></li>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/12b39e1/packages/helpers/index.d.ts#L38">helpers/index.d.ts:38</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -274,7 +315,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/0d5b62d/packages/helpers/index.d.ts#L48">helpers/index.d.ts:48</a></li>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/12b39e1/packages/helpers/index.d.ts#L48">helpers/index.d.ts:48</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -300,7 +341,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/0d5b62d/packages/helpers/index.d.ts#L58">helpers/index.d.ts:58</a></li>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/12b39e1/packages/helpers/index.d.ts#L58">helpers/index.d.ts:58</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>

@@ -71,13 +71,114 @@
 					<a href="#ckb-lumoscommon-scripts" id="ckb-lumoscommon-scripts" style="color: inherit; text-decoration: none;">
 						<h1><code>@ckb-lumos/common-scripts</code></h1>
 					</a>
-					<p>Common script implementation for lumos.</p>
+					<p>Common script implementation for lumos. Includes <code>secp256k1_blake2b</code> lock script, <code>secp256k1_blake160_multisig</code> lock script, <code>dao</code> type script now.</p>
+					<p><code>LocktimePool</code> script includes <code>secp256k1_blake160_multisig</code> cells which with locktime in lock <code>args</code> (which <code>args</code> total length is 28 bytes, last 8 bytes is a <code>since</code> format locktime in BigUInt64LE encode) and <code>DAO</code> step2 cells.</p>
+					<p><code>common</code> script allows you to <code>transfer</code> capacity from <code>fromInfos</code> to an address. It will use locktime pool cells first by default.</p>
 					<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
 						<h2>Usage</h2>
 					</a>
-					<pre><code><span class="hljs-keyword">const</span> commonScripts = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;@ckb-lumos/common-scripts&#x27;</span>);
+					<p>Following script will show how to use <code>common</code> script to transfer capacity to another address. <code>secp256k1_blake160</code>, <code>secp256k1_blake160_multisig</code> and <code>locktime_pool</code> script are similar to <code>common</code>, and <code>common</code> maybe a better choose.</p>
+					<pre><code class="language-javascript"><span class="hljs-keyword">const</span> { common } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;@ckb-lumos/common-scripts&#x27;</span>);
+<span class="hljs-keyword">const</span> { sealTransaction } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;@ckb-lumos/helpers&quot;</span>)
+<span class="hljs-keyword">const</span> { Indexer } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;@ckb-lumos/indexer&quot;</span>)
 
-<span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> DEMONSTRATE API</span></code></pre>
+<span class="hljs-comment">// We can use Indexer module as cell provider</span>
+<span class="hljs-keyword">const</span> indexer = <span class="hljs-keyword">new</span> Indexer(<span class="hljs-string">&quot;http://127.0.0.1:8114&quot;</span>, <span class="hljs-string">&quot;./indexer-data&quot;</span>);
+
+<span class="hljs-keyword">const</span> tipHeader = {
+  <span class="hljs-attr">compact_target</span>: <span class="hljs-string">&#x27;0x20010000&#x27;</span>,
+  <span class="hljs-attr">dao</span>: <span class="hljs-string">&#x27;0x49bfb20771031d556c8480d47f2a290059f0ac7e383b6509006f4a772ed50200&#x27;</span>,
+  <span class="hljs-attr">epoch</span>: <span class="hljs-string">&#x27;0xa0006002b18&#x27;</span>,
+  <span class="hljs-attr">hash</span>: <span class="hljs-string">&#x27;0x432451e23c26f45eaceeedcc261764d6485ea5c9a204ac55ad755bb8dec9a079&#x27;</span>,
+  <span class="hljs-attr">nonce</span>: <span class="hljs-string">&#x27;0x8199548f8a5ac7a0f0caef1620f37b79&#x27;</span>,
+  <span class="hljs-attr">number</span>: <span class="hljs-string">&#x27;0x1aef6&#x27;</span>,
+  <span class="hljs-attr">parent_hash</span>: <span class="hljs-string">&#x27;0x63594a64108f19f6aed53d0dca9ab4075aac4379cb80b2097b0deac8fc16fd3b&#x27;</span>,
+  <span class="hljs-attr">proposals_hash</span>: <span class="hljs-string">&#x27;0x0000000000000000000000000000000000000000000000000000000000000000&#x27;</span>,
+  <span class="hljs-attr">timestamp</span>: <span class="hljs-string">&#x27;0x172f6b9a4cf&#x27;</span>,
+  <span class="hljs-attr">transactions_root</span>: <span class="hljs-string">&#x27;0x282dbadcd49f3e229d997875f37f4e4f19cb4f04fcf762e9639145aaa667b6f8&#x27;</span>,
+  <span class="hljs-attr">uncles_hash</span>: <span class="hljs-string">&#x27;0x0000000000000000000000000000000000000000000000000000000000000000&#x27;</span>,
+  <span class="hljs-attr">version</span>: <span class="hljs-string">&#x27;0x0&#x27;</span>
+}
+
+<span class="hljs-keyword">const</span> fromInfos = [
+  <span class="hljs-string">&quot;ckb1qyqwyxfa75whssgkq9ukkdd30d8c7txct0gq5f9mxs&quot;</span>,
+  {
+    <span class="hljs-attr">R</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">M</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">publicKeyHashes</span>: [<span class="hljs-string">&quot;0x36c329ed630d6ce750712a477543672adab57f4c&quot;</span>],
+  },
+]
+
+<span class="hljs-keyword">let</span> txSkeleton = TransactionSkeleton({ <span class="hljs-attr">cellProvider</span>: indexer })
+
+<span class="hljs-comment">// If using secp256k1_blake160_multisig lock script, put MultisigScript to `fromInfos` for generate signing messages.</span>
+<span class="hljs-comment">// By default, `common.transfer` will use cells with locktime firstly. `tipHeader` is required when you want to spent cells with locktime.</span>
+txSkeleton = <span class="hljs-keyword">await</span> common.transfer(
+  txSkeleton,
+  fromInfos,
+  <span class="hljs-string">&quot;ckb1qyqrdsefa43s6m882pcj53m4gdnj4k440axqdt9rtd&quot;</span>,
+  BigInt(<span class="hljs-number">3500</span> * <span class="hljs-number">10</span> ** <span class="hljs-number">8</span>),
+  tipHeader,
+)
+
+<span class="hljs-comment">// Or you want to use cells without locktime firstly.</span>
+txSkeleton = <span class="hljs-keyword">await</span> common.transfer(
+  txSkeleton,
+  fromInfos,
+  <span class="hljs-string">&quot;ckb1qyqrdsefa43s6m882pcj53m4gdnj4k440axqdt9rtd&quot;</span>,
+  BigInt(<span class="hljs-number">3500</span> * <span class="hljs-number">10</span> ** <span class="hljs-number">8</span>),
+  tipHeader,
+  { <span class="hljs-attr">useLocktimeCellsFirst</span>: <span class="hljs-literal">false</span> }
+)
+
+<span class="hljs-comment">// When you want to pay fee for transaction, just call `payFee`.</span>
+txSkeleton = <span class="hljs-keyword">await</span> common.payFee(
+  txSkeleton,
+  fromInfos,
+  BigInt(<span class="hljs-number">1</span>*<span class="hljs-number">10</span>**<span class="hljs-number">8</span>),
+  tipHeader,
+)
+
+<span class="hljs-comment">// `prepareSigningEntries` will generate message for signing.</span>
+<span class="hljs-comment">// Signing messages will fill in `txSkeleton.signingEntries`.</span>
+txSkeleton = <span class="hljs-keyword">await</span> common.prepareSigningEntries(
+  txSkeleton
+)
+
+<span class="hljs-comment">// Then you can sign messages in order and get contents.</span>
+<span class="hljs-comment">// <span class="hljs-doctag">NOTE:</span> lumos not provided tools for generate signatures now.</span>
+<span class="hljs-comment">// Call `sealTransaction` to get a transaction.</span>
+<span class="hljs-keyword">const</span> tx = sealTransaction(txSkeleton, contents)
+
+<span class="hljs-comment">// Then you can send tx to a CKB node via RPC `send_transaction`.</span></code></pre>
+					<p>Following script will show how to use <code>DAO</code> script.</p>
+					<pre><code class="language-javascript"><span class="hljs-keyword">const</span> { dao } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;@ckb-lumos/common-scripts&quot;</span>)
+
+<span class="hljs-keyword">let</span> txSkeleton = TransactionSkeleton({ <span class="hljs-attr">cellProvider</span>: indexer })
+
+<span class="hljs-comment">// First, deposit capacity to dao.</span>
+txSkeleton = <span class="hljs-keyword">await</span> dao.deposit(
+  txSkeleton,
+  <span class="hljs-string">&quot;ckb1qyqrdsefa43s6m882pcj53m4gdnj4k440axqdt9rtd&quot;</span>, <span class="hljs-comment">// will gather inputs from this address.</span>
+  <span class="hljs-string">&quot;ckb1qyqwyxfa75whssgkq9ukkdd30d8c7txct0gq5f9mxs&quot;</span>, <span class="hljs-comment">// will generate a dao cell with lock of this address.</span>
+  BigInt(<span class="hljs-number">1000</span>*<span class="hljs-number">10</span>**<span class="hljs-number">8</span>),
+)
+
+<span class="hljs-comment">// Using `listDaoCells` to list all deposited cells.</span>
+<span class="hljs-keyword">const</span> daoDepositedCells = <span class="hljs-keyword">await</span> dao.listDaoCells(
+  indexer,
+  <span class="hljs-string">&quot;ckb1qyqwyxfa75whssgkq9ukkdd30d8c7txct0gq5f9mxs&quot;</span>,
+  <span class="hljs-string">&quot;deposit&quot;</span>,
+)
+
+<span class="hljs-comment">// And pick one to withdraw.</span>
+<span class="hljs-comment">// `fromInfo` only required for multisig script.</span>
+txSkeleton = <span class="hljs-keyword">await</span> dao.withdraw(
+  txSkeleton,
+  daoDepositedCells[<span class="hljs-number">0</span>],
+)
+
+<span class="hljs-comment">// Then if want to unlock dao withdrew cells, just use `common.transfer`.</span></code></pre>
 				</div>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -119,7 +220,7 @@
 					<div class="tsd-signature tsd-kind-icon">From<wbr>Info<span class="tsd-signature-symbol">:</span> <a href="../interfaces/common_scripts.multisigscript.html" class="tsd-signature-type">MultisigScript</a><span class="tsd-signature-symbol"> | </span><a href="base.html#address" class="tsd-signature-type">Address</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/0d5b62d/packages/common-scripts/index.d.ts#L38">common-scripts/index.d.ts:38</a></li>
+							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/12b39e1/packages/common-scripts/index.d.ts#L38">common-scripts/index.d.ts:38</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -132,7 +233,7 @@
 					<div class="tsd-signature tsd-kind-icon">common<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>payFee<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>prepareSigningEntries<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>transfer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/0d5b62d/packages/common-scripts/index.d.ts#L326">common-scripts/index.d.ts:326</a></li>
+							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/12b39e1/packages/common-scripts/index.d.ts#L326">common-scripts/index.d.ts:326</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -147,7 +248,7 @@
 									<li class="tsd-description">
 										<aside class="tsd-sources">
 											<ul>
-												<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/0d5b62d/packages/common-scripts/index.d.ts#L345">common-scripts/index.d.ts:345</a></li>
+												<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/12b39e1/packages/common-scripts/index.d.ts#L345">common-scripts/index.d.ts:345</a></li>
 											</ul>
 										</aside>
 										<h4 class="tsd-parameters-title">Parameters</h4>
@@ -181,7 +282,7 @@
 									<li class="tsd-description">
 										<aside class="tsd-sources">
 											<ul>
-												<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/0d5b62d/packages/common-scripts/index.d.ts#L353">common-scripts/index.d.ts:353</a></li>
+												<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/12b39e1/packages/common-scripts/index.d.ts#L353">common-scripts/index.d.ts:353</a></li>
 											</ul>
 										</aside>
 										<h4 class="tsd-parameters-title">Parameters</h4>
@@ -206,7 +307,7 @@
 									<li class="tsd-description">
 										<aside class="tsd-sources">
 											<ul>
-												<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/0d5b62d/packages/common-scripts/index.d.ts#L336">common-scripts/index.d.ts:336</a></li>
+												<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/12b39e1/packages/common-scripts/index.d.ts#L336">common-scripts/index.d.ts:336</a></li>
 											</ul>
 										</aside>
 										<div class="tsd-comment tsd-typography">
@@ -250,7 +351,7 @@
 					<div class="tsd-signature tsd-kind-icon">dao<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>calculateDaoEarliestSince<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>calculateMaximumWithdraw<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>deposit<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>listDaoCells<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>unlock<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>withdraw<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/0d5b62d/packages/common-scripts/index.d.ts#L204">common-scripts/index.d.ts:204</a></li>
+							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/12b39e1/packages/common-scripts/index.d.ts#L204">common-scripts/index.d.ts:204</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -265,7 +366,7 @@
 									<li class="tsd-description">
 										<aside class="tsd-sources">
 											<ul>
-												<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/0d5b62d/packages/common-scripts/index.d.ts#L277">common-scripts/index.d.ts:277</a></li>
+												<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/12b39e1/packages/common-scripts/index.d.ts#L277">common-scripts/index.d.ts:277</a></li>
 											</ul>
 										</aside>
 										<div class="tsd-comment tsd-typography">
@@ -301,7 +402,7 @@
 									<li class="tsd-description">
 										<aside class="tsd-sources">
 											<ul>
-												<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/0d5b62d/packages/common-scripts/index.d.ts#L289">common-scripts/index.d.ts:289</a></li>
+												<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/12b39e1/packages/common-scripts/index.d.ts#L289">common-scripts/index.d.ts:289</a></li>
 											</ul>
 										</aside>
 										<div class="tsd-comment tsd-typography">
@@ -343,7 +444,7 @@
 									<li class="tsd-description">
 										<aside class="tsd-sources">
 											<ul>
-												<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/0d5b62d/packages/common-scripts/index.d.ts#L214">common-scripts/index.d.ts:214</a></li>
+												<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/12b39e1/packages/common-scripts/index.d.ts#L214">common-scripts/index.d.ts:214</a></li>
 											</ul>
 										</aside>
 										<div class="tsd-comment tsd-typography">
@@ -390,7 +491,7 @@
 									<li class="tsd-description">
 										<aside class="tsd-sources">
 											<ul>
-												<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/0d5b62d/packages/common-scripts/index.d.ts#L230">common-scripts/index.d.ts:230</a></li>
+												<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/12b39e1/packages/common-scripts/index.d.ts#L230">common-scripts/index.d.ts:230</a></li>
 											</ul>
 										</aside>
 										<div class="tsd-comment tsd-typography">
@@ -428,7 +529,7 @@
 									<li class="tsd-description">
 										<aside class="tsd-sources">
 											<ul>
-												<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/0d5b62d/packages/common-scripts/index.d.ts#L262">common-scripts/index.d.ts:262</a></li>
+												<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/12b39e1/packages/common-scripts/index.d.ts#L262">common-scripts/index.d.ts:262</a></li>
 											</ul>
 										</aside>
 										<div class="tsd-comment tsd-typography">
@@ -478,7 +579,7 @@
 									<li class="tsd-description">
 										<aside class="tsd-sources">
 											<ul>
-												<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/0d5b62d/packages/common-scripts/index.d.ts#L245">common-scripts/index.d.ts:245</a></li>
+												<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/12b39e1/packages/common-scripts/index.d.ts#L245">common-scripts/index.d.ts:245</a></li>
 											</ul>
 										</aside>
 										<div class="tsd-comment tsd-typography">
@@ -519,7 +620,7 @@
 					<div class="tsd-signature tsd-kind-icon">locktime<wbr>Pool<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>collectCells<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>payFee<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>prepareSigningEntries<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>transfer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/0d5b62d/packages/common-scripts/index.d.ts#L296">common-scripts/index.d.ts:296</a></li>
+							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/12b39e1/packages/common-scripts/index.d.ts#L296">common-scripts/index.d.ts:296</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -528,13 +629,13 @@
 							<li class="tsd-parameter">
 								<h5>collect<wbr>Cells<span class="tsd-signature-symbol">: </span>function</h5>
 								<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-type-literal">
-									<li class="tsd-signature tsd-kind-icon">collect<wbr>Cells<span class="tsd-signature-symbol">(</span>cellProvider<span class="tsd-signature-symbol">: </span><a href="../interfaces/base.cellprovider.html" class="tsd-signature-type">CellProvider</a>, fromScript<span class="tsd-signature-symbol">: </span><a href="../interfaces/base.script-1.html" class="tsd-signature-type">Script</a>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/common_scripts.options.html" class="tsd-signature-type">Options</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AsyncIterator</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/common_scripts.locktimecell.html" class="tsd-signature-type">LocktimeCell</a><span class="tsd-signature-symbol">&gt;</span></li>
+									<li class="tsd-signature tsd-kind-icon">collect<wbr>Cells<span class="tsd-signature-symbol">(</span>cellProvider<span class="tsd-signature-symbol">: </span><a href="../interfaces/base.cellprovider.html" class="tsd-signature-type">CellProvider</a>, fromInfo<span class="tsd-signature-symbol">: </span><a href="common_scripts.html#frominfo" class="tsd-signature-type">FromInfo</a>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/common_scripts.options.html" class="tsd-signature-type">Options</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AsyncIterator</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/common_scripts.locktimecell.html" class="tsd-signature-type">LocktimeCell</a><span class="tsd-signature-symbol">&gt;</span></li>
 								</ul>
 								<ul class="tsd-descriptions">
 									<li class="tsd-description">
 										<aside class="tsd-sources">
 											<ul>
-												<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/0d5b62d/packages/common-scripts/index.d.ts#L297">common-scripts/index.d.ts:297</a></li>
+												<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/12b39e1/packages/common-scripts/index.d.ts#L297">common-scripts/index.d.ts:297</a></li>
 											</ul>
 										</aside>
 										<h4 class="tsd-parameters-title">Parameters</h4>
@@ -543,7 +644,7 @@
 												<h5>cellProvider: <a href="../interfaces/base.cellprovider.html" class="tsd-signature-type">CellProvider</a></h5>
 											</li>
 											<li>
-												<h5>fromScript: <a href="../interfaces/base.script-1.html" class="tsd-signature-type">Script</a></h5>
+												<h5>fromInfo: <a href="common_scripts.html#frominfo" class="tsd-signature-type">FromInfo</a></h5>
 											</li>
 											<li>
 												<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/common_scripts.options.html" class="tsd-signature-type">Options</a></h5>
@@ -562,7 +663,7 @@
 									<li class="tsd-description">
 										<aside class="tsd-sources">
 											<ul>
-												<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/0d5b62d/packages/common-scripts/index.d.ts#L312">common-scripts/index.d.ts:312</a></li>
+												<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/12b39e1/packages/common-scripts/index.d.ts#L312">common-scripts/index.d.ts:312</a></li>
 											</ul>
 										</aside>
 										<h4 class="tsd-parameters-title">Parameters</h4>
@@ -596,7 +697,7 @@
 									<li class="tsd-description">
 										<aside class="tsd-sources">
 											<ul>
-												<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/0d5b62d/packages/common-scripts/index.d.ts#L320">common-scripts/index.d.ts:320</a></li>
+												<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/12b39e1/packages/common-scripts/index.d.ts#L320">common-scripts/index.d.ts:320</a></li>
 											</ul>
 										</aside>
 										<h4 class="tsd-parameters-title">Parameters</h4>
@@ -621,7 +722,7 @@
 									<li class="tsd-description">
 										<aside class="tsd-sources">
 											<ul>
-												<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/0d5b62d/packages/common-scripts/index.d.ts#L303">common-scripts/index.d.ts:303</a></li>
+												<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/12b39e1/packages/common-scripts/index.d.ts#L303">common-scripts/index.d.ts:303</a></li>
 											</ul>
 										</aside>
 										<h4 class="tsd-parameters-title">Parameters</h4>
@@ -658,7 +759,7 @@
 					<div class="tsd-signature tsd-kind-icon">secp256k1<wbr>Blake160<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>injectCapacity<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>payFee<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>prepareSigningEntries<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>setupInputCell<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>transfer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/0d5b62d/packages/common-scripts/index.d.ts#L41">common-scripts/index.d.ts:41</a></li>
+							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/12b39e1/packages/common-scripts/index.d.ts#L41">common-scripts/index.d.ts:41</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -673,7 +774,7 @@
 									<li class="tsd-description">
 										<aside class="tsd-sources">
 											<ul>
-												<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/0d5b62d/packages/common-scripts/index.d.ts#L93">common-scripts/index.d.ts:93</a></li>
+												<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/12b39e1/packages/common-scripts/index.d.ts#L93">common-scripts/index.d.ts:93</a></li>
 											</ul>
 										</aside>
 										<div class="tsd-comment tsd-typography">
@@ -711,7 +812,7 @@
 									<li class="tsd-description">
 										<aside class="tsd-sources">
 											<ul>
-												<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/0d5b62d/packages/common-scripts/index.d.ts#L67">common-scripts/index.d.ts:67</a></li>
+												<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/12b39e1/packages/common-scripts/index.d.ts#L67">common-scripts/index.d.ts:67</a></li>
 											</ul>
 										</aside>
 										<div class="tsd-comment tsd-typography">
@@ -752,7 +853,7 @@
 									<li class="tsd-description">
 										<aside class="tsd-sources">
 											<ul>
-												<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/0d5b62d/packages/common-scripts/index.d.ts#L80">common-scripts/index.d.ts:80</a></li>
+												<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/12b39e1/packages/common-scripts/index.d.ts#L80">common-scripts/index.d.ts:80</a></li>
 											</ul>
 										</aside>
 										<div class="tsd-comment tsd-typography">
@@ -784,7 +885,7 @@
 									<li class="tsd-description">
 										<aside class="tsd-sources">
 											<ul>
-												<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/0d5b62d/packages/common-scripts/index.d.ts#L107">common-scripts/index.d.ts:107</a></li>
+												<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/12b39e1/packages/common-scripts/index.d.ts#L107">common-scripts/index.d.ts:107</a></li>
 											</ul>
 										</aside>
 										<div class="tsd-comment tsd-typography">
@@ -819,7 +920,7 @@
 									<li class="tsd-description">
 										<aside class="tsd-sources">
 											<ul>
-												<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/0d5b62d/packages/common-scripts/index.d.ts#L51">common-scripts/index.d.ts:51</a></li>
+												<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/12b39e1/packages/common-scripts/index.d.ts#L51">common-scripts/index.d.ts:51</a></li>
 											</ul>
 										</aside>
 										<div class="tsd-comment tsd-typography">
@@ -863,7 +964,7 @@
 					<div class="tsd-signature tsd-kind-icon">secp256k1<wbr>Blake160<wbr>Multisig<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>injectCapacity<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>multisigArgs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>payFee<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>prepareSigningEntries<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>serializeMultisigScript<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>setupInputCell<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>transfer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/0d5b62d/packages/common-scripts/index.d.ts#L114">common-scripts/index.d.ts:114</a></li>
+							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/12b39e1/packages/common-scripts/index.d.ts#L114">common-scripts/index.d.ts:114</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -878,7 +979,7 @@
 									<li class="tsd-description">
 										<aside class="tsd-sources">
 											<ul>
-												<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/0d5b62d/packages/common-scripts/index.d.ts#L181">common-scripts/index.d.ts:181</a></li>
+												<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/12b39e1/packages/common-scripts/index.d.ts#L181">common-scripts/index.d.ts:181</a></li>
 											</ul>
 										</aside>
 										<div class="tsd-comment tsd-typography">
@@ -916,7 +1017,7 @@
 									<li class="tsd-description">
 										<aside class="tsd-sources">
 											<ul>
-												<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/0d5b62d/packages/common-scripts/index.d.ts#L171">common-scripts/index.d.ts:171</a></li>
+												<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/12b39e1/packages/common-scripts/index.d.ts#L171">common-scripts/index.d.ts:171</a></li>
 											</ul>
 										</aside>
 										<div class="tsd-comment tsd-typography">
@@ -944,7 +1045,7 @@
 									<li class="tsd-description">
 										<aside class="tsd-sources">
 											<ul>
-												<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/0d5b62d/packages/common-scripts/index.d.ts#L140">common-scripts/index.d.ts:140</a></li>
+												<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/12b39e1/packages/common-scripts/index.d.ts#L140">common-scripts/index.d.ts:140</a></li>
 											</ul>
 										</aside>
 										<div class="tsd-comment tsd-typography">
@@ -985,7 +1086,7 @@
 									<li class="tsd-description">
 										<aside class="tsd-sources">
 											<ul>
-												<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/0d5b62d/packages/common-scripts/index.d.ts#L153">common-scripts/index.d.ts:153</a></li>
+												<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/12b39e1/packages/common-scripts/index.d.ts#L153">common-scripts/index.d.ts:153</a></li>
 											</ul>
 										</aside>
 										<div class="tsd-comment tsd-typography">
@@ -1017,7 +1118,7 @@
 									<li class="tsd-description">
 										<aside class="tsd-sources">
 											<ul>
-												<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/0d5b62d/packages/common-scripts/index.d.ts#L163">common-scripts/index.d.ts:163</a></li>
+												<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/12b39e1/packages/common-scripts/index.d.ts#L163">common-scripts/index.d.ts:163</a></li>
 											</ul>
 										</aside>
 										<div class="tsd-comment tsd-typography">
@@ -1045,7 +1146,7 @@
 									<li class="tsd-description">
 										<aside class="tsd-sources">
 											<ul>
-												<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/0d5b62d/packages/common-scripts/index.d.ts#L196">common-scripts/index.d.ts:196</a></li>
+												<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/12b39e1/packages/common-scripts/index.d.ts#L196">common-scripts/index.d.ts:196</a></li>
 											</ul>
 										</aside>
 										<div class="tsd-comment tsd-typography">
@@ -1083,7 +1184,7 @@
 									<li class="tsd-description">
 										<aside class="tsd-sources">
 											<ul>
-												<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/0d5b62d/packages/common-scripts/index.d.ts#L124">common-scripts/index.d.ts:124</a></li>
+												<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/12b39e1/packages/common-scripts/index.d.ts#L124">common-scripts/index.d.ts:124</a></li>
 											</ul>
 										</aside>
 										<div class="tsd-comment tsd-typography">
