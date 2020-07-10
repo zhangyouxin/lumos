@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>CastToArrayBuffer | lumos</title>
+	<title>MultisigScript | lumos</title>
 	<meta name="description" content="Documentation for lumos">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,24 +56,34 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/base.html">base</a>
+					<a href="../modules/common_scripts.html">common-scripts</a>
 				</li>
 				<li>
-					<a href="base.casttoarraybuffer.html">CastToArrayBuffer</a>
+					<a href="common_scripts.multisigscript-1.html">MultisigScript</a>
 				</li>
 			</ul>
-			<h1>Interface CastToArrayBuffer</h1>
+			<h1>Interface MultisigScript</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>secp256k1_blake160_multisig script requires S, R, M, N and public key hashes
+							S must be zero now
+							and N equals to publicKeyHashes size
+						so only need to provide R, M and public key hashes</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">CastToArrayBuffer</span>
+						<span class="target">MultisigScript</span>
 					</li>
 				</ul>
 			</section>
@@ -82,32 +92,78 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Methods</h3>
+							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="base.casttoarraybuffer.html#toarraybuffer" class="tsd-kind-icon">to<wbr>Array<wbr>Buffer</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="common_scripts.multisigscript-1.html#m" class="tsd-kind-icon">M</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="common_scripts.multisigscript-1.html#r" class="tsd-kind-icon">R</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="common_scripts.multisigscript-1.html#publickeyhashes" class="tsd-kind-icon">public<wbr>Key<wbr>Hashes</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="common_scripts.multisigscript-1.html#since" class="tsd-kind-icon">since</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
-					<a name="toarraybuffer" class="tsd-anchor"></a>
-					<h3>to<wbr>Array<wbr>Buffer</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">to<wbr>Array<wbr>Buffer<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ArrayBuffer</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/9bc9eb4/packages/base/lib/core.d.ts#L2">base/lib/core.d.ts:2</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ArrayBuffer</span></h4>
-						</li>
-					</ul>
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="m" class="tsd-anchor"></a>
+					<h3>M</h3>
+					<div class="tsd-signature tsd-kind-icon">M<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/9bc9eb4/packages/common-scripts/src/secp256k1_blake160_multisig.ts#L43">common-scripts/src/secp256k1_blake160_multisig.ts:43</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>threshold, 1 byte</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="r" class="tsd-anchor"></a>
+					<h3>R</h3>
+					<div class="tsd-signature tsd-kind-icon">R<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/9bc9eb4/packages/common-scripts/src/secp256k1_blake160_multisig.ts#L41">common-scripts/src/secp256k1_blake160_multisig.ts:41</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>first nth public keys must match, 1 byte</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="publickeyhashes" class="tsd-anchor"></a>
+					<h3>public<wbr>Key<wbr>Hashes</h3>
+					<div class="tsd-signature tsd-kind-icon">public<wbr>Key<wbr>Hashes<span class="tsd-signature-symbol">:</span> <a href="../modules/base.html#hash" class="tsd-signature-type">Hash</a><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/9bc9eb4/packages/common-scripts/src/secp256k1_blake160_multisig.ts#L45">common-scripts/src/secp256k1_blake160_multisig.ts:45</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>blake160 hashes of compressed public keys</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="since" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> since</h3>
+					<div class="tsd-signature tsd-kind-icon">since<span class="tsd-signature-symbol">:</span> <a href="../modules/base.html#packedsince" class="tsd-signature-type">PackedSince</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/9bc9eb4/packages/common-scripts/src/secp256k1_blake160_multisig.ts#L47">common-scripts/src/secp256k1_blake160_multisig.ts:47</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>locktime in since format</p>
+						</div>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -117,10 +173,10 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class=" tsd-kind-module">
 						<a href="../modules/base.html">base</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class="current tsd-kind-module">
 						<a href="../modules/common_scripts.html">common-<wbr>scripts</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -142,16 +198,28 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-module">
+						<a href="../modules/base.html" class="tsd-kind-icon">base</a>
+					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-module">
-						<a href="../modules/base.html" class="tsd-kind-icon">base</a>
+						<a href="../modules/common_scripts.html" class="tsd-kind-icon">common-<wbr>scripts</a>
 						<ul>
 							<li class="current tsd-kind-interface tsd-parent-kind-module">
-								<a href="base.casttoarraybuffer.html" class="tsd-kind-icon">Cast<wbr>ToArray<wbr>Buffer</a>
+								<a href="common_scripts.multisigscript-1.html" class="tsd-kind-icon">Multisig<wbr>Script</a>
 								<ul>
-									<li class=" tsd-kind-method tsd-parent-kind-interface">
-										<a href="base.casttoarraybuffer.html#toarraybuffer" class="tsd-kind-icon">to<wbr>Array<wbr>Buffer</a>
+									<li class=" tsd-kind-property tsd-parent-kind-interface">
+										<a href="common_scripts.multisigscript-1.html#m" class="tsd-kind-icon">M</a>
+									</li>
+									<li class=" tsd-kind-property tsd-parent-kind-interface">
+										<a href="common_scripts.multisigscript-1.html#r" class="tsd-kind-icon">R</a>
+									</li>
+									<li class=" tsd-kind-property tsd-parent-kind-interface">
+										<a href="common_scripts.multisigscript-1.html#publickeyhashes" class="tsd-kind-icon">public<wbr>Key<wbr>Hashes</a>
+									</li>
+									<li class=" tsd-kind-property tsd-parent-kind-interface">
+										<a href="common_scripts.multisigscript-1.html#since" class="tsd-kind-icon">since</a>
 									</li>
 								</ul>
 							</li>
@@ -159,9 +227,6 @@
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-module">
-						<a href="../modules/common_scripts.html" class="tsd-kind-icon">common-<wbr>scripts</a>
-					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/config_manager.html" class="tsd-kind-icon">config-<wbr>manager</a>
 					</li>
@@ -193,7 +258,7 @@
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>

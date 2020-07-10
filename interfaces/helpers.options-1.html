@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>OutPoint | lumos</title>
+	<title>Options | lumos</title>
 	<meta name="description" content="Documentation for lumos">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,13 +56,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/base.html">base</a>
+					<a href="../modules/helpers.html">helpers</a>
 				</li>
 				<li>
-					<a href="base.outpoint-1.html">OutPoint</a>
+					<a href="helpers.options-1.html">Options</a>
 				</li>
 			</ul>
-			<h1>Interface OutPoint</h1>
+			<h1>Interface Options</h1>
 		</div>
 	</div>
 </header>
@@ -73,7 +73,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">OutPoint</span>
+						<span class="target">Options</span>
 					</li>
 				</ul>
 			</section>
@@ -84,8 +84,7 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="base.outpoint-1.html#index" class="tsd-kind-icon">index</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="base.outpoint-1.html#tx_hash" class="tsd-kind-icon">tx_<wbr>hash</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="helpers.options-1.html#config" class="tsd-kind-icon">config</a></li>
 							</ul>
 						</section>
 					</div>
@@ -94,22 +93,12 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="index" class="tsd-anchor"></a>
-					<h3>index</h3>
-					<div class="tsd-signature tsd-kind-icon">index<span class="tsd-signature-symbol">:</span> <a href="../modules/base.html#hexstring" class="tsd-signature-type">HexString</a></div>
+					<a name="config" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> config</h3>
+					<div class="tsd-signature tsd-kind-icon">config<span class="tsd-signature-symbol">:</span> <a href="config_manager.config.html" class="tsd-signature-type">Config</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/9bc9eb4/packages/base/index.d.ts#L37">base/index.d.ts:37</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="tx_hash" class="tsd-anchor"></a>
-					<h3>tx_<wbr>hash</h3>
-					<div class="tsd-signature tsd-kind-icon">tx_<wbr>hash<span class="tsd-signature-symbol">:</span> <a href="../modules/base.html#hash" class="tsd-signature-type">Hash</a></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/9bc9eb4/packages/base/index.d.ts#L36">base/index.d.ts:36</a></li>
+							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/9bc9eb4/packages/helpers/src/index.ts#L20">helpers/src/index.ts:20</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -121,7 +110,7 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class=" tsd-kind-module">
 						<a href="../modules/base.html">base</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -130,7 +119,7 @@
 					<li class=" tsd-kind-module">
 						<a href="../modules/config_manager.html">config-<wbr>manager</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class="current tsd-kind-module">
 						<a href="../modules/helpers.html">helpers</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -146,35 +135,98 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-module">
+					<li class=" tsd-kind-module">
 						<a href="../modules/base.html" class="tsd-kind-icon">base</a>
-						<ul>
-							<li class="current tsd-kind-interface tsd-parent-kind-module">
-								<a href="base.outpoint-1.html" class="tsd-kind-icon">Out<wbr>Point</a>
-								<ul>
-									<li class=" tsd-kind-property tsd-parent-kind-interface">
-										<a href="base.outpoint-1.html#index" class="tsd-kind-icon">index</a>
-									</li>
-									<li class=" tsd-kind-property tsd-parent-kind-interface">
-										<a href="base.outpoint-1.html#tx_hash" class="tsd-kind-icon">tx_<wbr>hash</a>
-									</li>
-								</ul>
-							</li>
-						</ul>
 					</li>
-				</ul>
-				<ul class="after-current">
 					<li class=" tsd-kind-module">
 						<a href="../modules/common_scripts.html" class="tsd-kind-icon">common-<wbr>scripts</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/config_manager.html" class="tsd-kind-icon">config-<wbr>manager</a>
 					</li>
-					<li class=" tsd-kind-module">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-module">
 						<a href="../modules/helpers.html" class="tsd-kind-icon">helpers</a>
+						<ul>
+							<li class=" tsd-kind-interface tsd-parent-kind-module">
+								<a href="helpers.options.html" class="tsd-kind-icon">Options</a>
+							</li>
+							<li class="current tsd-kind-interface tsd-parent-kind-module">
+								<a href="helpers.options-1.html" class="tsd-kind-icon">Options</a>
+								<ul>
+									<li class=" tsd-kind-property tsd-parent-kind-interface">
+										<a href="helpers.options-1.html#config" class="tsd-kind-icon">config</a>
+									</li>
+								</ul>
+							</li>
+							<li class=" tsd-kind-interface tsd-parent-kind-module">
+								<a href="helpers.transactionskeletoninterface.html" class="tsd-kind-icon">Transaction<wbr>Skeleton<wbr>Interface</a>
+							</li>
+							<li class=" tsd-kind-interface tsd-parent-kind-module">
+								<a href="helpers.transactionskeletoninterface-1.html" class="tsd-kind-icon">Transaction<wbr>Skeleton<wbr>Interface</a>
+							</li>
+							<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+								<a href="../modules/helpers.html#transactionskeletontype" class="tsd-kind-icon">Transaction<wbr>Skeleton<wbr>Type</a>
+							</li>
+							<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+								<a href="../modules/helpers.html#transactionskeletontype-1" class="tsd-kind-icon">Transaction<wbr>Skeleton<wbr>Type</a>
+							</li>
+							<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+								<a href="../modules/helpers.html#bech32_limit" class="tsd-kind-icon">BECH32_<wbr>LIMIT</a>
+							</li>
+							<li class=" tsd-kind-variable tsd-parent-kind-module">
+								<a href="../modules/helpers.html#transactionskeleton" class="tsd-kind-icon">Transaction<wbr>Skeleton</a>
+							</li>
+							<li class=" tsd-kind-variable tsd-parent-kind-module">
+								<a href="../modules/helpers.html#transactionskeleton-1" class="tsd-kind-icon">Transaction<wbr>Skeleton</a>
+							</li>
+							<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+								<a href="../modules/helpers.html#bytearraytohex" class="tsd-kind-icon">byte<wbr>Array<wbr>ToHex</a>
+							</li>
+							<li class=" tsd-kind-function tsd-parent-kind-module">
+								<a href="../modules/helpers.html#createtransactionfromskeleton" class="tsd-kind-icon">create<wbr>Transaction<wbr>From<wbr>Skeleton</a>
+							</li>
+							<li class=" tsd-kind-function tsd-parent-kind-module">
+								<a href="../modules/helpers.html#createtransactionfromskeleton-1" class="tsd-kind-icon">create<wbr>Transaction<wbr>From<wbr>Skeleton</a>
+							</li>
+							<li class=" tsd-kind-function tsd-parent-kind-module">
+								<a href="../modules/helpers.html#generateaddress" class="tsd-kind-icon">generate<wbr>Address</a>
+							</li>
+							<li class=" tsd-kind-function tsd-parent-kind-module">
+								<a href="../modules/helpers.html#generateaddress-1" class="tsd-kind-icon">generate<wbr>Address</a>
+							</li>
+							<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+								<a href="../modules/helpers.html#hextobytearray" class="tsd-kind-icon">hex<wbr>ToByte<wbr>Array</a>
+							</li>
+							<li class=" tsd-kind-function tsd-parent-kind-module">
+								<a href="../modules/helpers.html#locatecelldep" class="tsd-kind-icon">locate<wbr>Cell<wbr>Dep</a>
+							</li>
+							<li class=" tsd-kind-function tsd-parent-kind-module">
+								<a href="../modules/helpers.html#locatecelldep-1" class="tsd-kind-icon">locate<wbr>Cell<wbr>Dep</a>
+							</li>
+							<li class=" tsd-kind-function tsd-parent-kind-module">
+								<a href="../modules/helpers.html#minimalcellcapacity" class="tsd-kind-icon">minimal<wbr>Cell<wbr>Capacity</a>
+							</li>
+							<li class=" tsd-kind-function tsd-parent-kind-module">
+								<a href="../modules/helpers.html#minimalcellcapacity-1" class="tsd-kind-icon">minimal<wbr>Cell<wbr>Capacity</a>
+							</li>
+							<li class=" tsd-kind-function tsd-parent-kind-module">
+								<a href="../modules/helpers.html#parseaddress" class="tsd-kind-icon">parse<wbr>Address</a>
+							</li>
+							<li class=" tsd-kind-function tsd-parent-kind-module">
+								<a href="../modules/helpers.html#parseaddress-1" class="tsd-kind-icon">parse<wbr>Address</a>
+							</li>
+							<li class=" tsd-kind-function tsd-parent-kind-module">
+								<a href="../modules/helpers.html#sealtransaction" class="tsd-kind-icon">seal<wbr>Transaction</a>
+							</li>
+							<li class=" tsd-kind-function tsd-parent-kind-module">
+								<a href="../modules/helpers.html#sealtransaction-1" class="tsd-kind-icon">seal<wbr>Transaction</a>
+							</li>
+						</ul>
 					</li>
+				</ul>
+				<ul class="after-current">
 					<li class=" tsd-kind-module">
 						<a href="../modules/indexer.html" class="tsd-kind-icon">indexer</a>
 					</li>

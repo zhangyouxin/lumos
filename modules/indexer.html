@@ -86,34 +86,126 @@
 					<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
 						<h2>Usage</h2>
 					</a>
-					<pre><code><span class="hljs-keyword">const</span> { Indexer, CellCollector } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;@ckb-lumos/indexer&#x27;</span>);
-<span class="hljs-keyword">const</span> indexer = <span class="hljs-keyword">new</span> Indexer(<span class="hljs-string">&quot;http://127.0.0.1:8114&quot;</span>, <span class="hljs-string">&quot;/tmp/indexed-data&quot;</span>)
-indexer.startForever();</code></pre><p>To query existing cells, you can create a CellCollector:</p>
-					<pre><code>collector = <span class="hljs-keyword">new</span> CellCollector(indexer, {
-  lock: {
-    code_hash:
+					<a href="#start-indexer" id="start-indexer" style="color: inherit; text-decoration: none;">
+						<h3>Start Indexer</h3>
+					</a>
+					<pre><code class="language-javascript"><span class="hljs-keyword">const</span> { Indexer, CellCollector, TransactionCollector } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;@ckb-lumos/indexer&quot;</span>);
+<span class="hljs-keyword">const</span> indexer = <span class="hljs-keyword">new</span> Indexer(<span class="hljs-string">&quot;http://127.0.0.1:8114&quot;</span>, <span class="hljs-string">&quot;/tmp/indexed-data&quot;</span>);
+indexer.startForever();</code></pre>
+					<a href="#cellcollector" id="cellcollector" style="color: inherit; text-decoration: none;">
+						<h3>CellCollector</h3>
+					</a>
+					<p>To query existing cells, you can create a CellCollector:</p>
+					<pre><code class="language-javascript">collector = <span class="hljs-keyword">new</span> CellCollector(indexer, {
+  <span class="hljs-attr">lock</span>: {
+    <span class="hljs-attr">code_hash</span>:
       <span class="hljs-string">&quot;0x0000000000000000000000000000000000000000000000000000000000000000&quot;</span>,
-    hash_type: <span class="hljs-string">&quot;data&quot;</span>,
-    args: <span class="hljs-string">&quot;0x62e907b15cbf27d5425399ebf6f0fb50ebb88f18&quot;</span>,
+    <span class="hljs-attr">hash_type</span>: <span class="hljs-string">&quot;data&quot;</span>,
+    <span class="hljs-attr">args</span>: <span class="hljs-string">&quot;0x62e907b15cbf27d5425399ebf6f0fb50ebb88f18&quot;</span>,
   },
 });
 
-<span class="hljs-function"><span class="hljs-keyword">for</span> <span class="hljs-title">await</span> <span class="hljs-params">(<span class="hljs-keyword">const</span> cell of collector.collect())</span> </span>{
-  console.<span class="hljs-built_in">log</span>(cell);
-}</code></pre><p>Prefix search is supported on <code>args</code>.</p>
-					<p>Similar solution can be used to query for transactions related to a lock script:</p>
-					<pre><code>txCollector = <span class="hljs-keyword">new</span> TransactionCollector(indexer, {
-  lock: {
-    code_hash:
-      <span class="hljs-string">&quot;0x0000000000000000000000000000000000000000000000000000000000000000&quot;</span>,
-    hash_type: <span class="hljs-string">&quot;data&quot;</span>,
-    args: <span class="hljs-string">&quot;0x62e907b15cbf27d5425399ebf6f0fb50ebb88f18&quot;</span>,
-  },
-});
-
-<span class="hljs-function"><span class="hljs-keyword">for</span> <span class="hljs-title">await</span> <span class="hljs-params">(<span class="hljs-keyword">const</span> tx of txCollector.collect())</span> </span>{
-  console.<span class="hljs-built_in">log</span>(tx);
+<span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">const</span> cell <span class="hljs-keyword">of</span> collector.collect()) {
+  <span class="hljs-built_in">console</span>.log(cell);
 }</code></pre>
+					<p>Prefix search is supported on <code>args</code>.</p>
+					<p>Range query for cells between given block_numbers is supported:</p>
+					<pre><code class="language-javascript">cellCollector = <span class="hljs-keyword">new</span> CellCollector(indexer, {
+  <span class="hljs-attr">lock</span>: {
+    <span class="hljs-attr">code_hash</span>: 
+      <span class="hljs-string">&quot;0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8&quot;</span>,
+    <span class="hljs-attr">hash_type</span>: <span class="hljs-string">&quot;type&quot;</span>,
+    <span class="hljs-attr">args</span>: <span class="hljs-string">&quot;0xa528f2b9a51118b193178db4cf2f3db92e7df323&quot;</span>,
+  },
+  <span class="hljs-attr">fromBlock</span>: <span class="hljs-number">2250000</span>,
+  <span class="hljs-attr">toBlock</span>: <span class="hljs-number">2252000</span>,
+});
+
+<span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">const</span> tx <span class="hljs-keyword">of</span> cellCollector.collect()) {
+  <span class="hljs-built_in">console</span>.log(tx);
+}</code></pre>
+					<p>It will fetch cells between <code>[fromBlock, toBlock]</code>, which means both <code>fromBlock</code> and <code>toBlock</code> are included in query range.</p>
+					<p>Page jump when queryring cells is supported:</p>
+					<pre><code class="language-javascript">cellCollector = <span class="hljs-keyword">new</span> CellCollector(indexer, {
+  <span class="hljs-attr">lock</span>: {
+    <span class="hljs-attr">code_hash</span>: 
+      <span class="hljs-string">&quot;0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8&quot;</span>,
+    <span class="hljs-attr">hash_type</span>: <span class="hljs-string">&quot;type&quot;</span>,
+    <span class="hljs-attr">args</span>: <span class="hljs-string">&quot;0xa528f2b9a51118b193178db4cf2f3db92e7df323&quot;</span>,
+  },
+  <span class="hljs-attr">skip</span>: <span class="hljs-number">100</span>,
+});
+
+<span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">const</span> tx <span class="hljs-keyword">of</span> cellCollector.collect()) {
+  <span class="hljs-built_in">console</span>.log(tx);
+}</code></pre>
+					<p>The <code>skip</code> field represents the number of cells being skipped, which in the above code snippet means it would skip the first 100 cells and return from the 101st one.</p>
+					<a href="#transactioncollector" id="transactioncollector" style="color: inherit; text-decoration: none;">
+						<h3>TransactionCollector</h3>
+					</a>
+					<p>Similar solution can be used to query for transactions related to a lock script:</p>
+					<pre><code class="language-javascript">txCollector = <span class="hljs-keyword">new</span> TransactionCollector(indexer, {
+  <span class="hljs-attr">lock</span>: {
+    <span class="hljs-attr">code_hash</span>:
+      <span class="hljs-string">&quot;0x0000000000000000000000000000000000000000000000000000000000000000&quot;</span>,
+    <span class="hljs-attr">hash_type</span>: <span class="hljs-string">&quot;data&quot;</span>,
+    <span class="hljs-attr">args</span>: <span class="hljs-string">&quot;0x62e907b15cbf27d5425399ebf6f0fb50ebb88f18&quot;</span>,
+  },
+});
+
+<span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">const</span> tx <span class="hljs-keyword">of</span> txCollector.collect()) {
+  <span class="hljs-built_in">console</span>.log(tx);
+}</code></pre>
+					<p>Range query for transactions between given block_numbers is supported:</p>
+					<pre><code class="language-javascript">txCollector = <span class="hljs-keyword">new</span> TransactionCollector(indexer, {
+  <span class="hljs-attr">lock</span>: {
+    <span class="hljs-attr">code_hash</span>: 
+      <span class="hljs-string">&quot;0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8&quot;</span>,
+    <span class="hljs-attr">hash_type</span>: <span class="hljs-string">&quot;type&quot;</span>,
+    <span class="hljs-attr">args</span>: <span class="hljs-string">&quot;0xa528f2b9a51118b193178db4cf2f3db92e7df323&quot;</span>,
+  },
+  <span class="hljs-attr">fromBlock</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">toBlock</span>: <span class="hljs-number">2000</span>,
+});
+
+<span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">const</span> tx <span class="hljs-keyword">of</span> txCollector.collect()) {
+  <span class="hljs-built_in">console</span>.log(tx);
+}</code></pre>
+					<p>It will fetch transactions between <code>[fromBlock, toBlock]</code>, which means both <code>fromBlock</code> and <code>toBlock</code> are included in query range.</p>
+					<p>Fine grained query for transactions by scripts with <code>ioType</code> is supported: </p>
+					<pre><code class="language-javascript">txCollector = <span class="hljs-keyword">new</span> TransactionCollector(indexer, {
+  <span class="hljs-attr">lock</span>: {
+    <span class="hljs-attr">script</span>: {
+      <span class="hljs-attr">code_hash</span>: 
+        <span class="hljs-string">&quot;0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8&quot;</span>,
+      <span class="hljs-attr">hash_type</span>: <span class="hljs-string">&quot;type&quot;</span>,
+      <span class="hljs-attr">args</span>: <span class="hljs-string">&quot;0xa528f2b9a51118b193178db4cf2f3db92e7df323&quot;</span>,
+    },
+    <span class="hljs-attr">ioType</span>: <span class="hljs-string">&quot;input&quot;</span>,
+  },
+  <span class="hljs-attr">fromBlock</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">toBlock</span>: <span class="hljs-number">2000</span>,
+});
+
+<span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">const</span> tx <span class="hljs-keyword">of</span> txCollector.collect()) {
+  <span class="hljs-built_in">console</span>.log(tx);
+}</code></pre>
+					<p>The <code>ioType</code> field is among <code>input | output | both</code>.</p>
+					<p>Page jump when queryring transactions is supported:</p>
+					<pre><code class="language-javascript">txCollector = <span class="hljs-keyword">new</span> TransactionCollector(indexer, {
+  <span class="hljs-attr">lock</span>: {
+    <span class="hljs-attr">code_hash</span>: 
+      <span class="hljs-string">&quot;0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8&quot;</span>,
+    <span class="hljs-attr">hash_type</span>: <span class="hljs-string">&quot;type&quot;</span>,
+    <span class="hljs-attr">args</span>: <span class="hljs-string">&quot;0xa528f2b9a51118b193178db4cf2f3db92e7df323&quot;</span>,
+  },
+  <span class="hljs-attr">skip</span>: <span class="hljs-number">100</span>,
+});
+
+<span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">const</span> tx <span class="hljs-keyword">of</span> txCollector.collect()) {
+  <span class="hljs-built_in">console</span>.log(tx);
+}</code></pre>
+					<p>The <code>skip</code> field represents the number of transactions being skipped, which in the above code snippet means it would skip the first 100 transactions and return from the 101st one.</p>
 					<a href="#electron-note" id="electron-note" style="color: inherit; text-decoration: none;">
 						<h2>Electron note</h2>
 					</a>
@@ -144,6 +236,7 @@ indexer.startForever();</code></pre><p>To query existing cells, you can create a
 								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/indexer.indexeroptions.html" class="tsd-kind-icon">Indexer<wbr>Options</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/indexer.tip.html" class="tsd-kind-icon">Tip</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/indexer.transactioncollectoroptions.html" class="tsd-kind-icon">Transaction<wbr>Collector<wbr>Options</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/indexer.transactioncollectorresults.html" class="tsd-kind-icon">Transaction<wbr>Collector<wbr>Results</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -163,7 +256,7 @@ indexer.startForever();</code></pre><p>To query existing cells, you can create a
 					<div class="tsd-signature tsd-kind-icon">Logger<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>level<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/12b39e1/packages/indexer/index.d.ts#L7">indexer/index.d.ts:7</a></li>
+							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/9bc9eb4/packages/indexer/index.d.ts#L7">indexer/index.d.ts:7</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -258,6 +351,9 @@ indexer.startForever();</code></pre><p>To query existing cells, you can create a
 							</li>
 							<li class=" tsd-kind-interface tsd-parent-kind-module">
 								<a href="../interfaces/indexer.transactioncollectoroptions.html" class="tsd-kind-icon">Transaction<wbr>Collector<wbr>Options</a>
+							</li>
+							<li class=" tsd-kind-interface tsd-parent-kind-module">
+								<a href="../interfaces/indexer.transactioncollectorresults.html" class="tsd-kind-icon">Transaction<wbr>Collector<wbr>Results</a>
 							</li>
 							<li class=" tsd-kind-type-alias tsd-parent-kind-module">
 								<a href="indexer.html#logger" class="tsd-kind-icon">Logger</a>

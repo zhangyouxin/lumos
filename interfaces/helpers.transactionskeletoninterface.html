@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Options | lumos</title>
+	<title>TransactionSkeletonInterface | lumos</title>
 	<meta name="description" content="Documentation for lumos">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -59,10 +59,10 @@
 					<a href="../modules/helpers.html">helpers</a>
 				</li>
 				<li>
-					<a href="helpers.options.html">Options</a>
+					<a href="helpers.transactionskeletoninterface.html">TransactionSkeletonInterface</a>
 				</li>
 			</ul>
-			<h1>Interface Options</h1>
+			<h1>Interface TransactionSkeletonInterface</h1>
 		</div>
 	</div>
 </header>
@@ -73,7 +73,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">Options</span>
+						<span class="target">TransactionSkeletonInterface</span>
 					</li>
 				</ul>
 			</section>
@@ -84,7 +84,15 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="helpers.options.html#config" class="tsd-kind-icon">config</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="helpers.transactionskeletoninterface.html#celldeps" class="tsd-kind-icon">cell<wbr>Deps</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="helpers.transactionskeletoninterface.html#cellprovider" class="tsd-kind-icon">cell<wbr>Provider</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="helpers.transactionskeletoninterface.html#fixedentries" class="tsd-kind-icon">fixed<wbr>Entries</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="helpers.transactionskeletoninterface.html#headerdeps" class="tsd-kind-icon">header<wbr>Deps</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="helpers.transactionskeletoninterface.html#inputsinces" class="tsd-kind-icon">input<wbr>Sinces</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="helpers.transactionskeletoninterface.html#inputs" class="tsd-kind-icon">inputs</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="helpers.transactionskeletoninterface.html#outputs" class="tsd-kind-icon">outputs</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="helpers.transactionskeletoninterface.html#signingentries" class="tsd-kind-icon">signing<wbr>Entries</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="helpers.transactionskeletoninterface.html#witnesses" class="tsd-kind-icon">witnesses</a></li>
 							</ul>
 						</section>
 					</div>
@@ -93,12 +101,92 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="config" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> config</h3>
-					<div class="tsd-signature tsd-kind-icon">config<span class="tsd-signature-symbol">:</span> <a href="config_manager.config.html" class="tsd-signature-type">Config</a></div>
+					<a name="celldeps" class="tsd-anchor"></a>
+					<h3>cell<wbr>Deps</h3>
+					<div class="tsd-signature tsd-kind-icon">cell<wbr>Deps<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">List</span><span class="tsd-signature-symbol">&lt;</span><a href="base.celldep-1.html" class="tsd-signature-type">CellDep</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in helpers/lib/index.d.ts:5</li>
+							<li>Defined in helpers/lib/index.d.ts:15</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="cellprovider" class="tsd-anchor"></a>
+					<h3>cell<wbr>Provider</h3>
+					<div class="tsd-signature tsd-kind-icon">cell<wbr>Provider<span class="tsd-signature-symbol">:</span> <a href="base.cellprovider.html" class="tsd-signature-type">CellProvider</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in helpers/lib/index.d.ts:14</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="fixedentries" class="tsd-anchor"></a>
+					<h3>fixed<wbr>Entries</h3>
+					<div class="tsd-signature tsd-kind-icon">fixed<wbr>Entries<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">List</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span>field<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in helpers/lib/index.d.ts:20</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="headerdeps" class="tsd-anchor"></a>
+					<h3>header<wbr>Deps</h3>
+					<div class="tsd-signature tsd-kind-icon">header<wbr>Deps<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">List</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules/base.html#hash" class="tsd-signature-type">Hash</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in helpers/lib/index.d.ts:16</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="inputsinces" class="tsd-anchor"></a>
+					<h3>input<wbr>Sinces</h3>
+					<div class="tsd-signature tsd-kind-icon">input<wbr>Sinces<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><a href="../modules/base.html#packedsince" class="tsd-signature-type">PackedSince</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in helpers/lib/index.d.ts:29</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="inputs" class="tsd-anchor"></a>
+					<h3>inputs</h3>
+					<div class="tsd-signature tsd-kind-icon">inputs<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">List</span><span class="tsd-signature-symbol">&lt;</span><a href="base.cell.html" class="tsd-signature-type">Cell</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in helpers/lib/index.d.ts:17</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="outputs" class="tsd-anchor"></a>
+					<h3>outputs</h3>
+					<div class="tsd-signature tsd-kind-icon">outputs<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">List</span><span class="tsd-signature-symbol">&lt;</span><a href="base.cell.html" class="tsd-signature-type">Cell</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in helpers/lib/index.d.ts:18</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="signingentries" class="tsd-anchor"></a>
+					<h3>signing<wbr>Entries</h3>
+					<div class="tsd-signature tsd-kind-icon">signing<wbr>Entries<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">List</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in helpers/lib/index.d.ts:24</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="witnesses" class="tsd-anchor"></a>
+					<h3>witnesses</h3>
+					<div class="tsd-signature tsd-kind-icon">witnesses<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">List</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules/base.html#hexstring" class="tsd-signature-type">HexString</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in helpers/lib/index.d.ts:19</li>
 						</ul>
 					</aside>
 				</section>
@@ -149,19 +237,43 @@
 					<li class="current tsd-kind-module">
 						<a href="../modules/helpers.html" class="tsd-kind-icon">helpers</a>
 						<ul>
-							<li class="current tsd-kind-interface tsd-parent-kind-module">
+							<li class=" tsd-kind-interface tsd-parent-kind-module">
 								<a href="helpers.options.html" class="tsd-kind-icon">Options</a>
-								<ul>
-									<li class=" tsd-kind-property tsd-parent-kind-interface">
-										<a href="helpers.options.html#config" class="tsd-kind-icon">config</a>
-									</li>
-								</ul>
 							</li>
 							<li class=" tsd-kind-interface tsd-parent-kind-module">
 								<a href="helpers.options-1.html" class="tsd-kind-icon">Options</a>
 							</li>
-							<li class=" tsd-kind-interface tsd-parent-kind-module">
+							<li class="current tsd-kind-interface tsd-parent-kind-module">
 								<a href="helpers.transactionskeletoninterface.html" class="tsd-kind-icon">Transaction<wbr>Skeleton<wbr>Interface</a>
+								<ul>
+									<li class=" tsd-kind-property tsd-parent-kind-interface">
+										<a href="helpers.transactionskeletoninterface.html#celldeps" class="tsd-kind-icon">cell<wbr>Deps</a>
+									</li>
+									<li class=" tsd-kind-property tsd-parent-kind-interface">
+										<a href="helpers.transactionskeletoninterface.html#cellprovider" class="tsd-kind-icon">cell<wbr>Provider</a>
+									</li>
+									<li class=" tsd-kind-property tsd-parent-kind-interface">
+										<a href="helpers.transactionskeletoninterface.html#fixedentries" class="tsd-kind-icon">fixed<wbr>Entries</a>
+									</li>
+									<li class=" tsd-kind-property tsd-parent-kind-interface">
+										<a href="helpers.transactionskeletoninterface.html#headerdeps" class="tsd-kind-icon">header<wbr>Deps</a>
+									</li>
+									<li class=" tsd-kind-property tsd-parent-kind-interface">
+										<a href="helpers.transactionskeletoninterface.html#inputsinces" class="tsd-kind-icon">input<wbr>Sinces</a>
+									</li>
+									<li class=" tsd-kind-property tsd-parent-kind-interface">
+										<a href="helpers.transactionskeletoninterface.html#inputs" class="tsd-kind-icon">inputs</a>
+									</li>
+									<li class=" tsd-kind-property tsd-parent-kind-interface">
+										<a href="helpers.transactionskeletoninterface.html#outputs" class="tsd-kind-icon">outputs</a>
+									</li>
+									<li class=" tsd-kind-property tsd-parent-kind-interface">
+										<a href="helpers.transactionskeletoninterface.html#signingentries" class="tsd-kind-icon">signing<wbr>Entries</a>
+									</li>
+									<li class=" tsd-kind-property tsd-parent-kind-interface">
+										<a href="helpers.transactionskeletoninterface.html#witnesses" class="tsd-kind-icon">witnesses</a>
+									</li>
+								</ul>
 							</li>
 							<li class=" tsd-kind-interface tsd-parent-kind-module">
 								<a href="helpers.transactionskeletoninterface-1.html" class="tsd-kind-icon">Transaction<wbr>Skeleton<wbr>Interface</a>

@@ -130,24 +130,43 @@
 							<h3>Interfaces</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/helpers.options.html" class="tsd-kind-icon">Options</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/helpers.options-1.html" class="tsd-kind-icon">Options</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/helpers.transactionskeletoninterface.html" class="tsd-kind-icon">Transaction<wbr>Skeleton<wbr>Interface</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/helpers.transactionskeletoninterface-1.html" class="tsd-kind-icon">Transaction<wbr>Skeleton<wbr>Interface</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Type aliases</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="helpers.html#transactionskeletontype" class="tsd-kind-icon">Transaction<wbr>Skeleton<wbr>Type</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="helpers.html#transactionskeletontype-1" class="tsd-kind-icon">Transaction<wbr>Skeleton<wbr>Type</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Variables</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="helpers.html#bech32_limit" class="tsd-kind-icon">BECH32_<wbr>LIMIT</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="helpers.html#transactionskeleton" class="tsd-kind-icon">Transaction<wbr>Skeleton</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="helpers.html#transactionskeleton-1" class="tsd-kind-icon">Transaction<wbr>Skeleton</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="helpers.html#transactionskeleton" class="tsd-kind-icon">Transaction<wbr>Skeleton</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="helpers.html#bytearraytohex" class="tsd-kind-icon">byte<wbr>Array<wbr>ToHex</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="helpers.html#createtransactionfromskeleton" class="tsd-kind-icon">create<wbr>Transaction<wbr>From<wbr>Skeleton</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="helpers.html#createtransactionfromskeleton-1" class="tsd-kind-icon">create<wbr>Transaction<wbr>From<wbr>Skeleton</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="helpers.html#generateaddress" class="tsd-kind-icon">generate<wbr>Address</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="helpers.html#generateaddress-1" class="tsd-kind-icon">generate<wbr>Address</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="helpers.html#hextobytearray" class="tsd-kind-icon">hex<wbr>ToByte<wbr>Array</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="helpers.html#locatecelldep" class="tsd-kind-icon">locate<wbr>Cell<wbr>Dep</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="helpers.html#locatecelldep-1" class="tsd-kind-icon">locate<wbr>Cell<wbr>Dep</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="helpers.html#minimalcellcapacity" class="tsd-kind-icon">minimal<wbr>Cell<wbr>Capacity</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="helpers.html#minimalcellcapacity-1" class="tsd-kind-icon">minimal<wbr>Cell<wbr>Capacity</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="helpers.html#parseaddress" class="tsd-kind-icon">parse<wbr>Address</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="helpers.html#parseaddress-1" class="tsd-kind-icon">parse<wbr>Address</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="helpers.html#sealtransaction" class="tsd-kind-icon">seal<wbr>Transaction</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="helpers.html#sealtransaction-1" class="tsd-kind-icon">seal<wbr>Transaction</a></li>
 							</ul>
 						</section>
 					</div>
@@ -158,36 +177,79 @@
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
 					<a name="transactionskeletontype" class="tsd-anchor"></a>
 					<h3>Transaction<wbr>Skeleton<wbr>Type</h3>
-					<div class="tsd-signature tsd-kind-icon">Transaction<wbr>Skeleton<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Factory</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span>cellDeps<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">List</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/base.celldep-1.html" class="tsd-signature-type">CellDep</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>cellProvider<span class="tsd-signature-symbol">: </span><a href="../interfaces/base.cellprovider.html" class="tsd-signature-type">CellProvider</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">; </span>fixedEntries<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">List</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span>field<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>headerDeps<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">List</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>inputSinces<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>inputs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">List</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/base.cell.html" class="tsd-signature-type">Cell</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>outputs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">List</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/base.cell.html" class="tsd-signature-type">Cell</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>signingEntries<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">List</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>witnesses<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">List</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<div class="tsd-signature tsd-kind-icon">Transaction<wbr>Skeleton<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/helpers.transactionskeletoninterface.html" class="tsd-signature-type">TransactionSkeletonInterface</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/helpers.transactionskeletoninterface.html" class="tsd-signature-type">TransactionSkeletonInterface</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/12b39e1/packages/helpers/index.d.ts#L13">helpers/index.d.ts:13</a></li>
+							<li>Defined in helpers/lib/index.d.ts:31</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="transactionskeletontype-1" class="tsd-anchor"></a>
+					<h3>Transaction<wbr>Skeleton<wbr>Type</h3>
+					<div class="tsd-signature tsd-kind-icon">Transaction<wbr>Skeleton<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/helpers.transactionskeletoninterface-1.html" class="tsd-signature-type">TransactionSkeletonInterface</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/helpers.transactionskeletoninterface-1.html" class="tsd-signature-type">TransactionSkeletonInterface</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/9bc9eb4/packages/helpers/src/index.ts#L173">helpers/src/index.ts:173</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Variables</h2>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+					<a name="bech32_limit" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> BECH32_<wbr>LIMIT</h3>
+					<div class="tsd-signature tsd-kind-icon">BECH32_<wbr>LIMIT<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">1023</span><span class="tsd-signature-symbol"> = 1023</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/9bc9eb4/packages/helpers/src/index.ts#L23">helpers/src/index.ts:23</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
+					<a name="transactionskeleton" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> Transaction<wbr>Skeleton</h3>
+					<div class="tsd-signature tsd-kind-icon">Transaction<wbr>Skeleton<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Factory</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/helpers.transactionskeletoninterface.html" class="tsd-signature-type">TransactionSkeletonInterface</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in helpers/lib/index.d.ts:32</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
+					<a name="transactionskeleton-1" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> Transaction<wbr>Skeleton</h3>
+					<div class="tsd-signature tsd-kind-icon">Transaction<wbr>Skeleton<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Factory</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/helpers.transactionskeletoninterface-1.html" class="tsd-signature-type">TransactionSkeletonInterface</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = Record&lt;TransactionSkeletonInterface&gt;({cellProvider: null,cellDeps: List(),headerDeps: List(),inputs: List(),outputs: List(),witnesses: List(),fixedEntries: List(),signingEntries: List(),inputSinces: Map(),})</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/9bc9eb4/packages/helpers/src/index.ts#L176">helpers/src/index.ts:176</a></li>
 						</ul>
 					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="transactionskeleton" class="tsd-anchor"></a>
-					<h3>Transaction<wbr>Skeleton</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">Transaction<wbr>Skeleton<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="helpers.html#transactionskeletontype" class="tsd-signature-type">TransactionSkeletonType</a></li>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="bytearraytohex" class="tsd-anchor"></a>
+					<h3>byte<wbr>Array<wbr>ToHex</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">byte<wbr>Array<wbr>ToHex<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="base.html#hexstring" class="tsd-signature-type">HexString</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/12b39e1/packages/helpers/index.d.ts#L25">helpers/index.d.ts:25</a></li>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/9bc9eb4/packages/helpers/src/index.ts#L25">helpers/src/index.ts:25</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>params: <span class="tsd-signature-type">any</span></h5>
+									<h5>a: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="helpers.html#transactionskeletontype" class="tsd-signature-type">TransactionSkeletonType</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="base.html#hexstring" class="tsd-signature-type">HexString</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -195,13 +257,13 @@
 					<a name="createtransactionfromskeleton" class="tsd-anchor"></a>
 					<h3>create<wbr>Transaction<wbr>From<wbr>Skeleton</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">create<wbr>Transaction<wbr>From<wbr>Skeleton<span class="tsd-signature-symbol">(</span>txSkeleton<span class="tsd-signature-symbol">: </span><a href="helpers.html#transactionskeletontype" class="tsd-signature-type">TransactionSkeletonType</a>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>validate<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/base.transaction-1.html" class="tsd-signature-type">Transaction</a></li>
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Transaction<wbr>From<wbr>Skeleton<span class="tsd-signature-symbol">(</span>txSkeleton<span class="tsd-signature-symbol">: </span><a href="helpers.html#transactionskeletontype" class="tsd-signature-type">TransactionSkeletonType</a>, __namedParameters<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>validate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/base.transaction-1.html" class="tsd-signature-type">Transaction</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/12b39e1/packages/helpers/index.d.ts#L53">helpers/index.d.ts:53</a></li>
+									<li>Defined in helpers/lib/index.d.ts:33</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -210,10 +272,41 @@
 									<h5>txSkeleton: <a href="helpers.html#transactionskeletontype" class="tsd-signature-type">TransactionSkeletonType</a></h5>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-symbol">{ </span>validate<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> }</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> __namedParameters: <span class="tsd-signature-symbol">{ </span>validate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> }</span></h5>
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter">
-											<h5><span class="tsd-flag ts-flagOptional">Optional</span> validate<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span></h5>
+											<h5>validate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></h5>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/base.transaction-1.html" class="tsd-signature-type">Transaction</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="createtransactionfromskeleton-1" class="tsd-anchor"></a>
+					<h3>create<wbr>Transaction<wbr>From<wbr>Skeleton</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Transaction<wbr>From<wbr>Skeleton<span class="tsd-signature-symbol">(</span>txSkeleton<span class="tsd-signature-symbol">: </span><a href="helpers.html#transactionskeletontype" class="tsd-signature-type">TransactionSkeletonType</a>, __namedParameters<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>validate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/base.transaction-1.html" class="tsd-signature-type">Transaction</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/9bc9eb4/packages/helpers/src/index.ts#L188">helpers/src/index.ts:188</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>txSkeleton: <a href="helpers.html#transactionskeletontype" class="tsd-signature-type">TransactionSkeletonType</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> __namedParameters: <span class="tsd-signature-symbol">{ </span>validate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> = {}</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>validate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
 										</li>
 									</ul>
 								</li>
@@ -226,13 +319,13 @@
 					<a name="generateaddress" class="tsd-anchor"></a>
 					<h3>generate<wbr>Address</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">generate<wbr>Address<span class="tsd-signature-symbol">(</span>script<span class="tsd-signature-symbol">: </span><a href="../interfaces/base.script-1.html" class="tsd-signature-type">Script</a>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/helpers.options.html" class="tsd-signature-type">Options</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="base.html#address" class="tsd-signature-type">Address</a></li>
+						<li class="tsd-signature tsd-kind-icon">generate<wbr>Address<span class="tsd-signature-symbol">(</span>script<span class="tsd-signature-symbol">: </span><a href="../interfaces/base.script-1.html" class="tsd-signature-type">Script</a>, __namedParameters<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/config_manager.config.html" class="tsd-signature-type">Config</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="base.html#address" class="tsd-signature-type">Address</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/12b39e1/packages/helpers/index.d.ts#L43">helpers/index.d.ts:43</a></li>
+									<li>Defined in helpers/lib/index.d.ts:11</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -241,7 +334,12 @@
 									<h5>script: <a href="../interfaces/base.script-1.html" class="tsd-signature-type">Script</a></h5>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/helpers.options.html" class="tsd-signature-type">Options</a></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> __namedParameters: <span class="tsd-signature-symbol">{ </span>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/config_manager.config.html" class="tsd-signature-type">Config</a><span class="tsd-signature-symbol"> }</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/config_manager.config.html" class="tsd-signature-type">Config</a></h5>
+										</li>
+									</ul>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="base.html#address" class="tsd-signature-type">Address</a></h4>
@@ -249,16 +347,16 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="locatecelldep" class="tsd-anchor"></a>
-					<h3>locate<wbr>Cell<wbr>Dep</h3>
+					<a name="generateaddress-1" class="tsd-anchor"></a>
+					<h3>generate<wbr>Address</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">locate<wbr>Cell<wbr>Dep<span class="tsd-signature-symbol">(</span>script<span class="tsd-signature-symbol">: </span><a href="../interfaces/base.script-1.html" class="tsd-signature-type">Script</a>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/helpers.options.html" class="tsd-signature-type">Options</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/base.celldep-1.html" class="tsd-signature-type">CellDep</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
+						<li class="tsd-signature tsd-kind-icon">generate<wbr>Address<span class="tsd-signature-symbol">(</span>script<span class="tsd-signature-symbol">: </span><a href="../interfaces/base.script-1.html" class="tsd-signature-type">Script</a>, __namedParameters<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/config_manager.config.html" class="tsd-signature-type">Config</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="base.html#address" class="tsd-signature-type">Address</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/12b39e1/packages/helpers/index.d.ts#L33">helpers/index.d.ts:33</a></li>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/9bc9eb4/packages/helpers/src/index.ts#L89">helpers/src/index.ts:89</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -267,7 +365,97 @@
 									<h5>script: <a href="../interfaces/base.script-1.html" class="tsd-signature-type">Script</a></h5>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/helpers.options.html" class="tsd-signature-type">Options</a></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> __namedParameters: <span class="tsd-signature-symbol">{ </span>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/config_manager.config.html" class="tsd-signature-type">Config</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> = {}</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/config_manager.config.html" class="tsd-signature-type">Config</a></h5>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="base.html#address" class="tsd-signature-type">Address</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="hextobytearray" class="tsd-anchor"></a>
+					<h3>hex<wbr>ToByte<wbr>Array</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">hex<wbr>ToByte<wbr>Array<span class="tsd-signature-symbol">(</span>h<span class="tsd-signature-symbol">: </span><a href="base.html#hexstring" class="tsd-signature-type">HexString</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/9bc9eb4/packages/helpers/src/index.ts#L29">helpers/src/index.ts:29</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>h: <a href="base.html#hexstring" class="tsd-signature-type">HexString</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="locatecelldep" class="tsd-anchor"></a>
+					<h3>locate<wbr>Cell<wbr>Dep</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">locate<wbr>Cell<wbr>Dep<span class="tsd-signature-symbol">(</span>script<span class="tsd-signature-symbol">: </span><a href="../interfaces/base.script-1.html" class="tsd-signature-type">Script</a>, __namedParameters<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/config_manager.config.html" class="tsd-signature-type">Config</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/base.celldep-1.html" class="tsd-signature-type">CellDep</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in helpers/lib/index.d.ts:10</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>script: <a href="../interfaces/base.script-1.html" class="tsd-signature-type">Script</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> __namedParameters: <span class="tsd-signature-symbol">{ </span>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/config_manager.config.html" class="tsd-signature-type">Config</a><span class="tsd-signature-symbol"> }</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/config_manager.config.html" class="tsd-signature-type">Config</a></h5>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/base.celldep-1.html" class="tsd-signature-type">CellDep</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="locatecelldep-1" class="tsd-anchor"></a>
+					<h3>locate<wbr>Cell<wbr>Dep</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">locate<wbr>Cell<wbr>Dep<span class="tsd-signature-symbol">(</span>script<span class="tsd-signature-symbol">: </span><a href="../interfaces/base.script-1.html" class="tsd-signature-type">Script</a>, __namedParameters<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/config_manager.config.html" class="tsd-signature-type">Config</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/base.celldep-1.html" class="tsd-signature-type">CellDep</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/9bc9eb4/packages/helpers/src/index.ts#L68">helpers/src/index.ts:68</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>script: <a href="../interfaces/base.script-1.html" class="tsd-signature-type">Script</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> __namedParameters: <span class="tsd-signature-symbol">{ </span>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/config_manager.config.html" class="tsd-signature-type">Config</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> = {}</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/config_manager.config.html" class="tsd-signature-type">Config</a></h5>
+										</li>
+									</ul>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="../interfaces/base.celldep-1.html" class="tsd-signature-type">CellDep</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h4>
@@ -278,13 +466,13 @@
 					<a name="minimalcellcapacity" class="tsd-anchor"></a>
 					<h3>minimal<wbr>Cell<wbr>Capacity</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">minimal<wbr>Cell<wbr>Capacity<span class="tsd-signature-symbol">(</span>fullCell<span class="tsd-signature-symbol">: </span><a href="../interfaces/base.cell.html" class="tsd-signature-type">Cell</a>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>validate<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">bigint</span></li>
+						<li class="tsd-signature tsd-kind-icon">minimal<wbr>Cell<wbr>Capacity<span class="tsd-signature-symbol">(</span>fullCell<span class="tsd-signature-symbol">: </span><a href="../interfaces/base.cell.html" class="tsd-signature-type">Cell</a>, __namedParameters<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>validate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">bigint</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/12b39e1/packages/helpers/index.d.ts#L38">helpers/index.d.ts:38</a></li>
+									<li>Defined in helpers/lib/index.d.ts:7</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -293,10 +481,41 @@
 									<h5>fullCell: <a href="../interfaces/base.cell.html" class="tsd-signature-type">Cell</a></h5>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-symbol">{ </span>validate<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> }</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> __namedParameters: <span class="tsd-signature-symbol">{ </span>validate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> }</span></h5>
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter">
-											<h5><span class="tsd-flag ts-flagOptional">Optional</span> validate<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span></h5>
+											<h5>validate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></h5>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">bigint</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="minimalcellcapacity-1" class="tsd-anchor"></a>
+					<h3>minimal<wbr>Cell<wbr>Capacity</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">minimal<wbr>Cell<wbr>Capacity<span class="tsd-signature-symbol">(</span>fullCell<span class="tsd-signature-symbol">: </span><a href="../interfaces/base.cell.html" class="tsd-signature-type">Cell</a>, __namedParameters<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>validate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">bigint</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/9bc9eb4/packages/helpers/src/index.ts#L44">helpers/src/index.ts:44</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>fullCell: <a href="../interfaces/base.cell.html" class="tsd-signature-type">Cell</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> __namedParameters: <span class="tsd-signature-symbol">{ </span>validate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> = {}</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>validate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
 										</li>
 									</ul>
 								</li>
@@ -309,13 +528,13 @@
 					<a name="parseaddress" class="tsd-anchor"></a>
 					<h3>parse<wbr>Address</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">parse<wbr>Address<span class="tsd-signature-symbol">(</span>address<span class="tsd-signature-symbol">: </span><a href="base.html#address" class="tsd-signature-type">Address</a>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/helpers.options.html" class="tsd-signature-type">Options</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/base.script-1.html" class="tsd-signature-type">Script</a></li>
+						<li class="tsd-signature tsd-kind-icon">parse<wbr>Address<span class="tsd-signature-symbol">(</span>address<span class="tsd-signature-symbol">: </span><a href="base.html#address" class="tsd-signature-type">Address</a>, __namedParameters<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/config_manager.config.html" class="tsd-signature-type">Config</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/base.script-1.html" class="tsd-signature-type">Script</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/12b39e1/packages/helpers/index.d.ts#L48">helpers/index.d.ts:48</a></li>
+									<li>Defined in helpers/lib/index.d.ts:12</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -324,7 +543,43 @@
 									<h5>address: <a href="base.html#address" class="tsd-signature-type">Address</a></h5>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/helpers.options.html" class="tsd-signature-type">Options</a></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> __namedParameters: <span class="tsd-signature-symbol">{ </span>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/config_manager.config.html" class="tsd-signature-type">Config</a><span class="tsd-signature-symbol"> }</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/config_manager.config.html" class="tsd-signature-type">Config</a></h5>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/base.script-1.html" class="tsd-signature-type">Script</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="parseaddress-1" class="tsd-anchor"></a>
+					<h3>parse<wbr>Address</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">parse<wbr>Address<span class="tsd-signature-symbol">(</span>address<span class="tsd-signature-symbol">: </span><a href="base.html#address" class="tsd-signature-type">Address</a>, __namedParameters<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/config_manager.config.html" class="tsd-signature-type">Config</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/base.script-1.html" class="tsd-signature-type">Script</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/9bc9eb4/packages/helpers/src/index.ts#L111">helpers/src/index.ts:111</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>address: <a href="base.html#address" class="tsd-signature-type">Address</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> __namedParameters: <span class="tsd-signature-symbol">{ </span>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/config_manager.config.html" class="tsd-signature-type">Config</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> = {}</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/config_manager.config.html" class="tsd-signature-type">Config</a></h5>
+										</li>
+									</ul>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="../interfaces/base.script-1.html" class="tsd-signature-type">Script</a></h4>
@@ -341,7 +596,33 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/12b39e1/packages/helpers/index.d.ts#L58">helpers/index.d.ts:58</a></li>
+									<li>Defined in helpers/lib/index.d.ts:36</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>txSkeleton: <a href="helpers.html#transactionskeletontype" class="tsd-signature-type">TransactionSkeletonType</a></h5>
+								</li>
+								<li>
+									<h5>sealingContents: <a href="base.html#hexstring" class="tsd-signature-type">HexString</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/base.transaction-1.html" class="tsd-signature-type">Transaction</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="sealtransaction-1" class="tsd-anchor"></a>
+					<h3>seal<wbr>Transaction</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">seal<wbr>Transaction<span class="tsd-signature-symbol">(</span>txSkeleton<span class="tsd-signature-symbol">: </span><a href="helpers.html#transactionskeletontype" class="tsd-signature-type">TransactionSkeletonType</a>, sealingContents<span class="tsd-signature-symbol">: </span><a href="base.html#hexstring" class="tsd-signature-type">HexString</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/base.transaction-1.html" class="tsd-signature-type">Transaction</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/9bc9eb4/packages/helpers/src/index.ts#L221">helpers/src/index.ts:221</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -407,29 +688,71 @@
 							<li class=" tsd-kind-interface tsd-parent-kind-module">
 								<a href="../interfaces/helpers.options.html" class="tsd-kind-icon">Options</a>
 							</li>
+							<li class=" tsd-kind-interface tsd-parent-kind-module">
+								<a href="../interfaces/helpers.options-1.html" class="tsd-kind-icon">Options</a>
+							</li>
+							<li class=" tsd-kind-interface tsd-parent-kind-module">
+								<a href="../interfaces/helpers.transactionskeletoninterface.html" class="tsd-kind-icon">Transaction<wbr>Skeleton<wbr>Interface</a>
+							</li>
+							<li class=" tsd-kind-interface tsd-parent-kind-module">
+								<a href="../interfaces/helpers.transactionskeletoninterface-1.html" class="tsd-kind-icon">Transaction<wbr>Skeleton<wbr>Interface</a>
+							</li>
 							<li class=" tsd-kind-type-alias tsd-parent-kind-module">
 								<a href="helpers.html#transactionskeletontype" class="tsd-kind-icon">Transaction<wbr>Skeleton<wbr>Type</a>
 							</li>
-							<li class=" tsd-kind-function tsd-parent-kind-module">
+							<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+								<a href="helpers.html#transactionskeletontype-1" class="tsd-kind-icon">Transaction<wbr>Skeleton<wbr>Type</a>
+							</li>
+							<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+								<a href="helpers.html#bech32_limit" class="tsd-kind-icon">BECH32_<wbr>LIMIT</a>
+							</li>
+							<li class=" tsd-kind-variable tsd-parent-kind-module">
 								<a href="helpers.html#transactionskeleton" class="tsd-kind-icon">Transaction<wbr>Skeleton</a>
+							</li>
+							<li class=" tsd-kind-variable tsd-parent-kind-module">
+								<a href="helpers.html#transactionskeleton-1" class="tsd-kind-icon">Transaction<wbr>Skeleton</a>
+							</li>
+							<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+								<a href="helpers.html#bytearraytohex" class="tsd-kind-icon">byte<wbr>Array<wbr>ToHex</a>
 							</li>
 							<li class=" tsd-kind-function tsd-parent-kind-module">
 								<a href="helpers.html#createtransactionfromskeleton" class="tsd-kind-icon">create<wbr>Transaction<wbr>From<wbr>Skeleton</a>
 							</li>
 							<li class=" tsd-kind-function tsd-parent-kind-module">
+								<a href="helpers.html#createtransactionfromskeleton-1" class="tsd-kind-icon">create<wbr>Transaction<wbr>From<wbr>Skeleton</a>
+							</li>
+							<li class=" tsd-kind-function tsd-parent-kind-module">
 								<a href="helpers.html#generateaddress" class="tsd-kind-icon">generate<wbr>Address</a>
+							</li>
+							<li class=" tsd-kind-function tsd-parent-kind-module">
+								<a href="helpers.html#generateaddress-1" class="tsd-kind-icon">generate<wbr>Address</a>
+							</li>
+							<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+								<a href="helpers.html#hextobytearray" class="tsd-kind-icon">hex<wbr>ToByte<wbr>Array</a>
 							</li>
 							<li class=" tsd-kind-function tsd-parent-kind-module">
 								<a href="helpers.html#locatecelldep" class="tsd-kind-icon">locate<wbr>Cell<wbr>Dep</a>
 							</li>
 							<li class=" tsd-kind-function tsd-parent-kind-module">
+								<a href="helpers.html#locatecelldep-1" class="tsd-kind-icon">locate<wbr>Cell<wbr>Dep</a>
+							</li>
+							<li class=" tsd-kind-function tsd-parent-kind-module">
 								<a href="helpers.html#minimalcellcapacity" class="tsd-kind-icon">minimal<wbr>Cell<wbr>Capacity</a>
+							</li>
+							<li class=" tsd-kind-function tsd-parent-kind-module">
+								<a href="helpers.html#minimalcellcapacity-1" class="tsd-kind-icon">minimal<wbr>Cell<wbr>Capacity</a>
 							</li>
 							<li class=" tsd-kind-function tsd-parent-kind-module">
 								<a href="helpers.html#parseaddress" class="tsd-kind-icon">parse<wbr>Address</a>
 							</li>
 							<li class=" tsd-kind-function tsd-parent-kind-module">
+								<a href="helpers.html#parseaddress-1" class="tsd-kind-icon">parse<wbr>Address</a>
+							</li>
+							<li class=" tsd-kind-function tsd-parent-kind-module">
 								<a href="helpers.html#sealtransaction" class="tsd-kind-icon">seal<wbr>Transaction</a>
+							</li>
+							<li class=" tsd-kind-function tsd-parent-kind-module">
+								<a href="helpers.html#sealtransaction-1" class="tsd-kind-icon">seal<wbr>Transaction</a>
 							</li>
 						</ul>
 					</li>
