@@ -100,6 +100,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="sql_indexer.indexer.html#start" class="tsd-kind-icon">start</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="sql_indexer.indexer.html#startforever" class="tsd-kind-icon">start<wbr>Forever</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="sql_indexer.indexer.html#stop" class="tsd-kind-icon">stop</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="sql_indexer.indexer.html#subscribe" class="tsd-kind-icon">subscribe</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="sql_indexer.indexer.html#tip" class="tsd-kind-icon">tip</a></li>
 							</ul>
 						</section>
@@ -119,7 +120,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="indexer.indexer-1.html">Indexer</a>.<a href="indexer.indexer-1.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/64cd080/packages/sql-indexer/index.d.ts#L9">sql-indexer/index.d.ts:9</a></li>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/6ea89f2/packages/sql-indexer/index.d.ts#L9">sql-indexer/index.d.ts:9</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -152,7 +153,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="indexer.indexer-1.html">Indexer</a>.<a href="indexer.indexer-1.html#collector">collector</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/64cd080/packages/indexer/index.d.ts#L61">indexer/index.d.ts:61</a></li>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/6ea89f2/packages/indexer/index.d.ts#L61">indexer/index.d.ts:61</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -176,7 +177,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="indexer.indexer-1.html">Indexer</a>.<a href="indexer.indexer-1.html#running">running</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/64cd080/packages/indexer/index.d.ts#L55">indexer/index.d.ts:55</a></li>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/6ea89f2/packages/indexer/index.d.ts#L55">indexer/index.d.ts:55</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -194,7 +195,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="indexer.indexer-1.html">Indexer</a>.<a href="indexer.indexer-1.html#start">start</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/64cd080/packages/indexer/index.d.ts#L57">indexer/index.d.ts:57</a></li>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/6ea89f2/packages/indexer/index.d.ts#L57">indexer/index.d.ts:57</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -212,7 +213,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="indexer.indexer-1.html">Indexer</a>.<a href="indexer.indexer-1.html#startforever">startForever</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/64cd080/packages/indexer/index.d.ts#L56">indexer/index.d.ts:56</a></li>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/6ea89f2/packages/indexer/index.d.ts#L56">indexer/index.d.ts:56</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -230,10 +231,34 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="indexer.indexer-1.html">Indexer</a>.<a href="indexer.indexer-1.html#stop">stop</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/64cd080/packages/indexer/index.d.ts#L58">indexer/index.d.ts:58</a></li>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/6ea89f2/packages/indexer/index.d.ts#L58">indexer/index.d.ts:58</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="subscribe" class="tsd-anchor"></a>
+					<h3>subscribe</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">subscribe<span class="tsd-signature-symbol">(</span>queries<span class="tsd-signature-symbol">: </span><a href="../interfaces/base.queryoptions.html" class="tsd-signature-type">QueryOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EventEmitter</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="indexer.indexer-1.html">Indexer</a>.<a href="indexer.indexer-1.html#subscribe">subscribe</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/6ea89f2/packages/indexer/index.d.ts#L62">indexer/index.d.ts:62</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>queries: <a href="../interfaces/base.queryoptions.html" class="tsd-signature-type">QueryOptions</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">EventEmitter</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -248,7 +273,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="indexer.indexer-1.html">Indexer</a>.<a href="indexer.indexer-1.html#tip">tip</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/64cd080/packages/indexer/index.d.ts#L59">indexer/index.d.ts:59</a></li>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/6ea89f2/packages/indexer/index.d.ts#L59">indexer/index.d.ts:59</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/indexer.tip.html" class="tsd-signature-type">Tip</a><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -333,6 +358,9 @@
 										<a href="sql_indexer.indexer.html#stop" class="tsd-kind-icon">stop</a>
 									</li>
 									<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+										<a href="sql_indexer.indexer.html#subscribe" class="tsd-kind-icon">subscribe</a>
+									</li>
+									<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 										<a href="sql_indexer.indexer.html#tip" class="tsd-kind-icon">tip</a>
 									</li>
 								</ul>
@@ -354,6 +382,7 @@
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
 				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
 				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>

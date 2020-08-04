@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ScriptWrapper | lumos</title>
+	<title>ACP | lumos</title>
 	<meta name="description" content="Documentation for lumos">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,13 +56,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/base.html">base</a>
+					<a href="../modules/common_scripts.html">common-scripts</a>
 				</li>
 				<li>
-					<a href="base.scriptwrapper.html">ScriptWrapper</a>
+					<a href="common_scripts.acp.html">ACP</a>
 				</li>
 			</ul>
-			<h1>Interface ScriptWrapper</h1>
+			<h1>Interface ACP</h1>
 		</div>
 	</div>
 </header>
@@ -73,7 +73,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">ScriptWrapper</span>
+						<span class="target">ACP</span>
 					</li>
 				</ul>
 			</section>
@@ -84,8 +84,8 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="base.scriptwrapper.html#iotype" class="tsd-kind-icon">io<wbr>Type</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="base.scriptwrapper.html#script" class="tsd-kind-icon">script</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="common_scripts.acp.html#address" class="tsd-kind-icon">address</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="common_scripts.acp.html#destroyable" class="tsd-kind-icon">destroyable</a></li>
 							</ul>
 						</section>
 					</div>
@@ -94,22 +94,22 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="iotype" class="tsd-anchor"></a>
-					<h3>io<wbr>Type</h3>
-					<div class="tsd-signature tsd-kind-icon">io<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"input"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"output"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"both"</span></div>
+					<a name="address" class="tsd-anchor"></a>
+					<h3>address</h3>
+					<div class="tsd-signature tsd-kind-icon">address<span class="tsd-signature-symbol">:</span> <a href="../modules/base.html#address" class="tsd-signature-type">Address</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/6ea89f2/packages/base/index.d.ts#L100">base/index.d.ts:100</a></li>
+							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/6ea89f2/packages/common-scripts/src/from_info.ts#L32">common-scripts/src/from_info.ts:32</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="script" class="tsd-anchor"></a>
-					<h3>script</h3>
-					<div class="tsd-signature tsd-kind-icon">script<span class="tsd-signature-symbol">:</span> <a href="base.script-1.html" class="tsd-signature-type">Script</a></div>
+					<a name="destroyable" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> destroyable</h3>
+					<div class="tsd-signature tsd-kind-icon">destroyable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/6ea89f2/packages/base/index.d.ts#L99">base/index.d.ts:99</a></li>
+							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/6ea89f2/packages/common-scripts/src/from_info.ts#L33">common-scripts/src/from_info.ts:33</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -121,10 +121,10 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class=" tsd-kind-module">
 						<a href="../modules/base.html">base</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class="current tsd-kind-module">
 						<a href="../modules/common_scripts.html">common-<wbr>scripts</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -146,19 +146,22 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-module">
+						<a href="../modules/base.html" class="tsd-kind-icon">base</a>
+					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-module">
-						<a href="../modules/base.html" class="tsd-kind-icon">base</a>
+						<a href="../modules/common_scripts.html" class="tsd-kind-icon">common-<wbr>scripts</a>
 						<ul>
 							<li class="current tsd-kind-interface tsd-parent-kind-module">
-								<a href="base.scriptwrapper.html" class="tsd-kind-icon">Script<wbr>Wrapper</a>
+								<a href="common_scripts.acp.html" class="tsd-kind-icon">ACP</a>
 								<ul>
 									<li class=" tsd-kind-property tsd-parent-kind-interface">
-										<a href="base.scriptwrapper.html#iotype" class="tsd-kind-icon">io<wbr>Type</a>
+										<a href="common_scripts.acp.html#address" class="tsd-kind-icon">address</a>
 									</li>
 									<li class=" tsd-kind-property tsd-parent-kind-interface">
-										<a href="base.scriptwrapper.html#script" class="tsd-kind-icon">script</a>
+										<a href="common_scripts.acp.html#destroyable" class="tsd-kind-icon">destroyable</a>
 									</li>
 								</ul>
 							</li>
@@ -166,9 +169,6 @@
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-module">
-						<a href="../modules/common_scripts.html" class="tsd-kind-icon">common-<wbr>scripts</a>
-					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/config_manager.html" class="tsd-kind-icon">config-<wbr>manager</a>
 					</li>
