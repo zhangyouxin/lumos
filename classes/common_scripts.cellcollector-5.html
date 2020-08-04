@@ -59,7 +59,7 @@
 					<a href="../modules/common_scripts.html">common-scripts</a>
 				</li>
 				<li>
-					<a href="common_scripts.cellcollector-1.html">CellCollector</a>
+					<a href="common_scripts.cellcollector-5.html">CellCollector</a>
 				</li>
 			</ul>
 			<h1>Class CellCollector</h1>
@@ -90,19 +90,20 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="common_scripts.cellcollector-1.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="common_scripts.cellcollector-5.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="common_scripts.cellcollector-1.html#fromscript" class="tsd-kind-icon">from<wbr>Script</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="common_scripts.cellcollector-5.html#fromscript" class="tsd-kind-icon">from<wbr>Script</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="common_scripts.cellcollector-5.html#multisigscript" class="tsd-kind-icon">multisig<wbr>Script</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="common_scripts.cellcollector-1.html#collect" class="tsd-kind-icon">collect</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="common_scripts.cellcollector-5.html#collect" class="tsd-kind-icon">collect</a></li>
 							</ul>
 						</section>
 					</div>
@@ -114,13 +115,13 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Cell<wbr>Collector<span class="tsd-signature-symbol">(</span>fromInfo<span class="tsd-signature-symbol">: </span><a href="../modules/common_scripts.html#frominfo" class="tsd-signature-type">FromInfo</a>, cellProvider<span class="tsd-signature-symbol">: </span><a href="../interfaces/base.cellprovider.html" class="tsd-signature-type">CellProvider</a>, __namedParameters<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/config_manager.config.html" class="tsd-signature-type">Config</a><span class="tsd-signature-symbol">; </span>queryOptions<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/base.queryoptions.html" class="tsd-signature-type">QueryOptions</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="common_scripts.cellcollector-1.html" class="tsd-signature-type">CellCollector</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Cell<wbr>Collector<span class="tsd-signature-symbol">(</span>fromInfo<span class="tsd-signature-symbol">: </span><a href="../modules/common_scripts.html#frominfo" class="tsd-signature-type">FromInfo</a>, cellProvider<span class="tsd-signature-symbol">: </span><a href="../interfaces/base.cellprovider.html" class="tsd-signature-type">CellProvider</a>, __namedParameters<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/config_manager.config.html" class="tsd-signature-type">Config</a><span class="tsd-signature-symbol">; </span>queryOptions<span class="tsd-signature-symbol">: </span><a href="../interfaces/base.queryoptions.html" class="tsd-signature-type">QueryOptions</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="common_scripts.cellcollector-5.html" class="tsd-signature-type">CellCollector</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in common-scripts/lib/secp256k1_blake160.d.ts:8</li>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/e515ca1/packages/common-scripts/src/secp256k1_blake160_multisig.ts#L46">common-scripts/src/secp256k1_blake160_multisig.ts:46</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -132,18 +133,18 @@
 									<h5>cellProvider: <a href="../interfaces/base.cellprovider.html" class="tsd-signature-type">CellProvider</a></h5>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> __namedParameters: <span class="tsd-signature-symbol">{ </span>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/config_manager.config.html" class="tsd-signature-type">Config</a><span class="tsd-signature-symbol">; </span>queryOptions<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/base.queryoptions.html" class="tsd-signature-type">QueryOptions</a><span class="tsd-signature-symbol"> }</span></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> __namedParameters: <span class="tsd-signature-symbol">{ </span>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/config_manager.config.html" class="tsd-signature-type">Config</a><span class="tsd-signature-symbol">; </span>queryOptions<span class="tsd-signature-symbol">: </span><a href="../interfaces/base.queryoptions.html" class="tsd-signature-type">QueryOptions</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> = {}</span></h5>
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter">
 											<h5>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/config_manager.config.html" class="tsd-signature-type">Config</a></h5>
 										</li>
 										<li class="tsd-parameter">
-											<h5>query<wbr>Options<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/base.queryoptions.html" class="tsd-signature-type">QueryOptions</a></h5>
+											<h5>query<wbr>Options<span class="tsd-signature-symbol">: </span><a href="../interfaces/base.queryoptions.html" class="tsd-signature-type">QueryOptions</a></h5>
 										</li>
 									</ul>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="common_scripts.cellcollector-1.html" class="tsd-signature-type">CellCollector</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="common_scripts.cellcollector-5.html" class="tsd-signature-type">CellCollector</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -156,7 +157,17 @@
 					<div class="tsd-signature tsd-kind-icon">from<wbr>Script<span class="tsd-signature-symbol">:</span> <a href="../interfaces/base.script-1.html" class="tsd-signature-type">Script</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in common-scripts/lib/secp256k1_blake160.d.ts:8</li>
+							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/e515ca1/packages/common-scripts/src/secp256k1_blake160_multisig.ts#L45">common-scripts/src/secp256k1_blake160_multisig.ts:45</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="multisigscript" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> multisig<wbr>Script</h3>
+					<div class="tsd-signature tsd-kind-icon">multisig<wbr>Script<span class="tsd-signature-symbol">:</span> <a href="../modules/base.html#hexstring" class="tsd-signature-type">HexString</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/e515ca1/packages/common-scripts/src/secp256k1_blake160_multisig.ts#L46">common-scripts/src/secp256k1_blake160_multisig.ts:46</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -174,7 +185,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/base.cellcollector.html">CellCollector</a>.<a href="../interfaces/base.cellcollector.html#collect">collect</a></p>
 								<ul>
-									<li>Defined in common-scripts/lib/secp256k1_blake160.d.ts:12</li>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/e515ca1/packages/common-scripts/src/secp256k1_blake160_multisig.ts#L77">common-scripts/src/secp256k1_blake160_multisig.ts:77</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">AsyncGenerator</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/base.cell.html" class="tsd-signature-type">Cell</a><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -223,16 +234,19 @@
 						<a href="../modules/common_scripts.html" class="tsd-kind-icon">common-<wbr>scripts</a>
 						<ul>
 							<li class="current tsd-kind-class tsd-parent-kind-module">
-								<a href="common_scripts.cellcollector-1.html" class="tsd-kind-icon">Cell<wbr>Collector</a>
+								<a href="common_scripts.cellcollector-5.html" class="tsd-kind-icon">Cell<wbr>Collector</a>
 								<ul>
 									<li class=" tsd-kind-constructor tsd-parent-kind-class">
-										<a href="common_scripts.cellcollector-1.html#constructor" class="tsd-kind-icon">constructor</a>
+										<a href="common_scripts.cellcollector-5.html#constructor" class="tsd-kind-icon">constructor</a>
 									</li>
 									<li class=" tsd-kind-property tsd-parent-kind-class">
-										<a href="common_scripts.cellcollector-1.html#fromscript" class="tsd-kind-icon">from<wbr>Script</a>
+										<a href="common_scripts.cellcollector-5.html#fromscript" class="tsd-kind-icon">from<wbr>Script</a>
+									</li>
+									<li class=" tsd-kind-property tsd-parent-kind-class">
+										<a href="common_scripts.cellcollector-5.html#multisigscript" class="tsd-kind-icon">multisig<wbr>Script</a>
 									</li>
 									<li class=" tsd-kind-method tsd-parent-kind-class">
-										<a href="common_scripts.cellcollector-1.html#collect" class="tsd-kind-icon">collect</a>
+										<a href="common_scripts.cellcollector-5.html#collect" class="tsd-kind-icon">collect</a>
 									</li>
 								</ul>
 							</li>
