@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ProposalShortId | lumos</title>
+	<title>RawTransactionValue | lumos</title>
 	<meta name="description" content="Documentation for lumos">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -59,10 +59,10 @@
 					<a href="../modules/base.html">base</a>
 				</li>
 				<li>
-					<a href="base.proposalshortid.html">ProposalShortId</a>
+					<a href="base.rawtransactionvalue.html">RawTransactionValue</a>
 				</li>
 			</ul>
-			<h1>Class ProposalShortId</h1>
+			<h1>Class RawTransactionValue</h1>
 		</div>
 	</div>
 </header>
@@ -73,7 +73,12 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">ProposalShortId</span>
+						<a href="base.value.html" class="tsd-signature-type">Value</a>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">RawTransactionValue</span>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</section>
@@ -81,132 +86,111 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="base.proposalshortid.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-not-exported"><a href="base.rawtransactionvalue.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-inherited tsd-is-not-exported">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="base.proposalshortid.html#indexat" class="tsd-kind-icon">index<wbr>At</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="base.proposalshortid.html#raw" class="tsd-kind-icon">raw</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="base.proposalshortid.html#validate" class="tsd-kind-icon">validate</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="base.proposalshortid.html#size" class="tsd-kind-icon">size</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported"><a href="base.rawtransactionvalue.html#equals" class="tsd-kind-icon">equals</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported"><a href="base.rawtransactionvalue.html#hash" class="tsd-kind-icon">hash</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported"><a href="base.rawtransactionvalue.html#hashcode" class="tsd-kind-icon">hash<wbr>Code</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
 				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-not-exported">
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Proposal<wbr>Short<wbr>Id<span class="tsd-signature-symbol">(</span>reader<span class="tsd-signature-symbol">: </span><a href="../modules/base.html#cancasttoarraybuffer" class="tsd-signature-type">CanCastToArrayBuffer</a>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/base.createoptions.html" class="tsd-signature-type">CreateOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="base.proposalshortid.html" class="tsd-signature-type">ProposalShortId</a></li>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Raw<wbr>Transaction<wbr>Value<span class="tsd-signature-symbol">(</span>rawTransaction<span class="tsd-signature-symbol">: </span><a href="../interfaces/base.rawtransaction-1.html" class="tsd-signature-type">RawTransaction</a>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{ </span>validate<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="base.rawtransactionvalue.html" class="tsd-signature-type">RawTransactionValue</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/964fd4f/packages/base/lib/core.d.ts#L107">base/lib/core.d.ts:107</a></li>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/964fd4f/packages/base/index.d.ts#L308">base/index.d.ts:308</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>reader: <a href="../modules/base.html#cancasttoarraybuffer" class="tsd-signature-type">CanCastToArrayBuffer</a></h5>
+									<h5>rawTransaction: <a href="../interfaces/base.rawtransaction-1.html" class="tsd-signature-type">RawTransaction</a></h5>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/base.createoptions.html" class="tsd-signature-type">CreateOptions</a></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{ </span>validate<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> }</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="base.proposalshortid.html" class="tsd-signature-type">ProposalShortId</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="base.rawtransactionvalue.html" class="tsd-signature-type">RawTransactionValue</a></h4>
 						</li>
 					</ul>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-inherited tsd-is-not-exported">
 				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="indexat" class="tsd-anchor"></a>
-					<h3>index<wbr>At</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">index<wbr>At<span class="tsd-signature-symbol">(</span>i<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported">
+					<a name="equals" class="tsd-anchor"></a>
+					<h3>equals</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">equals<span class="tsd-signature-symbol">(</span>other<span class="tsd-signature-symbol">: </span><a href="base.value.html" class="tsd-signature-type">Value</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="base.value.html">Value</a>.<a href="base.value.html#equals">equals</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/964fd4f/packages/base/lib/core.d.ts#L110">base/lib/core.d.ts:110</a></li>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/964fd4f/packages/base/index.d.ts#L294">base/index.d.ts:294</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>i: <span class="tsd-signature-type">number</span></h5>
+									<h5>other: <a href="base.value.html" class="tsd-signature-type">Value</a></h5>
 								</li>
 							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported">
+					<a name="hash" class="tsd-anchor"></a>
+					<h3>hash</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">hash<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/base.html#hash" class="tsd-signature-type">Hash</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="base.value.html">Value</a>.<a href="base.value.html#hash">hash</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/964fd4f/packages/base/index.d.ts#L298">base/index.d.ts:298</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/base.html#hash" class="tsd-signature-type">Hash</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported">
+					<a name="hashcode" class="tsd-anchor"></a>
+					<h3>hash<wbr>Code</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">hash<wbr>Code<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="base.value.html">Value</a>.<a href="base.value.html#hashcode">hashCode</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/964fd4f/packages/base/index.d.ts#L296">base/index.d.ts:296</a></li>
+								</ul>
+							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="raw" class="tsd-anchor"></a>
-					<h3>raw</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">raw<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ArrayBuffer</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/964fd4f/packages/base/lib/core.d.ts#L111">base/lib/core.d.ts:111</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ArrayBuffer</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="validate" class="tsd-anchor"></a>
-					<h3>validate</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">validate<span class="tsd-signature-symbol">(</span>compatible<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/964fd4f/packages/base/lib/core.d.ts#L109">base/lib/core.d.ts:109</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> compatible: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<a name="size" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> size</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">size<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Number</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/964fd4f/packages/base/lib/core.d.ts#L112">base/lib/core.d.ts:112</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Number</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -248,23 +232,20 @@
 					<li class="current tsd-kind-module">
 						<a href="../modules/base.html" class="tsd-kind-icon">base</a>
 						<ul>
-							<li class="current tsd-kind-class tsd-parent-kind-module">
-								<a href="base.proposalshortid.html" class="tsd-kind-icon">Proposal<wbr>Short<wbr>Id</a>
+							<li class="current tsd-kind-class tsd-parent-kind-module tsd-is-not-exported">
+								<a href="base.rawtransactionvalue.html" class="tsd-kind-icon">Raw<wbr>Transaction<wbr>Value</a>
 								<ul>
-									<li class=" tsd-kind-constructor tsd-parent-kind-class">
-										<a href="base.proposalshortid.html#constructor" class="tsd-kind-icon">constructor</a>
+									<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-not-exported">
+										<a href="base.rawtransactionvalue.html#constructor" class="tsd-kind-icon">constructor</a>
 									</li>
-									<li class=" tsd-kind-method tsd-parent-kind-class">
-										<a href="base.proposalshortid.html#indexat" class="tsd-kind-icon">index<wbr>At</a>
+									<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported">
+										<a href="base.rawtransactionvalue.html#equals" class="tsd-kind-icon">equals</a>
 									</li>
-									<li class=" tsd-kind-method tsd-parent-kind-class">
-										<a href="base.proposalshortid.html#raw" class="tsd-kind-icon">raw</a>
+									<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported">
+										<a href="base.rawtransactionvalue.html#hash" class="tsd-kind-icon">hash</a>
 									</li>
-									<li class=" tsd-kind-method tsd-parent-kind-class">
-										<a href="base.proposalshortid.html#validate" class="tsd-kind-icon">validate</a>
-									</li>
-									<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
-										<a href="base.proposalshortid.html#size" class="tsd-kind-icon">size</a>
+									<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported">
+										<a href="base.rawtransactionvalue.html#hashcode" class="tsd-kind-icon">hash<wbr>Code</a>
 									</li>
 								</ul>
 							</li>
@@ -308,13 +289,12 @@
 			<ul class="tsd-legend">
 				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
 				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
 			</ul>
 		</div>
 	</div>
