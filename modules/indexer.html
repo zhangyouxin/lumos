@@ -138,8 +138,8 @@ indexer.startForever();</code></pre>
   <span class="hljs-attr">toBlock</span>: <span class="hljs-number">2252000</span>,
 });
 
-<span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">const</span> tx <span class="hljs-keyword">of</span> cellCollector.collect()) {
-  <span class="hljs-built_in">console</span>.log(tx);
+<span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">const</span> cell <span class="hljs-keyword">of</span> cellCollector.collect()) {
+  <span class="hljs-built_in">console</span>.log(cell);
 }</code></pre>
 					<p>It will fetch cells between <code>[fromBlock, toBlock]</code>, which means both <code>fromBlock</code> and <code>toBlock</code> are included in query range.</p>
 					<p>Page jump when queryring cells is supported:</p>
@@ -157,6 +157,23 @@ indexer.startForever();</code></pre>
   <span class="hljs-built_in">console</span>.log(tx);
 }</code></pre>
 					<p>The <code>skip</code> field represents the number of cells being skipped, which in the above code snippet means it would skip the first 100 cells and return from the 101st one.</p>
+					<p>Order by block number is supported:</p>
+					<pre><code class="language-javascript">cellCollector = <span class="hljs-keyword">new</span> CellCollector(indexer, {
+  <span class="hljs-attr">lock</span>: {
+    <span class="hljs-attr">code_hash</span>: 
+      <span class="hljs-string">&quot;0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8&quot;</span>,
+    <span class="hljs-attr">hash_type</span>: <span class="hljs-string">&quot;type&quot;</span>,
+    <span class="hljs-attr">args</span>: <span class="hljs-string">&quot;0xa528f2b9a51118b193178db4cf2f3db92e7df323&quot;</span>,
+  },
+  <span class="hljs-attr">fromBlock</span>: <span class="hljs-number">2440000</span>,
+  <span class="hljs-attr">toBlock</span>: <span class="hljs-number">2441000</span>,
+  <span class="hljs-attr">order</span>: <span class="hljs-string">&quot;desc&quot;</span>, <span class="hljs-comment">// default option is &quot;asc&quot;</span>
+  <span class="hljs-attr">skip</span>: <span class="hljs-number">300</span>,
+});
+
+<span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">const</span> cell <span class="hljs-keyword">of</span> cellCollector.collect()) {
+  <span class="hljs-built_in">console</span>.log(cell);
+}</code></pre>
 					<a href="#transactioncollector" id="transactioncollector" style="color: inherit; text-decoration: none;">
 						<h3>TransactionCollector</h3>
 					</a>
@@ -223,6 +240,23 @@ indexer.startForever();</code></pre>
   <span class="hljs-built_in">console</span>.log(tx);
 }</code></pre>
 					<p>The <code>skip</code> field represents the number of transactions being skipped, which in the above code snippet means it would skip the first 100 transactions and return from the 101st one.</p>
+					<p>Order by block number is supported:</p>
+					<pre><code class="language-javascript">txCollector = <span class="hljs-keyword">new</span> TransactionCollector(indexer, {
+  <span class="hljs-attr">lock</span>: {
+    <span class="hljs-attr">code_hash</span>: 
+      <span class="hljs-string">&quot;0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8&quot;</span>,
+    <span class="hljs-attr">hash_type</span>: <span class="hljs-string">&quot;type&quot;</span>,
+    <span class="hljs-attr">args</span>: <span class="hljs-string">&quot;0xa528f2b9a51118b193178db4cf2f3db92e7df323&quot;</span>,
+  },
+  <span class="hljs-attr">fromBlock</span>: <span class="hljs-number">20000</span>,
+  <span class="hljs-attr">toBlock</span>: <span class="hljs-number">21000</span>,
+  <span class="hljs-attr">order</span>: <span class="hljs-string">&quot;desc&quot;</span>, <span class="hljs-comment">// default option is &quot;asc&quot;</span>
+  <span class="hljs-attr">skip</span>: <span class="hljs-number">10</span>,
+});
+
+<span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">const</span> tx <span class="hljs-keyword">of</span> txCollector.collect()) {
+  <span class="hljs-built_in">console</span>.log(tx);
+}</code></pre>
 					<a href="#eventemitter" id="eventemitter" style="color: inherit; text-decoration: none;">
 						<h3>EventEmitter</h3>
 					</a>
@@ -307,7 +341,7 @@ eventEmitter.on(<span class="hljs-string">&quot;changed&quot;</span>,  <span cla
 					<div class="tsd-signature tsd-kind-icon">Logger<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>level<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/964fd4f/packages/indexer/index.d.ts#L8">indexer/index.d.ts:8</a></li>
+							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/4a9b9dc/packages/indexer/index.d.ts#L8">indexer/index.d.ts:8</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
