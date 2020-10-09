@@ -96,7 +96,7 @@ indexer.startForever();</code></pre>
 						<h3>CellCollector</h3>
 					</a>
 					<p>To query existing cells, you can create a CellCollector:</p>
-					<pre><code class="language-javascript">collector = <span class="hljs-keyword">new</span> CellCollector(indexer, {
+					<pre><code class="language-javascript">cellCollector = <span class="hljs-keyword">new</span> CellCollector(indexer, {
   <span class="hljs-attr">lock</span>: {
     <span class="hljs-attr">code_hash</span>:
       <span class="hljs-string">&quot;0x0000000000000000000000000000000000000000000000000000000000000000&quot;</span>,
@@ -105,11 +105,11 @@ indexer.startForever();</code></pre>
   },
 });
 
-<span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">const</span> cell <span class="hljs-keyword">of</span> collector.collect()) {
+<span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">const</span> cell <span class="hljs-keyword">of</span> cellCollector.collect()) {
   <span class="hljs-built_in">console</span>.log(cell);
 }</code></pre>
 					<p>You can also specify both <code>lock</code> and <code>type</code> script: </p>
-					<pre><code class="language-javascript">collector = <span class="hljs-keyword">new</span> CellCollector(indexer, {
+					<pre><code class="language-javascript">cellCollector = <span class="hljs-keyword">new</span> CellCollector(indexer, {
     <span class="hljs-attr">lock</span>: {
         <span class="hljs-attr">args</span>: <span class="hljs-string">&quot;0x92aad3bbab20f225cff28ec1d856c6ab63284c7a&quot;</span>,
         <span class="hljs-attr">code_hash</span>: <span class="hljs-string">&quot;0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8&quot;</span>,
@@ -122,10 +122,9 @@ indexer.startForever();</code></pre>
     }
 })
 
-<span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">const</span> cell <span class="hljs-keyword">of</span> collector.collect()) {
+<span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">const</span> cell <span class="hljs-keyword">of</span> cellCollector.collect()) {
   <span class="hljs-built_in">console</span>.log(cell);
 }</code></pre>
-					<p>Prefix search is supported on <code>args</code>.</p>
 					<p>Range query for cells between given block_numbers is supported:</p>
 					<pre><code class="language-javascript">cellCollector = <span class="hljs-keyword">new</span> CellCollector(indexer, {
   <span class="hljs-attr">lock</span>: {
@@ -134,15 +133,15 @@ indexer.startForever();</code></pre>
     <span class="hljs-attr">hash_type</span>: <span class="hljs-string">&quot;type&quot;</span>,
     <span class="hljs-attr">args</span>: <span class="hljs-string">&quot;0xa528f2b9a51118b193178db4cf2f3db92e7df323&quot;</span>,
   },
-  <span class="hljs-attr">fromBlock</span>: <span class="hljs-number">2250000</span>,
-  <span class="hljs-attr">toBlock</span>: <span class="hljs-number">2252000</span>,
+  <span class="hljs-attr">fromBlock</span>: <span class="hljs-string">&quot;0x225510&quot;</span>, <span class="hljs-comment">// &quot;0x&quot; + 2250000n.toString(16)</span>
+  <span class="hljs-attr">toBlock</span>: <span class="hljs-string">&quot;0x225ce0&quot;</span>, <span class="hljs-comment">// &quot;0x&quot; + 2252000n.toString(16)</span>
 });
 
 <span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">const</span> cell <span class="hljs-keyword">of</span> cellCollector.collect()) {
   <span class="hljs-built_in">console</span>.log(cell);
 }</code></pre>
 					<p>It will fetch cells between <code>[fromBlock, toBlock]</code>, which means both <code>fromBlock</code> and <code>toBlock</code> are included in query range.</p>
-					<p>Page jump when queryring cells is supported:</p>
+					<p>Page jump when query cells is supported:</p>
 					<pre><code class="language-javascript">cellCollector = <span class="hljs-keyword">new</span> CellCollector(indexer, {
   <span class="hljs-attr">lock</span>: {
     <span class="hljs-attr">code_hash</span>: 
@@ -157,7 +156,7 @@ indexer.startForever();</code></pre>
   <span class="hljs-built_in">console</span>.log(tx);
 }</code></pre>
 					<p>The <code>skip</code> field represents the number of cells being skipped, which in the above code snippet means it would skip the first 100 cells and return from the 101st one.</p>
-					<p>Order by block number is supported:</p>
+					<p>Order by block number is supported by setting <code>order</code> field explicitly:</p>
 					<pre><code class="language-javascript">cellCollector = <span class="hljs-keyword">new</span> CellCollector(indexer, {
   <span class="hljs-attr">lock</span>: {
     <span class="hljs-attr">code_hash</span>: 
@@ -165,10 +164,70 @@ indexer.startForever();</code></pre>
     <span class="hljs-attr">hash_type</span>: <span class="hljs-string">&quot;type&quot;</span>,
     <span class="hljs-attr">args</span>: <span class="hljs-string">&quot;0xa528f2b9a51118b193178db4cf2f3db92e7df323&quot;</span>,
   },
-  <span class="hljs-attr">fromBlock</span>: <span class="hljs-number">2440000</span>,
-  <span class="hljs-attr">toBlock</span>: <span class="hljs-number">2441000</span>,
+  <span class="hljs-attr">fromBlock</span>: <span class="hljs-string">&quot;0x253b40&quot;</span>, <span class="hljs-comment">// &quot;0x&quot; + 2440000n.toString(16)</span>
+  <span class="hljs-attr">toBlock</span>: <span class="hljs-string">&quot;0x253f28&quot;</span>, <span class="hljs-comment">// &quot;0x&quot; + 2441000n.toString(16)</span>
   <span class="hljs-attr">order</span>: <span class="hljs-string">&quot;desc&quot;</span>, <span class="hljs-comment">// default option is &quot;asc&quot;</span>
   <span class="hljs-attr">skip</span>: <span class="hljs-number">300</span>,
+});
+
+<span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">const</span> cell <span class="hljs-keyword">of</span> cellCollector.collect()) {
+  <span class="hljs-built_in">console</span>.log(cell);
+}</code></pre>
+					<p>Prefix search is supported on <code>args</code>. The default <code>argsLen</code> is -1, which means you pass the full slice of original args, and you can specify it when the <code>args</code> field is the prefix of original args.</p>
+					<pre><code class="language-javascript">cellCollector = <span class="hljs-keyword">new</span> CellCollector(indexer, {
+  <span class="hljs-attr">lock</span>: {
+    <span class="hljs-attr">code_hash</span>: 
+      <span class="hljs-string">&quot;0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8&quot;</span>,
+    <span class="hljs-attr">hash_type</span>: <span class="hljs-string">&quot;type&quot;</span>,
+    <span class="hljs-attr">args</span>: <span class="hljs-string">&quot;0xa528f2b9a51118b193178db4cf2f3db92e7df3&quot;</span>, <span class="hljs-comment">// truncate the last byte of orignal args: 0xa528f2b9a51118b193178db4cf2f3db92e7df323</span>
+  },
+  <span class="hljs-attr">argsLen</span>: <span class="hljs-number">20</span>, <span class="hljs-comment">// default option is -1</span>
+  <span class="hljs-attr">fromBlock</span>: <span class="hljs-string">&quot;0x253b40&quot;</span>, <span class="hljs-comment">// &quot;0x&quot; + 2440000n.toString(16)</span>
+  <span class="hljs-attr">toBlock</span>: <span class="hljs-string">&quot;0x253f28&quot;</span>, <span class="hljs-comment">// &quot;0x&quot; + 2441000n.toString(16)</span>
+  <span class="hljs-attr">order</span>: <span class="hljs-string">&quot;desc&quot;</span>, <span class="hljs-comment">// default option is &quot;asc&quot;</span>
+  <span class="hljs-attr">skip</span>: <span class="hljs-number">300</span>,
+});
+
+<span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">const</span> cell <span class="hljs-keyword">of</span> cellCollector.collect()) {
+  <span class="hljs-built_in">console</span>.log(cell);
+}</code></pre>
+					<p>You can also set it as <code>any</code> when the argsLen of the field args might have multiple possibilities, for example, lock script&#39;s args could be 20 in normal scenario and 28 in multisig scenario,  or any other length in customized scenarios. However, there&#39;s some performance lost when use <code>any</code> rather than explicitly specified length due to the low-level implementation.</p>
+					<pre><code class="language-javascript">cellCollector = <span class="hljs-keyword">new</span> CellCollector(indexer, {
+  <span class="hljs-attr">lock</span>: {
+    <span class="hljs-attr">code_hash</span>: 
+      <span class="hljs-string">&quot;0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8&quot;</span>,
+    <span class="hljs-attr">hash_type</span>: <span class="hljs-string">&quot;type&quot;</span>,
+    <span class="hljs-attr">args</span>: <span class="hljs-string">&quot;0xa528f2b9a51118b193178db4cf2f3db92e7d&quot;</span>, <span class="hljs-comment">// truncate the last two bytes of original args: 0xa528f2b9a51118b193178db4cf2f3db92e7df323</span>
+  },
+  <span class="hljs-attr">argsLen</span>: <span class="hljs-string">&quot;any&quot;</span>,
+  <span class="hljs-attr">fromBlock</span>: <span class="hljs-string">&quot;0x253b40&quot;</span>, <span class="hljs-comment">// &quot;0x&quot; + 2440000n.toString(16)</span>
+  <span class="hljs-attr">toBlock</span>: <span class="hljs-string">&quot;0x253f28&quot;</span>, <span class="hljs-comment">// &quot;0x&quot; + 2441000n.toString(16)</span>
+  <span class="hljs-attr">order</span>: <span class="hljs-string">&quot;desc&quot;</span>, <span class="hljs-comment">// default option is &quot;asc&quot;</span>
+  <span class="hljs-attr">skip</span>: <span class="hljs-number">300</span>,
+});
+
+<span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">const</span> cell <span class="hljs-keyword">of</span> cellCollector.collect()) {
+  <span class="hljs-built_in">console</span>.log(cell);
+}</code></pre>
+					<p>Fine grained query for cells can be achieved by using <a href="https://github.com/nervosnetwork/lumos/blob/cd418d258085d3cb6ab47eeaf5347073acf5422e/packages/base/index.d.ts#L123">ScriptWrapper</a>, with customized options like <code>argsLen</code>:</p>
+					<pre><code class="language-javascript">cellCollector = <span class="hljs-keyword">new</span> CellCollector(indexer, {
+  <span class="hljs-attr">lock</span>: {
+    <span class="hljs-attr">script</span>: {
+      <span class="hljs-attr">code_hash</span>: 
+        <span class="hljs-string">&quot;0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8&quot;</span>,
+      <span class="hljs-attr">hash_type</span>: <span class="hljs-string">&quot;type&quot;</span>,
+      <span class="hljs-attr">args</span>: <span class="hljs-string">&quot;0xe60f7f88c94ef365d540afc1574c46bb017765&quot;</span>, <span class="hljs-comment">// trucate the last byte of original args: 0xe60f7f88c94ef365d540afc1574c46bb017765a2</span>
+    },
+    <span class="hljs-attr">argsLen</span>: <span class="hljs-number">20</span>, 
+  },
+  <span class="hljs-attr">type</span>: {
+    <span class="hljs-attr">script</span>: {
+      <span class="hljs-attr">code_hash</span>: <span class="hljs-string">&quot;0x82d76d1b75fe2fd9a27dfbaa65a039221a380d76c926f378d3f81cf3e7e13f2e&quot;</span>,
+      <span class="hljs-attr">hash_type</span>: <span class="hljs-string">&quot;type&quot;</span>,
+      <span class="hljs-attr">args</span>: <span class="hljs-string">&quot;0x&quot;</span>,
+    },
+    <span class="hljs-comment">// when the `argsLen` is not setted here, it will use the outside `argsLen` config, which in this case is -1 by default</span>
+  }
 });
 
 <span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">const</span> cell <span class="hljs-keyword">of</span> cellCollector.collect()) {
@@ -198,34 +257,15 @@ indexer.startForever();</code></pre>
     <span class="hljs-attr">hash_type</span>: <span class="hljs-string">&quot;type&quot;</span>,
     <span class="hljs-attr">args</span>: <span class="hljs-string">&quot;0xa528f2b9a51118b193178db4cf2f3db92e7df323&quot;</span>,
   },
-  <span class="hljs-attr">fromBlock</span>: <span class="hljs-number">0</span>,
-  <span class="hljs-attr">toBlock</span>: <span class="hljs-number">2000</span>,
+  <span class="hljs-attr">fromBlock</span>: <span class="hljs-string">&quot;0x0&quot;</span>, <span class="hljs-comment">// &quot;0x&quot; + 0n.toString(16) </span>
+  <span class="hljs-attr">toBlock</span>: <span class="hljs-string">&quot;0x7d0&quot;</span> , <span class="hljs-comment">// &quot;0x&quot; + 2000n.toString(16)</span>
 });
 
 <span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">const</span> tx <span class="hljs-keyword">of</span> txCollector.collect()) {
   <span class="hljs-built_in">console</span>.log(tx);
 }</code></pre>
 					<p>It will fetch transactions between <code>[fromBlock, toBlock]</code>, which means both <code>fromBlock</code> and <code>toBlock</code> are included in query range.</p>
-					<p>Fine grained query for transactions by scripts with <code>ioType</code> is supported: </p>
-					<pre><code class="language-javascript">txCollector = <span class="hljs-keyword">new</span> TransactionCollector(indexer, {
-  <span class="hljs-attr">lock</span>: {
-    <span class="hljs-attr">script</span>: {
-      <span class="hljs-attr">code_hash</span>: 
-        <span class="hljs-string">&quot;0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8&quot;</span>,
-      <span class="hljs-attr">hash_type</span>: <span class="hljs-string">&quot;type&quot;</span>,
-      <span class="hljs-attr">args</span>: <span class="hljs-string">&quot;0xa528f2b9a51118b193178db4cf2f3db92e7df323&quot;</span>,
-    },
-    <span class="hljs-attr">ioType</span>: <span class="hljs-string">&quot;input&quot;</span>,
-  },
-  <span class="hljs-attr">fromBlock</span>: <span class="hljs-number">0</span>,
-  <span class="hljs-attr">toBlock</span>: <span class="hljs-number">2000</span>,
-});
-
-<span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">const</span> tx <span class="hljs-keyword">of</span> txCollector.collect()) {
-  <span class="hljs-built_in">console</span>.log(tx);
-}</code></pre>
-					<p>The <code>ioType</code> field is among <code>input | output | both</code>.</p>
-					<p>Page jump when queryring transactions is supported:</p>
+					<p>Page jump when query transactions is supported:</p>
 					<pre><code class="language-javascript">txCollector = <span class="hljs-keyword">new</span> TransactionCollector(indexer, {
   <span class="hljs-attr">lock</span>: {
     <span class="hljs-attr">code_hash</span>: 
@@ -248,8 +288,8 @@ indexer.startForever();</code></pre>
     <span class="hljs-attr">hash_type</span>: <span class="hljs-string">&quot;type&quot;</span>,
     <span class="hljs-attr">args</span>: <span class="hljs-string">&quot;0xa528f2b9a51118b193178db4cf2f3db92e7df323&quot;</span>,
   },
-  <span class="hljs-attr">fromBlock</span>: <span class="hljs-number">20000</span>,
-  <span class="hljs-attr">toBlock</span>: <span class="hljs-number">21000</span>,
+  <span class="hljs-attr">fromBlock</span>: <span class="hljs-string">&quot;0x4e20&quot;</span>, <span class="hljs-comment">// &quot;0x&quot; + 20000n.toString(16)</span>
+  <span class="hljs-attr">toBlock</span>: <span class="hljs-string">&quot;0x5208&quot;</span>, <span class="hljs-comment">// &quot;0x&quot; + 21000n.toString(16)</span>
   <span class="hljs-attr">order</span>: <span class="hljs-string">&quot;desc&quot;</span>, <span class="hljs-comment">// default option is &quot;asc&quot;</span>
   <span class="hljs-attr">skip</span>: <span class="hljs-number">10</span>,
 });
@@ -257,6 +297,68 @@ indexer.startForever();</code></pre>
 <span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">const</span> tx <span class="hljs-keyword">of</span> txCollector.collect()) {
   <span class="hljs-built_in">console</span>.log(tx);
 }</code></pre>
+					<p>Prefix search is supported on <code>args</code>. The default <code>argsLen</code> is -1, which means you pass the full slice of original args, and you can specify it when the <code>args</code> field is the prefix of original args.</p>
+					<pre><code class="language-javascript">txCollector = <span class="hljs-keyword">new</span> TransactionCollector(indexer, {
+  <span class="hljs-attr">lock</span>: {
+    <span class="hljs-attr">code_hash</span>: 
+      <span class="hljs-string">&quot;0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8&quot;</span>,
+    <span class="hljs-attr">hash_type</span>: <span class="hljs-string">&quot;type&quot;</span>,
+    <span class="hljs-attr">args</span>: <span class="hljs-string">&quot;0xa528f2b9a51118b193178db4cf2f3db92e7df3&quot;</span>, <span class="hljs-comment">// truncate the last byte of orignal args: 0xa528f2b9a51118b193178db4cf2f3db92e7df323</span>
+  },
+  <span class="hljs-attr">argsLen</span>: <span class="hljs-number">20</span>, <span class="hljs-comment">// default option is -1</span>
+  <span class="hljs-attr">fromBlock</span>: <span class="hljs-string">&quot;0x253b40&quot;</span>, <span class="hljs-comment">// &quot;0x&quot; + 2440000n.toString(16)</span>
+  <span class="hljs-attr">toBlock</span>: <span class="hljs-string">&quot;0x253f28&quot;</span>, <span class="hljs-comment">// &quot;0x&quot; + 2441000n.toString(16)</span>
+  <span class="hljs-attr">order</span>: <span class="hljs-string">&quot;desc&quot;</span>, <span class="hljs-comment">// default option is &quot;asc&quot;</span>
+  <span class="hljs-attr">skip</span>: <span class="hljs-number">300</span>,
+});
+
+<span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">const</span> tx <span class="hljs-keyword">of</span> txCollector.collect()) {
+  <span class="hljs-built_in">console</span>.log(tx);
+}</code></pre>
+					<p>You can also set it as <code>any</code> when the argsLen of the field args might have multiple possibilities, for example, lock script&#39;s args could be 20 in normal scenario and 28 in multisig scenario,  or any other length in customized scenarios. However, there&#39;s some performance lost when use <code>any</code> rather than explicitly specified length due to the low-level implementation.</p>
+					<pre><code class="language-javascript">txCollector = <span class="hljs-keyword">new</span> TransactionCollector(indexer, {
+  <span class="hljs-attr">lock</span>: {
+    <span class="hljs-attr">code_hash</span>: 
+      <span class="hljs-string">&quot;0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8&quot;</span>,
+    <span class="hljs-attr">hash_type</span>: <span class="hljs-string">&quot;type&quot;</span>,
+    <span class="hljs-attr">args</span>: <span class="hljs-string">&quot;0xa528f2b9a51118b193178db4cf2f3db92e7d&quot;</span>, <span class="hljs-comment">// truncate the last two bytes of original args: 0xa528f2b9a51118b193178db4cf2f3db92e7df323</span>
+  },
+  <span class="hljs-attr">argsLen</span>: <span class="hljs-string">&quot;any&quot;</span>,
+  <span class="hljs-attr">fromBlock</span>: <span class="hljs-string">&quot;0x253b40&quot;</span>, <span class="hljs-comment">// &quot;0x&quot; + 2440000n.toString(16)</span>
+  <span class="hljs-attr">toBlock</span>: <span class="hljs-string">&quot;0x253f28&quot;</span>, <span class="hljs-comment">// &quot;0x&quot; + 2441000n.toString(16)</span>
+  <span class="hljs-attr">order</span>: <span class="hljs-string">&quot;desc&quot;</span>, <span class="hljs-comment">// default option is &quot;asc&quot;</span>
+  <span class="hljs-attr">skip</span>: <span class="hljs-number">300</span>,
+});
+
+<span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">const</span> tx <span class="hljs-keyword">of</span> txCollector.collect()) {
+  <span class="hljs-built_in">console</span>.log(tx);
+}</code></pre>
+					<p>Fine grained query for transactions can be achieved by using <a href="https://github.com/nervosnetwork/lumos/blob/cd418d258085d3cb6ab47eeaf5347073acf5422e/packages/base/index.d.ts#L123">ScriptWrapper</a>, with customized options like <code>ioType</code>, <code>argsLen</code>:</p>
+					<pre><code class="language-javascript">txCollector = <span class="hljs-keyword">new</span> TransactionCollector(indexer, {
+  <span class="hljs-attr">lock</span>: {
+    <span class="hljs-attr">script</span>: {
+      <span class="hljs-attr">code_hash</span>: 
+        <span class="hljs-string">&quot;0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8&quot;</span>,
+      <span class="hljs-attr">hash_type</span>: <span class="hljs-string">&quot;type&quot;</span>,
+      <span class="hljs-attr">args</span>: <span class="hljs-string">&quot;0xe60f7f88c94ef365d540afc1574c46bb017765&quot;</span>, <span class="hljs-comment">// trucate the last byte of original args: 0xe60f7f88c94ef365d540afc1574c46bb017765a2</span>
+    },
+    <span class="hljs-attr">ioType</span>: <span class="hljs-string">&quot;both&quot;</span>,
+    <span class="hljs-attr">argsLen</span>: <span class="hljs-number">20</span>, <span class="hljs-comment">// when the `argsLen` is not setted here, it will use the outside `argsLen` config</span>
+  },
+  <span class="hljs-attr">type</span>: {
+    <span class="hljs-attr">script</span>: {
+      <span class="hljs-attr">code_hash</span>: <span class="hljs-string">&quot;0x82d76d1b75fe2fd9a27dfbaa65a039221a380d76c926f378d3f81cf3e7e13f2e&quot;</span>,
+      <span class="hljs-attr">hash_type</span>: <span class="hljs-string">&quot;type&quot;</span>,
+      <span class="hljs-attr">args</span>: <span class="hljs-string">&quot;0x&quot;</span>,
+    },
+    <span class="hljs-attr">ioType</span>: <span class="hljs-string">&quot;input&quot;</span>,
+  }
+});
+
+<span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">const</span> tx <span class="hljs-keyword">of</span> txCollector.collect()) {
+  <span class="hljs-built_in">console</span>.log(tx);
+}</code></pre>
+					<p>The <code>ioType</code> field is among <code>input | output | both</code>.</p>
 					<a href="#eventemitter" id="eventemitter" style="color: inherit; text-decoration: none;">
 						<h3>EventEmitter</h3>
 					</a>
@@ -289,7 +391,7 @@ eventEmitter.on(<span class="hljs-string">&quot;changed&quot;</span>,  <span cla
   <span class="hljs-comment">// default value is &quot;any&quot;</span>
   <span class="hljs-attr">data</span>: <span class="hljs-string">&quot;0x&quot;</span>,
   <span class="hljs-comment">// default value is 0</span>
-  <span class="hljs-attr">fromBlock</span>: <span class="hljs-number">1000</span>
+  <span class="hljs-attr">fromBlock</span>: <span class="hljs-number">0x3e8</span>, <span class="hljs-comment">// &quot;0x&quot; + 1000n.toString(16)</span>
 });</code></pre>
 					<a href="#electron-note" id="electron-note" style="color: inherit; text-decoration: none;">
 						<h2>Electron note</h2>
@@ -341,7 +443,7 @@ eventEmitter.on(<span class="hljs-string">&quot;changed&quot;</span>,  <span cla
 					<div class="tsd-signature tsd-kind-icon">Logger<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>level<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/4a9b9dc/packages/indexer/index.d.ts#L8">indexer/index.d.ts:8</a></li>
+							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/d4e6f21/packages/indexer/index.d.ts#L8">packages/indexer/index.d.ts:8</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -387,6 +489,9 @@ eventEmitter.on(<span class="hljs-string">&quot;changed&quot;</span>,  <span cla
 						<a href="config_manager.html">config-<wbr>manager</a>
 					</li>
 					<li class=" tsd-kind-module">
+						<a href="hd.html">hd</a>
+					</li>
+					<li class=" tsd-kind-module">
 						<a href="helpers.html">helpers</a>
 					</li>
 					<li class="current tsd-kind-module">
@@ -410,6 +515,9 @@ eventEmitter.on(<span class="hljs-string">&quot;changed&quot;</span>,  <span cla
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="config_manager.html" class="tsd-kind-icon">config-<wbr>manager</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="hd.html" class="tsd-kind-icon">hd</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="helpers.html" class="tsd-kind-icon">helpers</a>
@@ -467,6 +575,9 @@ eventEmitter.on(<span class="hljs-string">&quot;changed&quot;</span>,  <span cla
 				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
 				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
