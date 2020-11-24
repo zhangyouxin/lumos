@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>CellCollectorWithQueryOptions | lumos</title>
+	<title>CellCollector | lumos</title>
 	<meta name="description" content="Documentation for lumos">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,13 +56,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/hd.html">hd</a>
+					<a href="../modules/hd_cache.html">hd-cache</a>
 				</li>
 				<li>
-					<a href="hd.cellcollectorwithqueryoptions-1.html">CellCollectorWithQueryOptions</a>
+					<a href="hd_cache.cellcollector-1.html">CellCollector</a>
 				</li>
 			</ul>
-			<h1>Class CellCollectorWithQueryOptions</h1>
+			<h1>Class CellCollector</h1>
 		</div>
 	</div>
 </header>
@@ -73,7 +73,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">CellCollectorWithQueryOptions</span>
+						<span class="target">CellCollector</span>
 					</li>
 				</ul>
 			</section>
@@ -90,13 +90,13 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="hd.cellcollectorwithqueryoptions-1.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="hd_cache.cellcollector-1.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="hd.cellcollectorwithqueryoptions-1.html#collect" class="tsd-kind-icon">collect</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="hd_cache.cellcollector-1.html#collect" class="tsd-kind-icon">collect</a></li>
 							</ul>
 						</section>
 					</div>
@@ -108,48 +108,22 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Cell<wbr>Collector<wbr>With<wbr>Query<wbr>Options<span class="tsd-signature-symbol">(</span>collector<span class="tsd-signature-symbol">: </span><a href="hd.cellcollector-1.html" class="tsd-signature-type">CellCollector</a>, __namedParameters<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>argsLen<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"any"</span><span class="tsd-signature-symbol">; </span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>fromBlock<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>lock<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/base.script-1.html" class="tsd-signature-type">Script</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/base.scriptwrapper.html" class="tsd-signature-type">ScriptWrapper</a><span class="tsd-signature-symbol">; </span>skip<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>toBlock<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/base.script-1.html" class="tsd-signature-type">Script</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/base.scriptwrapper.html" class="tsd-signature-type">ScriptWrapper</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"empty"</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="hd.cellcollectorwithqueryoptions-1.html" class="tsd-signature-type">CellCollectorWithQueryOptions</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Cell<wbr>Collector<span class="tsd-signature-symbol">(</span>cacheManger<span class="tsd-signature-symbol">: </span><a href="hd_cache.cachemanager-1.html" class="tsd-signature-type">CacheManager</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="hd_cache.cellcollector-1.html" class="tsd-signature-type">CellCollector</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/1118baf/packages/hd/src/cache.ts#L724">packages/hd/src/cache.ts:724</a></li>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/f6f76ba/packages/hd-cache/src/index.ts#L711">packages/hd-cache/src/index.ts:711</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>collector: <a href="hd.cellcollector-1.html" class="tsd-signature-type">CellCollector</a></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> __namedParameters: <span class="tsd-signature-symbol">{ </span>argsLen<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"any"</span><span class="tsd-signature-symbol">; </span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>fromBlock<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>lock<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/base.script-1.html" class="tsd-signature-type">Script</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/base.scriptwrapper.html" class="tsd-signature-type">ScriptWrapper</a><span class="tsd-signature-symbol">; </span>skip<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>toBlock<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/base.script-1.html" class="tsd-signature-type">Script</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/base.scriptwrapper.html" class="tsd-signature-type">ScriptWrapper</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"empty"</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> = {}</span></h5>
-									<ul class="tsd-parameters">
-										<li class="tsd-parameter">
-											<h5>args<wbr>Len<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"any"</span></h5>
-										</li>
-										<li class="tsd-parameter">
-											<h5>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
-										</li>
-										<li class="tsd-parameter">
-											<h5>from<wbr>Block<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
-										</li>
-										<li class="tsd-parameter">
-											<h5>lock<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/base.script-1.html" class="tsd-signature-type">Script</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/base.scriptwrapper.html" class="tsd-signature-type">ScriptWrapper</a></h5>
-										</li>
-										<li class="tsd-parameter">
-											<h5>skip<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
-										</li>
-										<li class="tsd-parameter">
-											<h5>to<wbr>Block<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
-										</li>
-										<li class="tsd-parameter">
-											<h5>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/base.script-1.html" class="tsd-signature-type">Script</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/base.scriptwrapper.html" class="tsd-signature-type">ScriptWrapper</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"empty"</span></h5>
-										</li>
-									</ul>
+									<h5>cacheManger: <a href="hd_cache.cachemanager-1.html" class="tsd-signature-type">CacheManager</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="hd.cellcollectorwithqueryoptions-1.html" class="tsd-signature-type">CellCollectorWithQueryOptions</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="hd_cache.cellcollector-1.html" class="tsd-signature-type">CellCollector</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -167,7 +141,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/base.cellcollector.html">CellCollector</a>.<a href="../interfaces/base.cellcollector.html#collect">collect</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/1118baf/packages/hd/src/cache.ts#L750">packages/hd/src/cache.ts:750</a></li>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/f6f76ba/packages/hd-cache/src/index.ts#L717">packages/hd-cache/src/index.ts:717</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">AsyncGenerator</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/base.cell.html" class="tsd-signature-type">Cell</a><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -191,8 +165,11 @@
 					<li class=" tsd-kind-module">
 						<a href="../modules/config_manager.html">config-<wbr>manager</a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class=" tsd-kind-module">
 						<a href="../modules/hd.html">hd</a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="../modules/hd_cache.html">hd-<wbr>cache</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/helpers.html">helpers</a>
@@ -219,21 +196,117 @@
 					<li class=" tsd-kind-module">
 						<a href="../modules/config_manager.html" class="tsd-kind-icon">config-<wbr>manager</a>
 					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/hd.html" class="tsd-kind-icon">hd</a>
+					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-module">
-						<a href="../modules/hd.html" class="tsd-kind-icon">hd</a>
+						<a href="../modules/hd_cache.html" class="tsd-kind-icon">hd-<wbr>cache</a>
 						<ul>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="hd_cache.cache.html" class="tsd-kind-icon">Cache</a>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="hd_cache.cache-1.html" class="tsd-kind-icon">Cache</a>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="hd_cache.cachemanager.html" class="tsd-kind-icon">Cache<wbr>Manager</a>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="hd_cache.cachemanager-1.html" class="tsd-kind-icon">Cache<wbr>Manager</a>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="hd_cache.cellcollector.html" class="tsd-kind-icon">Cell<wbr>Collector</a>
+							</li>
 							<li class="current tsd-kind-class tsd-parent-kind-module">
-								<a href="hd.cellcollectorwithqueryoptions-1.html" class="tsd-kind-icon">Cell<wbr>Collector<wbr>With<wbr>Query<wbr>Options</a>
+								<a href="hd_cache.cellcollector-1.html" class="tsd-kind-icon">Cell<wbr>Collector</a>
 								<ul>
 									<li class=" tsd-kind-constructor tsd-parent-kind-class">
-										<a href="hd.cellcollectorwithqueryoptions-1.html#constructor" class="tsd-kind-icon">constructor</a>
+										<a href="hd_cache.cellcollector-1.html#constructor" class="tsd-kind-icon">constructor</a>
 									</li>
 									<li class=" tsd-kind-method tsd-parent-kind-class">
-										<a href="hd.cellcollectorwithqueryoptions-1.html#collect" class="tsd-kind-icon">collect</a>
+										<a href="hd_cache.cellcollector-1.html#collect" class="tsd-kind-icon">collect</a>
 									</li>
 								</ul>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="hd_cache.cellcollectorwithqueryoptions.html" class="tsd-kind-icon">Cell<wbr>Collector<wbr>With<wbr>Query<wbr>Options</a>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="hd_cache.cellcollectorwithqueryoptions-1.html" class="tsd-kind-icon">Cell<wbr>Collector<wbr>With<wbr>Query<wbr>Options</a>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="hd_cache.hdcache.html" class="tsd-kind-icon">HDCache</a>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="hd_cache.hdcache-1.html" class="tsd-kind-icon">HDCache</a>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="hd_cache.transactioncache.html" class="tsd-kind-icon">Transaction<wbr>Cache</a>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="hd_cache.transactioncache-1.html" class="tsd-kind-icon">Transaction<wbr>Cache</a>
+							</li>
+							<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
+								<a href="../interfaces/hd_cache.lockscriptinfo.html" class="tsd-kind-icon">Lock<wbr>Script<wbr>Info</a>
+							</li>
+							<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
+								<a href="../interfaces/hd_cache.lockscriptinfo-1.html" class="tsd-kind-icon">Lock<wbr>Script<wbr>Info</a>
+							</li>
+							<li class=" tsd-kind-interface tsd-parent-kind-module">
+								<a href="../interfaces/hd_cache.lockscriptmappinginfo.html" class="tsd-kind-icon">Lock<wbr>Script<wbr>Mapping<wbr>Info</a>
+							</li>
+							<li class=" tsd-kind-interface tsd-parent-kind-module">
+								<a href="../interfaces/hd_cache.lockscriptmappinginfo-1.html" class="tsd-kind-icon">Lock<wbr>Script<wbr>Mapping<wbr>Info</a>
+							</li>
+							<li class=" tsd-kind-interface tsd-parent-kind-module">
+								<a href="../interfaces/hd_cache.publickeyinfo.html" class="tsd-kind-icon">Public<wbr>Key<wbr>Info</a>
+							</li>
+							<li class=" tsd-kind-interface tsd-parent-kind-module">
+								<a href="../interfaces/hd_cache.publickeyinfo-1.html" class="tsd-kind-icon">Public<wbr>Key<wbr>Info</a>
+							</li>
+							<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+								<a href="../modules/hd_cache.html#iscellmatchqueryoptions" class="tsd-kind-icon">is<wbr>Cell<wbr>Match<wbr>Query<wbr>Options</a>
+							</li>
+							<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+								<a href="../modules/hd_cache.html#mnemonictoseedsync" class="tsd-kind-icon">mnemonic<wbr>ToSeed<wbr>Sync</a>
+							</li>
+							<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+								<a href="../modules/hd_cache.html#publickeytoblake160" class="tsd-kind-icon">public<wbr>Key<wbr>ToBlake160</a>
+							</li>
+							<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+								<a href="../modules/hd_cache.html#defaultlogger" class="tsd-kind-icon">default<wbr>Logger</a>
+							</li>
+							<li class=" tsd-kind-function tsd-parent-kind-module">
+								<a href="../modules/hd_cache.html#getbalance" class="tsd-kind-icon">get<wbr>Balance</a>
+							</li>
+							<li class=" tsd-kind-function tsd-parent-kind-module">
+								<a href="../modules/hd_cache.html#getbalance-1" class="tsd-kind-icon">get<wbr>Balance</a>
+							</li>
+							<li class=" tsd-kind-function tsd-parent-kind-module">
+								<a href="../modules/hd_cache.html#getdefaultinfos" class="tsd-kind-icon">get<wbr>Default<wbr>Infos</a>
+							</li>
+							<li class=" tsd-kind-function tsd-parent-kind-module">
+								<a href="../modules/hd_cache.html#getdefaultinfos-1" class="tsd-kind-icon">get<wbr>Default<wbr>Infos</a>
+							</li>
+							<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+								<a href="../modules/hd_cache.html#lockscriptmatch" class="tsd-kind-icon">lock<wbr>Script<wbr>Match</a>
+							</li>
+							<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+								<a href="../modules/hd_cache.html#outputtocell" class="tsd-kind-icon">output<wbr>ToCell</a>
+							</li>
+							<li class=" tsd-kind-function tsd-parent-kind-module">
+								<a href="../modules/hd_cache.html#publickeytomultisigargs" class="tsd-kind-icon">public<wbr>Key<wbr>ToMultisig<wbr>Args</a>
+							</li>
+							<li class=" tsd-kind-function tsd-parent-kind-module">
+								<a href="../modules/hd_cache.html#publickeytomultisigargs-1" class="tsd-kind-icon">public<wbr>Key<wbr>ToMultisig<wbr>Args</a>
+							</li>
+							<li class=" tsd-kind-function tsd-parent-kind-module">
+								<a href="../modules/hd_cache.html#serializeoutpoint" class="tsd-kind-icon">serialize<wbr>Out<wbr>Point</a>
+							</li>
+							<li class=" tsd-kind-function tsd-parent-kind-module">
+								<a href="../modules/hd_cache.html#serializeoutpoint-1" class="tsd-kind-icon">serialize<wbr>Out<wbr>Point</a>
 							</li>
 						</ul>
 					</li>
