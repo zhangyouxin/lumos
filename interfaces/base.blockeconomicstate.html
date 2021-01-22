@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>SinceBaseValue | lumos</title>
+	<title>BlockEconomicState | lumos</title>
 	<meta name="description" content="Documentation for lumos">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,13 +56,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/common_scripts.html">common-scripts</a>
+					<a href="../modules/base.html">base</a>
 				</li>
 				<li>
-					<a href="common_scripts.sincebasevalue-1.html">SinceBaseValue</a>
+					<a href="base.blockeconomicstate.html">BlockEconomicState</a>
 				</li>
 			</ul>
-			<h1>Interface SinceBaseValue</h1>
+			<h1>Interface BlockEconomicState</h1>
 		</div>
 	</div>
 </header>
@@ -73,7 +73,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">SinceBaseValue</span>
+						<span class="target">BlockEconomicState</span>
 					</li>
 				</ul>
 			</section>
@@ -84,9 +84,10 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="common_scripts.sincebasevalue-1.html#epoch" class="tsd-kind-icon">epoch</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="common_scripts.sincebasevalue-1.html#number" class="tsd-kind-icon">number</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="common_scripts.sincebasevalue-1.html#timestamp" class="tsd-kind-icon">timestamp</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="base.blockeconomicstate.html#finalized_at" class="tsd-kind-icon">finalized_<wbr>at</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="base.blockeconomicstate.html#issuance" class="tsd-kind-icon">issuance</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="base.blockeconomicstate.html#miner_reward" class="tsd-kind-icon">miner_<wbr>reward</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="base.blockeconomicstate.html#txs_fee" class="tsd-kind-icon">txs_<wbr>fee</a></li>
 							</ul>
 						</section>
 					</div>
@@ -95,32 +96,70 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="epoch" class="tsd-anchor"></a>
-					<h3>epoch</h3>
-					<div class="tsd-signature tsd-kind-icon">epoch<span class="tsd-signature-symbol">:</span> <a href="../modules/base.html#hexstring" class="tsd-signature-type">HexString</a></div>
+					<a name="finalized_at" class="tsd-anchor"></a>
+					<h3>finalized_<wbr>at</h3>
+					<div class="tsd-signature tsd-kind-icon">finalized_<wbr>at<span class="tsd-signature-symbol">:</span> <a href="../modules/base.html#hash" class="tsd-signature-type">Hash</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/common-scripts/lib/locktime_pool.d.ts:6</li>
+							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/4f13748/packages/base/index.d.ts#L154">packages/base/index.d.ts:154</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="number" class="tsd-anchor"></a>
-					<h3>number</h3>
-					<div class="tsd-signature tsd-kind-icon">number<span class="tsd-signature-symbol">:</span> <a href="../modules/base.html#hexstring" class="tsd-signature-type">HexString</a></div>
+					<a name="issuance" class="tsd-anchor"></a>
+					<h3>issuance</h3>
+					<div class="tsd-signature tsd-kind-icon">issuance<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>primary<span class="tsd-signature-symbol">: </span><a href="../modules/base.html#hexnumber" class="tsd-signature-type">HexNumber</a><span class="tsd-signature-symbol">; </span>secondary<span class="tsd-signature-symbol">: </span><a href="../modules/base.html#hexnumber" class="tsd-signature-type">HexNumber</a><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/common-scripts/lib/locktime_pool.d.ts:7</li>
+							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/4f13748/packages/base/index.d.ts#L143">packages/base/index.d.ts:143</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>primary<span class="tsd-signature-symbol">: </span><a href="../modules/base.html#hexnumber" class="tsd-signature-type">HexNumber</a></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>secondary<span class="tsd-signature-symbol">: </span><a href="../modules/base.html#hexnumber" class="tsd-signature-type">HexNumber</a></h5>
+							</li>
+						</ul>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="timestamp" class="tsd-anchor"></a>
-					<h3>timestamp</h3>
-					<div class="tsd-signature tsd-kind-icon">timestamp<span class="tsd-signature-symbol">:</span> <a href="../modules/base.html#hexstring" class="tsd-signature-type">HexString</a></div>
+					<a name="miner_reward" class="tsd-anchor"></a>
+					<h3>miner_<wbr>reward</h3>
+					<div class="tsd-signature tsd-kind-icon">miner_<wbr>reward<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>committed<span class="tsd-signature-symbol">: </span><a href="../modules/base.html#hexnumber" class="tsd-signature-type">HexNumber</a><span class="tsd-signature-symbol">; </span>primary<span class="tsd-signature-symbol">: </span><a href="../modules/base.html#hexnumber" class="tsd-signature-type">HexNumber</a><span class="tsd-signature-symbol">; </span>proposal<span class="tsd-signature-symbol">: </span><a href="../modules/base.html#hexnumber" class="tsd-signature-type">HexNumber</a><span class="tsd-signature-symbol">; </span>secondary<span class="tsd-signature-symbol">: </span><a href="../modules/base.html#hexnumber" class="tsd-signature-type">HexNumber</a><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/common-scripts/lib/locktime_pool.d.ts:8</li>
+							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/4f13748/packages/base/index.d.ts#L147">packages/base/index.d.ts:147</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>committed<span class="tsd-signature-symbol">: </span><a href="../modules/base.html#hexnumber" class="tsd-signature-type">HexNumber</a></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>primary<span class="tsd-signature-symbol">: </span><a href="../modules/base.html#hexnumber" class="tsd-signature-type">HexNumber</a></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>proposal<span class="tsd-signature-symbol">: </span><a href="../modules/base.html#hexnumber" class="tsd-signature-type">HexNumber</a></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>secondary<span class="tsd-signature-symbol">: </span><a href="../modules/base.html#hexnumber" class="tsd-signature-type">HexNumber</a></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="txs_fee" class="tsd-anchor"></a>
+					<h3>txs_<wbr>fee</h3>
+					<div class="tsd-signature tsd-kind-icon">txs_<wbr>fee<span class="tsd-signature-symbol">:</span> <a href="../modules/base.html#hexnumber" class="tsd-signature-type">HexNumber</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/4f13748/packages/base/index.d.ts#L153">packages/base/index.d.ts:153</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -132,10 +171,10 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class="current tsd-kind-module">
 						<a href="../modules/base.html">base</a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class=" tsd-kind-module">
 						<a href="../modules/common_scripts.html">common-<wbr>scripts</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -154,6 +193,9 @@
 						<a href="../modules/indexer.html">indexer</a>
 					</li>
 					<li class=" tsd-kind-module">
+						<a href="../modules/rpc.html">rpc</a>
+					</li>
+					<li class=" tsd-kind-module">
 						<a href="../modules/sql_indexer.html">sql-<wbr>indexer</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -163,25 +205,25 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-module">
-						<a href="../modules/base.html" class="tsd-kind-icon">base</a>
-					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-module">
-						<a href="../modules/common_scripts.html" class="tsd-kind-icon">common-<wbr>scripts</a>
+						<a href="../modules/base.html" class="tsd-kind-icon">base</a>
 						<ul>
 							<li class="current tsd-kind-interface tsd-parent-kind-module">
-								<a href="common_scripts.sincebasevalue-1.html" class="tsd-kind-icon">Since<wbr>Base<wbr>Value</a>
+								<a href="base.blockeconomicstate.html" class="tsd-kind-icon">Block<wbr>Economic<wbr>State</a>
 								<ul>
 									<li class=" tsd-kind-property tsd-parent-kind-interface">
-										<a href="common_scripts.sincebasevalue-1.html#epoch" class="tsd-kind-icon">epoch</a>
+										<a href="base.blockeconomicstate.html#finalized_at" class="tsd-kind-icon">finalized_<wbr>at</a>
 									</li>
 									<li class=" tsd-kind-property tsd-parent-kind-interface">
-										<a href="common_scripts.sincebasevalue-1.html#number" class="tsd-kind-icon">number</a>
+										<a href="base.blockeconomicstate.html#issuance" class="tsd-kind-icon">issuance</a>
 									</li>
 									<li class=" tsd-kind-property tsd-parent-kind-interface">
-										<a href="common_scripts.sincebasevalue-1.html#timestamp" class="tsd-kind-icon">timestamp</a>
+										<a href="base.blockeconomicstate.html#miner_reward" class="tsd-kind-icon">miner_<wbr>reward</a>
+									</li>
+									<li class=" tsd-kind-property tsd-parent-kind-interface">
+										<a href="base.blockeconomicstate.html#txs_fee" class="tsd-kind-icon">txs_<wbr>fee</a>
 									</li>
 								</ul>
 							</li>
@@ -189,6 +231,9 @@
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-module">
+						<a href="../modules/common_scripts.html" class="tsd-kind-icon">common-<wbr>scripts</a>
+					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/config_manager.html" class="tsd-kind-icon">config-<wbr>manager</a>
 					</li>
@@ -203,6 +248,9 @@
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/indexer.html" class="tsd-kind-icon">indexer</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/rpc.html" class="tsd-kind-icon">rpc</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/sql_indexer.html" class="tsd-kind-icon">sql-<wbr>indexer</a>

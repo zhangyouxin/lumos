@@ -175,6 +175,11 @@ fs.writeFileSync(<span class="hljs-string">&quot;your file&quot;</span>, <span c
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="helpers.html#createtransactionfromskeleton-1" class="tsd-kind-icon">create<wbr>Transaction<wbr>From<wbr>Skeleton</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="helpers.html#generateaddress" class="tsd-kind-icon">generate<wbr>Address</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="helpers.html#generateaddress-1" class="tsd-kind-icon">generate<wbr>Address</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="helpers.html#generatepredefinedaddress" class="tsd-kind-icon">generate<wbr>Predefined<wbr>Address</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="helpers.html#generatesecp256k1blake160address" class="tsd-kind-icon">generate<wbr>Secp256k1<wbr>Blake160<wbr>Address</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="helpers.html#generatesecp256k1blake160address-1" class="tsd-kind-icon">generate<wbr>Secp256k1<wbr>Blake160<wbr>Address</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="helpers.html#generatesecp256k1blake160multisigaddress" class="tsd-kind-icon">generate<wbr>Secp256k1<wbr>Blake160<wbr>Multisig<wbr>Address</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="helpers.html#generatesecp256k1blake160multisigaddress-1" class="tsd-kind-icon">generate<wbr>Secp256k1<wbr>Blake160<wbr>Multisig<wbr>Address</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="helpers.html#hextobytearray" class="tsd-kind-icon">hex<wbr>ToByte<wbr>Array</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="helpers.html#locatecelldep" class="tsd-kind-icon">locate<wbr>Cell<wbr>Dep</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="helpers.html#locatecelldep-1" class="tsd-kind-icon">locate<wbr>Cell<wbr>Dep</a></li>
@@ -201,7 +206,7 @@ fs.writeFileSync(<span class="hljs-string">&quot;your file&quot;</span>, <span c
 					<div class="tsd-signature tsd-kind-icon">Transaction<wbr>Skeleton<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/helpers.transactionskeletoninterface.html" class="tsd-signature-type">TransactionSkeletonInterface</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/helpers.transactionskeletoninterface.html" class="tsd-signature-type">TransactionSkeletonInterface</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/helpers/lib/index.d.ts:33</li>
+							<li>Defined in packages/helpers/lib/index.d.ts:35</li>
 						</ul>
 					</aside>
 				</section>
@@ -211,7 +216,7 @@ fs.writeFileSync(<span class="hljs-string">&quot;your file&quot;</span>, <span c
 					<div class="tsd-signature tsd-kind-icon">Transaction<wbr>Skeleton<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/helpers.transactionskeletoninterface-1.html" class="tsd-signature-type">TransactionSkeletonInterface</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/helpers.transactionskeletoninterface-1.html" class="tsd-signature-type">TransactionSkeletonInterface</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/f6f76ba/packages/helpers/src/index.ts#L177">packages/helpers/src/index.ts:177</a></li>
+							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/4f13748/packages/helpers/src/index.ts#L209">packages/helpers/src/index.ts:209</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -224,7 +229,7 @@ fs.writeFileSync(<span class="hljs-string">&quot;your file&quot;</span>, <span c
 					<div class="tsd-signature tsd-kind-icon">BECH32_<wbr>LIMIT<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">1023</span><span class="tsd-signature-symbol"> = 1023</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/f6f76ba/packages/helpers/src/index.ts#L23">packages/helpers/src/index.ts:23</a></li>
+							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/4f13748/packages/helpers/src/index.ts#L23">packages/helpers/src/index.ts:23</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -234,7 +239,7 @@ fs.writeFileSync(<span class="hljs-string">&quot;your file&quot;</span>, <span c
 					<div class="tsd-signature tsd-kind-icon">Transaction<wbr>Skeleton<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Factory</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/helpers.transactionskeletoninterface.html" class="tsd-signature-type">TransactionSkeletonInterface</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/helpers/lib/index.d.ts:34</li>
+							<li>Defined in packages/helpers/lib/index.d.ts:36</li>
 						</ul>
 					</aside>
 				</section>
@@ -244,7 +249,7 @@ fs.writeFileSync(<span class="hljs-string">&quot;your file&quot;</span>, <span c
 					<div class="tsd-signature tsd-kind-icon">Transaction<wbr>Skeleton<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Factory</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/helpers.transactionskeletoninterface-1.html" class="tsd-signature-type">TransactionSkeletonInterface</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = Record&lt;TransactionSkeletonInterface&gt;({cellProvider: null,cellDeps: List(),headerDeps: List(),inputs: List(),outputs: List(),witnesses: List(),fixedEntries: List(),signingEntries: List(),inputSinces: ImmutableMap(),})</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/f6f76ba/packages/helpers/src/index.ts#L180">packages/helpers/src/index.ts:180</a></li>
+							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/4f13748/packages/helpers/src/index.ts#L212">packages/helpers/src/index.ts:212</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -254,7 +259,7 @@ fs.writeFileSync(<span class="hljs-string">&quot;your file&quot;</span>, <span c
 					<div class="tsd-signature tsd-kind-icon">address<wbr>ToScript<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">typeof </span><a href="helpers.html#parseaddress" class="tsd-signature-type">parseAddress</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/helpers/lib/index.d.ts:14</li>
+							<li>Defined in packages/helpers/lib/index.d.ts:16</li>
 						</ul>
 					</aside>
 				</section>
@@ -264,7 +269,7 @@ fs.writeFileSync(<span class="hljs-string">&quot;your file&quot;</span>, <span c
 					<div class="tsd-signature tsd-kind-icon">address<wbr>ToScript<span class="tsd-signature-symbol">:</span> <a href="helpers.html#parseaddress-1" class="tsd-signature-type">parseAddress</a><span class="tsd-signature-symbol"> = parseAddress</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/f6f76ba/packages/helpers/src/index.ts#L163">packages/helpers/src/index.ts:163</a></li>
+							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/4f13748/packages/helpers/src/index.ts#L195">packages/helpers/src/index.ts:195</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -284,7 +289,7 @@ fs.writeFileSync(<span class="hljs-string">&quot;your file&quot;</span>, <span c
 					<div class="tsd-signature tsd-kind-icon">script<wbr>ToAddress<span class="tsd-signature-symbol">:</span> <a href="helpers.html#generateaddress-1" class="tsd-signature-type">generateAddress</a><span class="tsd-signature-symbol"> = generateAddress</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/f6f76ba/packages/helpers/src/index.ts#L111">packages/helpers/src/index.ts:111</a></li>
+							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/4f13748/packages/helpers/src/index.ts#L111">packages/helpers/src/index.ts:111</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -301,7 +306,7 @@ fs.writeFileSync(<span class="hljs-string">&quot;your file&quot;</span>, <span c
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/f6f76ba/packages/helpers/src/index.ts#L25">packages/helpers/src/index.ts:25</a></li>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/4f13748/packages/helpers/src/index.ts#L25">packages/helpers/src/index.ts:25</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -324,7 +329,7 @@ fs.writeFileSync(<span class="hljs-string">&quot;your file&quot;</span>, <span c
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/helpers/lib/index.d.ts:35</li>
+									<li>Defined in packages/helpers/lib/index.d.ts:37</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -355,7 +360,7 @@ fs.writeFileSync(<span class="hljs-string">&quot;your file&quot;</span>, <span c
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/f6f76ba/packages/helpers/src/index.ts#L192">packages/helpers/src/index.ts:192</a></li>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/4f13748/packages/helpers/src/index.ts#L224">packages/helpers/src/index.ts:224</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -417,13 +422,171 @@ fs.writeFileSync(<span class="hljs-string">&quot;your file&quot;</span>, <span c
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/f6f76ba/packages/helpers/src/index.ts#L89">packages/helpers/src/index.ts:89</a></li>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/4f13748/packages/helpers/src/index.ts#L89">packages/helpers/src/index.ts:89</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>script: <a href="../interfaces/base.script-1.html" class="tsd-signature-type">Script</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> __namedParameters: <span class="tsd-signature-symbol">{ </span>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/config_manager.config.html" class="tsd-signature-type">Config</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> = {}</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/config_manager.config.html" class="tsd-signature-type">Config</a></h5>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="base.html#address" class="tsd-signature-type">Address</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="generatepredefinedaddress" class="tsd-anchor"></a>
+					<h3>generate<wbr>Predefined<wbr>Address</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">generate<wbr>Predefined<wbr>Address<span class="tsd-signature-symbol">(</span>args<span class="tsd-signature-symbol">: </span><a href="base.html#hexstring" class="tsd-signature-type">HexString</a>, scriptType<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, __namedParameters<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/config_manager.config.html" class="tsd-signature-type">Config</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="base.html#address" class="tsd-signature-type">Address</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/4f13748/packages/helpers/src/index.ts#L113">packages/helpers/src/index.ts:113</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>args: <a href="base.html#hexstring" class="tsd-signature-type">HexString</a></h5>
+								</li>
+								<li>
+									<h5>scriptType: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> __namedParameters: <span class="tsd-signature-symbol">{ </span>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/config_manager.config.html" class="tsd-signature-type">Config</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> = {}</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/config_manager.config.html" class="tsd-signature-type">Config</a></h5>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="base.html#address" class="tsd-signature-type">Address</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="generatesecp256k1blake160address" class="tsd-anchor"></a>
+					<h3>generate<wbr>Secp256k1<wbr>Blake160<wbr>Address</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">generate<wbr>Secp256k1<wbr>Blake160<wbr>Address<span class="tsd-signature-symbol">(</span>args<span class="tsd-signature-symbol">: </span><a href="base.html#hexstring" class="tsd-signature-type">HexString</a>, __namedParameters<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/config_manager.config.html" class="tsd-signature-type">Config</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="base.html#address" class="tsd-signature-type">Address</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in packages/helpers/lib/index.d.ts:13</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>args: <a href="base.html#hexstring" class="tsd-signature-type">HexString</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> __namedParameters: <span class="tsd-signature-symbol">{ </span>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/config_manager.config.html" class="tsd-signature-type">Config</a><span class="tsd-signature-symbol"> }</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/config_manager.config.html" class="tsd-signature-type">Config</a></h5>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="base.html#address" class="tsd-signature-type">Address</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="generatesecp256k1blake160address-1" class="tsd-anchor"></a>
+					<h3>generate<wbr>Secp256k1<wbr>Blake160<wbr>Address</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">generate<wbr>Secp256k1<wbr>Blake160<wbr>Address<span class="tsd-signature-symbol">(</span>args<span class="tsd-signature-symbol">: </span><a href="base.html#hexstring" class="tsd-signature-type">HexString</a>, __namedParameters<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/config_manager.config.html" class="tsd-signature-type">Config</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="base.html#address" class="tsd-signature-type">Address</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/4f13748/packages/helpers/src/index.ts#L129">packages/helpers/src/index.ts:129</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>args: <a href="base.html#hexstring" class="tsd-signature-type">HexString</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> __namedParameters: <span class="tsd-signature-symbol">{ </span>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/config_manager.config.html" class="tsd-signature-type">Config</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> = {}</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/config_manager.config.html" class="tsd-signature-type">Config</a></h5>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="base.html#address" class="tsd-signature-type">Address</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="generatesecp256k1blake160multisigaddress" class="tsd-anchor"></a>
+					<h3>generate<wbr>Secp256k1<wbr>Blake160<wbr>Multisig<wbr>Address</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">generate<wbr>Secp256k1<wbr>Blake160<wbr>Multisig<wbr>Address<span class="tsd-signature-symbol">(</span>args<span class="tsd-signature-symbol">: </span><a href="base.html#hexstring" class="tsd-signature-type">HexString</a>, __namedParameters<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/config_manager.config.html" class="tsd-signature-type">Config</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="base.html#address" class="tsd-signature-type">Address</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in packages/helpers/lib/index.d.ts:14</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>args: <a href="base.html#hexstring" class="tsd-signature-type">HexString</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> __namedParameters: <span class="tsd-signature-symbol">{ </span>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/config_manager.config.html" class="tsd-signature-type">Config</a><span class="tsd-signature-symbol"> }</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/config_manager.config.html" class="tsd-signature-type">Config</a></h5>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="base.html#address" class="tsd-signature-type">Address</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="generatesecp256k1blake160multisigaddress-1" class="tsd-anchor"></a>
+					<h3>generate<wbr>Secp256k1<wbr>Blake160<wbr>Multisig<wbr>Address</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">generate<wbr>Secp256k1<wbr>Blake160<wbr>Multisig<wbr>Address<span class="tsd-signature-symbol">(</span>args<span class="tsd-signature-symbol">: </span><a href="base.html#hexstring" class="tsd-signature-type">HexString</a>, __namedParameters<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/config_manager.config.html" class="tsd-signature-type">Config</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="base.html#address" class="tsd-signature-type">Address</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/4f13748/packages/helpers/src/index.ts#L136">packages/helpers/src/index.ts:136</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>args: <a href="base.html#hexstring" class="tsd-signature-type">HexString</a></h5>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> __namedParameters: <span class="tsd-signature-symbol">{ </span>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/config_manager.config.html" class="tsd-signature-type">Config</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> = {}</span></h5>
@@ -448,7 +611,7 @@ fs.writeFileSync(<span class="hljs-string">&quot;your file&quot;</span>, <span c
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/f6f76ba/packages/helpers/src/index.ts#L29">packages/helpers/src/index.ts:29</a></li>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/4f13748/packages/helpers/src/index.ts#L29">packages/helpers/src/index.ts:29</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -502,7 +665,7 @@ fs.writeFileSync(<span class="hljs-string">&quot;your file&quot;</span>, <span c
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/f6f76ba/packages/helpers/src/index.ts#L68">packages/helpers/src/index.ts:68</a></li>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/4f13748/packages/helpers/src/index.ts#L68">packages/helpers/src/index.ts:68</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -564,7 +727,7 @@ fs.writeFileSync(<span class="hljs-string">&quot;your file&quot;</span>, <span c
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/f6f76ba/packages/helpers/src/index.ts#L44">packages/helpers/src/index.ts:44</a></li>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/4f13748/packages/helpers/src/index.ts#L44">packages/helpers/src/index.ts:44</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -595,7 +758,7 @@ fs.writeFileSync(<span class="hljs-string">&quot;your file&quot;</span>, <span c
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/helpers/lib/index.d.ts:68</li>
+									<li>Defined in packages/helpers/lib/index.d.ts:70</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -625,7 +788,7 @@ fs.writeFileSync(<span class="hljs-string">&quot;your file&quot;</span>, <span c
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/f6f76ba/packages/helpers/src/index.ts#L299">packages/helpers/src/index.ts:299</a></li>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/4f13748/packages/helpers/src/index.ts#L331">packages/helpers/src/index.ts:331</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -655,7 +818,7 @@ fs.writeFileSync(<span class="hljs-string">&quot;your file&quot;</span>, <span c
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/helpers/lib/index.d.ts:13</li>
+									<li>Defined in packages/helpers/lib/index.d.ts:15</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -686,7 +849,7 @@ fs.writeFileSync(<span class="hljs-string">&quot;your file&quot;</span>, <span c
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/f6f76ba/packages/helpers/src/index.ts#L113">packages/helpers/src/index.ts:113</a></li>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/4f13748/packages/helpers/src/index.ts#L145">packages/helpers/src/index.ts:145</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -717,7 +880,7 @@ fs.writeFileSync(<span class="hljs-string">&quot;your file&quot;</span>, <span c
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/helpers/lib/index.d.ts:38</li>
+									<li>Defined in packages/helpers/lib/index.d.ts:40</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -743,7 +906,7 @@ fs.writeFileSync(<span class="hljs-string">&quot;your file&quot;</span>, <span c
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/f6f76ba/packages/helpers/src/index.ts#L225">packages/helpers/src/index.ts:225</a></li>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/4f13748/packages/helpers/src/index.ts#L257">packages/helpers/src/index.ts:257</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -769,7 +932,7 @@ fs.writeFileSync(<span class="hljs-string">&quot;your file&quot;</span>, <span c
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/helpers/lib/index.d.ts:62</li>
+									<li>Defined in packages/helpers/lib/index.d.ts:64</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -799,7 +962,7 @@ fs.writeFileSync(<span class="hljs-string">&quot;your file&quot;</span>, <span c
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/f6f76ba/packages/helpers/src/index.ts#L288">packages/helpers/src/index.ts:288</a></li>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/4f13748/packages/helpers/src/index.ts#L320">packages/helpers/src/index.ts:320</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -847,6 +1010,9 @@ fs.writeFileSync(<span class="hljs-string">&quot;your file&quot;</span>, <span c
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="indexer.html">indexer</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="rpc.html">rpc</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="sql_indexer.html">sql-<wbr>indexer</a>
@@ -939,6 +1105,21 @@ fs.writeFileSync(<span class="hljs-string">&quot;your file&quot;</span>, <span c
 								<a href="helpers.html#generateaddress-1" class="tsd-kind-icon">generate<wbr>Address</a>
 							</li>
 							<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+								<a href="helpers.html#generatepredefinedaddress" class="tsd-kind-icon">generate<wbr>Predefined<wbr>Address</a>
+							</li>
+							<li class=" tsd-kind-function tsd-parent-kind-module">
+								<a href="helpers.html#generatesecp256k1blake160address" class="tsd-kind-icon">generate<wbr>Secp256k1<wbr>Blake160<wbr>Address</a>
+							</li>
+							<li class=" tsd-kind-function tsd-parent-kind-module">
+								<a href="helpers.html#generatesecp256k1blake160address-1" class="tsd-kind-icon">generate<wbr>Secp256k1<wbr>Blake160<wbr>Address</a>
+							</li>
+							<li class=" tsd-kind-function tsd-parent-kind-module">
+								<a href="helpers.html#generatesecp256k1blake160multisigaddress" class="tsd-kind-icon">generate<wbr>Secp256k1<wbr>Blake160<wbr>Multisig<wbr>Address</a>
+							</li>
+							<li class=" tsd-kind-function tsd-parent-kind-module">
+								<a href="helpers.html#generatesecp256k1blake160multisigaddress-1" class="tsd-kind-icon">generate<wbr>Secp256k1<wbr>Blake160<wbr>Multisig<wbr>Address</a>
+							</li>
+							<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 								<a href="helpers.html#hextobytearray" class="tsd-kind-icon">hex<wbr>ToByte<wbr>Array</a>
 							</li>
 							<li class=" tsd-kind-function tsd-parent-kind-module">
@@ -983,6 +1164,9 @@ fs.writeFileSync(<span class="hljs-string">&quot;your file&quot;</span>, <span c
 				<ul class="after-current">
 					<li class=" tsd-kind-module">
 						<a href="indexer.html" class="tsd-kind-icon">indexer</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="rpc.html" class="tsd-kind-icon">rpc</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="sql_indexer.html" class="tsd-kind-icon">sql-<wbr>indexer</a>

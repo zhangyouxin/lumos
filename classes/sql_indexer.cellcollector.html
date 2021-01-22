@@ -73,7 +73,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="indexer.cellcollector.html" class="tsd-signature-type">CellCollector</a>
+						<a href="base.basecellcollector.html" class="tsd-signature-type">BaseCellCollector</a>
 						<ul class="tsd-hierarchy">
 							<li>
 								<span class="target">CellCollector</span>
@@ -95,7 +95,7 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="sql_indexer.cellcollector.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="sql_indexer.cellcollector.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section tsd-is-inherited">
@@ -110,18 +110,17 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">new <wbr>Cell<wbr>Collector<span class="tsd-signature-symbol">(</span>knex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Knex</span>, queries<span class="tsd-signature-symbol">: </span><a href="../interfaces/base.queryoptions.html" class="tsd-signature-type">QueryOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="sql_indexer.cellcollector.html" class="tsd-signature-type">CellCollector</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overrides <a href="indexer.cellcollector.html">CellCollector</a>.<a href="indexer.cellcollector.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/f6f76ba/packages/sql-indexer/index.d.ts#L13">packages/sql-indexer/index.d.ts:13</a></li>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/4f13748/packages/sql-indexer/index.d.ts#L15">packages/sql-indexer/index.d.ts:15</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -150,9 +149,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/base.cellcollector.html">CellCollector</a>.<a href="../interfaces/base.cellcollector.html#collect">collect</a></p>
-								<p>Inherited from <a href="indexer.cellcollector.html">CellCollector</a>.<a href="indexer.cellcollector.html#collect">collect</a></p>
+								<p>Inherited from <a href="base.basecellcollector.html">BaseCellCollector</a>.<a href="base.basecellcollector.html#collect">collect</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/f6f76ba/packages/indexer/index.d.ts#L33">packages/indexer/index.d.ts:33</a></li>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/4f13748/packages/base/index.d.ts#L619">packages/base/index.d.ts:619</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="../interfaces/base.cellcollectorresults.html" class="tsd-signature-type">CellCollectorResults</a></h4>
@@ -168,9 +167,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="indexer.cellcollector.html">CellCollector</a>.<a href="indexer.cellcollector.html#count">count</a></p>
+								<p>Inherited from <a href="base.basecellcollector.html">BaseCellCollector</a>.<a href="base.basecellcollector.html#count">count</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/f6f76ba/packages/indexer/index.d.ts#L31">packages/indexer/index.d.ts:31</a></li>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/4f13748/packages/base/index.d.ts#L617">packages/base/index.d.ts:617</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -206,6 +205,9 @@
 					<li class=" tsd-kind-module">
 						<a href="../modules/indexer.html">indexer</a>
 					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/rpc.html">rpc</a>
+					</li>
 					<li class="current tsd-kind-module">
 						<a href="../modules/sql_indexer.html">sql-<wbr>indexer</a>
 					</li>
@@ -237,6 +239,9 @@
 					<li class=" tsd-kind-module">
 						<a href="../modules/indexer.html" class="tsd-kind-icon">indexer</a>
 					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/rpc.html" class="tsd-kind-icon">rpc</a>
+					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-module">
@@ -245,7 +250,7 @@
 							<li class="current tsd-kind-class tsd-parent-kind-module">
 								<a href="sql_indexer.cellcollector.html" class="tsd-kind-icon">Cell<wbr>Collector</a>
 								<ul>
-									<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+									<li class=" tsd-kind-constructor tsd-parent-kind-class">
 										<a href="sql_indexer.cellcollector.html#constructor" class="tsd-kind-icon">constructor</a>
 									</li>
 									<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
@@ -258,6 +263,9 @@
 							</li>
 							<li class=" tsd-kind-class tsd-parent-kind-module">
 								<a href="sql_indexer.indexer.html" class="tsd-kind-icon">Indexer</a>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="sql_indexer.transactioncollector.html" class="tsd-kind-icon">Transaction<wbr>Collector</a>
 							</li>
 						</ul>
 					</li>

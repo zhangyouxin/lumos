@@ -73,7 +73,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="indexer.indexer-1.html" class="tsd-signature-type">Indexer</a>
+						<a href="base.indexer.html" class="tsd-signature-type">Indexer</a>
 						<ul class="tsd-hierarchy">
 							<li>
 								<span class="target">Indexer</span>
@@ -89,7 +89,7 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="sql_indexer.indexer.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="sql_indexer.indexer.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section tsd-is-inherited">
@@ -107,7 +107,9 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="sql_indexer.indexer.html#startforever" class="tsd-kind-icon">start<wbr>Forever</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="sql_indexer.indexer.html#stop" class="tsd-kind-icon">stop</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="sql_indexer.indexer.html#subscribe" class="tsd-kind-icon">subscribe</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="sql_indexer.indexer.html#subscribemediantime" class="tsd-kind-icon">subscribe<wbr>Median<wbr>Time</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="sql_indexer.indexer.html#tip" class="tsd-kind-icon">tip</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="sql_indexer.indexer.html#waitforsync" class="tsd-kind-icon">wait<wbr>For<wbr>Sync</a></li>
 							</ul>
 						</section>
 					</div>
@@ -115,18 +117,17 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Indexer<span class="tsd-signature-symbol">(</span>uri<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, knex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Knex</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/indexer.indexeroptions.html" class="tsd-signature-type">IndexerOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="sql_indexer.indexer.html" class="tsd-signature-type">Indexer</a></li>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Indexer<span class="tsd-signature-symbol">(</span>uri<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, knex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Knex</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/base.indexeroptions.html" class="tsd-signature-type">IndexerOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="sql_indexer.indexer.html" class="tsd-signature-type">Indexer</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overrides <a href="indexer.indexer-1.html">Indexer</a>.<a href="indexer.indexer-1.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/f6f76ba/packages/sql-indexer/index.d.ts#L9">packages/sql-indexer/index.d.ts:9</a></li>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/4f13748/packages/sql-indexer/index.d.ts#L11">packages/sql-indexer/index.d.ts:11</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -138,7 +139,7 @@
 									<h5>knex: <span class="tsd-signature-type">Knex</span></h5>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/indexer.indexeroptions.html" class="tsd-signature-type">IndexerOptions</a></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/base.indexeroptions.html" class="tsd-signature-type">IndexerOptions</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="sql_indexer.indexer.html" class="tsd-signature-type">Indexer</a></h4>
@@ -153,9 +154,9 @@
 					<h3>uri</h3>
 					<div class="tsd-signature tsd-kind-icon">uri<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="indexer.indexer-1.html">Indexer</a>.<a href="indexer.indexer-1.html#uri">uri</a></p>
+						<p>Inherited from <a href="base.indexer.html">Indexer</a>.<a href="base.indexer.html#uri">uri</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/f6f76ba/packages/indexer/index.d.ts#L53">packages/indexer/index.d.ts:53</a></li>
+							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/4f13748/packages/base/index.d.ts#L601">packages/base/index.d.ts:601</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -166,14 +167,14 @@
 					<a name="collector" class="tsd-anchor"></a>
 					<h3>collector</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">collector<span class="tsd-signature-symbol">(</span>queries<span class="tsd-signature-symbol">: </span><a href="../interfaces/base.queryoptions.html" class="tsd-signature-type">QueryOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="indexer.cellcollector.html" class="tsd-signature-type">CellCollector</a></li>
+						<li class="tsd-signature tsd-kind-icon">collector<span class="tsd-signature-symbol">(</span>queries<span class="tsd-signature-symbol">: </span><a href="../interfaces/base.queryoptions.html" class="tsd-signature-type">QueryOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/base.cellcollector.html" class="tsd-signature-type">CellCollector</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="indexer.indexer-1.html">Indexer</a>.<a href="indexer.indexer-1.html#collector">collector</a></p>
+								<p>Inherited from <a href="base.indexer.html">Indexer</a>.<a href="base.indexer.html#collector">collector</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/f6f76ba/packages/indexer/index.d.ts#L63">packages/indexer/index.d.ts:63</a></li>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/4f13748/packages/base/index.d.ts#L609">packages/base/index.d.ts:609</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -182,7 +183,7 @@
 									<h5>queries: <a href="../interfaces/base.queryoptions.html" class="tsd-signature-type">QueryOptions</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="indexer.cellcollector.html" class="tsd-signature-type">CellCollector</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/base.cellcollector.html" class="tsd-signature-type">CellCollector</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -195,9 +196,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="indexer.indexer-1.html">Indexer</a>.<a href="indexer.indexer-1.html#running">running</a></p>
+								<p>Inherited from <a href="base.indexer.html">Indexer</a>.<a href="base.indexer.html#running">running</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/f6f76ba/packages/indexer/index.d.ts#L57">packages/indexer/index.d.ts:57</a></li>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/4f13748/packages/base/index.d.ts#L603">packages/base/index.d.ts:603</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -213,9 +214,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="indexer.indexer-1.html">Indexer</a>.<a href="indexer.indexer-1.html#start">start</a></p>
+								<p>Inherited from <a href="base.indexer.html">Indexer</a>.<a href="base.indexer.html#start">start</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/f6f76ba/packages/indexer/index.d.ts#L59">packages/indexer/index.d.ts:59</a></li>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/4f13748/packages/base/index.d.ts#L605">packages/base/index.d.ts:605</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -231,9 +232,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="indexer.indexer-1.html">Indexer</a>.<a href="indexer.indexer-1.html#startforever">startForever</a></p>
+								<p>Inherited from <a href="base.indexer.html">Indexer</a>.<a href="base.indexer.html#startforever">startForever</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/f6f76ba/packages/indexer/index.d.ts#L58">packages/indexer/index.d.ts:58</a></li>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/4f13748/packages/base/index.d.ts#L604">packages/base/index.d.ts:604</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -249,9 +250,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="indexer.indexer-1.html">Indexer</a>.<a href="indexer.indexer-1.html#stop">stop</a></p>
+								<p>Inherited from <a href="base.indexer.html">Indexer</a>.<a href="base.indexer.html#stop">stop</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/f6f76ba/packages/indexer/index.d.ts#L60">packages/indexer/index.d.ts:60</a></li>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/4f13748/packages/base/index.d.ts#L606">packages/base/index.d.ts:606</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -267,9 +268,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="indexer.indexer-1.html">Indexer</a>.<a href="indexer.indexer-1.html#subscribe">subscribe</a></p>
+								<p>Inherited from <a href="base.indexer.html">Indexer</a>.<a href="base.indexer.html#subscribe">subscribe</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/f6f76ba/packages/indexer/index.d.ts#L64">packages/indexer/index.d.ts:64</a></li>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/4f13748/packages/base/index.d.ts#L610">packages/base/index.d.ts:610</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -283,20 +284,62 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-					<a name="tip" class="tsd-anchor"></a>
-					<h3>tip</h3>
+					<a name="subscribemediantime" class="tsd-anchor"></a>
+					<h3>subscribe<wbr>Median<wbr>Time</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">tip<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/indexer.tip.html" class="tsd-signature-type">Tip</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">subscribe<wbr>Median<wbr>Time<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EventEmitter</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="indexer.indexer-1.html">Indexer</a>.<a href="indexer.indexer-1.html#tip">tip</a></p>
+								<p>Inherited from <a href="base.indexer.html">Indexer</a>.<a href="base.indexer.html#subscribemediantime">subscribeMedianTime</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/f6f76ba/packages/indexer/index.d.ts#L61">packages/indexer/index.d.ts:61</a></li>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/4f13748/packages/base/index.d.ts#L611">packages/base/index.d.ts:611</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/indexer.tip.html" class="tsd-signature-type">Tip</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">EventEmitter</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="tip" class="tsd-anchor"></a>
+					<h3>tip</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">tip<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/base.tip.html" class="tsd-signature-type">Tip</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="base.indexer.html">Indexer</a>.<a href="base.indexer.html#tip">tip</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/4f13748/packages/base/index.d.ts#L607">packages/base/index.d.ts:607</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/base.tip.html" class="tsd-signature-type">Tip</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="waitforsync" class="tsd-anchor"></a>
+					<h3>wait<wbr>For<wbr>Sync</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">wait<wbr>For<wbr>Sync<span class="tsd-signature-symbol">(</span>blockDifference<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="base.indexer.html">Indexer</a>.<a href="base.indexer.html#waitforsync">waitForSync</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/4f13748/packages/base/index.d.ts#L612">packages/base/index.d.ts:612</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> blockDifference: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -329,6 +372,9 @@
 					<li class=" tsd-kind-module">
 						<a href="../modules/indexer.html">indexer</a>
 					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/rpc.html">rpc</a>
+					</li>
 					<li class="current tsd-kind-module">
 						<a href="../modules/sql_indexer.html">sql-<wbr>indexer</a>
 					</li>
@@ -360,6 +406,9 @@
 					<li class=" tsd-kind-module">
 						<a href="../modules/indexer.html" class="tsd-kind-icon">indexer</a>
 					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/rpc.html" class="tsd-kind-icon">rpc</a>
+					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-module">
@@ -371,7 +420,7 @@
 							<li class="current tsd-kind-class tsd-parent-kind-module">
 								<a href="sql_indexer.indexer.html" class="tsd-kind-icon">Indexer</a>
 								<ul>
-									<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+									<li class=" tsd-kind-constructor tsd-parent-kind-class">
 										<a href="sql_indexer.indexer.html#constructor" class="tsd-kind-icon">constructor</a>
 									</li>
 									<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
@@ -396,9 +445,18 @@
 										<a href="sql_indexer.indexer.html#subscribe" class="tsd-kind-icon">subscribe</a>
 									</li>
 									<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+										<a href="sql_indexer.indexer.html#subscribemediantime" class="tsd-kind-icon">subscribe<wbr>Median<wbr>Time</a>
+									</li>
+									<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 										<a href="sql_indexer.indexer.html#tip" class="tsd-kind-icon">tip</a>
 									</li>
+									<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+										<a href="sql_indexer.indexer.html#waitforsync" class="tsd-kind-icon">wait<wbr>For<wbr>Sync</a>
+									</li>
 								</ul>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="sql_indexer.transactioncollector.html" class="tsd-kind-icon">Transaction<wbr>Collector</a>
 							</li>
 						</ul>
 					</li>

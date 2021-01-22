@@ -393,6 +393,11 @@ eventEmitter.on(<span class="hljs-string">&quot;changed&quot;</span>,  <span cla
   <span class="hljs-comment">// default value is 0</span>
   <span class="hljs-attr">fromBlock</span>: <span class="hljs-number">0x3e8</span>, <span class="hljs-comment">// &quot;0x&quot; + 1000n.toString(16)</span>
 });</code></pre>
+					<p>Listen to median time change when blocks changed.</p>
+					<pre><code class="language-javascript"><span class="hljs-keyword">const</span> medianTimeEmitter = indexer.subscribeMedianTime();
+medianTimeEmitter.on(<span class="hljs-string">&quot;changed&quot;</span>, <span class="hljs-function">(<span class="hljs-params">medianTime</span>) =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(medianTime);
+});</code></pre>
 					<a href="#electron-note" id="electron-note" style="color: inherit; text-decoration: none;">
 						<h2>Electron note</h2>
 					</a>
@@ -417,58 +422,6 @@ eventEmitter.on(<span class="hljs-string">&quot;changed&quot;</span>,  <span cla
 								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/indexer.transactioncollector.html" class="tsd-kind-icon">Transaction<wbr>Collector</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section ">
-							<h3>Interfaces</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/indexer.indexeroptions.html" class="tsd-kind-icon">Indexer<wbr>Options</a></li>
-								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/indexer.tip.html" class="tsd-kind-icon">Tip</a></li>
-								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/indexer.transactioncollectoroptions.html" class="tsd-kind-icon">Transaction<wbr>Collector<wbr>Options</a></li>
-								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/indexer.transactioncollectorresults.html" class="tsd-kind-icon">Transaction<wbr>Collector<wbr>Results</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
-							<h3>Type aliases</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="indexer.html#logger" class="tsd-kind-icon">Logger</a></li>
-							</ul>
-						</section>
-					</div>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Type aliases</h2>
-				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
-					<a name="logger" class="tsd-anchor"></a>
-					<h3>Logger</h3>
-					<div class="tsd-signature tsd-kind-icon">Logger<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>level<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/nervosnetwork/lumos/blob/f6f76ba/packages/indexer/index.d.ts#L8">packages/indexer/index.d.ts:8</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter-signature">
-								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-type-alias">
-									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>level<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-								</ul>
-								<ul class="tsd-descriptions">
-									<li class="tsd-description">
-										<h4 class="tsd-parameters-title">Parameters</h4>
-										<ul class="tsd-parameters">
-											<li>
-												<h5>level: <span class="tsd-signature-type">string</span></h5>
-											</li>
-											<li>
-												<h5>message: <span class="tsd-signature-type">string</span></h5>
-											</li>
-										</ul>
-										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-									</li>
-								</ul>
-							</li>
-						</ul>
 					</div>
 				</section>
 			</section>
@@ -499,6 +452,9 @@ eventEmitter.on(<span class="hljs-string">&quot;changed&quot;</span>,  <span cla
 					</li>
 					<li class="current tsd-kind-module">
 						<a href="indexer.html">indexer</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="rpc.html">rpc</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="sql_indexer.html">sql-<wbr>indexer</a>
@@ -542,25 +498,13 @@ eventEmitter.on(<span class="hljs-string">&quot;changed&quot;</span>,  <span cla
 							<li class=" tsd-kind-class tsd-parent-kind-module">
 								<a href="../classes/indexer.transactioncollector.html" class="tsd-kind-icon">Transaction<wbr>Collector</a>
 							</li>
-							<li class=" tsd-kind-interface tsd-parent-kind-module">
-								<a href="../interfaces/indexer.indexeroptions.html" class="tsd-kind-icon">Indexer<wbr>Options</a>
-							</li>
-							<li class=" tsd-kind-interface tsd-parent-kind-module">
-								<a href="../interfaces/indexer.tip.html" class="tsd-kind-icon">Tip</a>
-							</li>
-							<li class=" tsd-kind-interface tsd-parent-kind-module">
-								<a href="../interfaces/indexer.transactioncollectoroptions.html" class="tsd-kind-icon">Transaction<wbr>Collector<wbr>Options</a>
-							</li>
-							<li class=" tsd-kind-interface tsd-parent-kind-module">
-								<a href="../interfaces/indexer.transactioncollectorresults.html" class="tsd-kind-icon">Transaction<wbr>Collector<wbr>Results</a>
-							</li>
-							<li class=" tsd-kind-type-alias tsd-parent-kind-module">
-								<a href="indexer.html#logger" class="tsd-kind-icon">Logger</a>
-							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-module">
+						<a href="rpc.html" class="tsd-kind-icon">rpc</a>
+					</li>
 					<li class=" tsd-kind-module">
 						<a href="sql_indexer.html" class="tsd-kind-icon">sql-<wbr>indexer</a>
 					</li>
