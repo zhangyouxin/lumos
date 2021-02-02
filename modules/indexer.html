@@ -92,6 +92,24 @@
 					<pre><code class="language-javascript"><span class="hljs-keyword">const</span> { Indexer, CellCollector, TransactionCollector } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;@ckb-lumos/indexer&quot;</span>);
 <span class="hljs-keyword">const</span> indexer = <span class="hljs-keyword">new</span> Indexer(<span class="hljs-string">&quot;http://127.0.0.1:8114&quot;</span>, <span class="hljs-string">&quot;/tmp/indexed-data&quot;</span>);
 indexer.startForever();</code></pre>
+					<p>To enable HTTP persistent connection to CKB node:</p>
+					<pre><code class="language-javascript"><span class="hljs-keyword">const</span> httpAgent = <span class="hljs-keyword">new</span> http.Agent({
+    <span class="hljs-attr">keepAlive</span>: <span class="hljs-literal">true</span>
+});
+<span class="hljs-keyword">const</span> httpsAgent = <span class="hljs-keyword">new</span> https.Agent({
+    <span class="hljs-attr">keepAlive</span>: <span class="hljs-literal">true</span>
+});
+
+<span class="hljs-keyword">const</span> agent = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">_parsedURL</span>) </span>{
+  <span class="hljs-keyword">if</span> (_parsedURL.protocol == <span class="hljs-string">&#x27;http:&#x27;</span>) {
+    <span class="hljs-keyword">return</span> httpAgent;
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">return</span> httpsAgent;
+  }
+}
+
+<span class="hljs-keyword">const</span> uri = <span class="hljs-string">&quot;http://127.0.0.1:8114&quot;</span>;
+<span class="hljs-keyword">const</span> indexer = <span class="hljs-keyword">new</span> Indexer(uri, <span class="hljs-string">&quot;/tmp/indexed-data&quot;</span>, { <span class="hljs-attr">rpcOptions</span>: { <span class="hljs-attr">agent</span>: agent(<span class="hljs-keyword">new</span> URL(uri))}});</code></pre>
 					<a href="#cellcollector" id="cellcollector" style="color: inherit; text-decoration: none;">
 						<h3>CellCollector</h3>
 					</a>
@@ -359,6 +377,50 @@ indexer.startForever();</code></pre>
   <span class="hljs-built_in">console</span>.log(tx);
 }</code></pre>
 					<p>The <code>ioType</code> field is among <code>input | output | both</code>.</p>
+					<a href="#transactioncollector-batch-request" id="transactioncollector-batch-request" style="color: inherit; text-decoration: none;">
+						<h3>TransactionCollector batch request</h3>
+					</a>
+					<p>The TransactionCollector&#39;s <code>collect()</code> method follows an iterator pattern, yielding transaction one by one, which enables pagination combined with <code>skip</code> queryOption together. However, there might be some scenarios you want to send a batch request:</p>
+					<pre><code class="language-javascript">txCollector = <span class="hljs-keyword">new</span> TransactionCollector(indexer, {
+  <span class="hljs-attr">lock</span>: {
+    <span class="hljs-attr">code_hash</span>:
+      <span class="hljs-string">&quot;0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8&quot;</span>,
+    <span class="hljs-attr">hash_type</span>: <span class="hljs-string">&quot;type&quot;</span>,
+    <span class="hljs-attr">args</span>: <span class="hljs-string">&quot;0xa528f2b9a51118b193178db4cf2f3db92e7df323&quot;</span>,
+  },
+});
+
+txHashes = <span class="hljs-keyword">await</span> txCollector.getTransactionHashes().toArray();
+
+<span class="hljs-comment">// use indexer&#x27;s rpc instance or create a new one</span>
+batchRpc = indexer.rpc.batch();
+
+<span class="hljs-comment">// const { RPC } = require(&quot;ckb-js-toolkit&quot;);</span>
+<span class="hljs-comment">// const httpAgent = new http.Agent({</span>
+<span class="hljs-comment">//     keepAlive: true</span>
+<span class="hljs-comment">// });</span>
+<span class="hljs-comment">// const httpsAgent = new https.Agent({</span>
+<span class="hljs-comment">//     keepAlive: true</span>
+<span class="hljs-comment">// });</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">// const agent = function(_parsedURL) {</span>
+<span class="hljs-comment">//   if (_parsedURL.protocol == &#x27;http:&#x27;) {</span>
+<span class="hljs-comment">//       return httpAgent;</span>
+<span class="hljs-comment">//   } else {</span>
+<span class="hljs-comment">//       return httpsAgent;</span>
+<span class="hljs-comment">//   }</span>
+<span class="hljs-comment">// }</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">// const uri = &quot;http://127.0.0.1:8114&quot;;</span>
+<span class="hljs-comment">// const rpc = new RPC(uri, { agent: agent(new URL(uri))});</span>
+
+<span class="hljs-comment">// query 20 txs at most each request</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">20</span> &amp;&amp; i &lt; txHashes.length; i++) {
+  batchRpc = batchRpc.get_transaction(txHashes[i]);
+}
+
+<span class="hljs-keyword">await</span> batchRpc.send();
+</code></pre>
 					<a href="#eventemitter" id="eventemitter" style="color: inherit; text-decoration: none;">
 						<h3>EventEmitter</h3>
 					</a>
