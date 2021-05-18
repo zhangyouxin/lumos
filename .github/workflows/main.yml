@@ -2,29 +2,37 @@ name: CI
 
 on: [ push, pull_request ]
 
-strategy:
-  matrix:
-    node: [12, 14]
-    os: [ubuntu-latest]
-
 jobs:
   build:
+    strategy:
+      matrix:
+        node: [12]
+        os: [ubuntu-latest]
     runs-on: ${{ matrix.os }}
-
+    services:
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_ALLOW_EMPTY_PASSWORD: yes
+          MYSQL_DATABASE: sql_indexer_test
+        ports:
+          - 3306
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
 
       - name: Setup Node
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node }}
 
-      - name: Setup Rustup
+      - name: Setup Rust toolchain
         uses: actions-rs/toolchain@v1
         with:
-          toolchain: stable
+          toolchain: 1.46.0
           default: true
           override: true
+          components: rustfmt, clippy
 
       - name: Install NPM packages
         run: |
@@ -34,8 +42,8 @@ jobs:
           npm -g install yarn
           yarn -v
           yarn
-
-      - name: Run project scripts
+      
+      - name: Build and test
         run: |
           yarn workspace @ckb-lumos/helpers build
           yarn workspace @ckb-lumos/rpc build
@@ -54,3 +62,19 @@ jobs:
           yarn workspaces run fmt
           yarn workspaces run lint
           yarn run docs
+          git diff --exit-code
+
+      - name: Build binary
+        env:
+          LUMOS_NODE_RUNTIME_VERSION: 9.0.2
+        run: |
+          rm -rf packages/indexer/build
+          yarn workspace @ckb-lumos/indexer run package-for-electron
+
+      - name: Deploy release
+        uses: softprops/action-gh-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          files: 'packages/indexer/build/stage/v0.16.0/*'
+

@@ -6,7 +6,7 @@ const knex = require("knex")({
   connection: {
     host: "127.0.0.1",
     database: "sql_indexer_test",
-    user: "travis",
+    user: "root",
   },
 });
 
@@ -15,7 +15,7 @@ const knex2 = require("knex")({
   connection: {
     host: "127.0.0.1",
     database: "sql_indexer_test2",
-    user: "travis",
+    user: "root",
   },
 });
 
@@ -24,7 +24,7 @@ const knexForTransactionCollector = require("knex")({
   connection: {
     host: "127.0.0.1",
     database: "sql_indexer_test3",
-    user: "travis",
+    user: "root",
   },
 });
 
