@@ -1,0 +1,56 @@
+name: CI
+
+on: [ push, pull_request ]
+
+strategy:
+  matrix:
+    node: [12, 14]
+    os: [ubuntu-latest]
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Setup Rustup
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          default: true
+          override: true
+
+      - name: Install NPM packages
+        run: |
+          node -v
+          npm -v
+          npm -g install neon-cli
+          npm -g install yarn
+          yarn -v
+          yarn
+
+      - name: Run project scripts
+        run: |
+          yarn workspace @ckb-lumos/helpers build
+          yarn workspace @ckb-lumos/rpc build
+          yarn workspace @ckb-lumos/common-scripts build
+          yarn workspace @ckb-lumos/hd build
+          yarn workspace @ckb-lumos/hd-cache build
+          yarn workspace @ckb-lumos/base test
+          yarn workspace @ckb-lumos/common-scripts test
+          yarn workspace @ckb-lumos/config-manager test
+          yarn workspace @ckb-lumos/hd test
+          yarn workspace @ckb-lumos/hd-cache test
+          yarn workspace @ckb-lumos/helpers test
+          yarn workspace @ckb-lumos/indexer test
+          yarn workspace @ckb-lumos/transaction-manager test
+          yarn workspace @ckb-lumos/rpc test
+          yarn workspaces run fmt
+          yarn workspaces run lint
+          yarn run docs
