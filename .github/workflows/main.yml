@@ -1,6 +1,6 @@
 name: CI
 
-on: [ push, pull_request ]
+on: [push, pull_request]
 
 jobs:
   build:
@@ -42,7 +42,7 @@ jobs:
           npm -g install yarn
           yarn -v
           yarn
-      
+
       - name: Build and test
         run: |
           yarn workspace @ckb-lumos/helpers build
@@ -73,8 +73,8 @@ jobs:
 
       - name: Deploy release
         uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          files: 'packages/indexer/build/stage/v0.16.0/*'
-
+          files: "packages/indexer/build/stage/v0.16.0/*"
