@@ -47,7 +47,7 @@ export function generateDaoScript(config: Config): Script {
   const template = config.SCRIPTS.DAO!;
 
   return {
-    code_hash: template.CODE_HASH,
+    codeHash: template.CODE_HASH,
     hash_type: template.HASH_TYPE,
     args: "0x",
   };
@@ -59,7 +59,7 @@ export function isSecp256k1Blake160Script(
 ): boolean {
   const template = config.SCRIPTS.SECP256K1_BLAKE160!;
   return (
-    script.code_hash === template.CODE_HASH &&
+    script.codeHash === template.CODE_HASH &&
     script.hash_type === template.HASH_TYPE
   );
 }
@@ -78,7 +78,7 @@ export function isSecp256k1Blake160MultisigScript(
 ): boolean {
   const template = config.SCRIPTS.SECP256K1_BLAKE160_MULTISIG!;
   return (
-    script.code_hash === template.CODE_HASH &&
+    script.codeHash === template.CODE_HASH &&
     script.hash_type === template.HASH_TYPE
   );
 }
@@ -99,7 +99,7 @@ export function isDaoScript(
 
   return (
     !!script &&
-    script.code_hash === template.CODE_HASH &&
+    script.codeHash === template.CODE_HASH &&
     script.hash_type === template.HASH_TYPE
   );
 }
@@ -116,7 +116,7 @@ export function isSudtScript(
 
   return (
     !!script &&
-    script.code_hash === template.CODE_HASH &&
+    script.codeHash === template.CODE_HASH &&
     script.hash_type === template.HASH_TYPE
   );
 }
@@ -130,7 +130,7 @@ export function isAcpScript(script: Script, config: Config): boolean {
 
   return (
     !!script &&
-    script.code_hash === template.CODE_HASH &&
+    script.codeHash === template.CODE_HASH &&
     script.hash_type === template.HASH_TYPE
   );
 }
@@ -141,6 +141,7 @@ export function isAcpAddress(address: Address, config: Config): boolean {
   return isAcpScript(script, config);
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/explicit-module-boundary-types 
 export function hashWitness(hasher: any, witness: HexString): void {
   const lengthBuffer = new ArrayBuffer(8);
   const view = new DataView(lengthBuffer);
@@ -180,7 +181,7 @@ export function prepareSigningEntries(
   for (let i = 0; i < inputs.size; i++) {
     const input = inputs.get(i)!;
     if (
-      template.CODE_HASH === input.cell_output.lock.code_hash &&
+      template.CODE_HASH === input.cell_output.lock.codeHash &&
       template.HASH_TYPE === input.cell_output.lock.hash_type &&
       !processedArgs.has(input.cell_output.lock.args)
     ) {
@@ -235,7 +236,7 @@ export function ensureScript(
     );
   }
   if (
-    template.CODE_HASH !== script.code_hash ||
+    template.CODE_HASH !== script.codeHash ||
     template.HASH_TYPE !== script.hash_type
   ) {
     throw new Error(`Provided script is not ${scriptType} script!`);

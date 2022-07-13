@@ -17,7 +17,7 @@ export interface Header {
 
 export type HashType = "type" | "data" | "data1";
 export interface Script {
-  code_hash: Hash;
+  codeHash: Hash;
   hash_type: HashType;
   args: HexString;
 }

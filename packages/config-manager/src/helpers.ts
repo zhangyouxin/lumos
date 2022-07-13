@@ -12,7 +12,7 @@ export function findConfigByScript(
 
   return Object.values(scripts).find(
     (item) =>
-      item?.CODE_HASH === scriptTemplate.code_hash &&
+      item?.CODE_HASH === scriptTemplate.codeHash &&
       item?.HASH_TYPE === scriptTemplate.hash_type
   );
 }
@@ -37,7 +37,7 @@ export function nameOfScript<S extends ScriptConfigs>(
 
   const foundEntry = Object.entries(scripts).find(
     ([, config]) =>
-      config?.CODE_HASH === scriptTemplate.code_hash &&
+      config?.CODE_HASH === scriptTemplate.codeHash &&
       config?.HASH_TYPE === scriptTemplate.hash_type
   );
 

@@ -273,7 +273,7 @@ function lockScriptMatch(script: Script, otherScript: Script): boolean {
     otherScript.args.length
   );
   return (
-    script.code_hash === otherScript.code_hash &&
+    script.codeHash === otherScript.codeHash &&
     script.hash_type === otherScript.hash_type &&
     script.args.slice(0, shorterArgsLength) ===
       otherScript.args.slice(0, shorterArgsLength)

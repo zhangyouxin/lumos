@@ -45,12 +45,12 @@ export function minimalCellCapacityCompatible(
   }
   // Capacity field itself
   let bytes = 8;
-  bytes += new Reader(fullCell.cell_output.lock.code_hash).length();
+  bytes += new Reader(fullCell.cell_output.lock.codeHash).length();
   bytes += new Reader(fullCell.cell_output.lock.args).length();
   // hash_type field
   bytes += 1;
   if (fullCell.cell_output.type) {
-    bytes += new Reader(fullCell.cell_output.type.code_hash).length();
+    bytes += new Reader(fullCell.cell_output.type.codeHash).length();
     bytes += new Reader(fullCell.cell_output.type.args).length();
     bytes += 1;
   }
@@ -67,7 +67,7 @@ export function locateCellDep(
   config = config || getConfig();
   const scriptTemplate = Object.values(config.SCRIPTS).find(
     (s) =>
-      s && s.CODE_HASH === script.code_hash && s.HASH_TYPE === script.hash_type
+      s && s.CODE_HASH === script.codeHash && s.HASH_TYPE === script.hash_type
   );
 
   if (scriptTemplate) {
@@ -104,7 +104,7 @@ export function generateAddress(
 
   const scriptTemplate = Object.values(config.SCRIPTS).find(
     (s) =>
-      s && s.CODE_HASH === script.code_hash && s.HASH_TYPE === script.hash_type
+      s && s.CODE_HASH === script.codeHash && s.HASH_TYPE === script.hash_type
   );
   const data = [];
   if (scriptTemplate && scriptTemplate.SHORT_ID !== undefined) {
@@ -115,7 +115,7 @@ export function generateAddress(
     else if (script.hash_type === "data") data.push(0x02);
     else throw new Error(`Invalid hash_type ${script.hash_type}`);
 
-    data.push(...hexToByteArray(script.code_hash));
+    data.push(...hexToByteArray(script.codeHash));
     data.push(...hexToByteArray(script.args));
   }
   const words = bech32.toWords(data);
@@ -140,7 +140,7 @@ function generatePredefinedAddress(
     );
   }
   const script: Script = {
-    code_hash: template.CODE_HASH,
+    codeHash: template.CODE_HASH,
     hash_type: template.HASH_TYPE,
     args,
   };
@@ -197,7 +197,7 @@ export function encodeToAddress(
   })();
 
   data.push(0x00);
-  data.push(...hexToByteArray(script.code_hash));
+  data.push(...hexToByteArray(script.codeHash));
   data.push(hash_type);
   data.push(...hexToByteArray(script.args));
 

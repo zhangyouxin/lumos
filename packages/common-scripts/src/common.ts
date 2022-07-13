@@ -214,7 +214,7 @@ export async function transfer(
     | LockScriptInfo
     | undefined = lockScriptInfos.infos.find((lockScriptInfo) => {
     return (
-      lockScriptInfo.code_hash === toScript.code_hash &&
+      lockScriptInfo.code_hash === toScript.codeHash &&
       lockScriptInfo.hash_type === toScript.hash_type
     );
   });
@@ -790,7 +790,7 @@ export async function setupInputCell(
     | LockScriptInfo
     | undefined = lockScriptInfos.infos.find((lockScriptInfo) => {
     return (
-      lockScriptInfo.code_hash === inputLock.code_hash &&
+      lockScriptInfo.code_hash === inputLock.codeHash &&
       lockScriptInfo.hash_type === inputLock.hash_type
     );
   });

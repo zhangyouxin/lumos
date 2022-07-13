@@ -113,7 +113,7 @@ export const CellCollector: CellCollectorConstructor = class CellCollector
     let cellCollectors = List<CellCollectorType>([]);
     if (isSecp256k1Blake160MultisigScript(fromScript, config)) {
       const lock: Script = {
-        code_hash: fromScript.code_hash,
+        codeHash: fromScript.codeHash,
         hash_type: fromScript.hash_type,
         args: fromScript.args.slice(0, 42),
       };

@@ -74,7 +74,7 @@ export function parseFullFormatAddress(
   })();
   const args = byteArrayToHex(body.slice(33));
 
-  return { code_hash, hash_type, args };
+  return { codeHash: code_hash, hash_type, args };
 }
 
 export function parseDeprecatedCkb2019Address(
@@ -110,7 +110,7 @@ export function parseDeprecatedCkb2019Address(
         throw Error(`Invalid code hash index: ${shortId}!`);
       }
       return {
-        code_hash: scriptTemplate.CODE_HASH,
+        codeHash: scriptTemplate.CODE_HASH,
         hash_type: scriptTemplate.HASH_TYPE,
         args: byteArrayToHex(argsBytes),
       };
@@ -121,7 +121,7 @@ export function parseDeprecatedCkb2019Address(
         throw Error(`Invalid payload length!`);
       }
       return {
-        code_hash: byteArrayToHex(body.slice(0, 32)),
+        codeHash: byteArrayToHex(body.slice(0, 32)),
         hash_type: "data",
         args: byteArrayToHex(body.slice(32)),
       };
@@ -132,7 +132,7 @@ export function parseDeprecatedCkb2019Address(
         throw Error(`Invalid payload length!`);
       }
       return {
-        code_hash: byteArrayToHex(body.slice(0, 32)),
+        codeHash: byteArrayToHex(body.slice(0, 32)),
         hash_type: "type",
         args: byteArrayToHex(body.slice(32)),
       };

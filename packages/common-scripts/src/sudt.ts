@@ -146,6 +146,7 @@ export async function transfer(
     LocktimePoolCellCollector = LocktimeCellCollector,
     splitChangeCell = false,
   }: Options & {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     LocktimePoolCellCollector?: any;
     splitChangeCell?: boolean;
   } = {}
@@ -697,7 +698,7 @@ function _generateSudtScript(token: Hash, config: Config): Script {
   const SUDT_SCRIPT = config.SCRIPTS.SUDT!;
   // TODO: check token is a valid hash
   return {
-    code_hash: SUDT_SCRIPT.CODE_HASH,
+    codeHash: SUDT_SCRIPT.CODE_HASH,
     hash_type: SUDT_SCRIPT.HASH_TYPE,
     args: token,
   };

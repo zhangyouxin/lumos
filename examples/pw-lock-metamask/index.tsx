@@ -30,7 +30,7 @@ export function App() {
       .enable()
       .then(([ethAddr]: string[]) => {
         const pwLock: Script = {
-          code_hash: CONFIG.SCRIPTS.PW_LOCK.CODE_HASH,
+          codeHash: CONFIG.SCRIPTS.PW_LOCK.CODE_HASH,
           hash_type: CONFIG.SCRIPTS.PW_LOCK.HASH_TYPE,
           args: ethAddr,
         };

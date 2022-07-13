@@ -204,8 +204,8 @@ export const AddressToScript = () => {
                 )}
 
                 <Form.Item label="CodeHash">
-                    {script && script?.code_hash && (
-                        <Typography.Text copyable>{script?.code_hash}</Typography.Text>
+                    {script && script?.codeHash && (
+                        <Typography.Text copyable>{script?.codeHash}</Typography.Text>
                     )}
                 </Form.Item>
                 <Form.Item label="HashType">

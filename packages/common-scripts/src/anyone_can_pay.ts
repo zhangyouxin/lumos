@@ -469,7 +469,7 @@ export function prepareSigningEntries(
   for (let i = 0; i < inputs.size; i++) {
     const input = inputs.get(i)!;
     if (
-      template.CODE_HASH === input.cell_output.lock.code_hash &&
+      template.CODE_HASH === input.cell_output.lock.codeHash &&
       template.HASH_TYPE === input.cell_output.lock.hash_type &&
       !processedArgs.has(input.cell_output.lock.args)
     ) {

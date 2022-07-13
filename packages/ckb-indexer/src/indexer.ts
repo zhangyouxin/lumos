@@ -383,7 +383,7 @@ export class CkbIndexer implements Indexer {
         : emitter.outputData === outputData;
     const checkScript = !script
       ? true
-      : emitterScript.code_hash === script.code_hash &&
+      : emitterScript.codeHash === script.codeHash &&
         emitterScript.hash_type === script.hash_type &&
         this.checkArgs(emitter.argsLen, emitterScript.args, script.args);
     return checkBlockNumber && checkOutputData && checkScript;

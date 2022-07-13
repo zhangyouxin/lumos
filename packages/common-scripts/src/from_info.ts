@@ -118,7 +118,7 @@ export function parseFromInfo(
       multisigScript = serializeMultisigScript(fromInfo);
       const fromScriptArgs = multisigArgs(multisigScript, fromInfo.since);
       fromScript = {
-        code_hash: template.CODE_HASH,
+        codeHash: template.CODE_HASH,
         hash_type: template.HASH_TYPE,
         args: fromScriptArgs,
       };
@@ -135,7 +135,7 @@ export function parseFromInfo(
       destroyable = fromInfo.destroyable;
 
       if (
-        fromScript.code_hash !== template.CODE_HASH ||
+        fromScript.codeHash !== template.CODE_HASH ||
         fromScript.hash_type !== template.HASH_TYPE
       ) {
         throw new Error(`fromInfo.address is not ANYONE_CAN_PAY address!`);

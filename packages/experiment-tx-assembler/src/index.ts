@@ -54,7 +54,7 @@ export function createScriptRegistry<T extends ScriptConfigs>(
     if (config === undefined)
       throw new Error(`${key} doesn't exist in ScriptRegistry`);
     return (
-      script.code_hash === config.CODE_HASH &&
+      script.codeHash === config.CODE_HASH &&
       script.hash_type === config.HASH_TYPE
     );
   };
@@ -76,7 +76,7 @@ export function createScriptRegistry<T extends ScriptConfigs>(
     let name = undefined;
     map.forEach((value, key) => {
       if (
-        script.code_hash === value?.CODE_HASH &&
+        script.codeHash === value?.CODE_HASH &&
         script.hash_type === value.HASH_TYPE
       ) {
         name = key;

@@ -35,7 +35,7 @@ function findInConfig(script: Script, cfg: config.Config): config.ScriptConfig |
   let cfgScript = undefined;
   for (let key in configScripts) {
     const s = configScripts[key];
-    if (s.CODE_HASH === script.code_hash && s.HASH_TYPE === script.hash_type) {
+    if (s.CODE_HASH === script.codeHash && s.HASH_TYPE === script.hash_type) {
       cfgScript = s;
     }
   }

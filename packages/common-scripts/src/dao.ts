@@ -1,3 +1,4 @@
+import { helpers } from '@ckb-lumos/lumos';
 import {
   parseAddress,
   TransactionSkeletonType,
@@ -17,6 +18,7 @@ import {
   PackedDao,
   PackedSince,
   CellCollector as CellCollectorInterface,
+  Script,
 } from "@ckb-lumos/base";
 import { getConfig, Config } from "@ckb-lumos/config-manager";
 const { toBigUInt64LE, readBigUInt64LE } = utils;
@@ -134,8 +136,8 @@ export async function deposit(
   }
 
   const toScript = parseAddress(toAddress, { config });
-  const daoTypeScript = {
-    code_hash: DAO_SCRIPT.CODE_HASH,
+  const daoTypeScript: Script = {
+    codeHash: DAO_SCRIPT.CODE_HASH,
     hash_type: DAO_SCRIPT.HASH_TYPE,
     args: "0x",
   };
@@ -253,7 +255,7 @@ async function withdraw(
   const DAO_SCRIPT = config.SCRIPTS.DAO;
   if (
     !typeScript ||
-    typeScript.code_hash !== DAO_SCRIPT.CODE_HASH ||
+    typeScript.codeHash !== DAO_SCRIPT.CODE_HASH ||
     typeScript.hash_type !== DAO_SCRIPT.HASH_TYPE ||
     fromInput.data !== DEPOSIT_DAO_DATA
   ) {
@@ -364,7 +366,7 @@ export async function unlock(
     config = undefined,
     RpcClient = RPC,
   }: Options & { RpcClient?: typeof RPC } = {}
-) {
+): Promise<helpers.TransactionSkeletonType> {
   config = config || getConfig();
   _checkDaoScript(config);
   txSkeleton = _addDaoCellDep(txSkeleton, config);
@@ -383,7 +385,7 @@ export async function unlock(
   const DAO_SCRIPT = config.SCRIPTS.DAO;
   if (
     !typeScript ||
-    typeScript.code_hash !== DAO_SCRIPT.CODE_HASH ||
+    typeScript.codeHash !== DAO_SCRIPT.CODE_HASH ||
     typeScript.hash_type !== DAO_SCRIPT.HASH_TYPE ||
     depositInput.data !== DEPOSIT_DAO_DATA
   ) {
@@ -393,7 +395,7 @@ export async function unlock(
   const withdrawTypeScript = withdrawInput.cell_output.type;
   if (
     !withdrawTypeScript ||
-    withdrawTypeScript.code_hash !== DAO_SCRIPT.CODE_HASH ||
+    withdrawTypeScript.codeHash !== DAO_SCRIPT.CODE_HASH ||
     withdrawTypeScript.hash_type !== DAO_SCRIPT.HASH_TYPE ||
     withdrawInput.data === DEPOSIT_DAO_DATA
   ) {

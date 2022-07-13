@@ -35,7 +35,7 @@ export const SIGNATURE_PLACEHOLDER =
 function isPwLock(script: Script, config: Config) {
   const template = config.SCRIPTS.PW_LOCK!;
   return (
-    script.code_hash === template.CODE_HASH &&
+    script.codeHash === template.CODE_HASH &&
     script.hash_type === template.HASH_TYPE
   );
 }
@@ -296,7 +296,7 @@ function prepareSigningEntries(
   for (let i = 0; i < inputs.size; i++) {
     const input = inputs.get(i)!;
     if (
-      template.CODE_HASH === input.cell_output.lock.code_hash &&
+      template.CODE_HASH === input.cell_output.lock.codeHash &&
       template.HASH_TYPE === input.cell_output.lock.hash_type &&
       !processedArgs.has(input.cell_output.lock.args)
     ) {
