@@ -1,4 +1,3 @@
-import { helpers } from '@ckb-lumos/lumos';
 import {
   parseAddress,
   TransactionSkeletonType,
@@ -366,7 +365,7 @@ export async function unlock(
     config = undefined,
     RpcClient = RPC,
   }: Options & { RpcClient?: typeof RPC } = {}
-): Promise<helpers.TransactionSkeletonType> {
+): Promise<TransactionSkeletonType> {
   config = config || getConfig();
   _checkDaoScript(config);
   txSkeleton = _addDaoCellDep(txSkeleton, config);

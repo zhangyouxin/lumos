@@ -126,16 +126,18 @@ export class HDCache {
   resetLockScripts(): void {
     this.lockScriptInfos = this.getKeys()
       .map((publicKeyInfo) => {
-        return this.infos.map((info) => {
-          return {
-            lockScript: {
-              code_hash: info.code_hash,
-              hash_type: info.hash_type,
-              args: info.publicKeyToArgs(publicKeyInfo.publicKey),
-            },
-            publicKeyInfo,
-          };
-        });
+        return this.infos.map(
+          (info): LockScriptInfo => {
+            return {
+              lockScript: {
+                codeHash: info.code_hash,
+                hash_type: info.hash_type,
+                args: info.publicKeyToArgs(publicKeyInfo.publicKey),
+              },
+              publicKeyInfo,
+            };
+          }
+        );
       })
       .flat();
   }

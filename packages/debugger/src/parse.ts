@@ -82,7 +82,7 @@ export function parseDebuggerData(
             output: {
               capacity: "0x0",
               lock: {
-                code_hash: "0x" + "00".repeat(32),
+                codeHash: "0x" + "00".repeat(32),
                 args: "0x",
                 hash_type: "data",
               },

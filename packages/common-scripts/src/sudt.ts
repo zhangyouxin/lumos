@@ -69,8 +69,8 @@ export async function issueToken(
 
   const toScript = fromScript;
 
-  const sudtTypeScript = {
-    code_hash: template.CODE_HASH,
+  const sudtTypeScript: Script = {
+    codeHash: template.CODE_HASH,
     hash_type: template.HASH_TYPE,
     args: computeScriptHash(fromScript),
   };
@@ -89,7 +89,7 @@ export async function issueToken(
   if (!capacity) {
     capacity = minimalCellCapacityCompatible(targetOutput);
   }
-  let _capacity = BI.from(capacity);
+  const _capacity = BI.from(capacity);
   targetOutput.cell_output.capacity = "0x" + _capacity.toString(16);
 
   txSkeleton = txSkeleton.update("outputs", (outputs) => {
@@ -612,7 +612,7 @@ export async function transfer(
     const minimalChangeCellWithoutSudtCapacity = BI.from(
       minimalCellCapacityCompatible(changeCellWithoutSudt)
     );
-    let splitFlag: boolean = false;
+    let splitFlag = false;
     if (
       changeAmount.gt(0) &&
       splitChangeCell &&

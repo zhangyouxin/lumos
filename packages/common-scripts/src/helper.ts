@@ -141,7 +141,7 @@ export function isAcpAddress(address: Address, config: Config): boolean {
   return isAcpScript(script, config);
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/explicit-module-boundary-types 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/explicit-module-boundary-types
 export function hashWitness(hasher: any, witness: HexString): void {
   const lengthBuffer = new ArrayBuffer(8);
   const view = new DataView(lengthBuffer);

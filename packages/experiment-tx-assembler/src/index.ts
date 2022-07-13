@@ -30,19 +30,19 @@ export function createScriptRegistry<T extends ScriptConfigs>(
     return createScriptRegistry({ ...payload, ...newPayload });
   };
 
-  const newScript = (key: keyof T, args: string | Reader) => {
+  const newScript = (key: keyof T, args: string | Reader): Script => {
     const config = map.get(key);
     if (config === undefined)
-      throw new Error(`${key} doesn't exist in ScriptRegistry`);
+      throw new Error(`${String(key)} doesn't exist in ScriptRegistry`);
     if (typeof args === "string") {
       return {
-        code_hash: config.CODE_HASH,
+        codeHash: config.CODE_HASH,
         hash_type: config.HASH_TYPE,
         args: args,
       };
     } else {
       return {
-        code_hash: config.CODE_HASH,
+        codeHash: config.CODE_HASH,
         hash_type: config.HASH_TYPE,
         args: args.serializeJson(),
       };
@@ -52,7 +52,7 @@ export function createScriptRegistry<T extends ScriptConfigs>(
   const isScriptOf = (key: keyof T, script: Script) => {
     const config = map.get(key);
     if (config === undefined)
-      throw new Error(`${key} doesn't exist in ScriptRegistry`);
+      throw new Error(`${String(key)} doesn't exist in ScriptRegistry`);
     return (
       script.codeHash === config.CODE_HASH &&
       script.hash_type === config.HASH_TYPE
@@ -62,7 +62,7 @@ export function createScriptRegistry<T extends ScriptConfigs>(
   const newCellDep = (key: keyof T) => {
     const config = map.get(key);
     if (config === undefined)
-      throw new Error(`${key} doesn't exist in ScriptRegistry`);
+      throw new Error(`${String(key)} doesn't exist in ScriptRegistry`);
     return {
       out_point: {
         tx_hash: config.TX_HASH,

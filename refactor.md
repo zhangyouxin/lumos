@@ -41,3 +41,11 @@ export interface Script {
 
 ![auto-change](/assets/auto-change.jpg)
 
+需要手动修改才能 yarn build 成功的包有：
+
+- packages/hd-cache/src
+- packages/commnon-scripts
+- packages/debugger/src/parse.ts
+
+![auto-change](/assets/manual-change-build.png)
+
