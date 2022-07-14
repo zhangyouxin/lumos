@@ -3,7 +3,7 @@ const { transformers, Reader } = require("../lib");
 
 test("transform script", (t) => {
   const s = transformers.TransformScript({
-    code_hash:
+    codeHash:
       "0xa98c57135830e1b91345948df6c4b8870828199a786b26f09f7dec4bc27a73da",
     args: Reader.fromRawString("args1234"),
     hash_type: {
@@ -12,7 +12,7 @@ test("transform script", (t) => {
   });
 
   t.deepEqual(s, {
-    code_hash:
+    codeHash:
       "0xa98c57135830e1b91345948df6c4b8870828199a786b26f09f7dec4bc27a73da",
     args: "0x6172677331323334",
     hash_type: "data",
@@ -30,7 +30,7 @@ test("transform camel case script", (t) => {
   });
 
   t.deepEqual(s, {
-    code_hash:
+    codeHash:
       "0xa98c57135830e1b91345948df6c4b8870828199a786b26f09f7dec4bc27a73da",
     args: "0x6172677331323334",
     hash_type: "data",
@@ -39,14 +39,14 @@ test("transform camel case script", (t) => {
 
 test("transform plain script", (t) => {
   const s = transformers.TransformScript({
-    code_hash:
+    codeHash:
       "0xa98c57135830e1b91345948df6c4b8870828199a786b26f09f7dec4bc27a73da",
     args: "0x1234",
     hash_type: "data",
   });
 
   t.deepEqual(s, {
-    code_hash:
+    codeHash:
       "0xa98c57135830e1b91345948df6c4b8870828199a786b26f09f7dec4bc27a73da",
     args: "0x1234",
     hash_type: "data",
@@ -56,7 +56,7 @@ test("transform plain script", (t) => {
 test("transform invalid script", (t) => {
   t.throws(() => {
     transformers.TransformScript({
-      code_hash:
+      codeHash:
         "0xa98c57135830e1b91345948df6c4b8870828199a786b26f09f7dec4bc27a73da",
       args: "0xgghh",
       hash_type: "data",
@@ -67,7 +67,7 @@ test("transform invalid script", (t) => {
 test("transform invalid script but do not validate", (t) => {
   const s = transformers.TransformScript(
     {
-      code_hash:
+      codeHash:
         "0xa98c57135830e1b91345948df6c4b8870828199a786b26f09f7dec4bc27a73da",
       args: "0xgghh",
       hash_type: "data",
@@ -76,7 +76,7 @@ test("transform invalid script but do not validate", (t) => {
   );
 
   t.deepEqual(s, {
-    code_hash:
+    codeHash:
       "0xa98c57135830e1b91345948df6c4b8870828199a786b26f09f7dec4bc27a73da",
     args: "0xgghh",
     hash_type: "data",
@@ -178,7 +178,7 @@ test("celloutput with type", (t) => {
     capacity: "0x10",
     lock: {
       value: {
-        code_hash:
+        codeHash:
           "0xa98c57135830e1b91345948df6c4b8870828199a786b26f09f7dec4bc27a73da",
         args: new Reader("0x1234"),
         hash_type: "data",
@@ -188,7 +188,7 @@ test("celloutput with type", (t) => {
       },
     },
     type: {
-      code_hash:
+      codeHash:
         "0xa98c57135830e1b91345948df6c4b8870828199a786b26f09f7dec4bc27a73da",
       args: "0x",
       hash_type: "type",
@@ -198,13 +198,13 @@ test("celloutput with type", (t) => {
   t.deepEqual(v, {
     capacity: "0x10",
     lock: {
-      code_hash:
+      codeHash:
         "0xa98c57135830e1b91345948df6c4b8870828199a786b26f09f7dec4bc27a73da",
       args: "0x1234",
       hash_type: "data",
     },
     type: {
-      code_hash:
+      codeHash:
         "0xa98c57135830e1b91345948df6c4b8870828199a786b26f09f7dec4bc27a73da",
       args: "0x",
       hash_type: "type",
@@ -216,7 +216,7 @@ test("celloutput", (t) => {
   const v = transformers.TransformCellOutput({
     capacity: "0x1024",
     lock: {
-      code_hash:
+      codeHash:
         "0xa98c57135830e1b91345948df6c4b8870828199a786b26f09f7dec4bc27a73da",
       args: "0x",
       hash_type: "type",
@@ -226,7 +226,7 @@ test("celloutput", (t) => {
   t.deepEqual(v, {
     capacity: "0x1024",
     lock: {
-      code_hash:
+      codeHash:
         "0xa98c57135830e1b91345948df6c4b8870828199a786b26f09f7dec4bc27a73da",
       args: "0x",
       hash_type: "type",
@@ -239,7 +239,7 @@ test("celloutput invalid lock but skip validation", (t) => {
     {
       capacity: "0x1024",
       type: {
-        code_hash:
+        codeHash:
           "0xa98c57135830e1b91345948df6c4b8870828199a786b26f09f7dec4bc27a73da",
         args: "0x",
         hash_type: "type",
@@ -252,7 +252,7 @@ test("celloutput invalid lock but skip validation", (t) => {
   t.deepEqual(v, {
     capacity: "0x1024",
     type: {
-      code_hash:
+      codeHash:
         "0xa98c57135830e1b91345948df6c4b8870828199a786b26f09f7dec4bc27a73da",
       args: "0x",
       hash_type: "type",
@@ -265,7 +265,7 @@ test("celloutput invalid lock", (t) => {
     transformers.TransformCellOutput({
       capacity: "0x1024",
       type: {
-        code_hash:
+        codeHash:
           "0xa98c57135830e1b91345948df6c4b8870828199a786b26f09f7dec4bc27a73da",
         args: "0x",
         hash_type: "type",
@@ -347,7 +347,7 @@ test("correct transaction", (t) => {
       {
         capacity: "0x1234",
         lock: {
-          code_hash:
+          codeHash:
             "0xa98c57135830e1b91345948df6c4b8870828199a786b26f09f7dec4bc27a7302",
           args: new Reader("0x1234"),
           hash_type: "data",
@@ -387,7 +387,7 @@ test("correct transaction", (t) => {
       {
         capacity: "0x1234",
         lock: {
-          code_hash:
+          codeHash:
             "0xa98c57135830e1b91345948df6c4b8870828199a786b26f09f7dec4bc27a7302",
           args: "0x1234",
           hash_type: "data",
@@ -510,7 +510,7 @@ test("correct block", (t) => {
           {
             capacity: "0x1234",
             lock: {
-              code_hash:
+              codeHash:
                 "0xa98c57135830e1b91345948df6c4b8870828199a786b26f09f7dec4bc27a7302",
               args: "0x1234",
               hash_type: {
@@ -577,7 +577,7 @@ test("correct block", (t) => {
           {
             capacity: "0x1234",
             lock: {
-              code_hash:
+              codeHash:
                 "0xa98c57135830e1b91345948df6c4b8870828199a786b26f09f7dec4bc27a7302",
               args: "0x1234",
               hash_type: "data",
@@ -596,7 +596,7 @@ test("correct block", (t) => {
 test("correct cellbase witness", (t) => {
   const v = transformers.TransformCellbaseWitness({
     lock: {
-      code_hash:
+      codeHash:
         "0xa98c57135830e1b91345948df6c4b8870828199a786b26f09f7dec4bc27a73da",
       args: "0x1234",
       hash_type: "data",
@@ -608,7 +608,7 @@ test("correct cellbase witness", (t) => {
 
   t.deepEqual(v, {
     lock: {
-      code_hash:
+      codeHash:
         "0xa98c57135830e1b91345948df6c4b8870828199a786b26f09f7dec4bc27a73da",
       args: "0x1234",
       hash_type: "data",

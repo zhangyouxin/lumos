@@ -32,7 +32,7 @@ class ScriptValue extends Value {
     if (validate) {
       validators.ValidateScript(script);
     }
-    super(core.SerializeScript(normalizers.NormalizeScript(script)), script);
+    super(core.SerializeScript({...normalizers.NormalizeScript(script), code_hash: normalizers.NormalizeScript(script).codeHash}), script);
   }
 }
 

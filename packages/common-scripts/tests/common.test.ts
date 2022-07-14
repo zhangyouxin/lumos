@@ -97,7 +97,7 @@ test("lockScriptInfos", (t) => {
   t.is(__tests__.getLockScriptInfos().infos.length, 0);
   registerCustomLockScriptInfos([
     {
-      code_hash: "",
+      codeHash: "",
       hash_type: "type",
       lockScriptInfo: anyoneCanPay,
     },
@@ -244,7 +244,7 @@ test("transfer multisig lock => secp", async (t) => {
     readonly fromScript: Script;
     constructor() {
       this.fromScript = {
-        code_hash: "",
+        codeHash: "",
         hash_type: "data",
         args: "",
       };
@@ -607,13 +607,13 @@ const testTx: Transaction = {
     {
       capacity: "0x174876e800",
       lock: {
-        code_hash:
+        codeHash:
           "0x68d5438ac952d2f584abf879527946a537e82c7f3c1cbf6d8ebf9767437d8e88",
         args: "0x59a27ef3ba84f061517d13f42cf44ed020610061",
         hash_type: "type",
       },
       type: {
-        code_hash:
+        codeHash:
           "0xece45e0979030e2f8909f76258631c42333b1e906fd9701ec3600a464a90b8f6",
         args: "0x",
         hash_type: "data",
@@ -622,7 +622,7 @@ const testTx: Transaction = {
     {
       capacity: "0x59e1416a5000",
       lock: {
-        code_hash:
+        codeHash:
           "0x68d5438ac952d2f584abf879527946a537e82c7f3c1cbf6d8ebf9767437d8e88",
         args: "0x59a27ef3ba84f061517d13f42cf44ed020610061",
         hash_type: "type",
@@ -1033,7 +1033,7 @@ test("transfer multisig lock => secp, without deduct capacity", async (t) => {
     readonly fromScript: Script;
     constructor() {
       this.fromScript = {
-        code_hash: "",
+        codeHash: "",
         hash_type: "data",
         args: "",
       };

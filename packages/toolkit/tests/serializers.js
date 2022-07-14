@@ -4,7 +4,7 @@ const CKB = require("../testfiles/blockchain.umd.js");
 
 test("normalize and serialize script", (t) => {
   const value = {
-    code_hash:
+    codeHash:
       "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
     args: "0xaabbccdd44332211",
     hash_type: "type",
@@ -20,7 +20,7 @@ test("normalize and serialize script", (t) => {
 
 test("normalize and serialize script with integer hash type", (t) => {
   const value = {
-    code_hash:
+    codeHash:
       "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
     args: "0xaabbccdd44332211",
     hash_type: 1,
@@ -36,7 +36,7 @@ test("normalize and serialize script with integer hash type", (t) => {
 
 test("normalize invalid script", (t) => {
   const value = {
-    code_hash:
+    codeHash:
       "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
     args: "0xaabbccdd4433221",
     hash_type: "type",
@@ -48,7 +48,7 @@ test("normalize invalid script", (t) => {
 
 test("normalize invalid script type", (t) => {
   const value = {
-    code_hash:
+    codeHash:
       "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
     args: "0xaabbccdd44332211",
     hash_type: "invalidtype",
@@ -131,13 +131,13 @@ test("normalize and serialize celloutput", (t) => {
   const value = {
     capacity: "0x10",
     lock: {
-      code_hash:
+      codeHash:
         "0xa98c57135830e1b91345948df6c4b8870828199a786b26f09f7dec4bc27a73da",
       args: "0x1234",
       hash_type: "data",
     },
     type: {
-      code_hash:
+      codeHash:
         "0xa98c57135830e1b900000000f6c4b8870828199a786b26f09f7dec4bc27a73db",
       args: "0x",
       hash_type: "type",
@@ -156,7 +156,7 @@ test("normalize and serialize celloutput without type", (t) => {
   const value = {
     capacity: "0x10",
     lock: {
-      code_hash:
+      codeHash:
         "0xa98c57135830e1b91345948df6c4b8870828199a786b26f09f7dec4bc27a73da",
       args: "0x1234",
       hash_type: "data",
@@ -175,7 +175,7 @@ test("normalize invalid celloutput", (t) => {
   const value = {
     capacity: "0x102030405060708090",
     lock: {
-      code_hash:
+      codeHash:
         "0xa98c57135830e1b91345948df6c4b8870828199a786b26f09f7dec4bc27a73da",
       args: "0x1234",
       hash_type: "data",
@@ -234,7 +234,7 @@ test("normalize and serialize transaction", (t) => {
       {
         capacity: "0x1234",
         lock: {
-          code_hash:
+          codeHash:
             "0xa98c57135830e1b91345948df6c4b8870828199a786b26f09f7dec4bc27a7302",
           args: "0x1234",
           hash_type: "data",
@@ -359,7 +359,7 @@ test("normalize and serialize block", (t) => {
           {
             capacity: "0x1234",
             lock: {
-              code_hash:
+              codeHash:
                 "0xa98c57135830e1b91345948df6c4b8870828199a786b26f09f7dec4bc27a7302",
               args: "0x1234",
               hash_type: "data",
@@ -385,7 +385,7 @@ test("normalize and serialize block", (t) => {
 test("normalize and serialize cellbase witness", (t) => {
   const value = {
     lock: {
-      code_hash:
+      codeHash:
         "0xa98c57135830e1b91345948df6c4b8870828199a786b26f09f7dec4bc27a73da",
       args: "0x1234",
       hash_type: "data",

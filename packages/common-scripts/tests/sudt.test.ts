@@ -374,7 +374,7 @@ test("transfer secp => secp, change to acp and has previous output, fixed", asyn
   });
 
   const sudtTypeScript: Script = {
-    code_hash: AGGRON4.SCRIPTS.SUDT!.CODE_HASH,
+    codeHash: AGGRON4.SCRIPTS.SUDT!.CODE_HASH,
     hash_type: AGGRON4.SCRIPTS.SUDT!.HASH_TYPE,
     args: bob.secpLockHash,
   };
@@ -608,7 +608,7 @@ test("transfer secp => secp, change to acp and has previous output, split change
   });
 
   const sudtTypeScript: Script = {
-    code_hash: AGGRON4.SCRIPTS.SUDT!.CODE_HASH,
+    codeHash: AGGRON4.SCRIPTS.SUDT!.CODE_HASH,
     hash_type: AGGRON4.SCRIPTS.SUDT!.HASH_TYPE,
     args: bob.secpLockHash,
   };

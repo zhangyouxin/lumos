@@ -7,7 +7,7 @@ const cells = [
     cell_output: {
       capacity: "0x174876e800",
       lock: {
-        code_hash:
+        codeHash:
           "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
         hash_type: "type",
         args: "0x36c329ed630d6ce750712a477543672adab57f4c",
@@ -28,13 +28,13 @@ const cells = [
     cell_output: {
       capacity: "0x174876e800",
       lock: {
-        code_hash:
+        codeHash:
           "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
         hash_type: "type",
         args: "0x36c329ed630d6ce750712a477543672adab57f4c",
       },
       type: {
-        code_hash:
+        codeHash:
           "0x82d76d1b75fe2fd9a27dfbaa65a039221a380d76c926f378d3f81cf3e7e13f2e",
         hash_type: "type",
         args:
@@ -55,7 +55,7 @@ const cells = [
     cell_output: {
       capacity: "0x174876e800",
       lock: {
-        code_hash:
+        codeHash:
           "0x5c5069eb0857efc65e1bca0c07df34c31663b3622fd3876c876320fc9634e2a8",
         hash_type: "type",
         args: "0x56f281b3d4bb5fc73c751714af0bf78eb8aba0d80000000000000000",
@@ -94,7 +94,7 @@ test.before(() => {
 test("filter by lock", (t) => {
   const queryOptions = {
     lock: {
-      code_hash:
+      codeHash:
         "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
       hash_type: "type",
       args: "0x36c329ed630d6ce750712a477543672adab57f4c",
@@ -108,7 +108,7 @@ test("filter by wrapped lock", (t) => {
   const queryOptions = {
     lock: {
       script: {
-        code_hash:
+        codeHash:
           "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
         hash_type: "type",
         args: "0x36c329ed630d6ce750712a477543672adab57f4c",
@@ -122,7 +122,7 @@ test("filter by wrapped lock", (t) => {
 test("filter by lock & empty type", (t) => {
   const queryOptions = {
     lock: {
-      code_hash:
+      codeHash:
         "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
       hash_type: "type",
       args: "0x36c329ed630d6ce750712a477543672adab57f4c",
@@ -137,7 +137,7 @@ test("filter by wrapped lock & empty type", (t) => {
   const queryOptions = {
     lock: {
       script: {
-        code_hash:
+        codeHash:
           "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
         hash_type: "type",
         args: "0x36c329ed630d6ce750712a477543672adab57f4c",
@@ -152,13 +152,13 @@ test("filter by wrapped lock & empty type", (t) => {
 test("filter by lock & type", (t) => {
   const queryOptions = {
     lock: {
-      code_hash:
+      codeHash:
         "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
       hash_type: "type",
       args: "0x36c329ed630d6ce750712a477543672adab57f4c",
     },
     type: {
-      code_hash:
+      codeHash:
         "0x82d76d1b75fe2fd9a27dfbaa65a039221a380d76c926f378d3f81cf3e7e13f2e",
       hash_type: "type",
       args:
@@ -173,7 +173,7 @@ test("filter by wrapped lock & wrapped type", (t) => {
   const queryOptions = {
     lock: {
       script: {
-        code_hash:
+        codeHash:
           "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
         hash_type: "type",
         args: "0x36c329ed630d6ce750712a477543672adab57f4c",
@@ -181,7 +181,7 @@ test("filter by wrapped lock & wrapped type", (t) => {
     },
     type: {
       script: {
-        code_hash:
+        codeHash:
           "0x82d76d1b75fe2fd9a27dfbaa65a039221a380d76c926f378d3f81cf3e7e13f2e",
         hash_type: "type",
         args:
@@ -196,7 +196,7 @@ test("filter by wrapped lock & wrapped type", (t) => {
 test("filter by lock & data", (t) => {
   const queryOptions = {
     lock: {
-      code_hash:
+      codeHash:
         "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
       hash_type: "type",
       args: "0x36c329ed630d6ce750712a477543672adab57f4c",
@@ -210,7 +210,7 @@ test("filter by lock & data", (t) => {
 test("filter by lock & argsLen", (t) => {
   const queryOptions = {
     lock: {
-      code_hash:
+      codeHash:
         "0x5c5069eb0857efc65e1bca0c07df34c31663b3622fd3876c876320fc9634e2a8",
       hash_type: "type",
       args: "0x56f281b3d4bb5fc73c751714af0bf78eb8aba0d8",
@@ -225,7 +225,7 @@ test("filter by wrapped lock & argsLen", (t) => {
   const queryOptions = {
     lock: {
       script: {
-        code_hash:
+        codeHash:
           "0x5c5069eb0857efc65e1bca0c07df34c31663b3622fd3876c876320fc9634e2a8",
         hash_type: "type",
         args: "0x56f281b3d4bb5fc73c751714af0bf78eb8aba0d8",
@@ -240,7 +240,7 @@ test("filter by wrapped lock & argsLen", (t) => {
 test("filter by lock & argsLen, failed", (t) => {
   const queryOptions = {
     lock: {
-      code_hash:
+      codeHash:
         "0x5c5069eb0857efc65e1bca0c07df34c31663b3622fd3876c876320fc9634e2a8",
       hash_type: "type",
       args: "0x56f281b3d4bb5fc73c751714af0bf78eb8aba0d8",
@@ -277,7 +277,7 @@ test("filter by argsLen = any", (t) => {
   t.deepEqual(
     filterIndex(cells, {
       lock: {
-        code_hash:
+        codeHash:
           "0x5c5069eb0857efc65e1bca0c07df34c31663b3622fd3876c876320fc9634e2a8",
         hash_type: "type",
         args: "0x56f281b3d4bb5fc73c751714af0bf78eb8aba0d8",

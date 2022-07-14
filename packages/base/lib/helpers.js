@@ -49,7 +49,7 @@ function isCellMatchQueryOptions(
   if (wrappedLock && wrappedLock.script && wrappedLock.argsLen === "any") {
     const cellLock = cell.cell_output.lock;
     if (
-      cellLock.code_hash !== wrappedLock.script.code_hash ||
+      cellLock.codeHash !== wrappedLock.script.codeHash ||
       cellLock.hash_type !== wrappedLock.script.hash_type ||
       !cellLock.args.startsWith(wrappedLock.script.args)
     ) {
@@ -73,7 +73,7 @@ function isCellMatchQueryOptions(
     }
     if (
       !(
-        cellLock.code_hash === wrappedLock.script.code_hash &&
+        cellLock.codeHash === wrappedLock.script.codeHash &&
         cellLock.hash_type === wrappedLock.script.hash_type &&
         cellLock.args.slice(0, minLength) ===
           wrappedLock.script.args.slice(0, minLength)

@@ -5,7 +5,7 @@
 // 1. If the specified object has a serializeJson method, it would invoke this
 // method and use the result to replace current object.
 // 2. It then restricts the keys of the object to keys required by the specified
-// entity(i.e., a Script would only have code_hash, hash_type, args keys),for each
+// entity(i.e., a Script would only have codeHash, hash_type, args keys),for each
 // sub-field, it then recursively perform the steps here from step 1.
 // 3. It then optionally run validator functions to ensure the resulting object
 // follows specified rules.
@@ -52,7 +52,7 @@ export function TransformScript(
   { validation = true, debugPath = "script" } = {}
 ) {
   script = transformObject(debugPath, script, {
-    code_hash: invokeSerializeJson,
+    codeHash: invokeSerializeJson,
     hash_type: invokeSerializeJson,
     args: invokeSerializeJson,
   });

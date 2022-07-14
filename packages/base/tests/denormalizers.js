@@ -12,7 +12,7 @@ test.before(() => {
 
 test("denormalize script", (t) => {
   const script = {
-    code_hash:
+    codeHash:
       "0xa98c57135830e1b91345948df6c4b8870828199a786b26f09f7dec4bc27a73da",
     args: "0x1234",
     hash_type: "data",

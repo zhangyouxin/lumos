@@ -42,7 +42,7 @@ function defaultLogger(level: string, message: string) {
  *  please add the `output` at the end of `txSkeleton.get("outputs")`
  */
 export interface LockScriptInfo {
-  code_hash: Hash;
+  codeHash: Hash;
   hash_type: "type" | "data";
   lockScriptInfo: {
     CellCollector: CellCollectorConstructor;
@@ -112,7 +112,7 @@ function generateLockScriptInfos({ config = undefined }: Options = {}): void {
 
     if (secpTemplate) {
       predefinedInfos.push({
-        code_hash: secpTemplate.CODE_HASH,
+        codeHash: secpTemplate.CODE_HASH,
         hash_type: secpTemplate.HASH_TYPE,
         lockScriptInfo: secp256k1Blake160,
       });
@@ -125,7 +125,7 @@ function generateLockScriptInfos({ config = undefined }: Options = {}): void {
 
     if (multisigTemplate) {
       predefinedInfos.push({
-        code_hash: multisigTemplate.CODE_HASH,
+        codeHash: multisigTemplate.CODE_HASH,
         hash_type: multisigTemplate.HASH_TYPE,
         lockScriptInfo: secp256k1Blake160Multisig,
       });
@@ -138,7 +138,7 @@ function generateLockScriptInfos({ config = undefined }: Options = {}): void {
 
     if (acpTemplate) {
       predefinedInfos.push({
-        code_hash: acpTemplate.CODE_HASH,
+        codeHash: acpTemplate.CODE_HASH,
         hash_type: acpTemplate.HASH_TYPE,
         lockScriptInfo: anyoneCanPay,
       });
@@ -214,7 +214,7 @@ export async function transfer(
     | LockScriptInfo
     | undefined = lockScriptInfos.infos.find((lockScriptInfo) => {
     return (
-      lockScriptInfo.code_hash === toScript.codeHash &&
+      lockScriptInfo.codeHash === toScript.codeHash &&
       lockScriptInfo.hash_type === toScript.hash_type
     );
   });
@@ -790,7 +790,7 @@ export async function setupInputCell(
     | LockScriptInfo
     | undefined = lockScriptInfos.infos.find((lockScriptInfo) => {
     return (
-      lockScriptInfo.code_hash === inputLock.codeHash &&
+      lockScriptInfo.codeHash === inputLock.codeHash &&
       lockScriptInfo.hash_type === inputLock.hash_type
     );
   });

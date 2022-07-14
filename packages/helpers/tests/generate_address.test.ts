@@ -126,7 +126,7 @@ test("invalid deprecated address with ckb2021 data1 hash_type", (t) => {
   t.throws(
     () =>
       generateAddress({
-        code_hash:
+        codeHash:
           "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
         hash_type: "data1",
         args: "0x36c329ed630d6ce750712a477543672adab57f4c",

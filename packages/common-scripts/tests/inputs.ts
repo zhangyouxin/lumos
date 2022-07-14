@@ -6,7 +6,7 @@ export const bobSecpInputs: Cell[] = [
     cell_output: {
       capacity: "0x174876e800",
       lock: {
-        code_hash:
+        codeHash:
           "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
         hash_type: "type",
         args: "0x36c329ed630d6ce750712a477543672adab57f4c",
@@ -27,7 +27,7 @@ export const bobSecpInputs: Cell[] = [
     cell_output: {
       capacity: "0x174876e800",
       lock: {
-        code_hash:
+        codeHash:
           "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
         hash_type: "type",
         args: "0x36c329ed630d6ce750712a477543672adab57f4c",
@@ -51,7 +51,7 @@ export const bobMultisigInputs: Cell[] = [
     cell_output: {
       capacity: "0x174876e800",
       lock: {
-        code_hash:
+        codeHash:
           "0x5c5069eb0857efc65e1bca0c07df34c31663b3622fd3876c876320fc9634e2a8",
         hash_type: "type",
         args: "0x56f281b3d4bb5fc73c751714af0bf78eb8aba0d8",
@@ -72,7 +72,7 @@ export const bobMultisigInputs: Cell[] = [
     cell_output: {
       capacity: "0x174876e800",
       lock: {
-        code_hash:
+        codeHash:
           "0x5c5069eb0857efc65e1bca0c07df34c31663b3622fd3876c876320fc9634e2a8",
         hash_type: "type",
         args: "0x56f281b3d4bb5fc73c751714af0bf78eb8aba0d8",
@@ -96,7 +96,7 @@ export const bobMultisigLockInputs: Cell[] = [
     cell_output: {
       capacity: "0x174876e800",
       lock: {
-        code_hash:
+        codeHash:
           "0x5c5069eb0857efc65e1bca0c07df34c31663b3622fd3876c876320fc9634e2a8",
         hash_type: "type",
         args: "0x56f281b3d4bb5fc73c751714af0bf78eb8aba0d80000000000000000",
@@ -120,7 +120,7 @@ export const bobAcpCells: Cell[] = [
     cell_output: {
       capacity: "0x174876e800",
       lock: {
-        code_hash:
+        codeHash:
           "0x3419a1c09eb2567f6552ee7a8ecffd64155cffe0f1796e6e61ec088d740c1356",
         hash_type: "type",
         args: "0x36c329ed630d6ce750712a477543672adab57f4c",
@@ -144,7 +144,7 @@ export const aliceAcpCells: Cell[] = [
     cell_output: {
       capacity: "0x174876e800",
       lock: {
-        code_hash:
+        codeHash:
           "0x3419a1c09eb2567f6552ee7a8ecffd64155cffe0f1796e6e61ec088d740c1356",
         hash_type: "type",
         args: "0xe2193df51d78411601796b35b17b4f8f2cd85bd0",
@@ -168,13 +168,13 @@ export const bobSecpSudtInputs: Cell[] = [
     cell_output: {
       capacity: "0x174876e800",
       lock: {
-        code_hash:
+        codeHash:
           "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
         hash_type: "type",
         args: "0x36c329ed630d6ce750712a477543672adab57f4c",
       },
       type: {
-        code_hash:
+        codeHash:
           "0xc5e5dcf215925f7ef4dfaf5f4b4f105bc321c02776d6e7d52a1db3fcd9d011a4",
         hash_type: "type",
         args:
@@ -199,13 +199,13 @@ export const bobMultisigLockSudtInputs: LocktimeCell[] = [
       // origin capacity: "0x4a817c800"
       capacity: "0x" + BigInt(20000000000).toString(16),
       lock: {
-        code_hash:
+        codeHash:
           "0x5c5069eb0857efc65e1bca0c07df34c31663b3622fd3876c876320fc9634e2a8",
         hash_type: "type",
         args: "0x56f281b3d4bb5fc73c751714af0bf78eb8aba0d80000000000000000",
       },
       type: {
-        code_hash:
+        codeHash:
           "0x48dbf59b4c7ee1547238021b4869bceedf4eea6b43772e5d66ef8865b6ae7212",
         hash_type: "data",
         args:
@@ -233,13 +233,13 @@ export const bobAcpSudtInputs: Cell[] = [
     cell_output: {
       capacity: "0x174876e800",
       lock: {
-        code_hash:
+        codeHash:
           "0x3419a1c09eb2567f6552ee7a8ecffd64155cffe0f1796e6e61ec088d740c1356",
         hash_type: "type",
         args: "0x36c329ed630d6ce750712a477543672adab57f4c",
       },
       type: {
-        code_hash:
+        codeHash:
           "0xc5e5dcf215925f7ef4dfaf5f4b4f105bc321c02776d6e7d52a1db3fcd9d011a4",
         hash_type: "type",
         args:
@@ -263,13 +263,13 @@ export const aliceAcpSudtInputs: Cell[] = [
     cell_output: {
       capacity: "0x174876e800",
       lock: {
-        code_hash:
+        codeHash:
           "0x3419a1c09eb2567f6552ee7a8ecffd64155cffe0f1796e6e61ec088d740c1356",
         hash_type: "type",
         args: "0xe2193df51d78411601796b35b17b4f8f2cd85bd0",
       },
       type: {
-        code_hash:
+        codeHash:
           "0xc5e5dcf215925f7ef4dfaf5f4b4f105bc321c02776d6e7d52a1db3fcd9d011a4",
         hash_type: "type",
         args:
@@ -312,13 +312,13 @@ export const bobMultisigDaoInputs: Cell[] = [
     cell_output: {
       capacity: "0x174876e800",
       lock: {
-        code_hash:
+        codeHash:
           "0x5c5069eb0857efc65e1bca0c07df34c31663b3622fd3876c876320fc9634e2a8",
         hash_type: "type",
         args: "0x56f281b3d4bb5fc73c751714af0bf78eb8aba0d8",
       },
       type: {
-        code_hash:
+        codeHash:
           "0x82d76d1b75fe2fd9a27dfbaa65a039221a380d76c926f378d3f81cf3e7e13f2e",
         hash_type: "type",
         args: "0x",
@@ -340,13 +340,13 @@ export const bobSecpDaoDepositInput: Cell = {
   cell_output: {
     capacity: "0x174876e800",
     lock: {
-      code_hash:
+      codeHash:
         "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
       hash_type: "type",
       args: "0x36c329ed630d6ce750712a477543672adab57f4c",
     },
     type: {
-      code_hash:
+      codeHash:
         "0x82d76d1b75fe2fd9a27dfbaa65a039221a380d76c926f378d3f81cf3e7e13f2e",
       hash_type: "type",
       args: "0x",
@@ -367,13 +367,13 @@ export const bobSecpDaoWithdrawInput: Cell = {
   cell_output: {
     capacity: "0x174876e800",
     lock: {
-      code_hash:
+      codeHash:
         "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
       hash_type: "type",
       args: "0x36c329ed630d6ce750712a477543672adab57f4c",
     },
     type: {
-      code_hash:
+      codeHash:
         "0x82d76d1b75fe2fd9a27dfbaa65a039221a380d76c926f378d3f81cf3e7e13f2e",
       hash_type: "type",
       args: "0x",

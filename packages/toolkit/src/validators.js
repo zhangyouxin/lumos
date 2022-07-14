@@ -70,10 +70,10 @@ export function ValidateScript(
   assertObjectWithKeys(
     debugPath,
     script,
-    ["code_hash", "hash_type", "args"],
+    ["codeHash", "hash_type", "args"],
     []
   );
-  assertHash(`${debugPath}.code_hash`, script.code_hash);
+  assertHash(`${debugPath}.codeHash`, script.codeHash);
   assertHexString(`${debugPath}.args`, script.args);
 
   if (script.hash_type !== "data" && script.hash_type !== "type") {

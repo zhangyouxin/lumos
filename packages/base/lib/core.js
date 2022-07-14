@@ -735,7 +735,7 @@
 
   function SerializeScript(value) {
     const buffers = [];
-    buffers.push(SerializeByte32(value.code_hash));
+    buffers.push(SerializeByte32(value.codeHash));
     const hashTypeView = new DataView(new ArrayBuffer(1));
     hashTypeView.setUint8(0, value.hash_type);
     buffers.push(hashTypeView.buffer);

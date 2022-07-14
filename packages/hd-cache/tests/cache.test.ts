@@ -43,7 +43,7 @@ const mockTxs: TransactionWithStatus[] = [
         {
           capacity: "0x" + BigInt(1000 * 10 ** 8).toString(16),
           lock: {
-            code_hash:
+            codeHash:
               "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
             hash_type: "type",
             args: "0x89cba48c68b3978f185df19f31634bb870e94639",
@@ -79,7 +79,7 @@ const mockTxs: TransactionWithStatus[] = [
         {
           capacity: "0x" + BigInt(200 * 10 ** 8).toString(16),
           lock: {
-            code_hash:
+            codeHash:
               "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
             hash_type: "type",
             args: "0x0ce445e32d7f91c9392485ddb9bc6885ce46ad64",
@@ -88,7 +88,7 @@ const mockTxs: TransactionWithStatus[] = [
         {
           capacity: "0x" + BigInt(300 * 10 ** 8).toString(16),
           lock: {
-            code_hash:
+            codeHash:
               "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
             hash_type: "type",
             args: "0xaa5aa575dedb6f5d7a5c835428c3b4a3ea7ba1eb",
@@ -97,7 +97,7 @@ const mockTxs: TransactionWithStatus[] = [
         {
           capacity: "0x" + BigInt(400 * 10 ** 8).toString(16),
           lock: {
-            code_hash:
+            codeHash:
               "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
             hash_type: "type",
             args: "0xfa7b46aa28cb233db373e5712e16edcaaa4c4999",
@@ -107,7 +107,7 @@ const mockTxs: TransactionWithStatus[] = [
         {
           capacity: "0x" + BigInt(50 * 10 ** 8).toString(16),
           lock: {
-            code_hash:
+            codeHash:
               "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
             hash_type: "type",
             args: "0xa6ee79109863906e75668acd75d6c6adbd56469c",
@@ -361,7 +361,7 @@ test("CellCollectorWithQueryOptions", async (t) => {
 
   const queryOptions: QueryOptions = {
     lock: {
-      code_hash:
+      codeHash:
         "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
       hash_type: "type",
       args: "0x0ce445e32d7f91c9392485ddb9bc6885ce46ad64",

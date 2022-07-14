@@ -71,7 +71,7 @@ function normalizeObject(debugPath, object, keys) {
 
 export function NormalizeScript(script, { debugPath = "script" } = {}) {
   return normalizeObject(debugPath, script, {
-    code_hash: normalizeRawData(32),
+    codeHash: normalizeRawData(32),
     hash_type: function (debugPath, value) {
       switch (value) {
         case "data":

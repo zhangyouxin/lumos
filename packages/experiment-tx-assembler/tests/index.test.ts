@@ -15,7 +15,7 @@ test("ScriptRegistry", (t) => {
 
   const secp256k1Script = registry.newScript("SECP256K1_BLAKE160", "0x");
   const SECP256K1_BLAKE160_SCRIPT: Script = {
-    code_hash:
+    codeHash:
       "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
     hash_type: "type",
     args: "0x",
@@ -27,7 +27,7 @@ test("ScriptRegistry", (t) => {
     new Reader("0x")
   );
   const SECP256K1_BLAKE160_MULTISIG_SCRIPT = {
-    code_hash:
+    codeHash:
       "0x5c5069eb0857efc65e1bca0c07df34c31663b3622fd3876c876320fc9634e2a8",
     hash_type: "type",
     args: new Reader("0x").serializeJson(),
@@ -71,7 +71,7 @@ test("ScriptRegistry", (t) => {
   t.is(scriptName, "SECP256K1_BLAKE160");
 
   const noneExistScript: Script = {
-    code_hash:
+    codeHash:
       "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce7",
     hash_type: "type",
     args: "0x",
@@ -82,7 +82,7 @@ test("ScriptRegistry", (t) => {
 
 test("create input cell", (t) => {
   const lock: Script = {
-    code_hash:
+    codeHash:
       "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
     args: "0x159890a7cacb44a95bef0743064433d763de229c",
     hash_type: "type",
@@ -110,7 +110,7 @@ test("create input cell", (t) => {
 
 test("create output cell", (t) => {
   const lock: Script = {
-    code_hash:
+    codeHash:
       "0x79f90bb5e892d80dd213439eeab551120eb417678824f282b4ffb5f21bad2e1e",
     hash_type: "type",
     args: "0x01a08bcc398854db4eaffd9c28b881c65f91e3a28b00",
@@ -133,7 +133,7 @@ test("create output cell", (t) => {
 
 test("create minimal cell", (t) => {
   const lock: Script = {
-    code_hash:
+    codeHash:
       "0x79f90bb5e892d80dd213439eeab551120eb417678824f282b4ffb5f21bad2e1e",
     hash_type: "type",
     args: "0x01a08bcc398854db4eaffd9c28b881c65f91e3a28b00",

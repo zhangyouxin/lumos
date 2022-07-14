@@ -16,7 +16,7 @@ const aliceInput: Cell = {
   cell_output: {
     capacity: "0x1d1a3543f00",
     lock: {
-      code_hash:
+      codeHash:
         "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
       hash_type: "type",
       args: "0xe2193df51d78411601796b35b17b4f8f2cd85bd0",
@@ -37,7 +37,7 @@ const multisigInput: Cell = {
   cell_output: {
     capacity: "0xba37cb7e00",
     lock: {
-      code_hash:
+      codeHash:
         "0x5c5069eb0857efc65e1bca0c07df34c31663b3622fd3876c876320fc9634e2a8",
       hash_type: "type",
       args: "0x56f281b3d4bb5fc73c751714af0bf78eb8aba0d8",

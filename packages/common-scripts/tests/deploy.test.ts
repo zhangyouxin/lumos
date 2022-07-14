@@ -12,7 +12,7 @@ const { AGGRON4 } = predefined;
 
 const FROMADDRESS = "ckt1qyqptxys5l9vk39ft0hswscxgseawc77y2wqlr558h";
 const OUTPUTSCRIPTLOCK: Script = {
-  code_hash:
+  codeHash:
     "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
   hash_type: "type",
   args: "0x159890a7cacb44a95bef0743064433d763de229c",
@@ -26,7 +26,7 @@ const FROMINFO = {
   publicKeyHashes: [LOCKARG1, LOCKARG2, LOCKARG3],
 };
 const MULTISIGSCRIPT = {
-  code_hash:
+  codeHash:
     "0x5c5069eb0857efc65e1bca0c07df34c31663b3622fd3876c876320fc9634e2a8",
   hash_type: "type",
   args: "0xed20af7322823d0dc33bfb215486a05082669905",
@@ -60,7 +60,7 @@ test("deploy with data", async (t) => {
         capacity: "0x1718c7e00",
         lock: {
           args: "0x159890a7cacb44a95bef0743064433d763de229c",
-          code_hash:
+          codeHash:
             "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
           hash_type: "type",
         },
@@ -79,14 +79,14 @@ test("deploy with data", async (t) => {
         capacity: "0x2f4fa9f00",
         lock: {
           args: "0x159890a7cacb44a95bef0743064433d763de229c",
-          code_hash:
+          codeHash:
             "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
           hash_type: "type",
         },
         type: {
           args:
             "0xe9451f3528af55247ff7d3851a00b54a5fe7de38d40dc29580ce2c069332633a",
-          code_hash:
+          codeHash:
             "0x00000000000000000000000000000000000000000000000000545950455f4944",
           hash_type: "type",
         },
@@ -104,7 +104,7 @@ test("deploy with data", async (t) => {
         capacity: "0x981bb6e5000",
         lock: {
           args: "0x159890a7cacb44a95bef0743064433d763de229c",
-          code_hash:
+          codeHash:
             "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
           hash_type: "type",
         },
@@ -157,7 +157,7 @@ test("deploy with typeID", async (t) => {
         capacity: "0x1718c7e00",
         lock: {
           args: "0x159890a7cacb44a95bef0743064433d763de229c",
-          code_hash:
+          codeHash:
             "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
           hash_type: "type",
         },
@@ -176,14 +176,14 @@ test("deploy with typeID", async (t) => {
         capacity: "0x2f4fa9f00",
         lock: {
           args: "0x159890a7cacb44a95bef0743064433d763de229c",
-          code_hash:
+          codeHash:
             "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
           hash_type: "type",
         },
         type: {
           args:
             "0xe9451f3528af55247ff7d3851a00b54a5fe7de38d40dc29580ce2c069332633a",
-          code_hash:
+          codeHash:
             "0x00000000000000000000000000000000000000000000000000545950455f4944",
           hash_type: "type",
         },
@@ -201,7 +201,7 @@ test("deploy with typeID", async (t) => {
         capacity: "0x543fd2fccaf2",
         lock: {
           args: "0x159890a7cacb44a95bef0743064433d763de229c",
-          code_hash:
+          codeHash:
             "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
           hash_type: "type",
         },
@@ -254,14 +254,14 @@ test("upgrade with typeID", async (t) => {
         capacity: "0x2f4fa9f00",
         lock: {
           args: "0x159890a7cacb44a95bef0743064433d763de229c",
-          code_hash:
+          codeHash:
             "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
           hash_type: "type",
         },
         type: {
           args:
             "0x2c82a38950de3204a4ae166c50331d1b104e97a21402cb5bdb7ca23bb9c15f0f",
-          code_hash:
+          codeHash:
             "0x00000000000000000000000000000000000000000000000000545950455f4944",
           hash_type: "type",
         },
@@ -279,7 +279,7 @@ test("upgrade with typeID", async (t) => {
         capacity: "0x1718adf5a",
         lock: {
           args: "0x159890a7cacb44a95bef0743064433d763de229c",
-          code_hash:
+          codeHash:
             "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
           hash_type: "type",
         },
@@ -298,7 +298,7 @@ test("upgrade with typeID", async (t) => {
         capacity: "0x98049e1d02f",
         lock: {
           args: "0x159890a7cacb44a95bef0743064433d763de229c",
-          code_hash:
+          codeHash:
             "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
           hash_type: "type",
         },
@@ -320,7 +320,7 @@ test("upgrade with typeID", async (t) => {
     scriptBinary: upgradeBinary,
     fromInfo: FROMADDRESS,
     typeId: {
-      code_hash:
+      codeHash:
         "0x00000000000000000000000000000000000000000000000000545950455f4944",
       hash_type: "type" as const,
       args:
@@ -352,14 +352,14 @@ test("upgrade contract with size reduced", async (t) => {
         capacity: "0x5f5e10000",
         lock: {
           args: "0x159890a7cacb44a95bef0743064433d763de229c",
-          code_hash:
+          codeHash:
             "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
           hash_type: "type",
         },
         type: {
           args:
             "0x2c82a38950de3204a4ae166c50331d1b104e97a21402cb5bdb7ca23bb9c15f0f",
-          code_hash:
+          codeHash:
             "0x00000000000000000000000000000000000000000000000000545950455f4944",
           hash_type: "type",
         },
@@ -377,7 +377,7 @@ test("upgrade contract with size reduced", async (t) => {
         capacity: "0x1718adf5a",
         lock: {
           args: "0x159890a7cacb44a95bef0743064433d763de229c",
-          code_hash:
+          codeHash:
             "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
           hash_type: "type",
         },
@@ -396,7 +396,7 @@ test("upgrade contract with size reduced", async (t) => {
         capacity: "0x98049e1d02f",
         lock: {
           args: "0x159890a7cacb44a95bef0743064433d763de229c",
-          code_hash:
+          codeHash:
             "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
           hash_type: "type",
         },
@@ -418,7 +418,7 @@ test("upgrade contract with size reduced", async (t) => {
     scriptBinary: upgradeBinary,
     fromInfo: FROMADDRESS,
     typeId: {
-      code_hash:
+      codeHash:
         "0x00000000000000000000000000000000000000000000000000545950455f4944",
       hash_type: "type" as const,
       args:
@@ -450,7 +450,7 @@ test("deploy with data by multisig", async (t) => {
         capacity: "0x1718c7e00",
         lock: {
           args: "0xed20af7322823d0dc33bfb215486a05082669905",
-          code_hash:
+          codeHash:
             "0x5c5069eb0857efc65e1bca0c07df34c31663b3622fd3876c876320fc9634e2a8",
           hash_type: "type",
         },
@@ -469,14 +469,14 @@ test("deploy with data by multisig", async (t) => {
         capacity: "0x2f4fa9f00",
         lock: {
           args: "0xed20af7322823d0dc33bfb215486a05082669905",
-          code_hash:
+          codeHash:
             "0x5c5069eb0857efc65e1bca0c07df34c31663b3622fd3876c876320fc9634e2a8",
           hash_type: "type",
         },
         type: {
           args:
             "0xe9451f3528af55247ff7d3851a00b54a5fe7de38d40dc29580ce2c069332633a",
-          code_hash:
+          codeHash:
             "0x00000000000000000000000000000000000000000000000000545950455f4944",
           hash_type: "type",
         },
@@ -494,7 +494,7 @@ test("deploy with data by multisig", async (t) => {
         capacity: "0xdf0743f080",
         lock: {
           args: "0xed20af7322823d0dc33bfb215486a05082669905",
-          code_hash:
+          codeHash:
             "0x5c5069eb0857efc65e1bca0c07df34c31663b3622fd3876c876320fc9634e2a8",
           hash_type: "type",
         },
@@ -556,7 +556,7 @@ test("collected capacity is enough for change cell and deploy cell", async (t) =
         capacity: "0x2e318fc00",
         lock: {
           args: "0x159890a7cacb44a95bef0743064433d763de229c",
-          code_hash:
+          codeHash:
             "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
           hash_type: "type",
         },
@@ -590,7 +590,7 @@ test("collected capacity is NOT enough for change cell and deploy cell", async (
         capacity: "0x165a0bc00",
         lock: {
           args: "0x159890a7cacb44a95bef0743064433d763de229c",
-          code_hash:
+          codeHash:
             "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
           hash_type: "type",
         },
@@ -625,7 +625,7 @@ test("collected capacity is enough for deploy cell but NOT enough for change cel
         capacity: "0x2cb417800",
         lock: {
           args: "0x159890a7cacb44a95bef0743064433d763de229c",
-          code_hash:
+          codeHash:
             "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
           hash_type: "type",
         },

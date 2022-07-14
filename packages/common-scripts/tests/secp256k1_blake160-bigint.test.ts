@@ -58,7 +58,7 @@ test("BigInt:transfer to non secp256k1_blake160 address", async (t) => {
   const changeOutput = txSkeleton.get("outputs").get(1)!;
   const template = LINA.SCRIPTS.SECP256K1_BLAKE160!;
   const expectedChangeLockScript = {
-    code_hash: template.CODE_HASH,
+    codeHash: template.CODE_HASH,
     hash_type: template.HASH_TYPE,
     args: bob.blake160,
   };

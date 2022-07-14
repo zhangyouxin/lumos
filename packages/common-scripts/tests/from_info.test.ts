@@ -46,7 +46,7 @@ test("parseFromInfo, secp address", (t) => {
   const result = parseFromInfo(bob.testnetAddress, { config: AGGRON4 });
   const template = AGGRON4.SCRIPTS.SECP256K1_BLAKE160!;
 
-  t.is(result.fromScript.code_hash, template.CODE_HASH);
+  t.is(result.fromScript.codeHash, template.CODE_HASH);
   t.is(result.fromScript.hash_type, template.HASH_TYPE);
   t.is(result.fromScript.args, bob.blake160);
   t.is(result.multisigScript, undefined);
@@ -61,7 +61,7 @@ test("parseFromInfo, MultisigScript", (t) => {
 
   const template = AGGRON4.SCRIPTS.SECP256K1_BLAKE160_MULTISIG!;
 
-  t.is(result.fromScript.code_hash, template.CODE_HASH);
+  t.is(result.fromScript.codeHash, template.CODE_HASH);
   t.is(result.fromScript.hash_type, template.HASH_TYPE);
   t.is(result.fromScript.args, bob.multisigArgs);
   t.is(result.multisigScript, serializeMultisigScript(bob.fromInfo));
@@ -82,7 +82,7 @@ test("parseFromInfo, ACP, destroyable", (t) => {
 
   const template = AGGRON4.SCRIPTS.ANYONE_CAN_PAY!;
 
-  t.is(result.fromScript.code_hash, template.CODE_HASH);
+  t.is(result.fromScript.codeHash, template.CODE_HASH);
   t.is(result.fromScript.hash_type, template.HASH_TYPE);
   t.is(result.fromScript.args, bob.blake160);
   t.is(result.multisigScript, undefined);
@@ -102,7 +102,7 @@ test("parseFromInfo, ACP, default", (t) => {
 
   const template = AGGRON4.SCRIPTS.ANYONE_CAN_PAY!;
 
-  t.is(result.fromScript.code_hash, template.CODE_HASH);
+  t.is(result.fromScript.codeHash, template.CODE_HASH);
   t.is(result.fromScript.hash_type, template.HASH_TYPE);
   t.is(result.fromScript.args, bob.blake160);
   t.is(result.multisigScript, undefined);
@@ -126,7 +126,7 @@ test("parseFromInfo, CustomScript", (t) => {
 
   const template = AGGRON4.SCRIPTS.ANYONE_CAN_PAY!;
 
-  t.is(result.fromScript.code_hash, template.CODE_HASH);
+  t.is(result.fromScript.codeHash, template.CODE_HASH);
   t.is(result.fromScript.hash_type, template.HASH_TYPE);
   t.is(result.fromScript.args, bob.blake160);
   t.is(result.multisigScript, undefined);

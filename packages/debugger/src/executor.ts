@@ -37,7 +37,6 @@ export class CKBDebugger implements Executor {
    */
   private saveTmpTxFile(txSkeleton: TransactionSkeletonType): string {
     const debuggerData = parseDebuggerData(txSkeleton, this.loader);
-
     // TODO replace with random tmp file name to avoid conflict
     const tmpTxPath = path.join(os.tmpdir(), "ckb_debugger_tx.json");
     fs.writeFileSync(tmpTxPath, JSON.stringify(debuggerData));

@@ -69,7 +69,21 @@ export function parseDebuggerData(
     mock_info: {
       inputs: txSkeleton.inputs.toArray().map((cell, i) => ({
         input: tx.inputs[i],
-        output: cell.cell_output,
+        output: {
+          capacity: cell.cell_output.capacity,
+          lock: {
+            hash_type: cell.cell_output.lock.hash_type,
+            code_hash: cell.cell_output.lock.codeHash,
+            args: cell.cell_output.lock.args,
+          },
+          type: cell.cell_output.type
+            ? {
+                hash_type: cell.cell_output.type.hash_type,
+                code_hash: cell.cell_output.type.codeHash,
+                args: cell.cell_output.type.args,
+              }
+            : undefined,
+        },
         data: cell.data,
       })),
       cell_deps: txSkeleton
@@ -82,7 +96,7 @@ export function parseDebuggerData(
             output: {
               capacity: "0x0",
               lock: {
-                codeHash: "0x" + "00".repeat(32),
+                code_hash: "0x" + "00".repeat(32),
                 args: "0x",
                 hash_type: "data",
               },
@@ -91,6 +105,25 @@ export function parseDebuggerData(
         ),
       header_deps: txSkeleton.get("headerDeps").toArray().map(loader.getHeader),
     },
-    tx,
+    tx: {
+      ...tx,
+      outputs: tx.outputs.map((output) => {
+        return {
+          capacity: output.capacity,
+          lock: {
+            hash_type: output.lock.hash_type,
+            code_hash: output.lock.codeHash,
+            args: output.lock.args,
+          },
+          type: output.type
+            ? {
+                hash_type: output.type.hash_type,
+                code_hash: output.type.codeHash,
+                args: output.type.args,
+              }
+            : undefined,
+        };
+      }),
+    },
   };
 }

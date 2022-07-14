@@ -7,13 +7,13 @@ const calculateMaximumWithdrawInfo = {
     cell_output: {
       capacity: "0x174876e800",
       lock: {
-        code_hash:
+        codeHash:
           "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
         hash_type: "type",
         args: "0xe2193df51d78411601796b35b17b4f8f2cd85bd0",
       },
       type: {
-        code_hash:
+        codeHash:
           "0x82d76d1b75fe2fd9a27dfbaa65a039221a380d76c926f378d3f81cf3e7e13f2e",
         hash_type: "type",
         args: "0x",

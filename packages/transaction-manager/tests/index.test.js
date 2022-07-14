@@ -10,7 +10,7 @@ const cells = [
     cell_output: {
       capacity: "0x11714b9539d5",
       lock: {
-        code_hash:
+        codeHash:
           "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
         hash_type: "type",
         args: "0x36c329ed630d6ce750712a477543672adab57f4c",
@@ -56,7 +56,7 @@ const tx = {
     {
       capacity: "0x174876e800",
       lock: {
-        code_hash:
+        codeHash:
           "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
         hash_type: "type",
         args: "0xe2193df51d78411601796b35b17b4f8f2cd85bd0",
@@ -65,7 +65,7 @@ const tx = {
     {
       capacity: "0x115a031e51d5",
       lock: {
-        code_hash:
+        codeHash:
           "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
         hash_type: "type",
         args: "0x36c329ed630d6ce750712a477543672adab57f4c",

@@ -74,7 +74,7 @@ test("readBigUInt128LECompatible", (t) => {
 });
 
 const script = {
-  code_hash:
+  codeHash:
     "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
   hash_type: "type",
   args: "0x36c329ed630d6ce750712a477543672adab57f4c",
@@ -118,7 +118,7 @@ test("test type id", (t) => {
   };
   const typeIdScript = {
     args: "0xa803c9ed6c190fd780e64d885794933ab23da641e94ad1b9270ebac893a7cdcc",
-    code_hash:
+    codeHash:
       "0x00000000000000000000000000000000000000000000000000545950455f4944",
     hash_type: "type",
   };

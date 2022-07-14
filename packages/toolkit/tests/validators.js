@@ -3,7 +3,7 @@ const { validators } = require("../lib");
 
 test("correct script should pass validation", (t) => {
   validators.ValidateScript({
-    code_hash:
+    codeHash:
       "0xa98c57135830e1b91345948df6c4b8870828199a786b26f09f7dec4bc27a73da",
     args: "0x1234",
     hash_type: "data",
@@ -13,7 +13,7 @@ test("correct script should pass validation", (t) => {
 
 test("correct script with empty args", (t) => {
   validators.ValidateScript({
-    code_hash:
+    codeHash:
       "0xa98c57135830e1b91345948df6c4b8870828199a786b26f09f7dec4bc27a73da",
     args: "0x",
     hash_type: "type",
@@ -30,7 +30,7 @@ test("script that is not object", (t) => {
 test("script with invalid code hash", (t) => {
   t.throws(() => {
     validators.ValidateScript({
-      code_hash: "0xa98c57135830e1b913",
+      codeHash: "0xa98c57135830e1b913",
       args: "0x",
       hash_type: "type",
     });
@@ -40,7 +40,7 @@ test("script with invalid code hash", (t) => {
 test("script with invalid args", (t) => {
   t.throws(() => {
     validators.ValidateScript({
-      code_hash:
+      codeHash:
         "0xa98c57135830e1b91345948df6c4b8870828199a786b26f09f7dec4bc27a73da",
       args: "0xthisisnothex",
       hash_type: "type",
@@ -51,7 +51,7 @@ test("script with invalid args", (t) => {
 test("script with invalid hash type", (t) => {
   t.throws(() => {
     validators.ValidateScript({
-      code_hash:
+      codeHash:
         "0xa98c57135830e1b91345948df6c4b8870828199a786b26f09f7dec4bc27a73da",
       args: "0x",
       hash_type: "code",
@@ -151,7 +151,7 @@ test("correct celloutput", (t) => {
   validators.ValidateCellOutput({
     capacity: "0x10",
     lock: {
-      code_hash:
+      codeHash:
         "0xa98c57135830e1b91345948df6c4b8870828199a786b26f09f7dec4bc27a73da",
       args: "0x1234",
       hash_type: "data",
@@ -164,13 +164,13 @@ test("correct celloutput with type", (t) => {
   validators.ValidateCellOutput({
     capacity: "0x10",
     lock: {
-      code_hash:
+      codeHash:
         "0xa98c57135830e1b91345948df6c4b8870828199a786b26f09f7dec4bc27a73da",
       args: "0x1234",
       hash_type: "data",
     },
     type: {
-      code_hash:
+      codeHash:
         "0xa98c57135830e1b91345948df6c4b8870828199a786b26f09f7dec4bc27a73da",
       args: "0x",
       hash_type: "type",
@@ -184,7 +184,7 @@ test("celloutput with invalid capacity", (t) => {
     validators.ValidateCellOutput({
       capacity: "0xggg",
       lock: {
-        code_hash:
+        codeHash:
           "0xa98c57135830e1b91345948df6c4b8870828199a786b26f09f7dec4bc27a73da",
         args: "0x1234",
         hash_type: "data",
@@ -292,7 +292,7 @@ test("correct raw transaction", (t) => {
       {
         capacity: "0x1234",
         lock: {
-          code_hash:
+          codeHash:
             "0xa98c57135830e1b91345948df6c4b8870828199a786b26f09f7dec4bc27a7302",
           args: "0x1234",
           hash_type: "data",
@@ -326,7 +326,7 @@ test("invalid raw transaction", (t) => {
         {
           capacity: "0x1234",
           lock: {
-            code_hash:
+            codeHash:
               "0xa98c57135830e1b91345948df6c4b8870828199a786b26f09f7dec4bc27a7302",
             args: "0x1234",
             hash_type: "data",
@@ -368,7 +368,7 @@ test("correct transaction", (t) => {
       {
         capacity: "0x1234",
         lock: {
-          code_hash:
+          codeHash:
             "0xa98c57135830e1b91345948df6c4b8870828199a786b26f09f7dec4bc27a7302",
           args: "0x1234",
           hash_type: "data",
@@ -556,7 +556,7 @@ test("validate block", (t) => {
           {
             capacity: "0x1234",
             lock: {
-              code_hash:
+              codeHash:
                 "0xa98c57135830e1b91345948df6c4b8870828199a786b26f09f7dec4bc27a7302",
               args: "0x1234",
               hash_type: "data",
@@ -576,7 +576,7 @@ test("validate block", (t) => {
 test("correct cellbase witness", (t) => {
   validators.ValidateCellbaseWitness({
     lock: {
-      code_hash:
+      codeHash:
         "0xa98c57135830e1b91345948df6c4b8870828199a786b26f09f7dec4bc27a73da",
       args: "0x1234",
       hash_type: "data",

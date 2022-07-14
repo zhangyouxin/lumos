@@ -2,7 +2,7 @@ import { HashType, TransactionWithStatus } from "@ckb-lumos/base";
 import { IndexerTransactionList } from "@ckb-lumos/ckb-indexer/src/type";
 export const queryOption = {
   lock: {
-    code_hash:
+    codeHash:
       "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
     hash_type: "type" as HashType,
     args: "0xbde8b19b4505dd1d1310223edecea20adc4e240e",
@@ -126,13 +126,13 @@ export const unresolvedTransaction: TransactionWithStatus = {
         capacity: "0xba43b7400",
         lock: {
           args: "0xdfc8ad219178a307ff117ee4e2fe760cd18410a7",
-          code_hash:
+          codeHash:
             "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
           hash_type: "type",
         },
         type: {
           args: "0x",
-          code_hash:
+          codeHash:
             "0x82d76d1b75fe2fd9a27dfbaa65a039221a380d76c926f378d3f81cf3e7e13f2e",
           hash_type: "type",
         },
@@ -141,7 +141,7 @@ export const unresolvedTransaction: TransactionWithStatus = {
         capacity: "0x5619c490e0",
         lock: {
           args: "0xdfc8ad219178a307ff117ee4e2fe760cd18410a7",
-          code_hash:
+          codeHash:
             "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
           hash_type: "type",
         },
@@ -212,13 +212,13 @@ export const resolvedTransaction: TransactionWithStatus = {
         capacity: "0x37e11d600",
         lock: {
           args: "0xdfc8ad219178a307ff117ee4e2fe760cd18410a7",
-          code_hash:
+          codeHash:
             "0x82d76d1b75fe2fd9a27dfbaa65a039221a380d76c926f378d3f81cf3e7e13f2e",
           hash_type: "type",
         },
         type: {
           args: "0x",
-          code_hash:
+          codeHash:
             "0x82d76d1b75fe2fd9a27dfbaa65a039221a380d76c926f378d3f81cf3e7e13f2e",
           hash_type: "type",
         },
@@ -227,7 +227,7 @@ export const resolvedTransaction: TransactionWithStatus = {
         capacity: "0x1bf076460",
         lock: {
           args: "0xdfc8ad219178a307ff117ee4e2fe760cd18410a7",
-          code_hash:
+          codeHash:
             "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
           hash_type: "type",
         },
@@ -297,13 +297,13 @@ export const batchRequestTransaction = [
             capacity: "0x37e11d600",
             lock: {
               args: "0xdfc8ad219178a307ff117ee4e2fe760cd18410a7",
-              code_hash:
+              codeHash:
                 "0x82d76d1b75fe2fd9a27dfbaa65a039221a380d76c926f378d3f81cf3e7e13f2e",
               hash_type: "type",
             },
             type: {
               args: "0x",
-              code_hash:
+              codeHash:
                 "0x82d76d1b75fe2fd9a27dfbaa65a039221a380d76c926f378d3f81cf3e7e13f2e",
               hash_type: "type",
             },
@@ -312,7 +312,7 @@ export const batchRequestTransaction = [
             capacity: "0x1bf076460",
             lock: {
               args: "0xdfc8ad219178a307ff117ee4e2fe760cd18410a7",
-              code_hash:
+              codeHash:
                 "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
               hash_type: "type",
             },

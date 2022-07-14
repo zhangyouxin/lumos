@@ -42,7 +42,7 @@ const inputInfos: LocktimeCell[] = [
     cell_output: {
       capacity: "0x" + BigInt("100000000000").toString(16),
       lock: {
-        code_hash:
+        codeHash:
           "0x5c5069eb0857efc65e1bca0c07df34c31663b3622fd3876c876320fc9634e2a8",
         hash_type: "type",
         args: "0x56f281b3d4bb5fc73c751714af0bf78eb8aba0d80000000000000000",
@@ -73,7 +73,7 @@ const inputInfos: LocktimeCell[] = [
     cell_output: {
       capacity: "0x" + BigInt("100000000000").toString(16),
       lock: {
-        code_hash:
+        codeHash:
           "0x5c5069eb0857efc65e1bca0c07df34c31663b3622fd3876c876320fc9634e2a8",
         hash_type: "type",
         args: "0x56f281b3d4bb5fc73c751714af0bf78eb8aba0d8152b00c000f00020",
@@ -104,13 +104,13 @@ const inputInfos: LocktimeCell[] = [
     cell_output: {
       capacity: "0x" + BigInt("100007690204").toString(16),
       lock: {
-        code_hash:
+        codeHash:
           "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
         hash_type: "type",
         args: "0xe2193df51d78411601796b35b17b4f8f2cd85bd0",
       },
       type: {
-        code_hash:
+        codeHash:
           "0x82d76d1b75fe2fd9a27dfbaa65a039221a380d76c926f378d3f81cf3e7e13f2e",
         hash_type: "type",
         args: "0x",
@@ -152,7 +152,7 @@ class LocktimeCellCollector {
     this.fromInfo = fromInfo;
     this.config = config!;
     this.fromScript = {
-      code_hash: "",
+      codeHash: "",
       hash_type: "data",
       args: "",
     };
@@ -165,7 +165,7 @@ class LocktimeCellCollector {
     for (const info of inputInfos) {
       const lock = info.cell_output.lock;
       if (
-        lock.code_hash === fromScript.code_hash &&
+        lock.codeHash === fromScript.codeHash &&
         lock.hash_type === fromScript.hash_type
       ) {
         yield info;
@@ -420,7 +420,7 @@ test("JSBI:Don't update capacity directly when deduct", async (t) => {
       this.fromInfo = fromInfo;
       this.config = config!;
       this.fromScript = {
-        code_hash: "",
+        codeHash: "",
         hash_type: "data",
         args: "",
       };
@@ -433,7 +433,7 @@ test("JSBI:Don't update capacity directly when deduct", async (t) => {
       for (const info of [inputInfos[0]]) {
         const lock = info.cell_output.lock;
         if (
-          lock.code_hash === fromScript.code_hash &&
+          lock.codeHash === fromScript.codeHash &&
           lock.hash_type === fromScript.hash_type
         ) {
           yield info;
@@ -695,7 +695,7 @@ test("CellCollector, dao & multisig, dao since > multisig since", async (t) => {
   const withdrawCell: Cell = cloneObject(bobSecpDaoWithdrawInput);
 
   const multisigLock: Script = {
-    code_hash:
+    codeHash:
       "0x5c5069eb0857efc65e1bca0c07df34c31663b3622fd3876c876320fc9634e2a8",
     hash_type: "type",
     args,
@@ -772,7 +772,7 @@ test("CellCollector, dao & multisig, multisig since > dao since", async (t) => {
   const withdrawCell: Cell = cloneObject(bobSecpDaoWithdrawInput);
 
   const multisigLock: Script = {
-    code_hash:
+    codeHash:
       "0x5c5069eb0857efc65e1bca0c07df34c31663b3622fd3876c876320fc9634e2a8",
     hash_type: "type",
     args,
@@ -849,7 +849,7 @@ test("CellCollector, dao & multisig, multisig since type = blockNumber", async (
   const withdrawCell: Cell = cloneObject(bobSecpDaoWithdrawInput);
 
   const multisigLock: Script = {
-    code_hash:
+    codeHash:
       "0x5c5069eb0857efc65e1bca0c07df34c31663b3622fd3876c876320fc9634e2a8",
     hash_type: "type",
     args,

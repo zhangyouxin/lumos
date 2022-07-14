@@ -3,7 +3,9 @@ import { TransactionSkeletonType } from "@ckb-lumos/helpers";
 import {
   CellDep,
   Hash,
+  HashType,
   Header,
+  HexNumber,
   HexString,
   Input,
   OutPoint,
@@ -26,18 +28,43 @@ export interface DataLoader {
   getHeader(blockHash: Hash): Header;
 }
 
+export interface DebuggerScript {
+  code_hash: Hash;
+  hash_type: HashType;
+  args: HexString;
+}
+export interface DebuggerOutput {
+  capacity: HexString;
+  lock: DebuggerScript;
+  type?: DebuggerScript;
+}
+export interface DebuggerTransaction {
+  cell_deps: CellDep[];
+  hash?: Hash;
+  header_deps: Hash[];
+  inputs: Input[];
+  outputs: DebuggerOutput[];
+  outputs_data: HexString[];
+  version: HexNumber;
+  witnesses: HexString[];
+}
 export interface DebuggerData {
   mock_info: {
-    inputs: { input: Input; output: Output; data: HexString; header?: Hash }[];
+    inputs: {
+      input: Input;
+      output: DebuggerOutput;
+      data: HexString;
+      header?: Hash;
+    }[];
     cell_deps: {
       cell_dep: CellDep;
-      output: Output;
+      output: DebuggerOutput;
       data: HexString;
       header?: Hash;
     }[];
     header_deps: Header[];
   };
-  tx: Transaction;
+  tx: DebuggerTransaction;
 }
 
 export interface Executor {

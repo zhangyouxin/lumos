@@ -74,7 +74,7 @@ test("createTransactionFromSkeleton, invalid input", (t) => {
     cell_output: {
       capacity: "0x0",
       lock: {
-        code_hash:
+        codeHash:
           "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
         args: "0x159890a7cacb44a95bef0743064433d763de229c",
         hash_type: "type",
