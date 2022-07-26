@@ -107,6 +107,7 @@ dist
 packages/sql-indexer/knexfile.dev.js
 
 # compiled js
+lib
 packages/helpers/lib
 packages/common-scripts/lib
 packages/hd/lib
