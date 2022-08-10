@@ -1,6 +1,6 @@
 {
   "name": "@yadomi29/config-manager",
-  "version": "0.26.0-alpha.0",
+  "version": "0.27.0-alpha.0",
   "description": "Config manager for lumos",
   "author": "Xuejie Xiao <xxuejie@gmail.com>",
   "homepage": "https://github.com/nervosnetwork/lumos#readme",
@@ -36,9 +36,9 @@
     "url": "https://github.com/nervosnetwork/lumos/issues"
   },
   "dependencies": {
-    "@yadomi29/base": "^0.26.0-alpha.0",
-    "@yadomi29/bi": "^0.26.0-alpha.0",
     "@types/deep-freeze-strict": "^1.1.0",
+    "@yadomi29/base": "^0.27.0-alpha.0",
+    "@yadomi29/bi": "^0.27.0-alpha.0",
     "deep-freeze-strict": "^1.1.1"
   },
   "publishConfig": {

@@ -1,6 +1,6 @@
 {
   "name": "@yadomi29/common-scripts",
-  "version": "0.26.0-alpha.0",
+  "version": "0.27.0-alpha.0",
   "description": "Common script support in lumos",
   "author": "Xuejie Xiao <xxuejie@gmail.com>",
   "homepage": "https://github.com/nervosnetwork/lumos#readme",
@@ -19,12 +19,12 @@
     "src"
   ],
   "dependencies": {
-    "@yadomi29/base": "^0.26.0-alpha.0",
-    "@yadomi29/bi": "^0.26.0-alpha.0",
-    "@yadomi29/config-manager": "^0.26.0-alpha.0",
-    "@yadomi29/helpers": "^0.26.0-alpha.0",
-    "@yadomi29/rpc": "^0.26.0-alpha.0",
-    "@yadomi29/toolkit": "^0.26.0-alpha.0",
+    "@yadomi29/base": "^0.27.0-alpha.0",
+    "@yadomi29/bi": "^0.27.0-alpha.0",
+    "@yadomi29/config-manager": "^0.27.0-alpha.0",
+    "@yadomi29/helpers": "^0.27.0-alpha.0",
+    "@yadomi29/rpc": "^0.27.0-alpha.0",
+    "@yadomi29/toolkit": "^0.27.0-alpha.0",
     "immutable": "^4.0.0-rc.12"
   },
   "repository": {

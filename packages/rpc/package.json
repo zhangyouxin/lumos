@@ -1,6 +1,6 @@
 {
   "name": "@yadomi29/rpc",
-  "version": "0.26.0-alpha.0",
+  "version": "0.27.0-alpha.0",
   "description": "RPC module for CKB",
   "author": "Xuejie Xiao <xxuejie@gmail.com>",
   "homepage": "https://github.com/nervosnetwork/lumos#readme",
@@ -37,9 +37,9 @@
     "url": "https://github.com/nervosnetwork/lumos/issues"
   },
   "dependencies": {
-    "@yadomi29/base": "^0.26.0-alpha.0",
-    "@yadomi29/bi": "^0.26.0-alpha.0",
-    "@yadomi29/toolkit": "^0.26.0-alpha.0"
+    "@yadomi29/base": "^0.27.0-alpha.0",
+    "@yadomi29/bi": "^0.27.0-alpha.0",
+    "@yadomi29/toolkit": "^0.27.0-alpha.0"
   },
   "ava": {
     "extensions": [
