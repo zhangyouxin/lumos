@@ -4,10 +4,10 @@ import {
   createCellWithMinimalCapacity,
 } from "../src";
 import test from "ava";
-import { BI } from "@ckb-lumos/bi";
-import { predefined } from "@ckb-lumos/config-manager";
-import { Reader } from "@ckb-lumos/toolkit";
-import { Script } from "@ckb-lumos/base";
+import { BI } from "@yadomi29/bi";
+import { predefined } from "@yadomi29/config-manager";
+import { Reader } from "@yadomi29/toolkit";
+import { Script } from "@yadomi29/base";
 const { AGGRON4 } = predefined;
 
 test("ScriptRegistry", (t) => {

@@ -1,5 +1,5 @@
 import { blockchain, molecule, number } from "../src";
-import { BI } from "@ckb-lumos/bi";
+import { BI } from "@yadomi29/bi";
 
 const { struct } = molecule;
 const { Byte32 } = blockchain;

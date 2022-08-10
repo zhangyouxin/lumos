@@ -2,24 +2,24 @@ import test from "ava";
 import {
   createCellWithMinimalCapacity,
   createScriptRegistry,
-} from "@ckb-lumos/experiment-tx-assembler";
-import { computeScriptHash } from "@ckb-lumos/base/lib/utils";
-import { HexString } from "@ckb-lumos/base";
+} from "@yadomi29/experiment-tx-assembler";
+import { computeScriptHash } from "@yadomi29/base/lib/utils";
+import { HexString } from "@yadomi29/base";
 import { CKBDebugger, CKBDebuggerDownloader, DataLoader } from "../src";
-import { TransactionSkeleton } from "@ckb-lumos/helpers";
+import { TransactionSkeleton } from "@yadomi29/helpers";
 import {
   createTestContext,
   getDefaultConfig,
   mockOutPoint,
 } from "../src/context";
 import { randomBytes } from "crypto";
-import { privateKeyToBlake160, signRecoverable } from "@ckb-lumos/hd/lib/key";
-import { hexify } from "@ckb-lumos/codec/lib/bytes";
+import { privateKeyToBlake160, signRecoverable } from "@yadomi29/hd/lib/key";
+import { hexify } from "@yadomi29/codec/lib/bytes";
 import {
   createP2PKHMessageGroup,
   parseFromInfo,
-} from "@ckb-lumos/common-scripts";
-import { WitnessArgs } from "@ckb-lumos/codec/lib/blockchain";
+} from "@yadomi29/common-scripts";
+import { WitnessArgs } from "@yadomi29/codec/lib/blockchain";
 
 const downloader = new CKBDebuggerDownloader();
 const context = createTestContext(getDefaultConfig());

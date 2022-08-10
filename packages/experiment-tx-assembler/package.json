@@ -1,5 +1,5 @@
 {
-  "name": "@ckb-lumos/experiment-tx-assembler",
+  "name": "@yadomi29/experiment-tx-assembler",
   "version": "0.26.0-alpha.0",
   "description": "",
   "homepage": "https://github.com/nervosnetwork/lumos#readme",
@@ -21,10 +21,10 @@
     "access": "public"
   },
   "dependencies": {
-    "@ckb-lumos/base": "^0.26.0-alpha.0",
-    "@ckb-lumos/config-manager": "^0.26.0-alpha.0",
-    "@ckb-lumos/helpers": "^0.26.0-alpha.0",
-    "@ckb-lumos/toolkit": "^0.26.0-alpha.0"
+    "@yadomi29/base": "^0.26.0-alpha.0",
+    "@yadomi29/config-manager": "^0.26.0-alpha.0",
+    "@yadomi29/helpers": "^0.26.0-alpha.0",
+    "@yadomi29/toolkit": "^0.26.0-alpha.0"
   },
   "repository": {
     "type": "git",

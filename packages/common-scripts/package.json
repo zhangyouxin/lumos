@@ -1,5 +1,5 @@
 {
-  "name": "@ckb-lumos/common-scripts",
+  "name": "@yadomi29/common-scripts",
   "version": "0.26.0-alpha.0",
   "description": "Common script support in lumos",
   "author": "Xuejie Xiao <xxuejie@gmail.com>",
@@ -19,12 +19,12 @@
     "src"
   ],
   "dependencies": {
-    "@ckb-lumos/base": "^0.26.0-alpha.0",
-    "@ckb-lumos/bi": "^0.26.0-alpha.0",
-    "@ckb-lumos/config-manager": "^0.26.0-alpha.0",
-    "@ckb-lumos/helpers": "^0.26.0-alpha.0",
-    "@ckb-lumos/rpc": "^0.26.0-alpha.0",
-    "@ckb-lumos/toolkit": "^0.26.0-alpha.0",
+    "@yadomi29/base": "^0.26.0-alpha.0",
+    "@yadomi29/bi": "^0.26.0-alpha.0",
+    "@yadomi29/config-manager": "^0.26.0-alpha.0",
+    "@yadomi29/helpers": "^0.26.0-alpha.0",
+    "@yadomi29/rpc": "^0.26.0-alpha.0",
+    "@yadomi29/toolkit": "^0.26.0-alpha.0",
     "immutable": "^4.0.0-rc.12"
   },
   "repository": {

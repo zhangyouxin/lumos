@@ -1,5 +1,5 @@
 {
-  "name": "@ckb-lumos/codec",
+  "name": "@yadomi29/codec",
   "version": "0.26.0-alpha.0",
   "description": "Make your own molecule binding in JavaScript(TypeScript)",
   "author": "",
@@ -30,7 +30,7 @@
     "release": "npm publish"
   },
   "dependencies": {
-    "@ckb-lumos/bi": "^0.26.0-alpha.0"
+    "@yadomi29/bi": "^0.26.0-alpha.0"
   },
   "publishConfig": {
     "access": "public"

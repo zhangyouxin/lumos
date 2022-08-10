@@ -1,5 +1,5 @@
 import test from "ava";
-import { BI } from "@ckb-lumos/bi";
+import { BI } from "@yadomi29/bi";
 import {
   Uint128,
   Uint128BE,

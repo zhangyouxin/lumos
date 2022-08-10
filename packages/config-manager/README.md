@@ -1,10 +1,10 @@
-# @ckb-lumos/config-manager
+# @yadomi29/config-manager
 
 ## Example
 
 ```ts
-import { initializeConfig, predefined } from '@ckb-lumos/config';
-import { generateAddress } from '@ckb-lumos/helper'
+import { initializeConfig, predefined } from '@yadomi29/config';
+import { generateAddress } from '@yadomi29/helper'
 
 initializeConfig(predefined.AGGRON);
 generateAddress({...}) // ckt1...

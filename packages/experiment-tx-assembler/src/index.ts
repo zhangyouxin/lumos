@@ -6,11 +6,11 @@ import {
   Hash,
   HexNumber,
   Cell,
-} from "@ckb-lumos/base";
-import { BI, BIish } from "@ckb-lumos/bi";
-import { minimalCellCapacity } from "@ckb-lumos/helpers";
-import { ScriptConfig, ScriptConfigs } from "@ckb-lumos/config-manager";
-import { Reader } from "@ckb-lumos/toolkit";
+} from "@yadomi29/base";
+import { BI, BIish } from "@yadomi29/bi";
+import { minimalCellCapacity } from "@yadomi29/helpers";
+import { ScriptConfig, ScriptConfigs } from "@yadomi29/config-manager";
+import { Reader } from "@yadomi29/toolkit";
 
 interface ScriptRegistry<T extends ScriptConfigs> {
   extend: <T1 extends ScriptConfigs>(newPayload: T1) => ScriptRegistry<T & T1>;

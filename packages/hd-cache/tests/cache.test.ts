@@ -5,7 +5,7 @@ import {
   QueryOptions,
   TransactionWithStatus,
   indexer as BaseIndexerModule,
-} from "@ckb-lumos/base";
+} from "@yadomi29/base";
 
 import {
   CacheManager,
@@ -16,10 +16,10 @@ import {
   CellCollectorWithQueryOptions,
   publicKeyToMultisigArgs,
 } from "../src";
-import { BI } from "@ckb-lumos/bi";
+import { BI } from "@yadomi29/bi";
 import { stub } from "sinon";
-import { Indexer as CkbIndexer } from "@ckb-lumos/ckb-indexer";
-import { RPC } from "@ckb-lumos/rpc";
+import { Indexer as CkbIndexer } from "@yadomi29/ckb-indexer";
+import { RPC } from "@yadomi29/rpc";
 
 const mockTxs: TransactionWithStatus[] = [
   {

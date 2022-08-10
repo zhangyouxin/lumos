@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "@ckb-lumos/debugger",
+  "name": "@yadomi29/debugger",
   "version": "0.26.0-alpha.0",
   "description": "ckb-standard-debugger wrapper for lumos, check tx without launching a full node",
   "author": "",
@@ -21,11 +21,11 @@
     "contracts"
   ],
   "dependencies": {
-    "@ckb-lumos/base": "^0.26.0-alpha.0",
-    "@ckb-lumos/bi": "^0.26.0-alpha.0",
-    "@ckb-lumos/codec": "^0.26.0-alpha.0",
-    "@ckb-lumos/config-manager": "^0.26.0-alpha.0",
-    "@ckb-lumos/helpers": "^0.26.0-alpha.0",
+    "@yadomi29/base": "^0.26.0-alpha.0",
+    "@yadomi29/bi": "^0.26.0-alpha.0",
+    "@yadomi29/codec": "^0.26.0-alpha.0",
+    "@yadomi29/config-manager": "^0.26.0-alpha.0",
+    "@yadomi29/helpers": "^0.26.0-alpha.0",
     "@types/download": "^8.0.1",
     "@types/object-hash": "^2.2.1",
     "debug": "^4.3.4",
@@ -34,7 +34,7 @@
     "object-hash": "^3.0.0"
   },
   "devDependencies": {
-    "@ckb-lumos/experiment-tx-assembler": "^0.26.0-alpha.0"
+    "@yadomi29/experiment-tx-assembler": "^0.26.0-alpha.0"
   },
   "bin": {
     "download-ckb-debugger": "bin/download-ckb-debugger.js"
