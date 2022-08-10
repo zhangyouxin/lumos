@@ -7,7 +7,7 @@ import {
   TransactionCollector as BaseTransactionCollector,
   QueryOptions,
   Transaction,
-} from "yadomi29/base";
+} from "@yadomi29/base";
 import {
   SearchKeyFilter,
   CKBIndexerQueryOptions,

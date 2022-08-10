@@ -1,4 +1,4 @@
-import { Script } from "yadomi29/base";
+import { Script } from "@yadomi29/base";
 import { ScriptConfig, ScriptConfigs } from "./types";
 import { getConfig } from "./manager";
 

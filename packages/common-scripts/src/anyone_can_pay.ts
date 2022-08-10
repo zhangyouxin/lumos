@@ -12,8 +12,8 @@ import {
   utils,
   values,
   WitnessArgs,
-} from "yadomi29/base";
-import { Config, getConfig } from "yadomi29/config-manager";
+} from "@yadomi29/base";
+import { Config, getConfig } from "@yadomi29/config-manager";
 import {
   createTransactionFromSkeleton,
   generateAddress,
@@ -21,10 +21,10 @@ import {
   Options,
   parseAddress,
   TransactionSkeletonType,
-} from "yadomi29/helpers";
-import { normalizers, Reader } from "yadomi29/toolkit";
+} from "@yadomi29/helpers";
+import { normalizers, Reader } from "@yadomi29/toolkit";
 import { List, Set } from "immutable";
-import { BI, BIish } from "yadomi29/bi";
+import { BI, BIish } from "@yadomi29/bi";
 import { FromInfo, parseFromInfo } from "./from_info";
 import {
   addCellDep,

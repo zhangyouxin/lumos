@@ -8,9 +8,9 @@ import {
   HexNumber,
   Output,
   TransactionWithStatus,
-} from "yadomi29/base";
+} from "@yadomi29/base";
 import { EventEmitter } from "events";
-import { BIish } from "yadomi29/bi";
+import { BIish } from "@yadomi29/bi";
 
 export type ScriptType = "type" | "lock";
 export type Order = "asc" | "desc";

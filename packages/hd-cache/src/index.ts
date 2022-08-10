@@ -13,10 +13,10 @@ import {
   Indexer,
   TransactionWithStatus,
   TransactionCollector as BaseTransactionCollector,
-} from "yadomi29/base";
+} from "@yadomi29/base";
 import { Map, Set } from "immutable";
-import { Config, getConfig } from "yadomi29/config-manager";
-import { RPC } from "yadomi29/rpc";
+import { Config, getConfig } from "@yadomi29/config-manager";
+import { RPC } from "@yadomi29/rpc";
 import {
   AccountExtendedPublicKey,
   AddressType,
@@ -24,9 +24,9 @@ import {
   key,
   Keystore,
   mnemonic,
-} from "yadomi29/hd";
-import { assertPublicKey, assertChainCode } from "yadomi29/hd/lib/helper";
-import { BI } from "yadomi29/bi";
+} from "@yadomi29/hd";
+import { assertPublicKey, assertChainCode } from "@yadomi29/hd/lib/helper";
+import { BI } from "@yadomi29/bi";
 const { isCellMatchQueryOptions } = helpers;
 const { publicKeyToBlake160 } = key;
 const { mnemonicToSeedSync } = mnemonic;

@@ -1,7 +1,7 @@
 import test from "ava";
 import { encodeToAddress } from "../src";
-import { predefined } from "yadomi29/config-manager";
-import { Script } from "yadomi29/base";
+import { predefined } from "@yadomi29/config-manager";
+import { Script } from "@yadomi29/base";
 
 const AGGRON = predefined.AGGRON4;
 

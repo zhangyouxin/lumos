@@ -1,7 +1,7 @@
 import { Address } from "@emurgo/cardano-serialization-lib-asmjs";
 import React, { useEffect, useState } from "react";
 import { capacityOf, CIP30FullAPI, CONFIG, detectCardano, transfer } from "./lib";
-import { helpers, Script } from "yadomi29/lumos";
+import { helpers, Script } from "@yadomi29/lumos";
 import ReactDOM from "react-dom";
 
 const app = document.getElementById("root");

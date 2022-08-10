@@ -5,7 +5,7 @@ import fs from "fs";
 import Path from "path";
 
 import { ExtendedPrivateKey } from "./extended_key";
-import { HexString } from "yadomi29/base";
+import { HexString } from "@yadomi29/base";
 
 export type HexStringWithoutPrefix = string;
 

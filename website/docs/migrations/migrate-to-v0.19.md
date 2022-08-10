@@ -3,8 +3,8 @@
 Migrate from `lumos@0.18` or earlier to `lumos@0.19`
 
 1. changed all snake_case to camelCase
-2. deprecated the `yadomi29/toolkit` and replaced with `yadomi29/codec`
-3. deprecated `readBigUintX` in `yadomi29/base`
+2. deprecated the `@yadomi29/toolkit` and replaced with `@yadomi29/codec`
+3. deprecated `readBigUintX` in `@yadomi29/base`
 
 ## Step-by-Step Guide
 
@@ -30,8 +30,8 @@ The warnings logged in console indicates that you should take care of some depre
 Rewrite Serialization and DeSerialization codes.
 
 ```diff
-+ import { blockchain } from "yadomi29/base"
-+ import { bytes } from "yadomi29/codec"
++ import { blockchain } from "@yadomi29/base"
++ import { bytes } from "@yadomi29/codec"
 // Deserialization
        const witness = '0x...'
 -      const witnessArgs = new core.WitnessArgs(new toolkit.Reader(witness));
@@ -51,7 +51,7 @@ Rewrite Serialization and DeSerialization codes.
 
 Some other changes you should take care of.
 
-- removed `digestReader` of `CKBHasher` class in `yadomi29/base/utils`
+- removed `digestReader` of `CKBHasher` class in `@yadomi29/base/utils`
 - return type of `ckbhash` function has changed to `HexString`
 
 ```diff
@@ -60,7 +60,7 @@ Some other changes you should take care of.
 - const message = hasher.digestReader().serializeJSON()
 + const message = hasher.digestHex()
   // if you would like to manipulate ArrayBuffer
-+ import { bytes } from "yadomi29/codec"
++ import { bytes } from "@yadomi29/codec"
 + const messageBytes = bytes.bytify(message)
 ```
 
@@ -71,7 +71,7 @@ After doing the 3 steps, you have done migrating to v0.19.
 Check the logs in the console of step 1,  deprecated functions work for now but should be repalced by new code.
 
 ```diff
-+ import{ number, bytes } from "yadomi29/codec"
++ import{ number, bytes } from "@yadomi29/codec"
 
 - const data: HexString = toBigUInt64LECompatible(num)
 + const data: HexString = bytes.bytify(number.Uint64LE.pack(num))
@@ -82,7 +82,7 @@ Check the logs in the console of step 1,  deprecated functions work for now but 
 - const data: bigint = readBigUInt64LE(u64String)
 + const data: bigint = number.Uint64LE.unpack(u64String).toBigInt()
 
-+ import { BI } from 'yadomi29/bi'
++ import { BI } from '@yadomi29/bi'
 - const data: JSBI = HexStringToBigInt(hexString)
 + const data: BI = BI.from(hexString)
 

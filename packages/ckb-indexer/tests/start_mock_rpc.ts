@@ -1,4 +1,4 @@
-import { createCKBMockRPC, mockData } from "yadomi29/testkit";
+import { createCKBMockRPC, mockData } from "@yadomi29/testkit";
 import fs from "fs";
 import path from "path";
 

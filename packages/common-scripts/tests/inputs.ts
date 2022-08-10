@@ -1,4 +1,4 @@
-import { Cell, Header } from "yadomi29/base";
+import { Cell, Header } from "@yadomi29/base";
 import { LocktimeCell } from "../src";
 
 export const bobSecpInputs: Cell[] = [

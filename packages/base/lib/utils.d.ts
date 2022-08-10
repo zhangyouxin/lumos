@@ -1,6 +1,6 @@
-import { Reader } from "yadomi29/toolkit";
+import { Reader } from "@yadomi29/toolkit";
 import { HexNumber } from "..";
-import { BI, BIish } from "yadomi29/bi";
+import { BI, BIish } from "@yadomi29/bi";
 import { Script, Input } from "./api";
 import { Hash, HexString } from "./primitive";
 

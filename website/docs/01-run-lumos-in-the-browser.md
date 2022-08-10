@@ -12,12 +12,12 @@ Lumos was originally run on NodeJS only. To run on browser, we replaced native i
 The following example of getting the balance will show you how to use lumos in your web project.
 
 ```shell
-npm install yadomi29/lumos
-# yarn add yadomi29/lumos
+npm install @yadomi29/lumos
+# yarn add @yadomi29/lumos
 ```
 
 ```ts
-import { Script, Indexer, BI } from "yadomi29/lumos";
+import { Script, Indexer, BI } from "@yadomi29/lumos";
 
 async function main(): Promise<BI> {
   const lock = { code_hash: "0x...", hash_type: "type", args: "0x..." };
@@ -39,10 +39,10 @@ please refer to [ckb-indexer-collector example](https://github.com/nervosnetwork
 
 ### ckb-indexer
 
-Because `yadomi29/indexer` and `yadomi29/sql-indexer` need to start the database and compile the code locally, cannot be run on the web side, we removed them and introduced `yadomi29/ckb-indexer`. Examples of how to use `yadomi29/ckb-indexer` are as follows.
+Because `@yadomi29/indexer` and `@yadomi29/sql-indexer` need to start the database and compile the code locally, cannot be run on the web side, we removed them and introduced `@yadomi29/ckb-indexer`. Examples of how to use `@yadomi29/ckb-indexer` are as follows.
 
 ```jsx
-const { Indexer } = require("yadomi29/ckb-indexer");
+const { Indexer } = require("@yadomi29/ckb-indexer");
 const nodeUri = "https://testnet.ckb.dev/rpc";
 const indexUri = "https://testnet.ckb.dev/indexer";
 const indexer = new Indexer(indexUri, nodeUri);
@@ -50,13 +50,13 @@ const indexer = new Indexer(indexUri, nodeUri);
 
 For a detailed tutorial, please refer to the [ckb-indexer User Guide](https://github.com/nervosnetwork/lumos/tree/develop/packages/ckb-indexer).
 
-To migrate from `yadomi29/indexer` to `yadomi29/ckb-indexer`, please refer to the [migration documentation](https://github.com/nervosnetwork/lumos/blob/develop/packages/ckb-indexer/mirgation.md).
+To migrate from `@yadomi29/indexer` to `@yadomi29/ckb-indexer`, please refer to the [migration documentation](https://github.com/nervosnetwork/lumos/blob/develop/packages/ckb-indexer/mirgation.md).
 
 ### root package
 
-There are multiple packages under the `yadomi29` organization, such as `yadomi29/helpers`, `yadomi29/config`, etc. The user needs to refer to a separate package when using it. For example, to use `parseAddress` you need to refer to `yadomi29/helpers`. To use `initializeConfig`, you need to refer to `yadomi29/config`.
+There are multiple packages under the `@yadomi29` organization, such as `@yadomi29/helpers`, `@yadomi29/config`, etc. The user needs to refer to a separate package when using it. For example, to use `parseAddress` you need to refer to `@yadomi29/helpers`. To use `initializeConfig`, you need to refer to `@yadomi29/config`.
 
-For your convenience, we have introduced the new `yadomi29/lumos` package. All subpackages are included, so there is no need to introduce them one by one.
+For your convenience, we have introduced the new `@yadomi29/lumos` package. All subpackages are included, so there is no need to introduce them one by one.
 
 ```ts
 import {
@@ -64,7 +64,7 @@ import {
   Indexer as CkbIndexer,
   helpers,
   config,
-} from "yadomi29/lumos";
+} from "@yadomi29/lumos";
 config.initializeConfig(config.predefined.AGGRON4);
 const address = "ckt1qyqxgftlqzmtv05cwcyl4xlz6ryx6dgsyrasjrp27t";
 const lock: Script = helpers.parseAddress(address);
@@ -75,7 +75,7 @@ const lock: Script = helpers.parseAddress(address);
 In order to facilitate the calculation of large numbers, we provide the [large number library BI](https://github.com/nervosnetwork/lumos/tree/develop/packages/bi). You can convert strings, numbers, etc. to and from BI and perform some common operations.
 
 ```jsx
-import { BI } from "yadomi29/bi";
+import { BI } from "@yadomi29/bi";
 
 BI.from(1).add(1);
 ```
@@ -84,9 +84,9 @@ For more use of the API, please refer to [BI Test Cases](https://github.com/nerv
 
 ### More Updates
 
-1. Migrate ckb-js-toolkit to yadomi29/toolkit
+1. Migrate ckb-js-toolkit to @yadomi29/toolkit
 
-   [ckb-js-toolkit](https://github.com/nervosnetwork/ckb-js-toolkit) is a tool to help ckb users develop `dapp`. It provides a set of standalone tools such as `reader`, `rpc`, etc., which have now been integrated into the `yadomi29/toolkit` package. It has been maintained as part of `lumos`.
+   [ckb-js-toolkit](https://github.com/nervosnetwork/ckb-js-toolkit) is a tool to help ckb users develop `dapp`. It provides a set of standalone tools such as `reader`, `rpc`, etc., which have now been integrated into the `@yadomi29/toolkit` package. It has been maintained as part of `lumos`.
 
 2. Conversion of new addresses
 
@@ -102,7 +102,7 @@ For more use of the API, please refer to [BI Test Cases](https://github.com/nerv
 
 5. [lumos playground](https://codesandbox.io/s/objective-cloud-282i4?file=/src/index.js)
 
-   We used codesandbox and `yadomi29/lumos` to build the [playground](https://codesandbox.io/s/objective-cloud-282i4?file=/src/index.js) where you can quickly try out the features of lumos.
+   We used codesandbox and `@yadomi29/lumos` to build the [playground](https://codesandbox.io/s/objective-cloud-282i4?file=/src/index.js) where you can quickly try out the features of lumos.
 
 6. A contract deployment generator is provided in lumos to facilitate the deployment of contracts, visit the link [🔗](https://github.com/nervosnetwork/lumos/tree/develop/packages/common-scripts#usage)
 

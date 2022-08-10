@@ -1,14 +1,14 @@
-import { Header, OutPoint } from "yadomi29/base";
+import { Header, OutPoint } from "@yadomi29/base";
 import * as crypto from "crypto";
-import { ScriptConfig } from "yadomi29/config-manager";
+import { ScriptConfig } from "@yadomi29/config-manager";
 import { OutputDataLoader } from "./loader";
 import { DataLoader, TestContext } from "./types";
 import { CKBDebuggerDownloader } from "./download";
 import { CKBDebugger } from "./executor";
 import * as fs from "fs";
 import * as path from "path";
-import { hexify } from "yadomi29/codec/lib/bytes";
-import { Uint32 } from "yadomi29/codec/lib/number";
+import { hexify } from "@yadomi29/codec/lib/bytes";
+import { Uint32 } from "@yadomi29/codec/lib/number";
 
 export function mockOutPoint(): OutPoint {
   return {

@@ -14,16 +14,16 @@ import {
   parseAddress,
   TransactionSkeleton,
   TransactionSkeletonType,
-} from "yadomi29/helpers";
+} from "@yadomi29/helpers";
 import {
   Cell,
   Transaction,
   values,
   Script,
   CellCollector as BaseCellCollector,
-} from "yadomi29/base";
+} from "@yadomi29/base";
 import { anyoneCanPay, parseFromInfo } from "../src";
-import { Config, predefined } from "yadomi29/config-manager";
+import { Config, predefined } from "@yadomi29/config-manager";
 import { CellCollector } from "../src/locktime_pool";
 const { AGGRON4, LINA } = predefined;
 
@@ -37,7 +37,7 @@ import {
 } from "./inputs";
 import { bob, alice } from "./account_info";
 import { List } from "immutable";
-import { BI } from "yadomi29/bi";
+import { BI } from "@yadomi29/bi";
 import { CellCollectorConstructor } from "../src/type";
 
 const aliceAddress = "ckt1qyqwyxfa75whssgkq9ukkdd30d8c7txct0gqfvmy2v";

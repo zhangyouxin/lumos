@@ -4,15 +4,15 @@ import {
   parseAddress,
   TransactionSkeleton,
   TransactionSkeletonType,
-} from "yadomi29/helpers";
+} from "@yadomi29/helpers";
 import { secp256k1Blake160 } from "../src";
-import { predefined } from "yadomi29/config-manager";
+import { predefined } from "@yadomi29/config-manager";
 const { LINA, AGGRON4 } = predefined;
 import { bob, alice, fullAddressInfo } from "./account_info";
 import { inputs } from "./secp256k1_blake160_inputs";
-import { Cell, values } from "yadomi29/base";
+import { Cell, values } from "@yadomi29/base";
 import { bobSecpInputs } from "./inputs";
-import { BI } from "yadomi29/bi";
+import { BI } from "@yadomi29/bi";
 
 const cellProvider = new CellProvider(inputs());
 let txSkeleton: TransactionSkeletonType = TransactionSkeleton({ cellProvider });

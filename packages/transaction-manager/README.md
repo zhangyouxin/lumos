@@ -1,12 +1,12 @@
-# `yadomi29/transaction-manager`
+# `@yadomi29/transaction-manager`
 
 TransactionManager is a tool for manager uncommitted cells, you can `send_transaction` via this tool and get uncommitted outputs by `collector`.
 
 ## Usage
 
 ```javascript
-const TransactionManager = require("yadomi29/transaction-manager");
-const { Indexer } = require("yadomi29/ckb-indexer");
+const TransactionManager = require("@yadomi29/transaction-manager");
+const { Indexer } = require("@yadomi29/ckb-indexer");
 
 // generate a new `TransactionManager` instance and start.
 const indexer = new Indexer("http://127.0.0.1:8114");

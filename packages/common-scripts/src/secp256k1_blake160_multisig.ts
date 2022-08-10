@@ -3,7 +3,7 @@ import {
   TransactionSkeletonType,
   Options,
   minimalCellCapacityCompatible,
-} from "yadomi29/helpers";
+} from "@yadomi29/helpers";
 import {
   core,
   values,
@@ -17,10 +17,10 @@ import {
   CellProvider,
   QueryOptions,
   PackedSince,
-} from "yadomi29/base";
-import { getConfig, Config } from "yadomi29/config-manager";
+} from "@yadomi29/base";
+import { getConfig, Config } from "@yadomi29/config-manager";
 const { ScriptValue } = values;
-import { normalizers, Reader } from "yadomi29/toolkit";
+import { normalizers, Reader } from "@yadomi29/toolkit";
 import { Set } from "immutable";
 import {
   addCellDep,
@@ -36,7 +36,7 @@ import {
   serializeMultisigScript,
   multisigArgs,
 } from "./from_info";
-import { BI, BIish } from "yadomi29/bi";
+import { BI, BIish } from "@yadomi29/bi";
 import { CellCollectorConstructor } from "./type";
 
 export { serializeMultisigScript, multisigArgs };

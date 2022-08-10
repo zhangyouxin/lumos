@@ -1,7 +1,7 @@
 import { DataLoader, ExecuteResult, Executor } from "./types";
-import { TransactionSkeletonType } from "yadomi29/helpers";
+import { TransactionSkeletonType } from "@yadomi29/helpers";
 import { spawnSync } from "child_process";
-import { Hash } from "yadomi29/base";
+import { Hash } from "@yadomi29/base";
 import * as fs from "fs";
 import * as os from "os";
 import * as path from "path";

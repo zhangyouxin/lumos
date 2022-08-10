@@ -1,13 +1,13 @@
 import test from "ava";
 import { addressToScript, parseAddress } from "../src";
-import { predefined } from "yadomi29/config-manager";
+import { predefined } from "@yadomi29/config-manager";
 import { bech32, bech32m } from "bech32";
 import {
   ADDRESS_FORMAT_FULL,
   ADDRESS_FORMAT_FULLDATA,
 } from "../src/address-to-script";
 import { hexToByteArray } from "../src/utils";
-import { Address } from "yadomi29/base";
+import { Address } from "@yadomi29/base";
 
 const LINA = predefined.LINA;
 const AGGRON = predefined.AGGRON4;

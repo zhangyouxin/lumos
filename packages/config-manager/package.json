@@ -1,5 +1,5 @@
 {
-  "name": "yadomi29/config-manager",
+  "name": "@yadomi29/config-manager",
   "version": "0.21.0",
   "description": "Config manager for lumos",
   "author": "Xuejie Xiao <xxuejie@gmail.com>",
@@ -36,8 +36,8 @@
     "url": "https://github.com/nervosnetwork/lumos/issues"
   },
   "dependencies": {
-    "yadomi29/base": "^0.21.0",
-    "yadomi29/bi": "^0.21.0",
+    "@yadomi29/base": "^0.21.0",
+    "@yadomi29/bi": "^0.21.0",
     "@types/deep-freeze-strict": "^1.1.0",
     "deep-freeze-strict": "^1.1.1"
   },

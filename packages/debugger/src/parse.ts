@@ -2,9 +2,9 @@ import { DataLoader, DebuggerData, ExecuteResult } from "./types";
 import {
   createTransactionFromSkeleton,
   TransactionSkeletonType,
-} from "yadomi29/helpers";
-import { CellDep, HexString } from "yadomi29/base";
-import { bytify } from "yadomi29/codec/lib/bytes";
+} from "@yadomi29/helpers";
+import { CellDep, HexString } from "@yadomi29/base";
+import { bytify } from "@yadomi29/codec/lib/bytes";
 import { OutPointVec } from "./codecs";
 
 export function parseDebuggerMessage(

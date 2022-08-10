@@ -1,4 +1,4 @@
-import { config } from "yadomi29/lumos";
+import { config } from "@yadomi29/lumos";
 
 const TESTNET_SCRIPTS: config.ScriptConfigs = {
   ...config.predefined.AGGRON4.SCRIPTS,

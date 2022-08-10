@@ -1,4 +1,4 @@
-import { BI, BIish } from "yadomi29/bi";
+import { BI, BIish } from "@yadomi29/bi";
 import { createFixedBytesCodec, FixedBytesCodec } from "../base";
 
 function assertNumberRange(value: BIish, min: BIish, max: BIish): void {

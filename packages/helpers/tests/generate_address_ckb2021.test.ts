@@ -1,7 +1,7 @@
 import test from "ava";
 import { encodeToAddress } from "../src";
-import { Config, predefined } from "yadomi29/config-manager";
-import { HashType, Script } from "yadomi29/base";
+import { Config, predefined } from "@yadomi29/config-manager";
+import { HashType, Script } from "@yadomi29/base";
 
 const LINA = predefined.LINA;
 const AGGRON4 = predefined.AGGRON4;

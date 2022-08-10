@@ -8,9 +8,9 @@ import {
   Output,
   utils,
   Block,
-} from "yadomi29/base";
-import { validators } from "yadomi29/toolkit";
-import { RPC } from "yadomi29/rpc";
+} from "@yadomi29/base";
+import { validators } from "@yadomi29/toolkit";
+import { RPC } from "@yadomi29/rpc";
 import { request, requestBatch } from "./services";
 import { CKBCellCollector } from "./collector";
 import { EventEmitter } from "events";
@@ -28,7 +28,7 @@ import {
   Terminator,
   OtherQueryOptions,
 } from "./type";
-import { BI } from "yadomi29/bi";
+import { BI } from "@yadomi29/bi";
 
 const DefaultTerminator: Terminator = () => {
   return { stop: false, push: true };

@@ -1,5 +1,5 @@
-import { utils, Cell, BaseCellCollector } from "yadomi29/base";
-import { validators } from "yadomi29/toolkit";
+import { utils, Cell, BaseCellCollector } from "@yadomi29/base";
+import { validators } from "@yadomi29/toolkit";
 import {
   SearchKeyFilter,
   CKBIndexerQueryOptions,

@@ -1,4 +1,4 @@
-import { BI, Cell, config, core, helpers, Indexer, RPC, toolkit, utils, commons } from "yadomi29/lumos";
+import { BI, Cell, config, core, helpers, Indexer, RPC, toolkit, utils, commons } from "@yadomi29/lumos";
 import {
   COSESign1Builder,
   HeaderMap,

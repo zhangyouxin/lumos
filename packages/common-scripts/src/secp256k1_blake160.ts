@@ -1,11 +1,11 @@
 import { Set } from "immutable";
-import { normalizers, Reader } from "yadomi29/toolkit";
+import { normalizers, Reader } from "@yadomi29/toolkit";
 import {
   parseAddress,
   minimalCellCapacityCompatible,
   TransactionSkeletonType,
   Options,
-} from "yadomi29/helpers";
+} from "@yadomi29/helpers";
 import {
   core,
   values,
@@ -19,8 +19,8 @@ import {
   OutPoint,
   HexString,
   PackedSince,
-} from "yadomi29/base";
-import { getConfig, Config } from "yadomi29/config-manager";
+} from "@yadomi29/base";
+import { getConfig, Config } from "@yadomi29/config-manager";
 import {
   addCellDep,
   ensureScript,
@@ -30,7 +30,7 @@ import {
 } from "./helper";
 import { FromInfo } from ".";
 import { parseFromInfo } from "./from_info";
-import { BI, BIish } from "yadomi29/bi";
+import { BI, BIish } from "@yadomi29/bi";
 import { CellCollectorConstructor } from "./type";
 const { ScriptValue } = values;
 

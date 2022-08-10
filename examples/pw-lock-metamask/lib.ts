@@ -1,4 +1,4 @@
-import { BI, Cell, config, core, helpers, Indexer, RPC, toolkit, commons } from "yadomi29/lumos";
+import { BI, Cell, config, core, helpers, Indexer, RPC, toolkit, commons } from "@yadomi29/lumos";
 import { default as createKeccak } from "keccak";
 
 export const CONFIG = config.createConfig({

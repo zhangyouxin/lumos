@@ -3,20 +3,20 @@ import { CellProvider } from "./cell_provider";
 import {
   TransactionSkeleton,
   TransactionSkeletonType,
-} from "yadomi29/helpers";
+} from "@yadomi29/helpers";
 import { dao, common } from "../src";
-import { predefined, Config } from "yadomi29/config-manager";
+import { predefined, Config } from "@yadomi29/config-manager";
 const { LINA, AGGRON4 } = predefined;
 import { bob } from "./account_info";
 import { inputs } from "./secp256k1_blake160_inputs";
-import { Script, Cell, HexString } from "yadomi29/base";
+import { Script, Cell, HexString } from "@yadomi29/base";
 import {
   bobMultisigDaoInputs,
   bobMultisigInputs,
   bobSecpDaoDepositInput,
   bobSecpDaoWithdrawInput,
 } from "./inputs";
-import { BI } from "yadomi29/bi";
+import { BI } from "@yadomi29/bi";
 
 const cellProvider = new CellProvider(inputs());
 let txSkeleton: TransactionSkeletonType = TransactionSkeleton({ cellProvider });

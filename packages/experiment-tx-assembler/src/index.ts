@@ -6,11 +6,11 @@ import {
   Hash,
   HexNumber,
   Cell,
-} from "yadomi29/base";
-import { BI, BIish } from "yadomi29/bi";
-import { minimalCellCapacity } from "yadomi29/helpers";
-import { ScriptConfig, ScriptConfigs } from "yadomi29/config-manager";
-import { Reader } from "yadomi29/toolkit";
+} from "@yadomi29/base";
+import { BI, BIish } from "@yadomi29/bi";
+import { minimalCellCapacity } from "@yadomi29/helpers";
+import { ScriptConfig, ScriptConfigs } from "@yadomi29/config-manager";
+import { Reader } from "@yadomi29/toolkit";
 
 interface ScriptRegistry<T extends ScriptConfigs> {
   extend: <T1 extends ScriptConfigs>(newPayload: T1) => ScriptRegistry<T & T1>;

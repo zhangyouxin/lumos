@@ -1,5 +1,5 @@
-import { ScriptConfig } from "yadomi29/config-manager";
-import { TransactionSkeletonType } from "yadomi29/helpers";
+import { ScriptConfig } from "@yadomi29/config-manager";
+import { TransactionSkeletonType } from "@yadomi29/helpers";
 import {
   CellDep,
   Hash,
@@ -9,7 +9,7 @@ import {
   OutPoint,
   Output,
   Transaction,
-} from "yadomi29/base";
+} from "@yadomi29/base";
 import { CKBDebugger } from "./executor";
 import { LocaleCode } from "./context";
 

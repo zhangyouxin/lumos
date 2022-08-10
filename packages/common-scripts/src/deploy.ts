@@ -8,9 +8,9 @@ import {
   core,
   WitnessArgs,
   Transaction,
-} from "yadomi29/base";
-import { SerializeTransaction } from "yadomi29/base/lib/core";
-import { getConfig, Config, helpers } from "yadomi29/config-manager";
+} from "@yadomi29/base";
+import { SerializeTransaction } from "@yadomi29/base/lib/core";
+import { getConfig, Config, helpers } from "@yadomi29/config-manager";
 import {
   TransactionSkeletonType,
   TransactionSkeleton,
@@ -18,12 +18,12 @@ import {
   createTransactionFromSkeleton,
   parseAddress,
   minimalCellCapacityCompatible,
-} from "yadomi29/helpers";
-import { Reader, normalizers } from "yadomi29/toolkit";
-import { RPC } from "yadomi29/rpc";
+} from "@yadomi29/helpers";
+import { Reader, normalizers } from "@yadomi29/toolkit";
+import { RPC } from "@yadomi29/rpc";
 import { Set } from "immutable";
 import { FromInfo, parseFromInfo, MultisigScript } from "./from_info";
-import { BI, BIish } from "yadomi29/bi";
+import { BI, BIish } from "@yadomi29/bi";
 const { ScriptValue } = values;
 
 function bytesToHex(bytes: Uint8Array): string {

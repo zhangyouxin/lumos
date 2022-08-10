@@ -1,7 +1,7 @@
-const { validators, RPC } = require("yadomi29/toolkit");
+const { validators, RPC } = require("@yadomi29/toolkit");
 const { List, Set } = require("immutable");
-const { values, helpers } = require("yadomi29/base");
-const { TransactionCollector } = require("yadomi29/ckb-indexer");
+const { values, helpers } = require("@yadomi29/base");
+const { TransactionCollector } = require("@yadomi29/ckb-indexer");
 const { isCellMatchQueryOptions } = helpers;
 
 function defaultLogger(level, message) {

@@ -1,13 +1,13 @@
-# `yadomi29/helpers`
+# `@yadomi29/helpers`
 
 Helper utilities for working with CKB transactions from lumos.
 
-The difference between this and `yadomi29/base`, is that `yadomi29/base` contains only core definitions, while this module contains utilities used in a framework sense. One example is: you can pretty much use `yadomi29/base` as a standalone library, while this library integrates more with `config` module so it knows whether the framework is running under testnet, or mainnet environment.
+The difference between this and `@yadomi29/base`, is that `@yadomi29/base` contains only core definitions, while this module contains utilities used in a framework sense. One example is: you can pretty much use `@yadomi29/base` as a standalone library, while this library integrates more with `config` module so it knows whether the framework is running under testnet, or mainnet environment.
 
 ## Usage
 
 ```javascript
-const { minimalCellCapacity, generateAddress, parseAddress } = require("yadomi29/helpers")
+const { minimalCellCapacity, generateAddress, parseAddress } = require("@yadomi29/helpers")
 
 // Get cell minimal capacity.
 const result = minimalCellCapacity({
@@ -38,7 +38,7 @@ const address = generateAddress({
 })
 
 // Then you will get mainnet address "ckb1qyqrdsefa43s6m882pcj53m4gdnj4k440axqdt9rtd", or you can generate testnet address by
-const { predefined } = require("yadomi29/config-manager")
+const { predefined } = require("@yadomi29/config-manager")
 
 const address = generateAddress({
   code_hash:

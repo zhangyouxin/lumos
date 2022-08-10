@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { helpers, Script } from "yadomi29/lumos";
+import { helpers, Script } from "@yadomi29/lumos";
 import ReactDOM from "react-dom";
 import { asyncSleep, capacityOf, CONFIG, ethereum, transfer } from "./lib";
 

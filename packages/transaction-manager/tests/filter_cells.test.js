@@ -1,6 +1,6 @@
 const test = require("ava");
 const TransactionManager = require("../lib");
-const { utils } = require("yadomi29/base");
+const { utils } = require("@yadomi29/base");
 
 const cells = [
   {

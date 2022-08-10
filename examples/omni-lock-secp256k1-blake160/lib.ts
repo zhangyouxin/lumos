@@ -1,4 +1,4 @@
-import { BI, Cell, config, core, helpers, Indexer, RPC, toolkit, utils, commons, hd, Hash } from "yadomi29/lumos";
+import { BI, Cell, config, core, helpers, Indexer, RPC, toolkit, utils, commons, hd, Hash } from "@yadomi29/lumos";
 import { SerializeRcLockWitnessLock } from "./generated/omni";
 
 export const CONFIG = config.createConfig({

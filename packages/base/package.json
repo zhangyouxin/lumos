@@ -31,8 +31,8 @@
     "url": "https://github.com/nervosnetwork/lumos/issues"
   },
   "dependencies": {
-    "yadomi29/bi": "^0.21.0",
-    "yadomi29/toolkit": "^0.21.0",
+    "@yadomi29/bi": "^0.21.0",
+    "@yadomi29/toolkit": "^0.21.0",
     "@types/lodash.isequal": "^4.5.5",
     "blake2b": "^2.1.3",
     "js-xxhash": "^1.0.4",
