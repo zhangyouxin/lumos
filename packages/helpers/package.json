@@ -1,6 +1,6 @@
 {
   "name": "@yadomi29/helpers",
-  "version": "0.21.0",
+  "version": "0.22.0",
   "description": "Helper functions for working with CKB",
   "author": "Xuejie Xiao <xxuejie@gmail.com>",
   "homepage": "https://github.com/nervosnetwork/lumos#readme",
@@ -37,10 +37,10 @@
     "url": "https://github.com/nervosnetwork/lumos/issues"
   },
   "dependencies": {
-    "@yadomi29/base": "^0.21.0",
-    "@yadomi29/bi": "^0.21.0",
-    "@yadomi29/config-manager": "^0.21.0",
-    "@yadomi29/toolkit": "^0.21.0",
+    "@yadomi29/base": "^0.22.0",
+    "@yadomi29/bi": "^0.22.0",
+    "@yadomi29/config-manager": "^0.22.0",
+    "@yadomi29/toolkit": "^0.22.0",
     "bech32": "^2.0.0",
     "immutable": "^4.0.0-rc.12"
   },

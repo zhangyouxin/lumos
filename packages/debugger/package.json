@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "@yadomi29/debugger",
-  "version": "0.21.0",
+  "version": "0.22.0",
   "description": "ckb-standard-debugger wrapper for lumos, check tx without launching a full node",
   "author": "",
   "homepage": "https://github.com/nervosnetwork/lumos#readme",
@@ -21,20 +21,20 @@
     "contracts"
   ],
   "dependencies": {
-    "@yadomi29/base": "^0.21.0",
-    "@yadomi29/bi": "^0.21.0",
-    "@yadomi29/codec": "^0.21.0",
-    "@yadomi29/config-manager": "^0.21.0",
-    "@yadomi29/helpers": "^0.21.0",
     "@types/download": "^8.0.1",
     "@types/object-hash": "^2.2.1",
+    "@yadomi29/base": "^0.22.0",
+    "@yadomi29/bi": "^0.22.0",
+    "@yadomi29/codec": "^0.22.0",
+    "@yadomi29/config-manager": "^0.22.0",
+    "@yadomi29/helpers": "^0.22.0",
     "debug": "^4.3.4",
     "download": "^8.0.0",
     "env-paths": "^2.2.1",
     "object-hash": "^3.0.0"
   },
   "devDependencies": {
-    "@yadomi29/experiment-tx-assembler": "^0.21.0"
+    "@yadomi29/experiment-tx-assembler": "^0.22.0"
   },
   "bin": {
     "download-ckb-debugger": "bin/download-ckb-debugger.js"

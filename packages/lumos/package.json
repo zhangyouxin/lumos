@@ -1,6 +1,6 @@
 {
   "name": "@yadomi29/lumos",
-  "version": "0.21.0",
+  "version": "0.22.0",
   "description": "A root package for Lumos",
   "author": "Xuejie Xiao <xxuejie@gmail.com>",
   "homepage": "https://github.com/nervosnetwork/lumos#readme",
@@ -37,15 +37,15 @@
     "url": "https://github.com/nervosnetwork/lumos/issues"
   },
   "dependencies": {
-    "@yadomi29/base": "^0.21.0",
-    "@yadomi29/bi": "^0.21.0",
-    "@yadomi29/ckb-indexer": "^0.21.0",
-    "@yadomi29/common-scripts": "^0.21.0",
-    "@yadomi29/config-manager": "^0.21.0",
-    "@yadomi29/hd": "^0.21.0",
-    "@yadomi29/helpers": "^0.21.0",
-    "@yadomi29/rpc": "^0.21.0",
-    "@yadomi29/toolkit": "^0.21.0"
+    "@yadomi29/base": "^0.22.0",
+    "@yadomi29/bi": "^0.22.0",
+    "@yadomi29/ckb-indexer": "^0.22.0",
+    "@yadomi29/common-scripts": "^0.22.0",
+    "@yadomi29/config-manager": "^0.22.0",
+    "@yadomi29/hd": "^0.22.0",
+    "@yadomi29/helpers": "^0.22.0",
+    "@yadomi29/rpc": "^0.22.0",
+    "@yadomi29/toolkit": "^0.22.0"
   },
   "devDependencies": {
     "buffer": "^6.0.3",

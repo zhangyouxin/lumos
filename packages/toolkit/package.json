@@ -1,6 +1,6 @@
 {
   "name": "@yadomi29/toolkit",
-  "version": "0.21.0",
+  "version": "0.22.0",
   "description": "JavaScript toolkits used to build dapps for Nervos CKB",
   "main": "lib/index.js",
   "types": "index.d.ts",
