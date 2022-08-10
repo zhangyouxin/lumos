@@ -13,6 +13,7 @@ export function isBIish(value: unknown): value is BIish {
   );
 }
 
+
 export class BI {
   private readonly jsbi: JSBI;
   readonly _isBI: boolean;
