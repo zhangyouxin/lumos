@@ -10,12 +10,12 @@ import {
   Script,
   Transaction,
   WitnessArgs,
-} from "@ckb-yadomis/base";
+} from "yadomi29/base";
 import { bech32, bech32m } from "bech32";
-import { normalizers, Reader, validators } from "@ckb-yadomis/toolkit";
+import { normalizers, Reader, validators } from "yadomi29/toolkit";
 import { List, Map as ImmutableMap, Record } from "immutable";
-import { Config, getConfig } from "@ckb-yadomis/config-manager";
-import { BI } from "@ckb-yadomis/bi";
+import { Config, getConfig } from "yadomi29/config-manager";
+import { BI } from "yadomi29/bi";
 import {
   parseDeprecatedCkb2019Address,
   parseFullFormatAddress,

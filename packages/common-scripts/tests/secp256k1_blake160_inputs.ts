@@ -1,4 +1,4 @@
-import { Cell } from "@ckb-yadomis/base";
+import { Cell } from "yadomi29/base";
 
 export const inputs = (): Cell[] => [
   {

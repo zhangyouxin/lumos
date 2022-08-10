@@ -1,4 +1,4 @@
-import { config as lumosConfig, helpers, Script } from "@ckb-yadomis/lumos";
+import { config as lumosConfig, helpers, Script } from "yadomi29/lumos";
 import { Err, MultiVersionAddress } from "@site/src/types";
 
 export type ParseResult = MultiVersionAddress | Err;

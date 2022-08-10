@@ -5,9 +5,9 @@ import {
   QueryOptions,
   Script,
   Header,
-} from "@ckb-yadomis/base";
-import { Options } from "@ckb-yadomis/helpers";
-import { RPC } from "@ckb-yadomis/rpc";
+} from "yadomi29/base";
+import { Options } from "yadomi29/helpers";
+import { RPC } from "yadomi29/rpc";
 import { FromInfo } from "./from_info";
 
 export interface CellCollectorConstructor {

@@ -2,7 +2,7 @@ import test from "ava";
 import { blockchain, molecule, number } from "../src";
 import { randomBytes } from "crypto";
 import { concat, hexify } from "../src/bytes";
-import { BI } from "@ckb-yadomis/bi";
+import { BI } from "yadomi29/bi";
 
 const { struct } = molecule;
 const { Uint32 } = number;

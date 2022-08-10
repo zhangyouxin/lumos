@@ -4,7 +4,7 @@ import {
   Options,
   generateAddress,
   minimalCellCapacityCompatible,
-} from "@ckb-yadomis/helpers";
+} from "yadomi29/helpers";
 import {
   core,
   utils,
@@ -17,11 +17,11 @@ import {
   PackedDao,
   PackedSince,
   CellCollector as CellCollectorInterface,
-} from "@ckb-yadomis/base";
-import { getConfig, Config } from "@ckb-yadomis/config-manager";
+} from "yadomi29/base";
+import { getConfig, Config } from "yadomi29/config-manager";
 const { toBigUInt64LE, readBigUInt64LE } = utils;
 const { parseSince } = sinceUtils;
-import { normalizers, Reader } from "@ckb-yadomis/toolkit";
+import { normalizers, Reader } from "yadomi29/toolkit";
 import secp256k1Blake160 from "./secp256k1_blake160";
 import secp256k1Blake160Multisig from "./secp256k1_blake160_multisig";
 import { FromInfo, parseFromInfo } from "./from_info";
@@ -31,9 +31,9 @@ import {
   isSecp256k1Blake160MultisigScript,
   generateDaoScript,
 } from "./helper";
-import { RPC } from "@ckb-yadomis/rpc";
-import { readBigUInt64LECompatible } from "@ckb-yadomis/base/lib/utils";
-import { BI, BIish } from "@ckb-yadomis/bi";
+import { RPC } from "yadomi29/rpc";
+import { readBigUInt64LECompatible } from "yadomi29/base/lib/utils";
+import { BI, BIish } from "yadomi29/bi";
 
 const DEPOSIT_DAO_DATA: HexString = "0x0000000000000000";
 const DAO_LOCK_PERIOD_EPOCHS_COMPATIBLE = BI.from(180);

@@ -8,9 +8,9 @@ import {
   core,
   WitnessArgs,
   Transaction,
-} from "@ckb-yadomis/base";
-import { SerializeTransaction } from "@ckb-yadomis/base/lib/core";
-import { getConfig, Config, helpers } from "@ckb-yadomis/config-manager";
+} from "yadomi29/base";
+import { SerializeTransaction } from "yadomi29/base/lib/core";
+import { getConfig, Config, helpers } from "yadomi29/config-manager";
 import {
   TransactionSkeletonType,
   TransactionSkeleton,
@@ -18,12 +18,12 @@ import {
   createTransactionFromSkeleton,
   parseAddress,
   minimalCellCapacityCompatible,
-} from "@ckb-yadomis/helpers";
-import { Reader, normalizers } from "@ckb-yadomis/toolkit";
-import { RPC } from "@ckb-yadomis/rpc";
+} from "yadomi29/helpers";
+import { Reader, normalizers } from "yadomi29/toolkit";
+import { RPC } from "yadomi29/rpc";
 import { Set } from "immutable";
 import { FromInfo, parseFromInfo, MultisigScript } from "./from_info";
-import { BI, BIish } from "@ckb-yadomis/bi";
+import { BI, BIish } from "yadomi29/bi";
 const { ScriptValue } = values;
 
 function bytesToHex(bytes: Uint8Array): string {

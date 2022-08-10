@@ -1,5 +1,5 @@
-import { RPC as ToolkitRPC } from "@ckb-yadomis/toolkit";
-import { HexString, Tip } from "@ckb-yadomis/base";
+import { RPC as ToolkitRPC } from "yadomi29/toolkit";
+import { HexString, Tip } from "yadomi29/base";
 import {
   GetCellsResults,
   IndexerTransactionList,

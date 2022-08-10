@@ -5,10 +5,10 @@ import {
   TransactionSkeletonType,
   TransactionSkeleton,
   parseAddress,
-} from "@ckb-yadomis/helpers";
+} from "yadomi29/helpers";
 import { bob, alice } from "./account_info";
-import { predefined } from "@ckb-yadomis/config-manager";
-import { Script, utils } from "@ckb-yadomis/base";
+import { predefined } from "yadomi29/config-manager";
+import { Script, utils } from "yadomi29/base";
 import { isSudtScript } from "../src/helper";
 import {
   bobSecpInputs,
@@ -18,8 +18,8 @@ import {
   bobAcpSudtInputs,
   aliceAcpSudtInputs,
 } from "./inputs";
-import { readBigUInt128LECompatible } from "@ckb-yadomis/base/lib/utils";
-import { BI } from "@ckb-yadomis/bi";
+import { readBigUInt128LECompatible } from "yadomi29/base/lib/utils";
+import { BI } from "yadomi29/bi";
 const { AGGRON4 } = predefined;
 
 test.before(() => {

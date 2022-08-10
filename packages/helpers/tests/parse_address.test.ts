@@ -6,7 +6,7 @@ import {
   fullAddressInfo,
   fullAddressInfoWithData,
 } from "./addresses";
-import { predefined } from "@ckb-yadomis/config-manager";
+import { predefined } from "yadomi29/config-manager";
 import { bech32, bech32m } from "bech32";
 import { hexToByteArray } from "../src/utils";
 import { ADDRESS_FORMAT_SHORT } from "../src/address-to-script";

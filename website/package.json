@@ -19,7 +19,7 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@ckb-yadomis/lumos": "*",
+    "yadomi29/lumos": "*",
     "@docusaurus/core": "2.0.0-rc.1",
     "@docusaurus/preset-classic": "2.0.0-rc.1",
     "@emotion/react": "^11.9.3",

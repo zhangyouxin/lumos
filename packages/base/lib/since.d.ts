@@ -1,4 +1,4 @@
-import { BIish, BI } from "@ckb-yadomis/bi";
+import { BIish, BI } from "yadomi29/bi";
 import { HexNumber, PackedSince, HexString } from "./primitive";
 
 export interface EpochSinceValue {

@@ -1,4 +1,4 @@
-# `@ckb-yadomis/common-scripts`
+# `yadomi29/common-scripts`
 
 Common script implementation for lumos. Includes `secp256k1_blake2b` lock script, `secp256k1_blake160_multisig` lock script, `dao` type script, `sudt` type script now.
 
@@ -17,9 +17,9 @@ Common script implementation for lumos. Includes `secp256k1_blake2b` lock script
 Following script will show how to use `common` script to transfer capacity to another address. `secp256k1_blake160`, `secp256k1_blake160_multisig` and `locktime_pool` script are similar to `common`, and `common` maybe a better choose.
 
 ```javascript
-const { common } = require('@ckb-yadomis/common-scripts');
-const { sealTransaction } = require("@ckb-yadomis/helpers")
-const { Indexer } = require("@ckb-yadomis/ckb-indexer")
+const { common } = require('yadomi29/common-scripts');
+const { sealTransaction } = require("yadomi29/helpers")
+const { Indexer } = require("yadomi29/ckb-indexer")
 
 // We can use Indexer module as cell provider
 const indexer = new Indexer("http://127.0.0.1:8114");
@@ -95,7 +95,7 @@ const tx = sealTransaction(txSkeleton, contents)
 Following script will show how to use `DAO` script.
 
 ```javascript
-const { dao } = require("@ckb-yadomis/common-scripts")
+const { dao } = require("yadomi29/common-scripts")
 
 let txSkeleton = TransactionSkeleton({ cellProvider: indexer })
 
@@ -138,7 +138,7 @@ txSkeleton = await dao.withdraw(
 Following script will show how to use `sUDT` script.
 
 ```javascript
-const { sudt } = require("@ckb-yadomis/common-scripts")
+const { sudt } = require("yadomi29/common-scripts")
 let txSkeleton = TransactionSkeleton({ cellProvider: indexer })
 
 // issue an sudt token, will use the second param address to generate sudt token(it's lock hash).
@@ -162,10 +162,10 @@ txSkeleton = await sudt.transfer(
 
 Following script will show how to use `deploy` script.
 ```javascript
-const { generateDeployWithDataTx, generateDeployWithTypeIdTx, generateUpgradeTypeIdDataTx, payFee } = require("@ckb-yadomis/common-scripts");
-const { Indexer } = require("@ckb-yadomis/ckb-indexer");
-const { initializeConfig, predefined } = require("@ckb-yadomis/config-manager");
-const { parseAddress } = require("@ckb-yadomis/helpers");
+const { generateDeployWithDataTx, generateDeployWithTypeIdTx, generateUpgradeTypeIdDataTx, payFee } = require("yadomi29/common-scripts");
+const { Indexer } = require("yadomi29/ckb-indexer");
+const { initializeConfig, predefined } = require("yadomi29/config-manager");
+const { parseAddress } = require("yadomi29/helpers");
 
 initializeConfig(predefined.AGGRON4);
 

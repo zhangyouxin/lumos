@@ -6,7 +6,7 @@ import {
   transactionSkeletonToObject,
 } from "../src";
 import { TransactionSkeleton } from "../lib";
-import { Cell } from "@ckb-yadomis/base";
+import { Cell } from "yadomi29/base";
 
 test.before(() => {
   // @ts-ignore: Unreachable code error

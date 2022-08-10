@@ -1,5 +1,5 @@
 import test from "ava";
-import { Cell } from "@ckb-yadomis/base";
+import { Cell } from "yadomi29/base";
 import { minimalCellCapacity } from "../src";
 
 const normalCell: Cell = {

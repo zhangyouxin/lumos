@@ -1,7 +1,7 @@
-import { HexString, OutPoint } from "@ckb-yadomis/base";
+import { HexString, OutPoint } from "yadomi29/base";
 import * as fs from "fs";
-import { ckbHash } from "@ckb-yadomis/base/lib/utils";
-import { hexify } from "@ckb-yadomis/codec/lib/bytes";
+import { ckbHash } from "yadomi29/base/lib/utils";
+import { hexify } from "yadomi29/codec/lib/bytes";
 import { OutPoint as OutPointCodec, OutPointVec } from "./codecs";
 
 export type LoadedCode = { codeHash: HexString; binary: HexString };

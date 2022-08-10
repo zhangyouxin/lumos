@@ -1,9 +1,9 @@
 const blake2b = require("blake2b");
-const { validators, normalizers, Reader } = require("@ckb-yadomis/toolkit");
+const { validators, normalizers, Reader } = require("yadomi29/toolkit");
 const isEqual = require("lodash.isequal");
 const { SerializeScript, SerializeCellInput } = require("./core");
 const { xxHash32 } = require("js-xxhash");
-const { BI } = require("@ckb-yadomis/bi");
+const { BI } = require("yadomi29/bi");
 
 class CKBHasher {
   constructor() {

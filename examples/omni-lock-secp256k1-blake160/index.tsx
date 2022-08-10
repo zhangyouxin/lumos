@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { helpers, Script } from "@ckb-yadomis/lumos";
-import { key } from '@ckb-yadomis/hd';
+import { helpers, Script } from "yadomi29/lumos";
+import { key } from 'yadomi29/hd';
 import { ec as EC } from "elliptic";
 import ReactDOM from "react-dom";
 import { capacityOf, CONFIG, buildTransfer, signByPrivateKey, sendTransaction } from "./lib";

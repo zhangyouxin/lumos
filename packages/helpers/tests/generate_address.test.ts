@@ -5,7 +5,7 @@ import {
   generateSecp256k1Blake160MultisigAddress,
   scriptToAddress,
 } from "../src";
-import { predefined } from "@ckb-yadomis/config-manager";
+import { predefined } from "yadomi29/config-manager";
 
 const LINA = predefined.LINA;
 const AGGRON4 = predefined.AGGRON4;

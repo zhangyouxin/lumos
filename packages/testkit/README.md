@@ -1,4 +1,4 @@
-# `@ckb-yadomis/base`
+# `yadomi29/base`
 
 Test toolkit for testing CKB dApps
 

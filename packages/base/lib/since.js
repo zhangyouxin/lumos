@@ -1,4 +1,4 @@
-const { BI, isBIish } = require("@ckb-yadomis/bi");
+const { BI, isBIish } = require("yadomi29/bi");
 function parseSince(since) {
   const result = parseSinceCompatible(since);
 

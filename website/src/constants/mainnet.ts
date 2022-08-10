@@ -1,4 +1,4 @@
-import { config } from "@ckb-yadomis/lumos";
+import { config } from "yadomi29/lumos";
 
 export const MAINNET_SCRIPTS: config.ScriptConfigs = {
   ...config.predefined.LINA.SCRIPTS,

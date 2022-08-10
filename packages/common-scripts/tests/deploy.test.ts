@@ -1,13 +1,13 @@
-import { Cell, Script } from "@ckb-yadomis/base";
-import { common } from "@ckb-yadomis/common-scripts";
+import { Cell, Script } from "yadomi29/base";
+import { common } from "yadomi29/common-scripts";
 import test from "ava";
 import { CellProvider } from "./cell_provider";
 import deploy from "../src/deploy";
 const { __tests__ } = deploy;
 const { calculateTxFee } = __tests__;
-import { predefined } from "@ckb-yadomis/config-manager";
-import { TransactionSkeletonType } from "@ckb-yadomis/helpers";
-import { BI } from "@ckb-yadomis/bi";
+import { predefined } from "yadomi29/config-manager";
+import { TransactionSkeletonType } from "yadomi29/helpers";
+import { BI } from "yadomi29/bi";
 const { AGGRON4 } = predefined;
 
 const FROMADDRESS = "ckt1qyqptxys5l9vk39ft0hswscxgseawc77y2wqlr558h";

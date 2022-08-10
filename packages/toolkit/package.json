@@ -1,5 +1,5 @@
 {
-  "name": "@ckb-yadomis/toolkit",
+  "name": "yadomi29/toolkit",
   "version": "0.21.0",
   "description": "JavaScript toolkits used to build dapps for Nervos CKB",
   "main": "lib/index.js",

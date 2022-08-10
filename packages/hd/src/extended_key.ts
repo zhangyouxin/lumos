@@ -1,6 +1,6 @@
 import Keychain from "./keychain";
 import key, { privateToPublic } from "./key";
-import { utils, HexString } from "@ckb-yadomis/base";
+import { utils, HexString } from "yadomi29/base";
 import { assertPublicKey, assertChainCode, assertPrivateKey } from "./helper";
 
 export enum AddressType {

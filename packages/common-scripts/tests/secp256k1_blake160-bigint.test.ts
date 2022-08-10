@@ -3,9 +3,9 @@ import { CellProvider } from "./cell_provider";
 import {
   TransactionSkeleton,
   TransactionSkeletonType,
-} from "@ckb-yadomis/helpers";
+} from "yadomi29/helpers";
 import { secp256k1Blake160 } from "../src";
-import { predefined } from "@ckb-yadomis/config-manager";
+import { predefined } from "yadomi29/config-manager";
 const { LINA } = predefined;
 import { bob, alice, fullAddressInfo } from "./account_info";
 import { inputs } from "./secp256k1_blake160_inputs";

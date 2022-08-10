@@ -1,5 +1,5 @@
 import deepFreeze from "deep-freeze-strict";
-import { logger } from "@ckb-yadomis/base";
+import { logger } from "yadomi29/base";
 import { Config } from "./types";
 import { predefined } from "./predefined";
 

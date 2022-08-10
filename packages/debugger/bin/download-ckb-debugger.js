@@ -1,6 +1,6 @@
 #! /usr/bin/env node
 
-const { CKBDebuggerDownloader } = require("@ckb-yadomis/debugger");
+const { CKBDebuggerDownloader } = require("yadomi29/debugger");
 
 async function main() {
   const downloader = new CKBDebuggerDownloader();

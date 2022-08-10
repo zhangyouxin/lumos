@@ -1,4 +1,4 @@
-import { Cell, Script, helpers } from "@ckb-yadomis/base";
+import { Cell, Script, helpers } from "yadomi29/base";
 const { isCellMatchQueryOptions } = helpers;
 
 interface Options {

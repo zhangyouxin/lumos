@@ -1,5 +1,5 @@
 const test = require("ava");
-const { normalizers } = require("@ckb-yadomis/toolkit");
+const { normalizers } = require("yadomi29/toolkit");
 
 const core = require("../lib/core");
 const denormalizers = require("../lib/denormalizers");

@@ -12,8 +12,8 @@ import {
   WitnessArgs,
   toolkit,
   BI,
-} from "@ckb-yadomis/lumos";
-import { values } from "@ckb-yadomis/base";
+} from "yadomi29/lumos";
+import { values } from "yadomi29/base";
 const { ScriptValue } = values;
 
 export const { AGGRON4 } = config.predefined;

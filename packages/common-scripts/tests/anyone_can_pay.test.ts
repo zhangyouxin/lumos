@@ -5,14 +5,14 @@ import {
   TransactionSkeletonType,
   TransactionSkeleton,
   minimalCellCapacityCompatible,
-} from "@ckb-yadomis/helpers";
-import { predefined } from "@ckb-yadomis/config-manager";
+} from "yadomi29/helpers";
+import { predefined } from "yadomi29/config-manager";
 import { bob, alice } from "./account_info";
 import { bobAcpCells, aliceAcpCells } from "./inputs";
-import { Cell, values } from "@ckb-yadomis/base";
+import { Cell, values } from "yadomi29/base";
 const { AGGRON4 } = predefined;
 import { checkLimit } from "../src/anyone_can_pay";
-import { BI } from "@ckb-yadomis/bi";
+import { BI } from "yadomi29/bi";
 test.before(() => {
   // @ts-ignore: Unreachable code error
   BigInt = () => {

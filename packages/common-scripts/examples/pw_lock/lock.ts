@@ -13,14 +13,14 @@ import {
   core,
   utils,
   CellDep,
-} from "@ckb-yadomis/base";
+} from "yadomi29/base";
 import {
   Options,
   TransactionSkeletonType,
   createTransactionFromSkeleton,
-} from "@ckb-yadomis/helpers";
-import { getConfig, Config, initializeConfig } from "@ckb-yadomis/config-manager";
-import { Reader, normalizers } from "@ckb-yadomis/toolkit";
+} from "yadomi29/helpers";
+import { getConfig, Config, initializeConfig } from "yadomi29/config-manager";
+import { Reader, normalizers } from "yadomi29/toolkit";
 import { Set } from "immutable";
 import keccak, { Keccak } from "keccak";
 

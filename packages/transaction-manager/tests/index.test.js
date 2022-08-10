@@ -1,9 +1,9 @@
 const test = require("ava");
-const { helpers, values } = require("@ckb-yadomis/base");
+const { helpers, values } = require("yadomi29/base");
 const TransactionManager = require("../lib");
 const { isCellMatchQueryOptions } = helpers;
 const sinon = require("sinon");
-const { TransactionCollector } = require("@ckb-yadomis/ckb-indexer");
+const { TransactionCollector } = require("yadomi29/ckb-indexer");
 
 const cells = [
   {

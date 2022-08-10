@@ -6,7 +6,7 @@ const {
   transactionCollectorCollectTestCases,
 } = require("./test_cases.js");
 
-import { QueryOptions } from "@ckb-yadomis/base";
+import { QueryOptions } from "yadomi29/base";
 
 const nodeUri = "http://127.0.0.1:8118/rpc";
 const indexUri = "http://127.0.0.1:8120";

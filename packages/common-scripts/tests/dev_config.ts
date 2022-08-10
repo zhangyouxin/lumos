@@ -1,4 +1,4 @@
-import { Config } from "@ckb-yadomis/config-manager";
+import { Config } from "yadomi29/config-manager";
 
 export const DEV_CONFIG: Config = {
   PREFIX: "ckt",
