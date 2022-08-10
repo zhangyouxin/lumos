@@ -1,6 +1,6 @@
 {
   "name": "@ckb-yadomis/common-scripts",
-  "version": "0.18.0",
+  "version": "0.19.0",
   "description": "Common script support in lumos",
   "author": "Xuejie Xiao <xxuejie@gmail.com>",
   "homepage": "https://github.com/nervosnetwork/lumos#readme",
@@ -19,12 +19,12 @@
     "src"
   ],
   "dependencies": {
-    "@ckb-yadomis/base": "0.18.0",
-    "@ckb-yadomis/bi": "0.18.0",
-    "@ckb-yadomis/config-manager": "0.18.0",
-    "@ckb-yadomis/helpers": "0.18.0",
-    "@ckb-yadomis/rpc": "0.18.0",
-    "@ckb-yadomis/toolkit": "0.18.0",
+    "@ckb-yadomis/base": "^0.19.0",
+    "@ckb-yadomis/bi": "^0.19.0",
+    "@ckb-yadomis/config-manager": "^0.19.0",
+    "@ckb-yadomis/helpers": "^0.19.0",
+    "@ckb-yadomis/rpc": "^0.19.0",
+    "@ckb-yadomis/toolkit": "^0.19.0",
     "immutable": "^4.0.0-rc.12"
   },
   "repository": {
