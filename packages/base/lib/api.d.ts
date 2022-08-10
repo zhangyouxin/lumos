@@ -15,6 +15,7 @@ export interface Header {
   version: HexNumber;
 }
 
+
 export type HashType = "type" | "data" | "data1";
 export interface Script {
   code_hash: Hash;
