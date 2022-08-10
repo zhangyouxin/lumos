@@ -1,6 +1,6 @@
 {
   "name": "@ckb-yadomis/hd-cache",
-  "version": "0.19.0",
+  "version": "0.20.0",
   "description": "HD wallet cache in lumos",
   "author": "Xuejie Xiao <xxuejie@gmail.com>",
   "homepage": "https://github.com/nervosnetwork/lumos#readme",
@@ -19,12 +19,12 @@
     "src"
   ],
   "dependencies": {
-    "@ckb-yadomis/base": "^0.19.0",
-    "@ckb-yadomis/bi": "^0.19.0",
-    "@ckb-yadomis/ckb-indexer": "^0.19.0",
-    "@ckb-yadomis/config-manager": "^0.19.0",
-    "@ckb-yadomis/hd": "^0.19.0",
-    "@ckb-yadomis/rpc": "^0.19.0",
+    "@ckb-yadomis/base": "^0.20.0",
+    "@ckb-yadomis/bi": "^0.20.0",
+    "@ckb-yadomis/ckb-indexer": "^0.20.0",
+    "@ckb-yadomis/config-manager": "^0.20.0",
+    "@ckb-yadomis/hd": "^0.20.0",
+    "@ckb-yadomis/rpc": "^0.20.0",
     "immutable": "^4.0.0-rc.12"
   },
   "repository": {
