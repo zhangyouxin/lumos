@@ -1,6 +1,6 @@
 {
   "name": "@yadomi29/bi",
-  "version": "0.22.0",
+  "version": "0.23.0",
   "description": "Bigint support in lumos",
   "author": "",
   "homepage": "https://github.com/nervosnetwork/lumos#readme",
