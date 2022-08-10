@@ -5,14 +5,14 @@ import {
   TransactionSkeletonType,
   TransactionSkeleton,
   minimalCellCapacityCompatible,
-} from "@ckb-lumos/helpers";
-import { predefined } from "@ckb-lumos/config-manager";
+} from "@ckb-yadomis/helpers";
+import { predefined } from "@ckb-yadomis/config-manager";
 import { bob, alice } from "./account_info";
 import { bobAcpCells, aliceAcpCells } from "./inputs";
-import { Cell, values } from "@ckb-lumos/base";
+import { Cell, values } from "@ckb-yadomis/base";
 const { AGGRON4 } = predefined;
 import { checkLimit } from "../src/anyone_can_pay";
-import { BI } from "@ckb-lumos/bi";
+import { BI } from "@ckb-yadomis/bi";
 test.before(() => {
   // @ts-ignore: Unreachable code error
   BigInt = () => {

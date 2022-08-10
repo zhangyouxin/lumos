@@ -1,4 +1,4 @@
-import { RPC as ToolkitRPC } from "@ckb-lumos/toolkit";
+import { RPC as ToolkitRPC } from "@ckb-yadomis/toolkit";
 import {
   Alert,
   BannedAddr,
@@ -25,8 +25,8 @@ import {
   TxPoolIds,
   TxPoolInfo,
   TxPoolVerbosity,
-} from "@ckb-lumos/base";
-import { BI } from "@ckb-lumos/bi";
+} from "@ckb-yadomis/base";
+import { BI } from "@ckb-yadomis/bi";
 
 export type SerializedBlock = HexString;
 export type SerializedHeader = HexString;

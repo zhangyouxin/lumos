@@ -1,4 +1,4 @@
-import { Script } from "@ckb-lumos/base";
+import { Script } from "@ckb-yadomis/base";
 import { ScriptConfig, ScriptConfigs } from "./types";
 import { getConfig } from "./manager";
 

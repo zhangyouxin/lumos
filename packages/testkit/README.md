@@ -1,4 +1,4 @@
-# `@ckb-lumos/base`
+# `@ckb-yadomis/base`
 
 Test toolkit for testing CKB dApps
 

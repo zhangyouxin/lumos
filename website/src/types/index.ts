@@ -1,4 +1,4 @@
-import { Script } from "@ckb-lumos/lumos";
+import { Script } from "@ckb-yadomis/lumos";
 
 export type Err = { error: string };
 

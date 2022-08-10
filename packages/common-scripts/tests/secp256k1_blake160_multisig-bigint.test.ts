@@ -3,9 +3,9 @@ import { CellProvider } from "./cell_provider";
 import {
   TransactionSkeleton,
   TransactionSkeletonType,
-} from "@ckb-lumos/helpers";
+} from "@ckb-yadomis/helpers";
 import { secp256k1Blake160Multisig } from "../src";
-import { predefined } from "@ckb-lumos/config-manager";
+import { predefined } from "@ckb-yadomis/config-manager";
 const { AGGRON4 } = predefined;
 import { bobMultisigInputs } from "./inputs";
 import { bob, alice } from "./account_info";

@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "@ckb-lumos/debugger",
+  "name": "@ckb-yadomis/debugger",
   "version": "0.18.0",
   "description": "ckb-standard-debugger wrapper for lumos, check tx without launching a full node",
   "author": "",
@@ -21,11 +21,11 @@
     "contracts"
   ],
   "dependencies": {
-    "@ckb-lumos/base": "*",
-    "@ckb-lumos/bi": "*",
-    "@ckb-lumos/codec": "*",
-    "@ckb-lumos/config-manager": "*",
-    "@ckb-lumos/helpers": "*",
+    "@ckb-yadomis/base": "*",
+    "@ckb-yadomis/bi": "*",
+    "@ckb-yadomis/codec": "*",
+    "@ckb-yadomis/config-manager": "*",
+    "@ckb-yadomis/helpers": "*",
     "@types/download": "^8.0.1",
     "@types/object-hash": "^2.2.1",
     "debug": "^4.3.4",
@@ -34,7 +34,7 @@
     "object-hash": "^3.0.0"
   },
   "devDependencies": {
-    "@ckb-lumos/experiment-tx-assembler": "*"
+    "@ckb-yadomis/experiment-tx-assembler": "*"
   },
   "bin": {
     "download-ckb-debugger": "bin/download-ckb-debugger.js"

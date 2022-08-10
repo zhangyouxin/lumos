@@ -1,6 +1,6 @@
 import test from "ava";
 import { locateCellDep } from "../src/index";
-import { CellDep, Script } from "@ckb-lumos/base";
+import { CellDep, Script } from "@ckb-yadomis/base";
 import { shortAddressInfo } from "./addresses";
 
 test("locate cellDep", (t) => {

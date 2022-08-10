@@ -1,6 +1,6 @@
 const test = require("ava");
 const TransactionManager = require("../lib");
-const { utils } = require("@ckb-lumos/base");
+const { utils } = require("@ckb-yadomis/base");
 
 const cells = [
   {

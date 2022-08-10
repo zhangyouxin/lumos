@@ -1,4 +1,4 @@
-const { validators } = require("@ckb-lumos/toolkit");
+const { validators } = require("@ckb-yadomis/toolkit");
 const utils = require("./utils");
 
 // Notice this TransactionCollector implementation only uses indexer

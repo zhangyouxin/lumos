@@ -11,10 +11,10 @@ import {
   WitnessArgs,
   toolkit,
   BI,
-} from "@ckb-lumos/lumos";
-import { values } from "@ckb-lumos/base";
-import { parseFromInfo, MultisigScript } from "@ckb-lumos/common-scripts/lib/from_info";
-import { BIish } from "@ckb-lumos/bi";
+} from "@ckb-yadomis/lumos";
+import { values } from "@ckb-yadomis/base";
+import { parseFromInfo, MultisigScript } from "@ckb-yadomis/common-scripts/lib/from_info";
+import { BIish } from "@ckb-yadomis/bi";
 
 const { ScriptValue } = values;
 

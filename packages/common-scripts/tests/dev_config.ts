@@ -1,4 +1,4 @@
-import { Config } from "@ckb-lumos/config-manager";
+import { Config } from "@ckb-yadomis/config-manager";
 
 export const DEV_CONFIG: Config = {
   PREFIX: "ckt",

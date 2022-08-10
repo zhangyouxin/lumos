@@ -1,4 +1,4 @@
-import { Address, Script } from "@ckb-lumos/base";
+import { Address, Script } from "@ckb-yadomis/base";
 
 interface AddressInfo {
   testnetAddress: Address;

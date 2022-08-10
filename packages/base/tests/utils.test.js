@@ -1,6 +1,6 @@
 const test = require("ava");
-const { Reader } = require("@ckb-lumos/toolkit");
-const { BI } = require("@ckb-lumos/bi");
+const { Reader } = require("@ckb-yadomis/toolkit");
+const { BI } = require("@ckb-yadomis/bi");
 
 const {
   CKBHasher,

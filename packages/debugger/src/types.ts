@@ -1,5 +1,5 @@
-import { ScriptConfig } from "@ckb-lumos/config-manager";
-import { TransactionSkeletonType } from "@ckb-lumos/helpers";
+import { ScriptConfig } from "@ckb-yadomis/config-manager";
+import { TransactionSkeletonType } from "@ckb-yadomis/helpers";
 import {
   CellDep,
   Hash,
@@ -9,7 +9,7 @@ import {
   OutPoint,
   Output,
   Transaction,
-} from "@ckb-lumos/base";
+} from "@ckb-yadomis/base";
 import { CKBDebugger } from "./executor";
 import { LocaleCode } from "./context";
 

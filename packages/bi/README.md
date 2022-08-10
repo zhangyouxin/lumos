@@ -1,11 +1,11 @@
-# @ckb-lumos/bi
+# @ckb-yadomis/bi
 
 A big number library for lumos.
 
 ## Example
 
 ```ts
-import { BI } from "@ckb-lumos/bi";
+import { BI } from "@ckb-yadomis/bi";
 
 BI.from(1).add(1)
 ```

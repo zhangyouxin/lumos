@@ -1,4 +1,4 @@
-import { HexString, utils } from "@ckb-lumos/base";
+import { HexString, utils } from "@ckb-yadomis/base";
 import { ec as EC, SignatureInput } from "elliptic";
 import { assertPrivateKey, assertPublicKey } from "./helper";
 

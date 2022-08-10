@@ -14,16 +14,16 @@ import {
   parseAddress,
   TransactionSkeleton,
   TransactionSkeletonType,
-} from "@ckb-lumos/helpers";
+} from "@ckb-yadomis/helpers";
 import {
   Cell,
   Transaction,
   values,
   Script,
   CellCollector as BaseCellCollector,
-} from "@ckb-lumos/base";
+} from "@ckb-yadomis/base";
 import { anyoneCanPay, parseFromInfo } from "../src";
-import { Config, predefined } from "@ckb-lumos/config-manager";
+import { Config, predefined } from "@ckb-yadomis/config-manager";
 import { CellCollector } from "../src/locktime_pool";
 const { AGGRON4, LINA } = predefined;
 
@@ -37,7 +37,7 @@ import {
 } from "./inputs";
 import { bob, alice } from "./account_info";
 import { List } from "immutable";
-import { BI } from "@ckb-lumos/bi";
+import { BI } from "@ckb-yadomis/bi";
 import { CellCollectorConstructor } from "../src/type";
 
 const aliceAddress = "ckt1qyqwyxfa75whssgkq9ukkdd30d8c7txct0gqfvmy2v";

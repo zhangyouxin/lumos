@@ -7,7 +7,7 @@ import {
   TransactionCollector as BaseTransactionCollector,
   QueryOptions,
   Transaction,
-} from "@ckb-lumos/base";
+} from "@ckb-yadomis/base";
 import {
   SearchKeyFilter,
   CKBIndexerQueryOptions,

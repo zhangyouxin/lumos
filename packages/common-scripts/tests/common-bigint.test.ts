@@ -6,10 +6,10 @@ import { CellProvider } from "./cell_provider";
 import {
   TransactionSkeleton,
   TransactionSkeletonType,
-} from "@ckb-lumos/helpers";
-import { Cell } from "@ckb-lumos/base";
+} from "@ckb-yadomis/helpers";
+import { Cell } from "@ckb-yadomis/base";
 import { FromInfo } from "../src";
-import { predefined } from "@ckb-lumos/config-manager";
+import { predefined } from "@ckb-yadomis/config-manager";
 const { AGGRON4 } = predefined;
 
 const aliceInput: Cell = {

@@ -1,6 +1,6 @@
 import test from "ava";
 import { dao } from "../src";
-import { Cell } from "@ckb-lumos/base";
+import { Cell } from "@ckb-yadomis/base";
 
 const calculateMaximumWithdrawInfo = {
   depositInput: {

@@ -1,7 +1,7 @@
 import test from "ava";
-import { Cell } from "@ckb-lumos/base";
+import { Cell } from "@ckb-yadomis/base";
 import { minimalCellCapacity, minimalCellCapacityCompatible } from "../src";
-import { BI } from "@ckb-lumos/bi";
+import { BI } from "@ckb-yadomis/bi";
 
 const normalCell: Cell = {
   cell_output: {

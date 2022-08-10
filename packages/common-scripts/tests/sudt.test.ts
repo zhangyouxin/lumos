@@ -5,10 +5,10 @@ import {
   TransactionSkeletonType,
   TransactionSkeleton,
   parseAddress,
-} from "@ckb-lumos/helpers";
+} from "@ckb-yadomis/helpers";
 import { bob, alice } from "./account_info";
-import { predefined } from "@ckb-lumos/config-manager";
-import { Script, utils } from "@ckb-lumos/base";
+import { predefined } from "@ckb-yadomis/config-manager";
+import { Script, utils } from "@ckb-yadomis/base";
 import { isSudtScript } from "../src/helper";
 import {
   bobSecpInputs,
@@ -18,8 +18,8 @@ import {
   bobAcpSudtInputs,
   aliceAcpSudtInputs,
 } from "./inputs";
-import { readBigUInt128LECompatible } from "@ckb-lumos/base/lib/utils";
-import { BI } from "@ckb-lumos/bi";
+import { readBigUInt128LECompatible } from "@ckb-yadomis/base/lib/utils";
+import { BI } from "@ckb-yadomis/bi";
 const { AGGRON4 } = predefined;
 
 test.before(() => {
