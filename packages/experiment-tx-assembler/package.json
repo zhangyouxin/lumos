@@ -1,6 +1,6 @@
 {
   "name": "@yadomi29/experiment-tx-assembler",
-  "version": "0.23.0",
+  "version": "0.24.0-next.0",
   "description": "",
   "homepage": "https://github.com/nervosnetwork/lumos#readme",
   "license": "MIT",
@@ -21,10 +21,10 @@
     "access": "public"
   },
   "dependencies": {
-    "@yadomi29/base": "^0.23.0",
-    "@yadomi29/config-manager": "^0.23.0",
-    "@yadomi29/helpers": "^0.23.0",
-    "@yadomi29/toolkit": "^0.23.0"
+    "@yadomi29/base": "^0.24.0-next.0",
+    "@yadomi29/config-manager": "^0.24.0-next.0",
+    "@yadomi29/helpers": "^0.24.0-next.0",
+    "@yadomi29/toolkit": "^0.24.0-next.0"
   },
   "repository": {
     "type": "git",
