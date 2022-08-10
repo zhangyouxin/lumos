@@ -1,6 +1,6 @@
 {
   "name": "@ckb-yadomis/bi",
-  "version": "0.20.0",
+  "version": "0.21.0",
   "description": "Bigint support in lumos",
   "author": "",
   "homepage": "https://github.com/nervosnetwork/lumos#readme",
