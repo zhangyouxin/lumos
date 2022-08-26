@@ -1,12 +1,13 @@
-import { Script } from "@ckb-lumos/base";
-import { predefined, initializeConfig } from "@ckb-lumos/config-manager";
 import test from "ava";
+import { Script } from "@ckb-lumos/base";
+import { predefined } from "@ckb-lumos/config-manager";
 import { BaseProvider } from "../src/index";
 const indexerUri = "dummy";
 const rpcUrl = "dummy";
 
-const provider = new BaseProvider(rpcUrl, indexerUri);
-initializeConfig(predefined.AGGRON4);
+const provider = new BaseProvider(rpcUrl, indexerUri, {
+  config: predefined.AGGRON4,
+});
 const dummyPrivateKey =
   "0x0123456789012345678901234567890123456789012345678901234567890123";
 const dummypubKey =

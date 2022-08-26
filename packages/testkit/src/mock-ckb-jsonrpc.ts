@@ -105,6 +105,41 @@ export function createCKBMockRPC(options: Options): Express {
     };
   });
 
+  server.addMethod("tx_pool_info", () => {
+    return {
+      last_txs_updated_at: "0x0",
+      min_fee_rate: "0x3e8",
+      orphan: "0x0",
+      pending: "0x2",
+      proposed: "0x0",
+      tip_hash:
+        "0x391a43bf2120ebb9cc2c318c032b192ddd7c60b7ec3c443a2f4b32ccab1b0aa3",
+      tip_number: "0x62dc4c",
+      total_tx_cycles: "0x9029c3",
+      total_tx_size: "0x10db",
+    };
+  });
+  server.addMethod("get_tip_header", () => {
+    return {
+      compact_target: "0x1d07aed8",
+      dao: "0x5408dfe836d50240e313607f055d2600c65a62c2e221a503006d7b0a3ed73f08",
+      epoch: "0x7080414001353",
+      extra_hash:
+        "0x0000000000000000000000000000000000000000000000000000000000000000",
+      hash: "0x49feca2a8c50387aa08fab4de4632ade062668d77c3e344d57e2a65e5b3231f6",
+      nonce: "0xa45bc1bf74fb0ff01b87b799e397092f",
+      number: "0x62dc4f",
+      parent_hash:
+        "0x7c9fe8261d225a50db3114193856a52206a72f1548b1522435507270848c8866",
+      proposals_hash:
+        "0x80576ec713b6d76e0296e5f006d0306954dc44190a3632c71e934fa0227f490b",
+      timestamp: "0x182d82e5be4",
+      transactions_root:
+        "0x28a2bfa59df889530bd54e209c5010967c3fe107450dc21f546b3a1bc69e409f",
+      version: "0x0",
+    };
+  });
+
   const app = express();
   app.use(bodyParser.json());
 
