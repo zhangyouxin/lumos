@@ -1,0 +1,34 @@
+{
+  "name": "@ckb-lumos/scripts",
+  "version": "0.19.0-alpha.0",
+  "description": "CKB scripts",
+  "homepage": "https://github.com/nervosnetwork/lumos#readme",
+  "license": "MIT",
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nervosnetwork/lumos.git"
+  },
+  "files": [
+    "src"
+  ],
+  "devDependencies": {
+    "@ckb-lumos/testkit": "0.19.0-alpha.0",
+    "@ckb-lumos/ckb-indexer": "0.19.0-alpha.0",
+    "@types/request": "^2.48.8",
+    "@types/sinon": "^10.0.6",
+    "find-process": "^1.4.7",
+    "request": "^2.88.2",
+    "sinon": "^12.0.1",
+    "ts-node": "^10.4.0"
+  },
+  "scripts": {
+    "teardown": "ts-node src/close-mock-server-and-ckb-indexer.ts",
+    "setup": "(nohup ts-node src/start_mock_rpc.ts &) ; (sleep 5) ; (nohup ts-node src/start_ckb_indexer.ts &) ; (sleep 15)"
+  },
+  "bugs": {
+    "url": "https://github.com/nervosnetwork/lumos/issues"
+  }
+}
