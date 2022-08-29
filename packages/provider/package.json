@@ -25,6 +25,7 @@
     "@ckb-lumos/hd": "0.19.0-alpha.0",
     "@ckb-lumos/codec": "0.19.0-alpha.0",
     "@ckb-lumos/config-manager": "0.19.0-alpha.0",
+    "@ckb-lumos/common-scripts": "0.19.0-alpha.0",
     "@ckb-lumos/rpc": "0.19.0-alpha.0"
   },
   "devDependencies": {
