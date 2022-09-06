@@ -21,85 +21,26 @@ export interface TransferOptions {
   amount: string;
 }
 
-const SECP_SIGNATURE_PLACEHOLDER = (
-  "0x" +
-    "00".repeat(
-      commons.omnilock.OmnilockWitnessLock.pack({
-        signature: new Uint8Array(65),
-      }).byteLength
-    )
-);
-
 export async function buildTransfer(options: TransferOptions) {
-  let tx = helpers.TransactionSkeleton({});
+  let txSkeleton = helpers.TransactionSkeleton({ cellProvider: indexer });
   const fromScript = helpers.parseAddress(options.from);
+  const fromAddress = helpers.encodeToAddress(fromScript, {config: CONFIG});
   const toScript = helpers.parseAddress(options.to);
+  const toAddress = helpers.encodeToAddress(toScript, {config: CONFIG});
 
-  // additional 1 ckb for tx fee
-  // the tx fee could calculated by tx size
-  // this is just a simple example
-  const neededCapacity = BI.from(options.amount).add(100000000);
-  let collectedSum = BI.from(0);
-  const collectedCells: Cell[] = [];
-  const collector = indexer.collector({ lock: fromScript, type: "empty" });
-  for await (const cell of collector.collect()) {
-    collectedSum = collectedSum.add(cell.cellOutput.capacity);
-    collectedCells.push(cell);
-    if (BI.from(collectedSum).gte(neededCapacity)) break;
-  }
+  txSkeleton = await commons.common.transfer(
+    txSkeleton,
+    [fromAddress],
+    toAddress,
+    BigInt(70*10**8),
+    undefined,
+    undefined,
+    {config: CONFIG}
+  )
+  
+  txSkeleton = await commons.common.payFee(txSkeleton,  [fromAddress], 1000, undefined, {config: CONFIG})
 
-  if (collectedSum.lt(neededCapacity)) {
-    throw new Error(`Not enough CKB, expected: ${neededCapacity}, actual: ${collectedSum} `);
-  }
-
-  const transferOutput: Cell = {
-    cellOutput: {
-      capacity: BI.from(options.amount).toHexString(),
-      lock: toScript,
-    },
-    data: "0x",
-  };
-
-  const changeOutput: Cell = {
-    cellOutput: {
-      capacity: collectedSum.sub(neededCapacity).toHexString(),
-      lock: fromScript,
-    },
-    data: "0x",
-  };
-
-  tx = tx.update("inputs", (inputs) => inputs.push(...collectedCells));
-  tx = tx.update("outputs", (outputs) => outputs.push(transferOutput, changeOutput));
-  tx = tx.update("cellDeps", (cellDeps) =>
-    cellDeps.push(
-      // omni lock dep
-      {
-        outPoint: {
-          txHash: CONFIG.SCRIPTS.OMNILOCK.TX_HASH,
-          index: CONFIG.SCRIPTS.OMNILOCK.INDEX,
-        },
-        depType: CONFIG.SCRIPTS.OMNILOCK.DEP_TYPE,
-      },
-      // SECP256K1 lock is depended by omni lock
-      {
-        outPoint: {
-          txHash: CONFIG.SCRIPTS.SECP256K1_BLAKE160.TX_HASH,
-          index: CONFIG.SCRIPTS.SECP256K1_BLAKE160.INDEX,
-        },
-        depType: CONFIG.SCRIPTS.SECP256K1_BLAKE160.DEP_TYPE,
-      }
-    )
-  );
-
-  const newWitnessArgs = { lock: SECP_SIGNATURE_PLACEHOLDER };
-  const witness = bytes.hexify(blockchain.WitnessArgs.pack(newWitnessArgs))
-
-  // fill txSkeleton's witness with 0
-  for (let i = 0; i < tx.inputs.toArray().length; i++) {
-    tx = tx.update("witnesses", (witnesses) => witnesses.push(witness));
-  }
-
-  return tx;
+  return txSkeleton;
 }
 
 export function toMessages(tx: helpers.TransactionSkeletonType) {
