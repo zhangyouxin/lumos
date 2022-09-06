@@ -46,9 +46,6 @@ export type OmnilockInfo = {
      */
     content: BytesLike;
   };
-  mode?: {
-    anyoneCanPay?: boolean;
-  };
 };
 
 export function createOmnilockScript(
