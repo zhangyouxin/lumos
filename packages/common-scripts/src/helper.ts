@@ -72,10 +72,7 @@ export function isSecp256k1Blake160Address(
   return isSecp256k1Blake160Script(script, config);
 }
 
-export function isOmnilockScript(
-  script: Script,
-  config: Config
-): boolean {
+export function isOmnilockScript(script: Script, config: Config): boolean {
   const template = config.SCRIPTS.OMNILOCK!;
   return (
     script.codeHash === template.CODE_HASH &&
@@ -83,10 +80,7 @@ export function isOmnilockScript(
   );
 }
 
-export function isOmnilockAddress(
-  address: Address,
-  config: Config
-): boolean {
+export function isOmnilockAddress(address: Address, config: Config): boolean {
   const script = parseAddress(address, { config });
   return isOmnilockScript(script, config);
 }
@@ -245,7 +239,11 @@ export function prepareSigningEntries(
 export function ensureScript(
   script: Script,
   config: Config,
-  scriptType: "SECP256K1_BLAKE160" | "SECP256K1_BLAKE160_MULTISIG" | "DAO" | "OMNILOCK"
+  scriptType:
+    | "SECP256K1_BLAKE160"
+    | "SECP256K1_BLAKE160_MULTISIG"
+    | "DAO"
+    | "OMNILOCK"
 ): void {
   const template = config.SCRIPTS[scriptType];
   if (!template) {

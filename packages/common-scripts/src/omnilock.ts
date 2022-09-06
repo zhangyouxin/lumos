@@ -1,7 +1,4 @@
-import {
-  TransactionSkeletonType,
-  Options,
-} from "@ckb-lumos/helpers";
+import { TransactionSkeletonType, Options } from "@ckb-lumos/helpers";
 import { bytes, BytesLike } from "@ckb-lumos/codec";
 import {
   values,
@@ -57,7 +54,7 @@ export type OmnilockInfo = {
 export function createOmnilockScript(
   omnilockInfo: OmnilockInfo,
   options?: Options
-) {
+): Script {
   const config = options?.config || getConfig();
   const omnilockConfig = config.SCRIPTS.OMNILOCK;
   if (!omnilockConfig) {

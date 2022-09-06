@@ -2,7 +2,7 @@ import { bytes } from "@ckb-lumos/codec";
 import {
   TransactionSkeleton,
   encodeToAddress,
-  sealTransaction
+  sealTransaction,
 } from "@ckb-lumos/helpers";
 import { key } from "@ckb-lumos/hd";
 import { initializeConfig, predefined } from "@ckb-lumos/config-manager/lib";
@@ -35,7 +35,7 @@ async function main() {
     codeHash: ckbConfig.SCRIPTS.SECP256K1_BLAKE160.CODE_HASH,
     hashType: ckbConfig.SCRIPTS.SECP256K1_BLAKE160.HASH_TYPE,
     args: aliceArgs,
-  }
+  };
 
   console.log("aliceOmnilock is:", aliceOmnilock);
   const aliceOmnilockAddress = encodeToAddress(aliceOmnilock, {
@@ -51,24 +51,32 @@ async function main() {
     txSkeleton,
     [aliceOmnilockAddress],
     aliceSecplockAddress,
-    BigInt(70*10**8),
+    BigInt(70 * 10 ** 8),
     undefined,
     undefined,
-    {config: ckbConfig}
-  )
-  
-  txSkeleton = await common.payFee(txSkeleton,  [aliceOmnilockAddress], 1000, undefined, {config: ckbConfig})
+    { config: ckbConfig }
+  );
+
+  txSkeleton = await common.payFee(
+    txSkeleton,
+    [aliceOmnilockAddress],
+    1000,
+    undefined,
+    { config: ckbConfig }
+  );
 
   txSkeleton = common.prepareSigningEntries(txSkeleton, { config: ckbConfig });
 
   const message = txSkeleton.get("signingEntries").get(0)!.message;
 
   const sig = key.signRecoverable(message, ALICE_PRIVKEY);
-  const omnilockSig = bytes.hexify(omnilock.OmnilockWitnessLock.pack({ signature: sig }))
+  const omnilockSig = bytes.hexify(
+    omnilock.OmnilockWitnessLock.pack({ signature: sig })
+  );
 
   const tx = sealTransaction(txSkeleton, [omnilockSig]);
   const hash = await rpc.sendTransaction(tx, "passthrough");
-  console.log('tx is:', tx);
+  console.log("tx is:", tx);
   console.log("The transaction hash is", hash);
   return hash;
 }
