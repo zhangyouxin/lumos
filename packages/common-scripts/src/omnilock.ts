@@ -48,6 +48,13 @@ export type OmnilockInfo = {
   };
 };
 
+/**
+ * only support ETHEREUM and SECP256K1_BLAKE160 mode currently
+ * refer to: @link https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0042-omnilock/0042-omnilock.md omnilock
+ * @param omnilockInfo
+ * @param options
+ * @returns
+ */
 export function createOmnilockScript(
   omnilockInfo: OmnilockInfo,
   options?: Options

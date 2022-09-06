@@ -1,4 +1,4 @@
-import { omnilock } from "@ckb-lumos/common-scripts";
+import * as omnilock from "./omnilock";
 import { Set } from "immutable";
 import {
   createTransactionFromSkeleton,
