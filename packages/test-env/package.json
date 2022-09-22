@@ -1,0 +1,54 @@
+{
+  "name": "@ckb-lumos/test-env",
+  "version": "0.19.0-alpha.3",
+  "description": "Test env for CKB",
+  "homepage": "https://github.com/ckb-js/lumos#readme",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "files": [
+    "lib",
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ckb-js/lumos.git"
+  },
+  "scripts": {
+    "start": "ts-node example/mock-ckb-node.ts",
+    "fmt": "prettier --write \"{src,tests,example}/**/*.ts\" package.json",
+    "lint": "eslint -c ../../.eslintrc.js \"{src,tests,example}/**/*.ts\"",
+    "clean": "rm -rf lib",
+    "prepublishOnly": "yarn run clean && yarn run build",
+    "release": "npm publish",
+    "build": "npm run build:types && npm run build:js",
+    "build:types": "tsc --declaration --emitDeclarationOnly",
+    "build:js": "babel --root-mode upward src --out-dir lib --extensions .ts -s"
+  },
+  "bugs": {
+    "url": "https://github.com/ckb-js/lumos/issues"
+  },
+  "ava": {
+    "extensions": [
+      "ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ]
+  },
+  "devDependencies": {
+    "shelljs": "^0.8.5",
+    "ts-node": "^10.4.0",
+    "@types/shelljs": "^0.8.11"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
