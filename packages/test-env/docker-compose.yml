@@ -1,0 +1,10 @@
+version: '3.3'
+services:
+  ckb:
+    image: lumos/ckb-dev:v0.104.1
+    build: ckb
+    ports:
+      - '8114:8114'
+      - '8116:8116'
+    volumes:
+      - ./data:/var/lib/ckb/data
